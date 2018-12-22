@@ -71,7 +71,7 @@
 
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="berandal">Beranda</a></li>
+                        <li class="active"><a href="beranda">Beranda</a></li>
                         <li><a href="#about-us.html">Profil</a></li>
                         <li><a href="#services.html">Agenda Kegiatan</a></li>
                         <li><a href="#portfolio.html">Galeri Foto</a></li>
