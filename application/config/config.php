@@ -35,7 +35,7 @@ $config['base_url']	= 'http://localhost/smk5/';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'beranda';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------
