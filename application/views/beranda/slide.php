@@ -4,21 +4,24 @@
                 <li data-target="#main-slider" data-slide-to="0" class="active"></li>
                 <li data-target="#main-slider" data-slide-to="1"></li>
                 <li data-target="#main-slider" data-slide-to="2"></li>
+                <li data-target="#main-slider" data-slide-to="3"></li>
             </ol>
             <div class="carousel-inner">
 
-                <div class="item active" style="background-image: url()">
-                    <img src="<?php echo base_url(); ?>layout/slide/1.jpg"  alt="...">
+                <div class="item active" style="background-image: url(layout/slide/1.jpg")">
+                 
                     <div class="container">
                         <div class="row">
                             <div class="col-md-7">
                                 <div class="carousel-content">
                                     <h1 class="animation animated-item-1">Help Finding Information Online</h1>
                                     <div class="animation animated-item-2">
-                                        Every new computer that’s brought home from the store has an operating system installed onto it.
+                                          Temukan semua berita dan informasi seputar SMKN 5 Jember disini.<br>
+                                        Silahkan tekan tombol "Get Started" untuk memulai, atau tombol "Learn More" 
+                                        untuk melihat informasi kontak SMKN 5 jember.
                                     </div>
-                                    <a class="btn-slide animation animated-item-3" href="#">Learn More</a>
-                                    <a class="btn-slide white animation animated-item-3" href="#">Get Started</a>
+                                    <a class="btn-slide white animation animated-item-3" href="#">Learn More</a>
+                                    <a class="btn-slide animation animated-item-3" href="#">Get Started</a>
                                 </div>
                             </div>
 
@@ -27,20 +30,66 @@
                 </div>
                 <!--/.item-->
 
-                <div class="item" style="background-image" <img src="<?php echo base_url(); ?>layout/slide/2.jpg"  alt="...">
+               <div class="item" style="background-image: url(layout/slide/2.jpg")">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-7">
                                 <div class="carousel-content">
                                     <h1 class="animation animated-item-1">Help Finding Information Online</h1>
                                     <div class="animation animated-item-2">
-                                        Every new computer that’s brought home from the store has an operating system installed onto it.
+                                        Temukan semua berita dan informasi seputar SMKN 5 Jember disini.<br>
+                                        Silahkan tekan tombol "Get Started" untuk memulai, atau tombol "Learn More" 
+                                        untuk melihat informasi kontak SMKN 5 jember.
                                     </div>
                                     <a class="btn-slide white animation animated-item-3" href="#">Learn More</a>
                                     <a class="btn-slide animation animated-item-3" href="#">Get Started</a>
                                 </div>
                             </div>
 
+
+                        </div>
+                    </div>
+                </div>
+                <!--/.item-->
+
+                 <div class="item" style="background-image: url(layout/slide/3.jpeg")">
+                 
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-7">
+                                <div class="carousel-content">
+                                    <h1 class="animation animated-item-1">Help Finding Information Online</h1>
+                                    <div class="animation animated-item-2">
+                                          Temukan semua berita dan informasi seputar SMKN 5 Jember disini.<br>
+                                        Silahkan tekan tombol "Get Started" untuk memulai, atau tombol "Learn More" 
+                                        untuk melihat informasi kontak SMKN 5 jember.
+                                    </div>
+                                    <a class="btn-slide white animation animated-item-3" href="#">Learn More</a>
+                                    <a class="btn-slide animation animated-item-3" href="#">Get Started</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!--/.item-->
+
+                <div class="item" style="background-image: url(layout/slide/4.png")">
+                 
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-7">
+                                <div class="carousel-content">
+                                    <h1 class="animation animated-item-1">Help Finding Information Online</h1>
+                                    <div class="animation animated-item-2">
+                                          Temukan semua berita dan informasi seputar SMKN 5 Jember disini.<br>
+                                        Silahkan tekan tombol "Get Started" untuk memulai, atau tombol "Learn More" 
+                                        untuk melihat informasi kontak SMKN 5 jember.
+                                    </div>
+                                    <a class="btn-slide white animation animated-item-3" href="#">Learn More</a>
+                                    <a class="btn-slide animation animated-item-3" href="#">Get Started</a>
+                                </div>
+                            </div>
 
                         </div>
                     </div>

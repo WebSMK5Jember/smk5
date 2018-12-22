@@ -75,7 +75,7 @@
                         <li><a href="#about-us.html">Profil</a></li>
 
                              <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Program Keahlian<i class="fa fa-angle-down"></i></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Program Keahlian <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#blog-item.html">Kimia Analisis</a></li>
                                 <li><a href="#blog-item.html">Teknik Komputer dan Jaringan</a></li>
@@ -97,7 +97,19 @@
                         <li><a href="#portfolio.html">Galeri Foto</a></li>
                        
                         <li><a href="login">Sistem Informasi</a></li>
-                        <li><a href="contact-us.html">Contact</a></li>
+
+                          <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu Lainnya <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#blog-item.html">FITUR</a></li>
+                                <li><a href="#blog-item.html">FITUR</a></li>
+                                <li><a href="#blog-item.html">FITUR</a></li>
+                                <li><a href="#blog-item.html">FITUR</a></li>
+                                <li><a href="#blog-item.html">FITUR</a></li>
+                               
+                            </ul>
+                        </li>
+                        
                     </ul>
                 </div>
             </div>

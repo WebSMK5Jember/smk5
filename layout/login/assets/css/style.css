@@ -1561,15 +1561,16 @@ code {
 }
 
 .btn-custom {
-  background-color: #02c0ce;
-  border-color: #02c0ce;
+  background-color: #4169E1;
+  border-color: #4169E1;
 }
 
 .btn-custom:hover, .btn-custom:focus, .btn-custom:active, .btn-custom.active,
 .btn-custom.focus, .btn-custom:active, .btn-custom:focus, .btn-custom:hover,
 .open > .dropdown-toggle.btn-custom {
-  background-color: #02a8b5;
-  border: 1px solid #02a8b5;
+  background-color: #ffff00;
+  border: 1px solid #ffff00;
+  
 }
 
 .btn-custom.focus, .btn-custom:focus, .btn-outline-custom.focus, .btn-outline-custom:focus,
