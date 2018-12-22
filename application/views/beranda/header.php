@@ -78,18 +78,18 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Jurusan<i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#blog-item.html">Jurusan 1</a></li>
-                                <li><a href="#blog-item.html">Jurusan 1</a></li>
-                                <li><a href="#blog-item.html">Jurusan 1</a></li>
-                                <li><a href="#blog-item.html">Jurusan 1</a></li>
-                                <li><a href="#blog-item.html">Jurusan 1</a></li>
-                                <li><a href="#blog-item.html">Jurusan 1</a></li>
-                                <li><a href="#blog-item.html">Jurusan 1</a></li>
-                                <li><a href="#blog-item.html">Jurusan 1</a></li>
-                                <li><a href="#blog-item.html">Jurusan 1</a></li>
-                                <li><a href="#blog-item.html">Jurusan 1</a></li>
-                                <li><a href="#blog-item.html">Jurusan 1</a></li>
-                                <li><a href="#blog-item.html">Jurusan 1</a></li>
+                                <li><a href="#blog-item.html">Kimia Analisis</a></li>
+                                <li><a href="#blog-item.html">Teknik Komputer dan Jaringan</a></li>
+                                <li><a href="#blog-item.html">Multimedia</a></li>
+                                <li><a href="#blog-item.html">Agribisnis Tanaman Pangan dan Holtikultura</a></li>
+                                <li><a href="#blog-item.html">Agribisnis Tanaman Perkebunan</a></li>
+                                <li><a href="#blog-item.html">Agribisnis Perbenihan dan Kultur Jaringan Tanaman</a></li>
+                                <li><a href="#blog-item.html">Agribisnis Ternak Ruminansia</a></li>
+                                <li><a href="#blog-item.html">Agribisnis Ternak Unggas</a></li>
+                                <li><a href="#blog-item.html">Teknologi Pengolahan Hasil Pertanian</a></li>
+                                <li><a href="#blog-item.html">Pengawasan Mutu Hasil Pertanian dan Perikanan</a></li>
+                                <li><a href="#blog-item.html">Alat Mesin Pertanian</a></li>
+                                <li><a href="#blog-item.html">Budidaya Perikanan</a></li>
 
                             </ul>
                         </li>
