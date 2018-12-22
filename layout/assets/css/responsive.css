@@ -109,6 +109,7 @@
       display: block;
       -webkit-animation: fadeInUp 400ms;
       animation: fadeInUp 400ms;
+      
   }
 
   .navbar-collapse {
