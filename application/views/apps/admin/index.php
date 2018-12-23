@@ -26,7 +26,7 @@
                         
                         <td><?php echo $data->KODE_ADMIN ?></td>
                         <td><?php echo $data->NAMA_ADMIN ?></td>
-						 <td><?php echo $data->NAMA_JABATAN ?></td>
+						 <td><?php echo $data->JABATAN ?></td>
 						  <td><?php echo $data->EMAIL ?></td>
                        
 					
