@@ -25,7 +25,7 @@ Class siswa extends CI_Controller{
         
     }
 public function jadwalpelajaran(){
-        $list = $this->ModelSiswa->get_data_diri();
+        $list = $this->ModelSiswa->get_jadwal_pelajaran();
         $data = array(
             "menu"      => "MenuSiswa",
             "panelbody" => "apps/siswa/jadwalpelajaran",
