@@ -34,6 +34,14 @@ public function jadwalpelajaran(){
         $this->load->view('panelbody', $data);
         
     }
-   
+   public function nilai(){
+        $list = $this->ModelSiswa->get_nilai();
+        $data = array(
+            "menu"      => "MenuSiswa",
+            "panelbody" => "apps/siswa/nilai",
+            "list"      => $list
+        );
+        $this->load->view('panelbody', $data);
     
+}
 }
