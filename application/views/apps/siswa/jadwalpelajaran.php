@@ -2,10 +2,10 @@
     <div class="col-sm-12">
         <div class="card-box table-responsive">
                 <h2 class="m-t-0 header-title"><b>JADWAL PELAJARAN "<?php echo $this->session->userdata('name_session');?>" </b></h2>
-				
-				
+                
+                
             <div id="datatable_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
-			<div class="row">
+            <div class="row">
    
         <table  class="table table-striped table-bordered dataTable no-footer"  >
                 <thead>
@@ -18,14 +18,14 @@
                     </th>
                     <th  tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 30px;">GURU
                     </th>
-					
-					<th  tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 30px;">JAM
+                    
+                    <th  tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 30px;">JAM
                     </th>
-					<th  tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 30px;">RUANGAN
+                    <th  tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 30px;">RUANGAN
                     </th>
-					<th  tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 30px;">HARI
+                    <th  tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 30px;">HARI
                     </th>
-					
+                    
                 </tr>
                 </thead>
                 <tbody>
