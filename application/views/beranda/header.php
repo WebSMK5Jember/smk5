@@ -101,11 +101,11 @@
                           <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu Lainnya <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#blog-item.html">FITUR</a></li>
-                                <li><a href="#blog-item.html">FITUR</a></li>
-                                <li><a href="#blog-item.html">FITUR</a></li>
-                                <li><a href="#blog-item.html">FITUR</a></li>
-                                <li><a href="#blog-item.html">FITUR</a></li>
+                                <li><a href="#blog-item.html">Lapor Sarana dan Prasarana</a></li>
+                                <li><a href="#blog-item.html">Lapor Guru</a></li>
+                                <li><a href="#blog-item.html">Kotak Saran</a></li>
+                                <li><a href="#blog-item.html">Pengumuman</a></li>
+                                
                                
                             </ul>
                         </li>
