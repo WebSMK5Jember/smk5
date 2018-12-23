@@ -17,7 +17,7 @@ Class admin extends CI_Controller{
     public function index(){
         $list = $this->ModelAdmin->get_data_diri();
         $data = array(
-            "menu"      => "MenuSiswa",
+            "menu"      => "MenuAdmin",
             "panelbody" => "apps/admin/index",
             "list"      => $list
         );
