@@ -35,8 +35,8 @@
                         foreach($list as $data){ ?>
                         
                         <td><?php echo $data->KODE_KELAS ?></td>
-                        <td><?php echo $data->KODE_MAPEL ?></td>
-                         <td><?php echo $data->KODE_GURU ?></td>
+                        <td><?php echo $data->NAMA_MAPEL ?></td>
+                         <td><?php echo $data->NAMA_GURU ?></td>
                           <td><?php echo $data->JAM ?></td>
                         <td><?php echo $data->RUANGAN ?></td>
                          
