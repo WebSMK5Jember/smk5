@@ -4,10 +4,10 @@
                 <h2 class="m-t-0 header-title"><b> PEROLEHAN NILAI "<?php echo $this->session->userdata('name_session');?>" </b></h2>
 				
 				
-            <div id="datatable_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
-			<div class="row">
-   
-        <table  class="table table-striped table-bordered dataTable no-footer"  >
+             <div id="datatable_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+<div class="row">
+    <div class="col-sm-12">
+        <table id="datatable" class="table table-striped table-bordered dataTable no-footer" role="grid" aria-describedby="datatable_info">
                 <thead>
                 <tr role="row">
                    
