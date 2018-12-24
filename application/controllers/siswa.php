@@ -15,7 +15,8 @@ Class siswa extends CI_Controller{
 	}
 
     public function index(){
-        $list = $this->ModelSiswa->get_data_diri();
+        $id = $this->session->userdata('id_session');
+        $list = $this->ModelSiswa->get_data_diri($id)->result();
         $data = array(
             "menu"      => "MenuSiswa",
             "panelbody" => "apps/siswa/index",
@@ -25,7 +26,8 @@ Class siswa extends CI_Controller{
         
     }
 public function jadwalpelajaran(){
-        $list = $this->ModelSiswa->get_jadwal_pelajaran();
+    $id = $this->session->userdata('id_session');
+        $list = $this->ModelSiswa->get_jadwal_pelajaran($id)->result();
         $data = array(
             "menu"      => "MenuSiswa",
             "panelbody" => "apps/siswa/jadwalpelajaran",
@@ -35,7 +37,8 @@ public function jadwalpelajaran(){
         
     }
    public function nilai(){
-        $list = $this->ModelSiswa->get_nilai();
+    $id = $this->session->userdata('id_session');
+        $list = $this->ModelSiswa->get_nilai($id)->result();
         $data = array(
             "menu"      => "MenuSiswa",
             "panelbody" => "apps/siswa/nilai",
@@ -45,7 +48,8 @@ public function jadwalpelajaran(){
     
 }
  public function absensi(){
-        $list = $this->ModelSiswa->get_absensi();
+    $id = $this->session->userdata('id_session');
+        $list = $this->ModelSiswa->get_absensi($id)->result();
         $data = array(
             "menu"      => "MenuSiswa",
             "panelbody" => "apps/siswa/absensi",
