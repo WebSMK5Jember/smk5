@@ -38,5 +38,14 @@ class ModelSiswa extends CI_Model{
 	return $data->result();
 
 }
+	function get_absensi(){
+		$this->db->select('*'); 
+		$this->db->from('tabel_absensi');
+		$this->db->join('tabel_mapel', 'tabel_mapel.KODE_MAPEL = tabel_absensi.KODE_MAPEL', 'left');
+		$this->db->join('tabel_siswa', 'tabel_siswa.NIS = tabel_absensi.NIS', 'left');
+		$data = $this->db->get();
+	return $data->result();
+
+}
 }
 ?>

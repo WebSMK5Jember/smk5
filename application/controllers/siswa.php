@@ -44,4 +44,13 @@ public function jadwalpelajaran(){
         $this->load->view('panelbody', $data);
     
 }
+ public function absensi(){
+        $list = $this->ModelSiswa->get_absensi();
+        $data = array(
+            "menu"      => "MenuSiswa",
+            "panelbody" => "apps/siswa/absensi",
+            "list"      => $list
+        );
+        $this->load->view('panelbody', $data);
+}
 }
