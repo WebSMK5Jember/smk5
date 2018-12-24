@@ -24,7 +24,14 @@ Class admin extends CI_Controller{
         $this->load->view('panelbody', $data);
         
     }
-
-   
+public function inputsiswa(){
+        $list = $this->ModelAdmin->get_input_siswa();
+        $data = array(
+            "menu"      => "MenuAdmin",
+            "panelbody" => "apps/admin/inputsiswa",
+            "list"      => $list
+        );
+        $this->load->view('panelbody', $data);
+   }
     
 }

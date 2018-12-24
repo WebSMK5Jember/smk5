@@ -18,7 +18,12 @@ class ModelAdmin extends CI_Model{
     return $data->result(); 
 	}
 
-	
+	function get_input_siswa(){
+		$this->db->insert('*'); 
+		$this->db->into('tabel_siswa');
+		 $data = $this->db->get(); 
+    return $data->result();
+	}
 
 }
 
