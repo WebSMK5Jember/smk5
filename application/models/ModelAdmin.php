@@ -18,13 +18,13 @@ class ModelAdmin extends CI_Model{
     return $data->result(); 
 	}
 
-	function get_input_siswa(){
-		$this->db->insert('*'); 
-		$this->db->into('tabel_siswa');
-		 $data = $this->db->get(); 
-    return $data->result();
-	}
+	function get_input_siswa($data,$table){
+		$this->db->insert($table,$data);
 
+	$data = $this->db->get(); 
+    return $data->result(); 
+
+}
 }
 
 ?>
