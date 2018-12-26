@@ -24,7 +24,7 @@ Class admin extends CI_Controller{
         $this->load->view('panelbody', $data);
         
     }
-public function get_input_siswa(){
+public function inputsiswa(){
      
         $nama = $this->input->post(NAMA_SISWA); 
         $NIS = $this->input->post(NIS)

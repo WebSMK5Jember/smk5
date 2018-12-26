@@ -110,11 +110,7 @@
                             <div class="col-xs-12">
                                 <div class="page-title-box">
                                     <h4 class="page-title">Dashboard</h4>
-                                    <ol class="breadcrumb p-0 m-0">
-                                        <li>
-                                            <a href="siswa"><?php echo $this->session->userdata('name_session');?>
-                                        </li>
-                                    </ol>
+                                    
                                     <div class="clearfix"></div>
                                 </div>
                             </div>
