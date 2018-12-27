@@ -5,6 +5,7 @@ class ModelAdmin extends CI_Model{
 	public function __construct(){
 		parent::__construct();
 		$this ->load ->database();
+		
 	}
 
 
@@ -18,11 +19,11 @@ class ModelAdmin extends CI_Model{
     return $data->result(); 
 	}
 
-	function get_input_siswa($data,$table){
-		$this->db->insert($table,$data);
+	function get_input_siswa(){
+		$this->db->set('NAMA_SISWA',$this->input->post('NAMA_SISWA'));
+		$this->db->set('NIS',$this->input->post('NIS'));
 
-	$data = $this->db->get(); 
-    return $data->result(); 
+	return $this->db->insert('tabel_siswa');
 
 }
 }

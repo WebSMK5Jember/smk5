@@ -26,18 +26,19 @@ Class admin extends CI_Controller{
     }
 public function inputsiswa(){
      
-        $nama = $this->input->post(NAMA_SISWA); 
-        $NIS = $this->input->post(NIS)
-        ;
-         $data = array(
+
+        $nama = $this->input->post('NAMA_SISWA'); 
+        $NIS = $this->input->post('NIS');
+        $list = $this->ModelAdmin->get_input_siswa('user');
+        $data = array(
             'NAMA_SISWA'=> $nama,
             'NIS'       => $NIS,
             "menu"      => "MenuAdmin",
             "panelbody" => "apps/admin/inputsiswa",
             "list"      => $list ); 
-    
-    $this->load->view('apps/admin/inputsiswa');
-  $this->ModelAdmin->input_data($data,'user');
+       
+        $this->load->view('apps/admin/inputsiswa');
+ 
     
     }
     
