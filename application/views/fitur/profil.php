@@ -34,7 +34,7 @@
 
   
     
-    <div class="page-title" style="background-image: url(images/page-title.png)">
+    <div class="page-title" style="background-image: url(<?php echo base_url(); ?>layout/images/slide/1.jpg)">
         <h1>About us</h1>
     </div>
 
@@ -43,7 +43,7 @@
             <div class="row">
                 <div class="col-md-7">
                     <div class="about-img">
-                        <img src="<?php echo base_url(); ?>layout/assets/images/about-img.png" alt="">
+                        <img src="<?php echo base_url(); ?>layout/images/profil/profil.jpg" alt="">
                     </div>
                 </div>
                 <div class="col-md-5">

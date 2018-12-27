@@ -8,7 +8,7 @@
             </ol>
             <div class="carousel-inner">
 
-                <div class="item active" style="background-image: url(layout/slide/1.jpg")">
+                <div class="item active" style="background-image: url(layout/images/slide/1.jpg")">
                  
                     <div class="container">
                         <div class="row">
@@ -30,7 +30,7 @@
                 </div>
                 <!--/.item-->
 
-               <div class="item" style="background-image: url(layout/slide/2.jpg")">
+               <div class="item" style="background-image: url(layout/images/slide/2.jpg")">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-7">
@@ -52,7 +52,7 @@
                 </div>
                 <!--/.item-->
 
-                 <div class="item" style="background-image: url(layout/slide/3.jpeg")">
+                 <div class="item" style="background-image: url(layout/images/slide/3.jpeg")">
                  
                     <div class="container">
                         <div class="row">
@@ -74,7 +74,7 @@
                 </div>
                 <!--/.item-->
 
-                <div class="item" style="background-image: url(layout/slide/4.png")">
+                <div class="item" style="background-image: url(layout/images/slide/4.png")">
                  
                     <div class="container">
                         <div class="row">
