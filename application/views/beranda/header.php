@@ -71,8 +71,8 @@
 
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="beranda">Beranda</a></li>
-                        <li><a href="#about-us.html">Profil</a></li>
+                        <li ><a href="beranda">Beranda</a></li>
+                        <li><a href="profil">Profil</a></li>
 
                              <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Program Keahlian <i class="fa fa-angle-down"></i></a>

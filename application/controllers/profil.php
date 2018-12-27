@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
  
-class beranda extends CI_Controller {
+class profil extends CI_Controller {
 	
 	function __construct(){
 		parent::__construct();
@@ -11,7 +11,7 @@ class beranda extends CI_Controller {
 	public function index(){		
 		
 		$this->load->view('beranda/header');
-		$this->load->view('beranda/slide');
+		$this->load->view('fitur/profil');
 		$this->load->view('beranda/footer');
 	
 	}
