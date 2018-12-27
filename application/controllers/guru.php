@@ -15,7 +15,8 @@ Class guru extends CI_Controller{
 	}
 
     public function index(){
-        $list = $this->ModelGuru->get_data_diri();
+        $id = $this->session->userdata('id_session');
+        $list = $this->ModelGuru->get_data_diri($id)->result();
         $data = array(
             "menu"      => "MenuGuru",
             "panelbody" => "apps/guru/index",

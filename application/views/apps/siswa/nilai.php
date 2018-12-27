@@ -7,7 +7,7 @@
              <div id="datatable_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
 <div class="row">
     <div class="col-sm-12">
-        <table id="datatable" class="table table-striped table-bordered dataTable no-footer" role="grid" aria-describedby="datatable_info">
+        <table  class="table table-striped table-bordered dataTable no-footer" role="grid" aria-describedby="datatable_info">
                 <thead>
                 <tr role="row">
                    
