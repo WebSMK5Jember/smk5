@@ -25,13 +25,24 @@ Class admin extends CI_Controller{
         
     }
 public function inputsiswa(){
-     
-
-   
+    
         $data = array(
          
             "menu"      => "MenuAdmin",
             "panelbody" => "apps/admin/inputsiswa");
+            
+         $this->load->view('panelbody', $data);
+      
+ 
+    
+    }
+    
+    public function inputguru(){
+    
+        $data = array(
+         
+            "menu"      => "MenuAdmin",
+            "panelbody" => "apps/admin/inputguru");
             
          $this->load->view('panelbody', $data);
       

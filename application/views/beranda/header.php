@@ -75,10 +75,10 @@
                         <li><a href="profil">Profil</a></li>
 
                              <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Program Keahlian <i class="fa fa-angle-down"></i></a>
+                            <a href="jurusan" class="dropdown-toggle" data-toggle="dropdown">Program Keahlian <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#blog-item.html">Kimia Analisis</a></li>
-                                <li><a href="#blog-item.html">Teknik Komputer dan Jaringan</a></li>
+                                <li><a href="jurusan/analisiskimia">Kimia Analisis</a></li>
+                                <li><a href="jurusan/tkj">Teknik Komputer dan Jaringan</a></li>
                                 <li><a href="#blog-item.html">Multimedia</a></li>
                                 <li><a href="#blog-item.html">Agribisnis Tanaman Pangan dan Holtikultura</a></li>
                                 <li><a href="#blog-item.html">Agribisnis Tanaman Perkebunan</a></li>
