@@ -1,3 +1,4 @@
+<?php echo form_open('admin/inputsiswa','class="form-horizontal" role="form"');?>
 <div class="row">
     <div class="col-sm-12">
         <div class="card-box">

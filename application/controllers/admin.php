@@ -33,9 +33,18 @@ public function inputsiswa(){
             
          $this->load->view('panelbody', $data);
       
- 
+    }
+    public function saveinputsiswa(){
+        
+         $data = array(
+            'NAMA_SISWA' => $this ->input ->post('NAMA_SISWA'),
+            'NIS' => $this ->input ->post('NIS'));
+            
+        $this ->db ->insert('tabel_siswa', $data);
+        redirect('admin/inputsiswa');
     
     }
+    
     
     public function inputguru(){
     
@@ -46,7 +55,6 @@ public function inputsiswa(){
             
          $this->load->view('panelbody', $data);
       
- 
     
     }
     

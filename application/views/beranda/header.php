@@ -72,23 +72,23 @@
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li ><a href="beranda">Beranda</a></li>
-                        <li><a href="profil">Profil</a></li>
+                        <li><a href="<?php echo base_url(); ?>profil">Profil</a></li>
 
                              <li class="dropdown">
                             <a href="jurusan" class="dropdown-toggle" data-toggle="dropdown">Program Keahlian <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a href="jurusan/analisiskimia">Kimia Analisis</a></li>
-                                <li><a href="jurusan/tkj">Teknik Komputer dan Jaringan</a></li>
-                                <li><a href="#blog-item.html">Multimedia</a></li>
-                                <li><a href="#blog-item.html">Agribisnis Tanaman Pangan dan Holtikultura</a></li>
-                                <li><a href="#blog-item.html">Agribisnis Tanaman Perkebunan</a></li>
-                                <li><a href="#blog-item.html">Agribisnis Perbenihan dan Kultur Jaringan Tanaman</a></li>
-                                <li><a href="#blog-item.html">Agribisnis Ternak Ruminansia</a></li>
-                                <li><a href="#blog-item.html">Agribisnis Ternak Unggas</a></li>
-                                <li><a href="#blog-item.html">Teknologi Pengolahan Hasil Pertanian</a></li>
-                                <li><a href="#blog-item.html">Pengawasan Mutu Hasil Pertanian dan Perikanan</a></li>
-                                <li><a href="#blog-item.html">Alat Mesin Pertanian</a></li>
-                                <li><a href="#blog-item.html">Budidaya Perikanan</a></li>
+                                <li><a href="<?php echo base_url(); ?>jurusan/analisiskimia">Kimia Analisis</a></li>
+                                <li><a href="<?php echo base_url(); ?>jurusan/tkj">Teknik Komputer dan Jaringan</a></li>
+                                <li><a href="<?php echo base_url(); ?>jurusan/multimedia">Multimedia</a></li>
+                                <li><a href="<?php echo base_url(); ?>jurusan/holtikultura">Agribisnis Tanaman Pangan dan Holtikultura</a></li>
+                                <li><a href="<?php echo base_url(); ?>jurusan/perkebunan">Agribisnis Tanaman Perkebunan</a></li>
+                                <li><a href="<?php echo base_url(); ?>jurusan/benih">Agribisnis Perbenihan dan Kultur Jaringan Tanaman</a></li>
+                                <li><a href="<?php echo base_url(); ?>jurusan/ruminansia">Agribisnis Ternak Ruminansia</a></li>
+                                <li><a href="<?php echo base_url(); ?>jurusan/unggas">Agribisnis Ternak Unggas</a></li>
+                                <li><a href="<?php echo base_url(); ?>jurusan/pengolahan_pertanian">Teknologi Pengolahan Hasil Pertanian</a></li>
+                                <li><a href="<?php echo base_url(); ?>jurusan/mutu">Pengawasan Mutu Hasil Pertanian dan Perikanan</a></li>
+                                <li><a href="<?php echo base_url(); ?>jurusan/mesin">Alat Mesin Pertanian</a></li>
+                                <li><a href="<?php echo base_url(); ?>jurusan/perikanan">Budidaya Perikanan</a></li>
 
                             </ul>
                         </li>
@@ -96,7 +96,7 @@
                         <li><a href="#services.html">Agenda Kegiatan</a></li>
                         <li><a href="#portfolio.html">Galeri Foto</a></li>
                        
-                        <li><a href="login">Sistem Informasi</a></li>
+                        <li><a href="<?php echo base_url(); ?>login">Sistem Informasi</a></li>
 
                           <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu Lainnya <i class="fa fa-angle-down"></i></a>

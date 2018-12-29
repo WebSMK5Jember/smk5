@@ -19,11 +19,9 @@ class ModelAdmin extends CI_Model{
     return $data->result(); 
 	}
 
-	function get_input_siswa(){
-		$this->db->set('NAMA_SISWA',$this->input->post('NAMA_SISWA'));
-		$this->db->set('NIS',$this->input->post('NIS'));
+	function get_input_siswa(){	
 
-	return $this->db->insert('tabel_siswa');
+	return $this->db->get('tabel_siswa');
 
 }
 }
