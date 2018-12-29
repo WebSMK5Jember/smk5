@@ -6,6 +6,7 @@ Class admin extends CI_Controller{
 		
 		parent::__construct();
         $this->load->helper(array('form','url'));
+        $this->load->library('form_validation');
 		$this ->load ->model('ModelAdmin');
         $this ->load ->model('ModelUi');
 		if($this ->session ->userdata('logon') != true && $this ->session ->userdata('level') != 5){
@@ -24,38 +25,46 @@ Class admin extends CI_Controller{
         $this->load->view('panelbody', $data);
         
     }
-public function inputsiswa(){
-    
+public function input_siswa(){
+
+        $kelas = $this ->ModelAdmin->get_kelas()->result();
+        $prodi = $this ->ModelAdmin->get_prodi()->result();
         $data = array(
-         
             "menu"      => "MenuAdmin",
-            "panelbody" => "apps/admin/inputsiswa");
+            "panelbody" => "apps/admin/inputsiswa",
+
+               "kelas" => $kelas,
+               "prodi" => $prodi
             
-         $this->load->view('panelbody', $data);
-      
-    }
-    public function saveinputsiswa(){
-        
-         $data = array(
-            'NAMA_SISWA' => $this ->input ->post('NAMA_SISWA'),
-            'NIS' => $this ->input ->post('NIS'));
-            
-        $this ->db ->insert('tabel_siswa', $data);
-        redirect('admin/inputsiswa');
-    
-    }
-    
-    
-    public function inputguru(){
-    
-        $data = array(
-         
-            "menu"      => "MenuAdmin",
-            "panelbody" => "apps/admin/inputguru");
-            
-         $this->load->view('panelbody', $data);
-      
-    
-    }
-    
+           );
+        $this->load->view('panelbody', $data);
 }
+ public function save_input_siswa(){
+    
+    $cek = $this->db->query("SELECT * FROM tabel_siswa where NIS='".$this->input->post('NIS')."'")->num_rows();
+    if ($cek<=0){
+        $data = array(
+            'NIS' => $this->input->post('NIS'),
+            'NAMA_SISWA' => $this->input->post('NAMA_SISWA'),
+            'KODE_PRODI' => $this->input->post('KD_PRODI'),
+            'KODE_KELAS' => $this->input->post('KD_KELAS'),
+            
+            'TEMPAT_LAHIR' => $this->input->post('TEMPAT_LAHIR'),
+            'TANGGAL_LAHIR' => $this->input->post('TANGGAL_LAHIR'),
+            'ALAMAT_SISWA' => $this->input->post('JENIS_KELAMIN'),
+            'JENIS_KELAMIN' => $this->input->post('JENIS_KELAMIN'),
+            'NAMA_ORANG_TUA' => $this->input->post('NAMA_ORANG_TUA'),
+            'ASAL_SEKOLAH' => $this->input->post('ASAL_SEKOLAH'),
+            'NO_IJASAH' => $this->input->post('NO_IJASAH')
+    );
+        
+        $this ->db ->insert('tabel_siswa',$data);
+        redirect('admin/input_siswa');
+
+
+    }else {  
+        echo "<script> alert('Data NIS yang anda masukkan sudah ada')</script>";
+    }
+}
+      }
+   ?>

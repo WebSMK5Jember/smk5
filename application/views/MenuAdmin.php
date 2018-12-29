@@ -6,7 +6,7 @@
 
                                 </li>
                                 <li>
-                                <a href="<?php echo base_url(); ?>admin/inputsiswa"><i class="fa fa-plus-circle"></i><span> Input Siswa</span></a>
+                                <a href="<?php echo base_url(); ?>admin/input_siswa"><i class="fa fa-plus-circle"></i><span> Input Siswa</span></a>
                             </li>
                             <li>
                                 <a href="<?php echo base_url(); ?>admin/inputguru"><i class="fa fa-plus-circle"></i><span> Input Guru</span></a>

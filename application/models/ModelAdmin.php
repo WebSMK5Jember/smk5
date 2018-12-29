@@ -19,11 +19,13 @@ class ModelAdmin extends CI_Model{
     return $data->result(); 
 	}
 
-	function get_input_siswa(){	
+	public function get_kelas(){
+		return $this ->db ->get("tabel_kelas");
+	}
 
-	return $this->db->get('tabel_siswa');
-
-}
+	public function get_prodi(){
+		return $this ->db ->get("table_prodi");
+	}
 }
 
 ?>
