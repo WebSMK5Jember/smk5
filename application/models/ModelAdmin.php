@@ -26,6 +26,15 @@ class ModelAdmin extends CI_Model{
 	public function get_prodi(){
 		return $this ->db ->get("table_prodi");
 	}
+	public function get_jabatan(){
+		return $this ->db ->get("tabel_jabatan");
+	}
+	public function get_piket(){
+		return $this ->db ->get("tabel_piket");
+	}
+	public function get_mapel(){
+		return $this ->db ->get("tabel_mapel");
+	}
 }
 
 ?>
