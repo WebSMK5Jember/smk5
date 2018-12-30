@@ -49,7 +49,7 @@
                 <div class="col-md-5">
                     <div class="about-content">
                         <h2>AGRIBISNIS TANAMAN PANGAN DAN HOLTIKULTURA</h2>
-                        <p>Photographs are a way of preserving a moment in our lives for the rest of our lives. Many of us have at least been tempted at the flashy array of photo printers which seemingly leap off the shelves at even the least tech-savvy. It surely seems old fashioned to talk about 35mm film and non-digital cameras in today’s day and age.</p>
+                        <p>Pada program keahlian ATPH, siswa akan dilatih untuk dapat memiliki keterampilan di bidang perencanaan dan pengolahan Agribisnis Tanaman Pangan dan Holtikultura serta memiliki keterampilan di bidang pembibitan tanaman pangan. Siswa juga akan melakukan praktik kerja di industri selama 6 bulan sampai 1 tahun sehingga setelah menyelesaikan pendidikan dapat langsung terjun di dunia kerja </p>
                     </div>
                 </div>
             </div>
