@@ -6,19 +6,20 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="p-20">
-
-                        <div class="form-group">
-                            <label class="col-md-2 control-label" for="exampleInputEmail1">NIP </label>
-                            <div class="col-md-10">
-                                <input type="text" name="NIP" class="form-control" id="exampleInputEmail1">
-                            </div>
-                         </div>
+                        
                          <div class="form-group">
                             <label class="col-md-2 control-label" for="exampleInputEmail1">KODE GURU </label>
                             <div class="col-md-10">
                                 <input type="text" name="KODE_GURU" class="form-control" id="exampleInputEmail1">
                             </div>
                          </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label" for="exampleInputEmail1">NIP </label>
+                            <div class="col-md-10">
+                                <input type="text" name="NIP" class="form-control" id="exampleInputEmail1">
+                            </div>
+                         </div>
+                        
                         <div class="form-group">
                              <label class="col-md-2 control-label" for="exampleInputEmail1">NAMA </label>
                                 <div class="col-md-10">

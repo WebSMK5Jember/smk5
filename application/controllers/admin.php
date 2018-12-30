@@ -88,8 +88,8 @@ public function input_guru(){
     $cek = $this->db->query("SELECT * FROM tabel_guru where KODE_GURU='".$this->input->post('KODE_GURU')."'")->num_rows();
     if ($cek<=0){
         $data = array(
-            'NIP' => $this->input->post('NIP'),
             'KODE_GURU' => $this->input->post('KODE_GURU'),
+            'NIP' => $this->input->post('NIP'),
             'NAMA_GURU' => $this->input->post('NAMA_GURU'),
             'ALAMAT_GURU' => $this->input->post('ALAMAT_GURU'),
             'JUMLAH_JAM' => $this->input->post('JUMLAH_JAM'),
