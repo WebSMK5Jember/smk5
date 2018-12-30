@@ -18,7 +18,7 @@
                                 <a href="<?php echo base_url(); ?>siswa/daful"><i class="fa fa-plus-circle"></i><span> Daftar Ulang</span></a>
                             </li>
                             <li>
-                                <a href="<?php echo base_url(); ?>siswa/prakerin"><i class="fa fa-plus-circle"></i><span> Daftar Prakerin</span></a>
+                                <a href="<?php echo base_url(); ?>siswa/input_prakerin"><i class="fa fa-plus-circle"></i><span> Daftar Prakerin</span></a>
 
 
                             </li>

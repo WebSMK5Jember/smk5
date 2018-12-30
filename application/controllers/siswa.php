@@ -57,4 +57,43 @@ public function jadwalpelajaran(){
         );
         $this->load->view('panelbody', $data);
 }
+
+public function input_prakerin(){
+
+        $guru = $this ->ModelSiswa->get_guru()->result();
+        $tempat = $this ->ModelSiswa->get_tempat()->result();
+        $data = array(
+            "menu"      => "MenuSiswa",
+            "panelbody" => "apps/siswa/prakerin",
+
+            "guru" => $guru,
+            "tempat" => $tempat
+           
+        );
+        $this->load->view('panelbody', $data);
+}
+public function save_input_prakerin(){
+    
+    $cek = $this->db->query("SELECT * FROM tabel_prakerin where KODE_PRAKERIN='".$this->input->post('KODE_PRAKERIN')."'")->num_rows();
+    if ($cek<=0){
+        $data = array(
+
+            'KODE_PRAKERIN' => $this->input->post('KODE_PRAKERIN'),
+            'NIS' => $this->input->post('NIS'),
+            'KODE_GURU' => $this->input->post('KODE_GURU'),
+            'KODE_TEMPAT' => $this->input->post('KODE_TEMPAT'),
+            'TANGGAL_DFTAR' => $this->input->post('TANGGAL_DFTAR'),
+            'TANGGAL_KELUAR' => $this->input->post('TANGGAL_KELUAR'),
+            'KETERANGAN' => $this->input->post('KETERANGAN')
+            
+    );
+        
+        $this ->db ->insert('tabel_prakerin',$data);
+        redirect('siswa/input_prakerin');
+
+
+    }else {  
+        echo "<script> alert('ANDA TELAH MENDAFTAR PRAKERIN')</script>";
+    }
+}
 }

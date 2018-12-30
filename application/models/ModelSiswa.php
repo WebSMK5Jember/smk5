@@ -73,5 +73,12 @@ class ModelSiswa extends CI_Model{
 			return $query;
 
 }
+
+public function get_guru(){
+		return $this ->db ->get("tabel_guru");
+	}
+public function get_tempat(){
+		return $this ->db ->get("tabel_tempat_prakerin");
+	}
 }
 ?>
