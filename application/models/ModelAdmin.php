@@ -35,6 +35,9 @@ class ModelAdmin extends CI_Model{
 	public function get_mapel(){
 		return $this ->db ->get("tabel_mapel");
 	}
+	public function get_guru(){
+		return $this ->db ->get("tabel_guru");
+	}
 }
 
 ?>

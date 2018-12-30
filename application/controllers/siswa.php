@@ -96,4 +96,5 @@ public function save_input_prakerin(){
         echo "<script> alert('ANDA TELAH MENDAFTAR PRAKERIN')</script>";
     }
 }
+
 }

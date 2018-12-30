@@ -80,5 +80,13 @@ public function get_guru(){
 public function get_tempat(){
 		return $this ->db ->get("tabel_tempat_prakerin");
 	}
-}
+	public function get_kelas(){
+		return $this ->db ->get("tabel_kelas");
+	}
+
+	public function get_mapel(){
+		return $this ->db ->get("tabel_mapel");
+	}
+	
+
 ?>

@@ -12,7 +12,7 @@
                                 <a href="<?php echo base_url(); ?>admin/input_guru"><i class="fa fa-plus-circle"></i><span> Input Guru</span></a>
                             </li>
                             <li>
-                                <a href="<?php echo base_url(); ?>admin"><i class="fa fa-plus-circle"></i><span> Input Jadwal</span></a>
+                                <a href="<?php echo base_url(); ?>admin/input_jadwal"><i class="fa fa-plus-circle"></i><span> Input Jadwal</span></a>
                             </li>
                             <li>
                                 <a href="<?php echo base_url(); ?>admin"><i class="fa fa-list"></i><span> Kelola Akun </span></a>

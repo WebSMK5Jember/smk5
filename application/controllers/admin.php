@@ -106,5 +106,42 @@ public function input_guru(){
         echo "<script> alert('Data kode guru yang anda masukkan sudah ada')</script>";
     }
 }
+public function input_jadwal(){
+
+         $kelas = $this ->ModelAdmin->get_kelas()->result();
+        $mapel = $this ->ModelAdmin->get_mapel()->result();
+       
+        $guru = $this ->ModelAdmin->get_guru()->result();
+        $data = array(
+            "menu"      => "MenuAdmin",
+            "panelbody" => "apps/admin/inputjadwal",
+
+                "kelas" => $kelas,
+               "mapel" => $mapel,
+               "guru" => $guru
+            
+           );
+        $this->load->view('panelbody', $data);
+      }
+public function save_input_jadwal(){
+    
+   
+        $data = array(
+            'KODE_KELAS' => $this->input->post('KODE_KELAS'),
+            'KODE_MAPEL' => $this->input->post('KODE_MAPEL'),
+            'KODE_GURU' => $this->input->post('KODE_GURU'),
+           'JAM' => $this->input->post('JAM'),
+           'RUANG' => $this->input->post('RUANG'),
+           'HARI' => $this->input->post('HARI'),
+
+           
+    );
+        
+        $this ->db ->insert('tabel_jadwal',$data);
+        redirect('admin/input_jadwal');
+
+
+    }
 }
+
    ?>
