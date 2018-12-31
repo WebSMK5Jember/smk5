@@ -63,7 +63,17 @@ public function input_siswa(){
 
     }else {  
         echo "<script> alert('Data NIS yang anda masukkan sudah ada')</script>";
+
     }
+$data = array(
+            "menu"      => "MenuAdmin",
+            "panelbody" => "apps/admin/inputsiswa"
+
+            
+           );
+     
+     $this->load->view('panelbody', $data);
+
 }
 
 public function input_guru(){

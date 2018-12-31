@@ -48,7 +48,7 @@
                 </div>
                 <div class="col-md-5">
                     <div class="about-content">
-                        <h2>ANALISIS KIMIA</h2>
+                        <h1>ANALISIS KIMIA</h1>
                         <p>Photographs are a way of preserving a moment in our lives for the rest of our lives. Many of us have at least been tempted at the flashy array of photo printers which seemingly leap off the shelves at even the least tech-savvy. It surely seems old fashioned to talk about 35mm film and non-digital cameras in today’s day and age.</p>
                     </div>
                 </div>

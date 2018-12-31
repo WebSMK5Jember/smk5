@@ -10,7 +10,7 @@
                         <div class="form-group">
                             <label class="col-md-2 control-label" for="exampleInputEmail1">NIS </label>
                             <div class="col-md-10">
-                                <input type="text" name="NIS" class="form-control" id="exampleInputEmail1">
+                                <input type="text" name="NIS" class="form-control" id="exampleInputEmail1" required>
                             </div>
                         </div>
                         <div class="form-group">
