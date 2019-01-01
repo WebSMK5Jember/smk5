@@ -87,6 +87,6 @@ public function get_tempat(){
 	public function get_mapel(){
 		return $this ->db ->get("tabel_mapel");
 	}
-	
+}
 
 ?>

@@ -4,7 +4,7 @@
                             <li class="menu-title">List Menu Siswa</li>
                             <li>
                                 <a href="<?php echo base_url(); ?>siswa/index"><i class="fa fa-home"></i><span> Profil</span></a>
-</li>>
+</li>
                                 <li>
                                 <a href="<?php echo base_url(); ?>siswa/jadwalpelajaran"><i class="fa fa-list"></i><span> Jadwal Pelajaran</span></a>
                             </li>
