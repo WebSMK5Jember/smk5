@@ -52,7 +52,7 @@
                          <div class="form-group">
                             <label class="col-md-2 control-label" for="exampleInputEmail1">TANGGAL LAHIR </label>
                             <div class="col-md-10">
-                                <input type="text" name="TANGGAL_LAHIR" class="form-control" id="exampleInputEmail1">
+                                <input type="date" name="TANGGAL_LAHIR" class="form-control" id="exampleInputEmail1">
                             </div>
                         </div>
 

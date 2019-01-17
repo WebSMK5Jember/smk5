@@ -83,8 +83,8 @@ public function save_input_prakerin(){
             'KODE_GURU' => $this->input->post('KODE_GURU'),
             'KODE_TEMPAT' => $this->input->post('KODE_TEMPAT'),
             'TANGGAL_DFTAR' => $this->input->post('TANGGAL_DFTAR'),
-            'TANGGAL_KELUAR' => $this->input->post('TANGGAL_KELUAR'),
-            'KETERANGAN' => $this->input->post('KETERANGAN')
+            'TANGGAL_KELUAR' => $this->input->post('TANGGAL_KELUAR')
+          
             
     );
         

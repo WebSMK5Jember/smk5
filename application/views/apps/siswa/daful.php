@@ -2,15 +2,15 @@
 <div class="row">
     <div class="col-sm-12">
         <div class="card-box">
-            <h4 class="m-t-0 header-title"><b>DAFTAR PRAKERIN</b></h4>
+            <h4 class="m-t-0 header-title"><b>DAFTAR ULANG</b></h4>
             <div class="row">
                 <div class="col-md-12">
                     <div class="p-20">
                         
                          <div class="form-group">
-                            <label class="col-md-2 control-label" for="exampleInputEmail1">KODE PRAKERIN </label>
+                            <label class="col-md-2 control-label" for="exampleInputEmail1">KODE DAFTAR ULANG </label>
                             <div class="col-md-10">
-                                <input type="text" name="KODE_PRAKERIN" class="form-control" id="exampleInputEmail1">
+                                <input type="text" name="KODE_DAFUL" class="form-control" id="exampleInputEmail1">
                             </div>
                          </div>
                         <div class="form-group">
