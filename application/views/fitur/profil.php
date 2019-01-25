@@ -48,8 +48,19 @@
                 </div>
                 <div class="col-md-5">
                     <div class="about-content">
-                        <h2>Who we are</h2>
-                        <p>Photographs are a way of preserving a moment in our lives for the rest of our lives. Many of us have at least been tempted at the flashy array of photo printers which seemingly leap off the shelves at even the least tech-savvy. It surely seems old fashioned to talk about 35mm film and non-digital cameras in today’s day and age.</p>
+                        <h2>SMK NEGERI 5 JEMBER </h2>
+                        <p>SMK Negeri 5 Jember merupakan salah satu Sekolah Menengah Kejuruan Negeri yang beralamat di Jl. Brawijawa No.55 Jubung, Kecamatan Sukorambi, Kabupaten Jember. Sekolah ini awalnya bernama SMKN 1 Sukorambi, hingga pada tahun 2013 berganti nama menjadi SMK Negeri 5 Jember. </p>
+
+                         <h2>Visi dan Misi </h2>
+
+                         <p>Visi  </p>
+                        <p>Menciptakan tenaga kerja professional tingkat menengah yang memiliki daya saing pada tingkat regional, nasional dan internasional</p>
+                         <p>Misi</p>
+                         <p>1. Menyiapkan tamatan yang bertaqwa dan berbudi luhur, memiliki etos kerja dan berjiwa wirausaha</p>
+                         <p>2. Menjadi Sekolah Menengah Kejuruan Unggulan</p>
+                         <p>3. Meningkatkan daya serap tamatan di dunia kerja dan dapat melanjutkan pendidikan kejenjang yang lebih tinggi</p>
+                         <p>4. Meningkatkan peran SMK sebagai pusat pengembangan agribisnis di tingkat regional</p>
+                         <p>5. Meningkatkan peran SMK sebagai pengembang teknologi informasi bagi sekolah, industri dan masyarakat</p>
                     </div>
                 </div>
             </div>
