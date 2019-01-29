@@ -97,4 +97,35 @@ public function save_input_prakerin(){
     }
 }
 
+public function input_daful(){
+
+       
+        $data = array(
+            "menu"      => "MenuSiswa",
+            "panelbody" => "apps/siswa/daful"
+
+            
+        );
+        $this->load->view('panelbody', $data);
+}
+public function save_input_daful(){
+    
+  
+        $data = array(
+
+            'NIS' => $this->input->post('NIS'),
+            'SEMESTER' => $this->input->post('SEMESTER'),
+            'TANGGAL_DAFUL' => $this->input->post('TANGGAL_DAFUL'),
+            'STATUS' => $this->input->post('STATUS')
+          
+            
+    );
+        
+        $this ->db ->insert('table_daful',$data);
+        redirect('siswa/input_daful');
+
+
+    }
+
+
 }
