@@ -49,7 +49,7 @@
                 <div class="col-md-5">
                     <div class="about-content">
                         <h2>MULTIMEDIA</h2>
-                        <p>Photographs are a way of preserving a moment in our lives for the rest of our lives. Many of us have at least been tempted at the flashy array of photo printers which seemingly leap off the shelves at even the least tech-savvy. It surely seems old fashioned to talk about 35mm film and non-digital cameras in today’s day and age.</p>
+                        <p>Pada program keahlian multiedia, siswa dilatih untuk dapat menghasilkan produk kreatif dan berwirausaha dalam bidang multimedia. Kompetensi - kompetensi yang diajarkan pada program keahlian ini meliputi teknik animasi 2D dan 3D, pengolahan audio, pengolahan video. Pada jaman digital saat ini, memiliki keahlian dibidang multimedia merupakan suatu keahlian yang banyak dibutuhkan pada industri teknologi informasi.  </p>
                     </div>
                 </div>
             </div>
