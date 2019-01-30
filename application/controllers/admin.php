@@ -56,13 +56,22 @@ public function input_siswa(){
             'ASAL_SEKOLAH' => $this->input->post('ASAL_SEKOLAH'),
             'NO_IJASAH' => $this->input->post('NO_IJASAH')
     );
+
+        $dataUser = array(
+    		'NIS_USER' => $this ->input ->post('NIS'),
+    		'PASSWORD' => ($this ->input ->post('NIS')),
+    		'level' => '4');
         
         $this ->db ->insert('tabel_siswa',$data);
+        $this ->db ->insert("tabel_user",$dataUser);
+        
         redirect('admin/input_siswa');
 
 
     }else {  
         echo "<script> alert('Data NIS yang anda masukkan sudah ada')</script>";
+
+        
 
     }
 $data = array(
@@ -107,8 +116,15 @@ public function input_guru(){
             'KODE_JABATAN' => $this->input->post('KODE_JABATAN'),
             'KODE_PIKET' => $this->input->post('KODE_PIKET')
     );
+
+         $dataUser = array(
+    		'KODE_GURU_USER' => $this ->input ->post('KODE_GURU'),
+    		'PASSWORD' => ($this ->input ->post('KODE_GURU')),
+    		'level' => '2');
         
+
         $this ->db ->insert('tabel_guru',$data);
+        $this ->db ->insert("tabel_user",$dataUser);
         redirect('admin/input_guru');
 
 
@@ -116,6 +132,9 @@ public function input_guru(){
         echo "<script> alert('Data kode guru yang anda masukkan sudah ada')</script>";
     }
 }
+
+
+
 public function input_jadwal(){
 
          $kelas = $this ->ModelAdmin->get_kelas()->result();
