@@ -48,8 +48,8 @@
                 </div>
                 <div class="col-md-5">
                     <div class="about-content">
-                        <h1>ANALISIS KIMIA</h1>
-                        <p>Photographs are a way of preserving a moment in our lives for the rest of our lives. Many of us have at least been tempted at the flashy array of photo printers which seemingly leap off the shelves at even the least tech-savvy. It surely seems old fashioned to talk about 35mm film and non-digital cameras in today’s day and age.</p>
+                        <h1>ANALISIS PENGUJIAN LABORATORIUM</h1>
+                        <p>Pada program keahlian Analisis Pengujian Laboratorium, siswa akan diajarkan bermacam- macam kompetensi diantaranya berhubungan dengan analisa kimia instrument, analisa mikrobiologi, pengujian kadar air dalam bahan, serta analisa kimia terapan. Produk unggulan yang dihasilkan oleh program keahlian ini adalah sabun cuci untuk kendaraan bermotor yang telah di pasarkan ke beberapa tempat. </p>
                     </div>
                 </div>
             </div>
