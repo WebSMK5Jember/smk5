@@ -49,7 +49,7 @@
                 <div class="col-md-5">
                     <div class="about-content">
                         <h2>AGRIBISNIS TERNAK UNGGAS</h2>
-                        <p>Photographs are a way of preserving a moment in our lives for the rest of our lives. Many of us have at least been tempted at the flashy array of photo printers which seemingly leap off the shelves at even the least tech-savvy. It surely seems old fashioned to talk about 35mm film and non-digital cameras in today’s day and age.</p>
+                        <p>Pada program keahlian Agribisnis Ternak Unggas, para siswa akan diajarkan bagaimana merawat ternak unggas dari awal, mulai dari agribisnis pembibitan ternak unggas yang meliputi penetasan telur, pengolahan pakan ternak, pemberian pakan, hingga proses memanen telur. Selain unggas ditujukan untuk petelur, agribisnis ternak unggas juga menyiapkan ternak yang dapat digunakan sebagai ternak pedaging. </p>
                     </div>
                 </div>
             </div>
