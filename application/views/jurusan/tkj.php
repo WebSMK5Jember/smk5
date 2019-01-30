@@ -49,7 +49,7 @@
                 <div class="col-md-5">
                     <div class="about-content">
                         <h2>TEKNIK KOMPUTER DAN JARINGAN</h2>
-                        <p>Photographs are a way of preserving a moment in our lives for the rest of our lives. Many of us have at least been tempted at the flashy array of photo printers which seemingly leap off the shelves at even the least tech-savvy. It surely seems old fashioned to talk about 35mm film and non-digital cameras in today’s day and age.</p>
+                        <p>Pada program keahlian Teknik Komputer dan Jaringan ini, siswa akan memperoleh pengetahuan dibidang insfrastruktur jaringan, rancang bangun jaringan, administrasi sistem jaringan, trouble shooting computer, trouble shooting LCD, trouble shooting printer. Dengan keahliah dan pengetahuan yang dimiliki, siswa diharapkan dapat langsung terjun ke dunia kerja ataupun melanjutkan ke jenjang pendidikan yang lebih tiggi</p>
                     </div>
                 </div>
             </div>
