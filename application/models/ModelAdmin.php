@@ -10,13 +10,19 @@ class ModelAdmin extends CI_Model{
 
 
 
-	function get_data_diri(){
+	function get_data_diri($id){
 	$this->db->select('*'); 
     $this->db->from('tabel_admin'); 
     $this->db->join('tabel_jabatan', 'tabel_jabatan.KODE_JABATAN = tabel_admin.JABATAN', 'left');
 	
-    $data = $this->db->get(); 
-    return $data->result(); 
+    $data = array(
+				'tabel_admin.KODE_ADMIN'=>$id
+				);
+			$this ->db ->where($data,$id);
+
+			$query = $this ->db ->get();
+
+			return $query;
 	}
 
 	public function get_kelas(){

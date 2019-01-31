@@ -16,7 +16,8 @@ Class admin extends CI_Controller{
 	}
 
     public function index(){
-        $list = $this->ModelAdmin->get_data_diri();
+        $id = $this->session->userdata('id_session');
+        $list = $this->ModelAdmin->get_data_diri($id)->result();
         $data = array(
             "menu"      => "MenuAdmin",
             "panelbody" => "apps/admin/index",
