@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 24 Des 2018 pada 02.42
--- Versi Server: 10.1.22-MariaDB
+-- Generation Time: Jan 31, 2019 at 09:53 AM
+-- Server version: 10.1.22-MariaDB
 -- PHP Version: 7.1.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `detail_pengumuman`
+-- Table structure for table `detail_pengumuman`
 --
 
 CREATE TABLE `detail_pengumuman` (
@@ -37,7 +37,7 @@ CREATE TABLE `detail_pengumuman` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `nilai_sikap`
+-- Table structure for table `nilai_sikap`
 --
 
 CREATE TABLE `nilai_sikap` (
@@ -52,7 +52,7 @@ CREATE TABLE `nilai_sikap` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tabel_absensi`
+-- Table structure for table `tabel_absensi`
 --
 
 CREATE TABLE `tabel_absensi` (
@@ -66,7 +66,7 @@ CREATE TABLE `tabel_absensi` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tabel_admin`
+-- Table structure for table `tabel_admin`
 --
 
 CREATE TABLE `tabel_admin` (
@@ -77,16 +77,16 @@ CREATE TABLE `tabel_admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tabel_admin`
+-- Dumping data for table `tabel_admin`
 --
 
 INSERT INTO `tabel_admin` (`KODE_ADMIN`, `NAMA_ADMIN`, `JABATAN`, `EMAIL`) VALUES
-('1', 'admin1', NULL, NULL);
+('a001', 'halo', '', '');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tabel_agenda`
+-- Table structure for table `tabel_agenda`
 --
 
 CREATE TABLE `tabel_agenda` (
@@ -100,7 +100,7 @@ CREATE TABLE `tabel_agenda` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tabel_galeri`
+-- Table structure for table `tabel_galeri`
 --
 
 CREATE TABLE `tabel_galeri` (
@@ -114,7 +114,7 @@ CREATE TABLE `tabel_galeri` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tabel_guru`
+-- Table structure for table `tabel_guru`
 --
 
 CREATE TABLE `tabel_guru` (
@@ -129,17 +129,10 @@ CREATE TABLE `tabel_guru` (
   `JUMLAH_JAM` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data untuk tabel `tabel_guru`
---
-
-INSERT INTO `tabel_guru` (`NIP`, `KODE_MAPEL`, `KODE_GURU`, `KODE_JABATAN`, `KODE_PIKET`, `NAMA_GURU`, `ALAMAT_GURU`, `JABATAN`, `JUMLAH_JAM`) VALUES
-('19700317 199303 1 008', NULL, 'A01', NULL, NULL, 'Sofyan Hadi Purwanto, SE, MT', NULL, NULL, 24);
-
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tabel_jabatan`
+-- Table structure for table `tabel_jabatan`
 --
 
 CREATE TABLE `tabel_jabatan` (
@@ -150,7 +143,7 @@ CREATE TABLE `tabel_jabatan` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tabel_jadwal`
+-- Table structure for table `tabel_jadwal`
 --
 
 CREATE TABLE `tabel_jadwal` (
@@ -165,7 +158,7 @@ CREATE TABLE `tabel_jadwal` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tabel_jurusan`
+-- Table structure for table `tabel_jurusan`
 --
 
 CREATE TABLE `tabel_jurusan` (
@@ -174,7 +167,7 @@ CREATE TABLE `tabel_jurusan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tabel_jurusan`
+-- Dumping data for table `tabel_jurusan`
 --
 
 INSERT INTO `tabel_jurusan` (`KODE_JURUSAN`, `NAMA_JURUSAN`) VALUES
@@ -183,7 +176,7 @@ INSERT INTO `tabel_jurusan` (`KODE_JURUSAN`, `NAMA_JURUSAN`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tabel_kelas`
+-- Table structure for table `tabel_kelas`
 --
 
 CREATE TABLE `tabel_kelas` (
@@ -193,7 +186,7 @@ CREATE TABLE `tabel_kelas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tabel_kelas`
+-- Dumping data for table `tabel_kelas`
 --
 
 INSERT INTO `tabel_kelas` (`KODE_KELAS`, `KODE_GURU`, `NAMA_KELAS`) VALUES
@@ -205,7 +198,7 @@ INSERT INTO `tabel_kelas` (`KODE_KELAS`, `KODE_GURU`, `NAMA_KELAS`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tabel_laporguru`
+-- Table structure for table `tabel_laporguru`
 --
 
 CREATE TABLE `tabel_laporguru` (
@@ -218,7 +211,7 @@ CREATE TABLE `tabel_laporguru` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tabel_laporsarana`
+-- Table structure for table `tabel_laporsarana`
 --
 
 CREATE TABLE `tabel_laporsarana` (
@@ -231,7 +224,7 @@ CREATE TABLE `tabel_laporsarana` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tabel_mapel`
+-- Table structure for table `tabel_mapel`
 --
 
 CREATE TABLE `tabel_mapel` (
@@ -240,7 +233,7 @@ CREATE TABLE `tabel_mapel` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tabel_mapel`
+-- Dumping data for table `tabel_mapel`
 --
 
 INSERT INTO `tabel_mapel` (`KODE_MAPEL`, `NAMA_MAPEL`) VALUES
@@ -251,7 +244,7 @@ INSERT INTO `tabel_mapel` (`KODE_MAPEL`, `NAMA_MAPEL`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tabel_nilai`
+-- Table structure for table `tabel_nilai`
 --
 
 CREATE TABLE `tabel_nilai` (
@@ -277,7 +270,7 @@ CREATE TABLE `tabel_nilai` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tabel_pengumuman`
+-- Table structure for table `tabel_pengumuman`
 --
 
 CREATE TABLE `tabel_pengumuman` (
@@ -291,7 +284,7 @@ CREATE TABLE `tabel_pengumuman` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tabel_piket`
+-- Table structure for table `tabel_piket`
 --
 
 CREATE TABLE `tabel_piket` (
@@ -303,7 +296,7 @@ CREATE TABLE `tabel_piket` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tabel_prakerin`
+-- Table structure for table `tabel_prakerin`
 --
 
 CREATE TABLE `tabel_prakerin` (
@@ -320,7 +313,7 @@ CREATE TABLE `tabel_prakerin` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tabel_saran`
+-- Table structure for table `tabel_saran`
 --
 
 CREATE TABLE `tabel_saran` (
@@ -334,7 +327,7 @@ CREATE TABLE `tabel_saran` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tabel_siswa`
+-- Table structure for table `tabel_siswa`
 --
 
 CREATE TABLE `tabel_siswa` (
@@ -352,16 +345,28 @@ CREATE TABLE `tabel_siswa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tabel_siswa`
+-- Dumping data for table `tabel_siswa`
 --
 
 INSERT INTO `tabel_siswa` (`NIS`, `KODE_KELAS`, `KODE_PRODI`, `NAMA_SISWA`, `TEMPAT_LAHIR`, `TANGGAL_LAHIR`, `ALAMAT_SISWA`, `JENIS_KELAMIN`, `NAMA_ORANG_TUA`, `ASAL_SEKOLAH`, `NO_IJASAH`) VALUES
-('15034/0470', 'XKIA1', 'KIA', 'ALDY ALVIANSYAH', 'JEMBER', '2000-04-27', 'JL. Anggur II/28 Lingkungan Perumnas', 'L', 'PONIMIN', 'SMP', 'DN-05 DI 0335633');
+('e311', NULL, NULL, '', '', '0000-00-00', '', NULL, '', '', '');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tabel_tempat_prakerin`
+-- Table structure for table `tabel_slide`
+--
+
+CREATE TABLE `tabel_slide` (
+  `id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `image` blob NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tabel_tempat_prakerin`
 --
 
 CREATE TABLE `tabel_tempat_prakerin` (
@@ -373,31 +378,30 @@ CREATE TABLE `tabel_tempat_prakerin` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tabel_user`
+-- Table structure for table `tabel_user`
 --
 
 CREATE TABLE `tabel_user` (
   `ID_USER` int(20) NOT NULL,
-  `password` varchar(15) NOT NULL,
+  `password` varchar(255) NOT NULL,
   `KODE_ADMIN_USER` varchar(5) DEFAULT NULL,
   `NIS_USER` varchar(10) DEFAULT NULL,
   `KODE_GURU_USER` varchar(5) DEFAULT NULL,
-  `LEVEL` enum('1','2','3','4','5') DEFAULT NULL
+  `LEVEL` enum('1','2','3','4','5') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tabel_user`
+-- Dumping data for table `tabel_user`
 --
 
 INSERT INTO `tabel_user` (`ID_USER`, `password`, `KODE_ADMIN_USER`, `NIS_USER`, `KODE_GURU_USER`, `LEVEL`) VALUES
-(1, '1234', NULL, '15034/0470', NULL, '4'),
-(2, '1234', NULL, NULL, 'A01', '1'),
-(3, '1234', '1', NULL, NULL, '5');
+(12, 'a68c555a2670e998a7e4cd4e201e6ba8', 'a001', NULL, NULL, '5'),
+(13, '000095081eb4d73906795bf0de4a36ce', NULL, 'e311', NULL, '4');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `table_daful`
+-- Table structure for table `table_daful`
 --
 
 CREATE TABLE `table_daful` (
@@ -411,7 +415,7 @@ CREATE TABLE `table_daful` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `table_prodi`
+-- Table structure for table `table_prodi`
 --
 
 CREATE TABLE `table_prodi` (
@@ -421,7 +425,7 @@ CREATE TABLE `table_prodi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `table_prodi`
+-- Dumping data for table `table_prodi`
 --
 
 INSERT INTO `table_prodi` (`KODE_PRODI`, `KODE_JURUSAN`, `NAMA_PRODI`) VALUES
@@ -576,6 +580,12 @@ ALTER TABLE `tabel_siswa`
   ADD KEY `FK_REFERENCE_23` (`KODE_PRODI`);
 
 --
+-- Indexes for table `tabel_slide`
+--
+ALTER TABLE `tabel_slide`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `tabel_tempat_prakerin`
 --
 ALTER TABLE `tabel_tempat_prakerin`
@@ -609,48 +619,53 @@ ALTER TABLE `table_prodi`
 --
 
 --
+-- AUTO_INCREMENT for table `tabel_slide`
+--
+ALTER TABLE `tabel_slide`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `tabel_user`
 --
 ALTER TABLE `tabel_user`
-  MODIFY `ID_USER` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID_USER` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `detail_pengumuman`
+-- Constraints for table `detail_pengumuman`
 --
 ALTER TABLE `detail_pengumuman`
   ADD CONSTRAINT `FK_REFERENCE_26` FOREIGN KEY (`NIS`) REFERENCES `tabel_siswa` (`NIS`),
   ADD CONSTRAINT `FK_REFERENCE_27` FOREIGN KEY (`KODE_PENGUMUMAN`) REFERENCES `tabel_pengumuman` (`KODE_PENGUMUMAN`);
 
 --
--- Ketidakleluasaan untuk tabel `nilai_sikap`
+-- Constraints for table `nilai_sikap`
 --
 ALTER TABLE `nilai_sikap`
   ADD CONSTRAINT `FK_REFERENCE_11` FOREIGN KEY (`NIS`) REFERENCES `tabel_siswa` (`NIS`);
 
 --
--- Ketidakleluasaan untuk tabel `tabel_absensi`
+-- Constraints for table `tabel_absensi`
 --
 ALTER TABLE `tabel_absensi`
   ADD CONSTRAINT `tabel_absensi_ibfk_1` FOREIGN KEY (`NIS`) REFERENCES `tabel_siswa` (`NIS`),
   ADD CONSTRAINT `tabel_absensi_ibfk_2` FOREIGN KEY (`KODE_MAPEL`) REFERENCES `tabel_mapel` (`KODE_MAPEL`);
 
 --
--- Ketidakleluasaan untuk tabel `tabel_agenda`
+-- Constraints for table `tabel_agenda`
 --
 ALTER TABLE `tabel_agenda`
   ADD CONSTRAINT `FK_REFERENCE_17` FOREIGN KEY (`KODE_ADMIN`) REFERENCES `tabel_admin` (`KODE_ADMIN`);
 
 --
--- Ketidakleluasaan untuk tabel `tabel_galeri`
+-- Constraints for table `tabel_galeri`
 --
 ALTER TABLE `tabel_galeri`
   ADD CONSTRAINT `FK_REFERENCE_16` FOREIGN KEY (`KODE_ADMIN`) REFERENCES `tabel_admin` (`KODE_ADMIN`);
 
 --
--- Ketidakleluasaan untuk tabel `tabel_guru`
+-- Constraints for table `tabel_guru`
 --
 ALTER TABLE `tabel_guru`
   ADD CONSTRAINT `FK_REFERENCE_24` FOREIGN KEY (`KODE_JABATAN`) REFERENCES `tabel_jabatan` (`KODE_JABATAN`),
@@ -658,7 +673,7 @@ ALTER TABLE `tabel_guru`
   ADD CONSTRAINT `FK_REFERENCE_4` FOREIGN KEY (`KODE_MAPEL`) REFERENCES `tabel_mapel` (`KODE_MAPEL`);
 
 --
--- Ketidakleluasaan untuk tabel `tabel_jadwal`
+-- Constraints for table `tabel_jadwal`
 --
 ALTER TABLE `tabel_jadwal`
   ADD CONSTRAINT `FK_REFERENCE_2` FOREIGN KEY (`KODE_KELAS`) REFERENCES `tabel_kelas` (`KODE_KELAS`),
@@ -666,25 +681,25 @@ ALTER TABLE `tabel_jadwal`
   ADD CONSTRAINT `FK_REFERENCE_5` FOREIGN KEY (`KODE_MAPEL`) REFERENCES `tabel_mapel` (`KODE_MAPEL`);
 
 --
--- Ketidakleluasaan untuk tabel `tabel_kelas`
+-- Constraints for table `tabel_kelas`
 --
 ALTER TABLE `tabel_kelas`
   ADD CONSTRAINT `FK_REFERENCE_1` FOREIGN KEY (`KODE_GURU`) REFERENCES `tabel_guru` (`KODE_GURU`);
 
 --
--- Ketidakleluasaan untuk tabel `tabel_laporguru`
+-- Constraints for table `tabel_laporguru`
 --
 ALTER TABLE `tabel_laporguru`
   ADD CONSTRAINT `FK_REFERENCE_20` FOREIGN KEY (`KODE_GURU`) REFERENCES `tabel_guru` (`KODE_GURU`);
 
 --
--- Ketidakleluasaan untuk tabel `tabel_laporsarana`
+-- Constraints for table `tabel_laporsarana`
 --
 ALTER TABLE `tabel_laporsarana`
   ADD CONSTRAINT `FK_REFERENCE_21` FOREIGN KEY (`NIS`) REFERENCES `tabel_siswa` (`NIS`);
 
 --
--- Ketidakleluasaan untuk tabel `tabel_nilai`
+-- Constraints for table `tabel_nilai`
 --
 ALTER TABLE `tabel_nilai`
   ADD CONSTRAINT `FK_REFERENCE_6` FOREIGN KEY (`NIS`) REFERENCES `tabel_siswa` (`NIS`),
@@ -693,13 +708,13 @@ ALTER TABLE `tabel_nilai`
   ADD CONSTRAINT `FK_REFERENCE_9` FOREIGN KEY (`KODE_GURU`) REFERENCES `tabel_guru` (`KODE_GURU`);
 
 --
--- Ketidakleluasaan untuk tabel `tabel_pengumuman`
+-- Constraints for table `tabel_pengumuman`
 --
 ALTER TABLE `tabel_pengumuman`
   ADD CONSTRAINT `FK_REFERENCE_18` FOREIGN KEY (`KODE_ADMIN`) REFERENCES `tabel_admin` (`KODE_ADMIN`);
 
 --
--- Ketidakleluasaan untuk tabel `tabel_prakerin`
+-- Constraints for table `tabel_prakerin`
 --
 ALTER TABLE `tabel_prakerin`
   ADD CONSTRAINT `FK_REFERENCE_14` FOREIGN KEY (`KODE_GURU`) REFERENCES `tabel_guru` (`KODE_GURU`),
@@ -707,20 +722,20 @@ ALTER TABLE `tabel_prakerin`
   ADD CONSTRAINT `FK_REFERENCE_22` FOREIGN KEY (`KODE_TEMPAT`) REFERENCES `tabel_tempat_prakerin` (`KODE_TEMPAT`);
 
 --
--- Ketidakleluasaan untuk tabel `tabel_saran`
+-- Constraints for table `tabel_saran`
 --
 ALTER TABLE `tabel_saran`
   ADD CONSTRAINT `FK_REFERENCE_19` FOREIGN KEY (`KODE_ADMIN`) REFERENCES `tabel_admin` (`KODE_ADMIN`);
 
 --
--- Ketidakleluasaan untuk tabel `tabel_siswa`
+-- Constraints for table `tabel_siswa`
 --
 ALTER TABLE `tabel_siswa`
   ADD CONSTRAINT `FK_REFERENCE_12` FOREIGN KEY (`KODE_KELAS`) REFERENCES `tabel_kelas` (`KODE_KELAS`),
   ADD CONSTRAINT `FK_REFERENCE_23` FOREIGN KEY (`KODE_PRODI`) REFERENCES `table_prodi` (`KODE_PRODI`);
 
 --
--- Ketidakleluasaan untuk tabel `tabel_user`
+-- Constraints for table `tabel_user`
 --
 ALTER TABLE `tabel_user`
   ADD CONSTRAINT `FK_REFERENCE_29` FOREIGN KEY (`KODE_ADMIN_USER`) REFERENCES `tabel_admin` (`KODE_ADMIN`),
@@ -728,13 +743,13 @@ ALTER TABLE `tabel_user`
   ADD CONSTRAINT `FK_REFERENCE_31` FOREIGN KEY (`KODE_GURU_USER`) REFERENCES `tabel_guru` (`KODE_GURU`);
 
 --
--- Ketidakleluasaan untuk tabel `table_daful`
+-- Constraints for table `table_daful`
 --
 ALTER TABLE `table_daful`
   ADD CONSTRAINT `FK_REFERENCE_13` FOREIGN KEY (`NIS`) REFERENCES `tabel_siswa` (`NIS`);
 
 --
--- Ketidakleluasaan untuk tabel `table_prodi`
+-- Constraints for table `table_prodi`
 --
 ALTER TABLE `table_prodi`
   ADD CONSTRAINT `FK_REFERENCE_28` FOREIGN KEY (`KODE_JURUSAN`) REFERENCES `tabel_jurusan` (`KODE_JURUSAN`);
