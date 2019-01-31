@@ -36,7 +36,7 @@
                 <div class="row">
                     <div class="col-sm-6 col-xs-12">
                         <div class="top-number">
-                            <p><i class="fa fa-phone-square"></i> +0123 456 70 90</p>
+                            <p><i class="fa fa-phone-square"></i> (0331) 487535 </p>
                         </div>
                     </div>
                     <div class="col-sm-6 col-xs-12">
@@ -94,7 +94,7 @@
                         </li>
 
                         <li><a href="#services.html">Agenda Kegiatan</a></li>
-                        <li><a href="#portfolio.html">Galeri Foto</a></li>
+                        <li><a href="<?php echo base_url(); ?>galery">Galeri Foto</a></li>
                        
                         <li><a href="<?php echo base_url(); ?>login">Sistem Informasi</a></li>
 

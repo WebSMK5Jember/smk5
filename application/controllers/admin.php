@@ -59,7 +59,7 @@ public function input_siswa(){
 
         $dataUser = array(
     		'NIS_USER' => $this ->input ->post('NIS'),
-    		'PASSWORD' => ($this ->input ->post('NIS')),
+    		'PASSWORD' => md5($this ->input ->post('NIS')),
     		'level' => '4');
         
         $this ->db ->insert('tabel_siswa',$data);
@@ -119,13 +119,51 @@ public function input_guru(){
 
          $dataUser = array(
     		'KODE_GURU_USER' => $this ->input ->post('KODE_GURU'),
-    		'PASSWORD' => ($this ->input ->post('KODE_GURU')),
+    		'PASSWORD' => md5($this ->input ->post('KODE_GURU')),
     		'level' => '2');
         
 
         $this ->db ->insert('tabel_guru',$data);
         $this ->db ->insert("tabel_user",$dataUser);
         redirect('admin/input_guru');
+
+
+    }else {  
+        echo "<script> alert('Data kode guru yang anda masukkan sudah ada')</script>";
+    }
+}
+
+public function input_admin(){
+
+        $data = array(
+            "menu"      => "MenuAdmin",
+            "panelbody" => "apps/admin/inputadmin"
+            
+           );
+        $this->load->view('panelbody', $data);
+      }
+    
+    public function save_input_admin(){
+    
+    $cek = $this->db->query("SELECT * FROM tabel_admin where KODE_ADMIN='".$this->input->post('KODE_ADMIN')."'")->num_rows();
+    if ($cek<=0){
+        $data = array(
+            'KODE_ADMIN' => $this->input->post('KODE_ADMIN'),
+            'NAMA_ADMIN' => $this->input->post('NAMA_ADMIN'),
+            'JABATAN' => $this->input->post('JABATAN'),
+            'EMAIL' => $this->input->post('EMAIL')
+            
+    );
+
+         $dataUser = array(
+            'KODE_ADMIN_USER' => $this ->input ->post('KODE_ADMIN'),
+            'PASSWORD' => md5($this ->input ->post('KODE_ADMIN')),
+            'level' => '5');
+        
+
+        $this ->db ->insert('tabel_admin',$data);
+        $this ->db ->insert("tabel_user",$dataUser);
+        redirect('admin/input_admin');
 
 
     }else {  

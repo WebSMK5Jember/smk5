@@ -17,7 +17,7 @@ Class Login extends CI_Controller{
     public function prosesLogin(){
 
     	$user = $this ->input ->post('username');
-    	$pass = ($this ->input ->post('pass'));
+    	$pass = md5($this ->input ->post('pass'));
 
 
     	$vs = $this ->ModelLogin ->cek_siswa($user);
@@ -102,3 +102,5 @@ Class Login extends CI_Controller{
     	redirect(base_url("login"));
     }
 }
+
+?>
