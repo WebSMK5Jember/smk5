@@ -52,9 +52,9 @@
                         </div>
 
                          <div class="form-group">
-                            <label class="col-md-2 control-label" for="exampleInputEmail1">JABATAN </label>
+                            <label class="col-md-2 control-label" for="exampleInputEmail1">PIKET </label>
                                 <div class="col-md-10">
-                                    <select class="form-control" name="KODE_JABATAN">
+                                    <select class="form-control" name="KODE_PIKET">
                                         <option disabled selected value>- Pilih -</option>
                                         <?php foreach($piket as $data){?>
                                         <option value="<?php echo $data->KODE_PIKET?>"><?php echo $data->HARI?></option>
@@ -65,9 +65,9 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="col-md-2 control-label" for="exampleInputEmail1">PIKET </label>
+                            <label class="col-md-2 control-label" for="exampleInputEmail1">JABATAN </label>
                                 <div class="col-md-10">
-                                    <select class="form-control" name="KODE_PIKET">
+                                    <select class="form-control" name="KODE_JABATANS">
                                         <option disabled selected value>- Pilih -</option>
                                         <?php foreach($jabatan as $data){?>
                                         <option value="<?php echo $data->KODE_JABATAN?>"><?php echo $data->NAMA_JABATAN?></option>
