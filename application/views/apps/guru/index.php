@@ -7,22 +7,30 @@
         <table  class="table table-striped table-bordered dataTable no-footer"  >
                 <thead>
                 <tr role="row">
-                    <th  tabindex="0" aria-controls="datatable" rowspan="1" colspan="1"  style="width: 50px;">KODE GURU
+                    <th  tabindex="0" aria-controls="picture" rowspan="1" colspan="1"  style="width: 50px;">FOTO
                     </th>
-					<th  tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 250px;">NIP
+					<th  tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 250px;">KODE GURU
                     </th>
-                    <th  tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 250px;">NAMA
+                    <th  tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 250px;">NIP
                     </th>
-                    <th  tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 150px;">JABATAN
+                    <th  tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 150px;">NAMA
                     </th>
                     <th  tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 30px;">ALAMAT
                     </th>
 					
-					<th  tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 30px;">MATA PELAJARAN
+					<th  tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 30px;">JENIS KELAMIN
                     </th>
-					<th  tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 30px;">JUMLAH JAM
+					<th  tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 30px;">TEMPAT LAHIR
                     </th>
-					<th  tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 30px;">JADWAL PIKET
+					<th  tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 30px;">TANGGAL LAHIR
+                    </th>
+                    <th  tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 30px;">JUMLAH JAM
+                    </th>
+                    <th  tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 30px;">KODE MATAPELAJARAN
+                    </th>
+                    <th  tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 30px;">KODE JABATAN
+                    </th>
+                    <th  tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 30px;">KODE PIKET
                     </th>
 					
                 </tr>
@@ -32,14 +40,18 @@
                         <?php 
                         
                         foreach($list as $data){ ?>
-                        <td><?php echo $data->KODE_GURU ?></td>
-                        <td><?php echo $data->NIP ?></td>
-                        <td><?php echo $data->NAMA_GURU ?></td>
-						 <td><?php echo $data->NAMA_JABATAN ?></td>
-						  <td><?php echo $data->ALAMAT_GURU ?></td>
-                        <td><?php echo $data->NAMA_MAPEL ?></td>
-						 <td><?php echo $data->JUMLAH_JAM ?></td>
-						  <td><?php echo $data->HARI?> <?php echo $data->JAM?></td>
+                        <td><?php echo $data->guru_photo ?></td>
+                        <td><?php echo $data->guru_id ?></td>
+                        <td><?php echo $data->guru_nip ?></td>
+                        <td><?php echo $data->guru_nama ?></td>
+                        <td><?php echo $data->guru_alamat ?></td>
+                        <td><?php echo $data->guru_jenkel ?></td>
+                          <td><?php echo $data->guru_tmp_lahir ?></td>
+                          <td> <?php echo $data->guru_tgl_lahir?></td>
+                        <td><?php echo $data->guru_jumlah_jam ?></td>
+						   <td><?php echo $data->guru_mapel_id ?></td>
+                        <td><?php echo $data->guru_jabatan_id ?></td>
+                        <td><?php echo $data->guru_piket_id ?></td>
 					
                     </tr>
                         <?php }?>

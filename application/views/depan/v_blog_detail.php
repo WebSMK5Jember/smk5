@@ -86,9 +86,11 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="<?php echo site_url('about');?>">Profil</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo site_url('');?>">Jurusan</a>
+
+                                 <li class="nav-item">
+                                    <a class="nav-link" href="<?php echo site_url('about');?>">Jurusan</a>
                                 </li>
+
                                 <li class="nav-item">
                                     <a class="nav-link" href="<?php echo site_url('guru');?>">Guru</a>
                                 </li>
