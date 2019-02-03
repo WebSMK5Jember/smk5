@@ -70,7 +70,7 @@
                                     <a class="nav-link" href="<?php echo site_url('about');?>">Profil</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo site_url('jurusan');?>">Jurusan</a>
+                                    <a class="nav-link" href="<?php echo site_url('');?>">Jurusan</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="<?php echo site_url('guru');?>">Guru</a>
@@ -113,34 +113,213 @@
 <!--//END ABOUT IMAGE -->
 
 <!--============================= WELCOME TITLE =============================-->
-<section class="welcome_about">
+<section class="our_courses">
     <div class="container">
         <div class="row">
-            <div class="col-md-7">
-                <h2>SMKN 5 Jember</h2>
-                <p>SMK Negeri 5 Jember merupakan salah satu Sekolah Menengah Kejuruan Negeri yang beralamat di Jl. Brawijawa No.55 Jubung, Kecamatan Sukorambi, Kabupaten Jember. Sekolah ini awalnya bernama SMKN 1 Sukorambi, hingga pada tahun 2013 berganti nama menjadi SMK Negeri 5 Jember. </p>
-
-               <p>Visi <br> 
-                        Menciptakan tenaga kerja professional tingkat menengah yang memiliki daya saing pada tingkat regional, nasional dan internasional</p>
-                         <p>Misi<br>
-                         1. Menyiapkan tamatan yang bertaqwa dan berbudi luhur, memiliki etos kerja dan berjiwa wirausaha<br>
-                         2. Menjadi Sekolah Menengah Kejuruan Unggulan<br>
-                         3. Meningkatkan daya serap tamatan di dunia kerja dan dapat melanjutkan pendidikan kejenjang yang lebih tinggi<br>
-                         4. Meningkatkan peran SMK sebagai pusat pengembangan agribisnis di tingkat regional<br>
-                         5. Meningkatkan peran SMK sebagai pengembang teknologi informasi bagi sekolah, industri dan masyarakat</p>
-                </div>
-                <div class="col-md-5">
-                    <img src="<?php echo base_url().'theme/images/welcome-img.jpg'?>" class="img-fluid" alt="#">
-                </div>
+            <div class="col-md-12">
+                <h2 style="text-align:center;">Jurusan</h2>
             </div>
         </div>
-    </section>
+        <div class="row">
+    
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+                <div class="courses_box mb-4">
+                    <div class="course-img-wrap">
+                        <img src="<?php echo base_url().'theme/images/icon.png'?>" class="img-fluid" alt="courses-img">
+                    </div>
+                    <!-- // end .course-img-wrap -->
+                    <a href="<?php echo site_url('jurusan');?>" class="course-box-content">
+                        <h3 style="text-align:center;">Agribisnis Pengujian Lab</h3>
+                    </a>
+                </div>
+            </div>
 
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+                <div class="courses_box mb-4">
+                    <div class="course-img-wrap">
+                        <img src="<?php echo base_url().'theme/images/icon.png'?>" class="img-fluid" alt="courses-img">
+                    </div>
+                    <!-- // end .course-img-wrap -->
+                    <a href="<?php echo site_url('jurusan/tkj');?>" class="course-box-content">
+                        <h3 style="text-align:center;">Teknik Komputer dan Jaringan</h3>
+                    </a>
+                </div>
+            </div>
 
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+                <div class="courses_box mb-4">
+                    <div class="course-img-wrap">
+                        <img src="<?php echo base_url().'theme/images/icon.png'?>" class="img-fluid" alt="courses-img">
+                    </div>
+                    <!-- // end .course-img-wrap -->
+                    <a href="<?php echo site_url('jurusan');?>" class="course-box-content">
+                        <h3 style="text-align:center;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Multimedia &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</h3>
+                    </a>
+                </div>
+
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+                <div class="courses_box mb-4">
+                    <div class="course-img-wrap">
+                        <img src="<?php echo base_url().'theme/images/icon.png'?>" class="img-fluid" alt="courses-img">
+                    </div>
+                    <!-- // end .course-img-wrap -->
+                    <a href="<?php echo site_url('jurusan');?>" class="course-box-content">
+                        <h3 style="text-align:center;">Agribisnis Ternak Ruminansia</h3>
+                    </a>
+                </div>
+            </div>
+               <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+                <div class="courses_box mb-4">
+                    <div class="course-img-wrap">
+                        <img src="<?php echo base_url().'theme/images/icon.png'?>" class="img-fluid" alt="courses-img">
+                    </div>
+                    <!-- // end .course-img-wrap -->
+                    <a href="<?php echo site_url('jurusan');?>" class="course-box-content">
+                        <h3 style="text-align:center;">Agribisnis Tanaman Pangan dan Holtikultura</h3>
+                    </a>
+                </div>
+            </div>
+
+             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+                <div class="courses_box mb-4">
+                    <div class="course-img-wrap">
+                        <img src="<?php echo base_url().'theme/images/icon.png'?>" class="img-fluid" alt="courses-img">
+                    </div>
+                    <!-- // end .course-img-wrap -->
+                    <a href="<?php echo site_url('jurusan');?>" class="course-box-content">
+                        <h3 style="text-align:center;">Agribisnis Tanaman Perkebunan</h3>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+                <div class="courses_box mb-4">
+                    <div class="course-img-wrap">
+                        <img src="<?php echo base_url().'theme/images/icon.png'?>" class="img-fluid" alt="courses-img">
+                    </div>
+                    <!-- // end .course-img-wrap -->
+                    <a href="<?php echo site_url('jurusan');?>" class="course-box-content">
+                        <h3 style="text-align:center;">Pemuliaan dan Pembenihan Tanaman</h3>
+                    </a>
+                </div>
+            </div>
+
+              <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+                <div class="courses_box mb-4">
+                    <div class="course-img-wrap">
+                        <img src="<?php echo base_url().'theme/images/icon.png'?>" class="img-fluid" alt="courses-img">
+                    </div>
+                    <!-- // end .course-img-wrap -->
+                    <a href="<?php echo site_url('jurusan');?>" class="course-box-content">
+                        <h3 style="text-align:center;">Agribisnis Pengolahan Hasil Pertanian</h3>
+                    </a>
+                </div>
+            </div>
+
+             
+
+             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+                <div class="courses_box mb-4">
+                    <div class="course-img-wrap">
+                        <img src="<?php echo base_url().'theme/images/icon.png'?>" class="img-fluid" alt="courses-img">
+                    </div>
+                    <!-- // end .course-img-wrap -->
+                    <a href="<?php echo site_url('jurusan');?>" class="course-box-content">
+                        <h3 style="text-align:center;">Agribisnis Ternak Unggas</h3>
+                    </a>
+                </div>
+            </div>
+
+           
+
+             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+                <div class="courses_box mb-4">
+                    <div class="course-img-wrap">
+                        <img src="<?php echo base_url().'theme/images/icon.png'?>" class="img-fluid" alt="courses-img">
+                    </div>
+                    <!-- // end .course-img-wrap -->
+                    <a href="<?php echo site_url('jurusan');?>" class="course-box-content">
+                        <h3 style="text-align:center;">Alat Mesin Pertanian</h3>
+                    </a>
+                </div>
+            </div>
+
+             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+                <div class="courses_box mb-4">
+                    <div class="course-img-wrap">
+                        <img src="<?php echo base_url().'theme/images/icon.png'?>" class="img-fluid" alt="courses-img">
+                    </div>
+                    <!-- // end .course-img-wrap -->
+                    <a href="<?php echo site_url('jurusan');?>" class="course-box-content">
+                        <h3 style="text-align:center;">Agribisnis Budidaya Ikan</h3>
+                    </a>
+                </div>
+            </div>
+
+             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+                <div class="courses_box mb-4">
+                    <div class="course-img-wrap">
+                        <img src="<?php echo base_url().'theme/images/icon.png'?>" class="img-fluid" alt="courses-img">
+                    </div>
+                    <!-- // end .course-img-wrap -->
+                    <a href="<?php echo site_url('jurusan');?>" class="course-box-content">
+                        <h3 style="text-align:center;">Pengawasan Mutu Hasil Pertanias</h3>
+                    </a>
+                </div>
+            </div>
+         
+        </div> <br>
+        
+    </div>
+</section>
+
+    
     <!--//END WELCOME TITLE -->
     
     <!--============================= DETAILED CHART =============================-->
-   
+    <div class="detailed_chart">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-3 chart_bottom">
+                    <div class="chart-img">
+                        <img src="<?php echo base_url().'theme/images/chart-icon_1.png'?>" class="img-fluid" alt="chart_icon">
+                    </div>
+                    <div class="chart-text">
+                        <p><span class="counter"><?php echo $tot_guru;?></span> Guru
+                        </p>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-3 chart_bottom chart_top">
+                    <div class="chart-img">
+                        <img src="<?php echo base_url().'theme/images/chart-icon_2.png'?>" class="img-fluid" alt="chart_icon">
+                    </div>
+                    <div class="chart-text">
+                        <p><span class="counter"><?php echo $tot_siswa;?></span> Siswa
+                        </p>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-3 chart_top">
+                    <div class="chart-img">
+                        <img src="<?php echo base_url().'theme/images/chart-icon_3.png'?>" class="img-fluid" alt="chart_icon">
+                    </div>
+                    <div class="chart-text">
+                        <p><span class="counter"><?php echo $tot_files;?></span> Download
+                        </p>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-3">
+                    <div class="chart-img">
+                        <img src="<?php echo base_url().'theme/images/chart-icon_4.png'?>" class="img-fluid" alt="chart_icon">
+                    </div>
+                    <div class="chart-text">
+                        <p><span class="counter"><?php echo $tot_agenda;?></span> Agenda</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--//END DETAILED CHART -->
 <!--============================= FOOTER =============================-->
 <footer>
     <div class="container">

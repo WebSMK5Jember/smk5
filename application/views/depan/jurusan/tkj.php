@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Agenda Kegiatan</title>
+    <title>Profil Sekolah</title>
     <link rel="shorcut icon" href="<?php echo base_url().'theme/images/icon.png'?>">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="<?php echo base_url().'theme/css/bootstrap.min.css'?>">
@@ -15,9 +15,9 @@
     <link rel="stylesheet" href="<?php echo base_url().'theme/css/font-awesome.min.css'?>">
     <!-- Simple Line Font -->
     <link rel="stylesheet" href="<?php echo base_url().'theme/css/simple-line-icons.css'?>">
-    <!-- Calendar Css -->
-    <link rel="stylesheet" href="<?php echo base_url().'theme/css/fullcalendar.min.css'?>" />
     <!-- Owl Carousel -->
+    <link rel="stylesheet" href="<?php echo base_url().'theme/css/slick.css'?>">
+    <link rel="stylesheet" href="<?php echo base_url().'theme/css/slick-theme.css'?>">
     <link rel="stylesheet" href="<?php echo base_url().'theme/css/owl.carousel.min.css'?>">
     <!-- Main CSS -->
     <link href="<?php echo base_url().'theme/css/style.css'?>" rel="stylesheet">
@@ -25,7 +25,6 @@
 
 <body>
      <!--============================= HEADER =============================-->
-      <!--============================= HEADER =============================-->
     <div class="header-topbar">
         <div class="container">
             <div class="row">
@@ -96,6 +95,8 @@
                                  <li class="nav-item">
                                     <a class="nav-link" href="<?php echo site_url('login_si');?>">Siakad</a>
                                 </li>
+
+                            
                                 <li class="nav-item">
                                   <a class="nav-link" href="<?php echo site_url('contact');?>">Kontak</a>
                                 </li>
@@ -110,59 +111,37 @@
 </section>
 <!--//END HEADER -->
 <!--//END ABOUT IMAGE -->
- 
-<!--============================= EVENTS =============================-->
-<section class="events">
+
+<!--============================= WELCOME TITLE =============================-->
+<section class="welcome_about">
     <div class="container">
         <div class="row">
-            <div class="col-md-4">
-                <h2 class="event-title">Agenda</h2>
-            </div>
-            <div class="col-md-8">
-                <!-- Nav tabs -->
-                <ul class="nav nav-tabs" role="tablist">
-                    <li class="nav-item nav-tab1">
-                        <a class="nav-link tab-list active" data-toggle="tab" href="#upcoming-events" role="tab">Agenda Terbaru </a>
-                    </li>
+            <div class="col-md-7">
+                <h2>SMKN 5 Jember</h2>
+                <p>SMK Negeri 5 Jember merupakan salah satu Sekolah Menengah Kejuruan Negeri yang beralamat di Jl. Brawijawa No.55 Jubung, Kecamatan Sukorambi, Kabupaten Jember. Sekolah ini awalnya bernama SMKN 1 Sukorambi, hingga pada tahun 2013 berganti nama menjadi SMK Negeri 5 Jember. </p>
 
-                </ul>
+               <p>Visi  </p>
+                        <p>Menciptakan tenaga kerja professional tingkat menengah yang memiliki daya saing pada tingkat regional, nasional dan internasional</p>
+                         <p>Misi</p>
+                         <p>1. Menyiapkan tamatan yang bertaqwa dan berbudi luhur, memiliki etos kerja dan berjiwa wirausaha</p>
+                         <p>2. Menjadi Sekolah Menengah Kejuruan Unggulan</p>
+                         <p>3. Meningkatkan daya serap tamatan di dunia kerja dan dapat melanjutkan pendidikan kejenjang yang lebih tinggi</p>
+                         <p>4. Meningkatkan peran SMK sebagai pusat pengembangan agribisnis di tingkat regional</p>
+                         <p>5. Meningkatkan peran SMK sebagai pengembang teknologi informasi bagi sekolah, industri dan masyarakat</p>
+                </div>
+                <div class="col-md-5">
+                    <img src="<?php echo base_url().'theme/images/welcome-img.jpg'?>" class="img-fluid" alt="#">
+                </div>
             </div>
         </div>
-        <br>
-        <div class="row">
-            <!-- Tab panes -->
-            <div class="tab-content">
-                <div class="tab-pane active" id="upcoming-events" role="tabpanel">
-                  <?php foreach($data->result() as $row):?>
-                    <div class="col-md-12">
-                        <div class="row">
-                            <div class="col-md-2">
-                                <div class="event-date">
-                                    <h4><?php echo date("d", strtotime($row->agenda_tanggal));?></h4> <span><?php echo date("M Y", strtotime($row->agenda_tanggal));?></span>
-                                </div>
-                                <span class="event-time"><?php echo $row->agenda_waktu;?></span>
-                            </div>
-                            <div class="col-md-10">
-                                <div class="event-heading">
-                                    <h3><?php echo $row->agenda_nama;?></h3>
-                                    <p><?php echo $row->agenda_deskripsi;?></p>
-                                </div>
-                          </div>
-                      </div>
-                      <hr class="event-underline">
-                  </div>
-                <?php endforeach;?>
+    </section>
 
-      <div class="col-md-12 text-center">
-        <?php echo $page;?>
-    </div>
-</div>
 
-</div>
-</div>
-</div>
-</section>
-<!--//END EVENTS -->
+    <!--//END WELCOME TITLE -->
+    
+    <!--============================= DETAILED CHART =============================-->
+    
+    <!--//END DETAILED CHART -->
 <!--============================= FOOTER =============================-->
 <footer>
     <div class="container">
@@ -216,7 +195,6 @@
             </div>
         </footer>
         <!--//END FOOTER -->
-        <!--//END FOOTER -->
         <!-- jQuery, Bootstrap JS. -->
         <script src="<?php echo base_url().'theme/js/jquery.min.js'?>"></script>
         <script src="<?php echo base_url().'theme/js/tether.min.js'?>"></script>
@@ -235,5 +213,6 @@
     </body>
 
     </html>
+
 
 
