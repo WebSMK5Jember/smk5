@@ -14,8 +14,7 @@ class admin_si_guru extends CI_Controller{
 
 
 	function index(){
-		$x['data']=$this->m_guru->get_all_guru_mapel();
-		$x['data']=$this->m_guru->get_all_guru_jabatan();
+		
 		$x['data']=$this->m_guru->get_all_guru_piket();
 		$x['jabatan']=$this->m_guru->get_jabatan();
 		$x['piket']=$this->m_guru->get_piket();

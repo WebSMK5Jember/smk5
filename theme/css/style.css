@@ -302,7 +302,7 @@ p {
   font-size: 17px; }
 
 a {
-  color: #696969;
+  color: #1e90ff;
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease; }
@@ -3536,7 +3536,7 @@ div.panel {
 
 .header-top_address {
   color: #2d2d2d;
-  font-size: 15px; }
+  font-size: 11px; }
   .header-top_address .header-top_list {
     display: inline-block;
     margin-right: 22px; }
@@ -3561,7 +3561,7 @@ div.panel {
   -webkit-transition: 0.2s;
   -o-transition: 0.2s;
   transition: 0.2s;
-  font-size: 15px; }
+  font-size: 11px; }
   .header-top_login a,
   .header-top_login2 a {
     padding: 5px;

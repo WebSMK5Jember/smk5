@@ -75,13 +75,13 @@ Class Login_si extends CI_Controller{
 				}else if($val_pass_admin['pengguna_password'] == $pass){
 	    		$this ->session ->set_userdata('logon', true);
     			$data = $this ->ModelLogin ->get_level_admin($user)->row_array();
-				$sisw = $this->ModelLogin->get_name_admin($user)->row_array();
+				$adm = $this->ModelLogin->get_name_admin($user)->row_array();
 
 	    		if($data['pengguna_level'] == 1){
 
 	    			$this ->session ->set_userdata('pengguna_level', '1');
 	    			$this ->session ->set_userdata('id_session', $data['pengguna_username']);
-	    			$this ->session ->set_userdata('name_session', $sisw['NAMA_ADMIN']);
+	    			$this ->session ->set_userdata('name_session', $adm['pengguna_nama']);
 
 	    		redirect('admin_si_dashboard');
 						$this ->load ->view('apps/admin/dashboard.php');

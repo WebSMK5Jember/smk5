@@ -25,6 +25,21 @@ class ModelGuru extends CI_Model{
 			return $query;
 	}
 
+	public function get_kelas(){
+		return $this ->db ->get("tbl_kelas");
+	}
+	public function get_data_siswa(){
+
+		$this ->db ->select('*');
+		$this ->db ->from('tbl_siswa');
+		$this ->db ->where('siswa_kelas_id= $kelas_id');
+
+
+		$query = $this ->db ->get();
+
+		return $query;
+	}
+
 	
 
 }

@@ -113,9 +113,8 @@ class ModelLogin extends CI_Model{
 	
 	public function get_name_admin($user){
 	
-	$this->db->select('tbl_pengguna.*,tabel_admin.*'); 
+	$this->db->select('*'); 
     $this->db->from('tbl_pengguna'); 
-    $this->db->join('tabel_admin', 'tabel_admin.KODE_ADMIN = tbl_pengguna.pengguna_username');
 	$this->db->where('pengguna_username',$user);
     return $data = $this->db->get();
 	}

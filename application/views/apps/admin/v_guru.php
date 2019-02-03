@@ -120,8 +120,7 @@
                 <tr>
           					<th>Photo</th>
                     <th>Kode Guru</th>
-                    <th>Mapel</th>
-                    <th>Jabatan</th>
+                  
                     <th>Piket</th>
           					<th>NIP</th>
           					<th>Nama</th>
@@ -141,10 +140,7 @@
           					foreach ($data->result_array() as $i) :
           					   $no++;
           					   $kode=$i['guru_id'];
-                       $mapel_id=$i['guru_mapel_id'];
-                       $mapel_nama=$i['NAMA_MAPEL'];
-                       $jabatan_id=$i['guru_jabatan_id'];
-                       $jabatan_nama=$i['NAMA_JABATAN'];
+                    
                        $piket_id=$i['guru_piket_id'];
                        $piket_nama=$i['HARI'];
           					   $nip=$i['guru_nip'];
@@ -165,8 +161,8 @@
                   <td><img width="40" height="40" class="img-circle" src="<?php echo base_url().'assets/images/'.$photo;?>"></td>
                   <?php endif;?>
                   <td><?php echo $kode;?></td>
-                  <td><?php echo $mapel_nama;?></td>
-                  <td><?php echo $jabatan_nama;?></td>
+                  
+                  
                   <td><?php echo $piket_nama;?></td>
                   <td><?php echo $nip;?></td>
         				  <td><?php echo $nama;?></td>
@@ -429,11 +425,11 @@
                                             <option value="">-Pilih-</option>
                                             <?php
                                                 foreach ($mapel->result_array() as $m) {
-                                                  $KODE_MAPEL=$m['KODE_MAPEL'];
-                                                  $NAMA_MAPEL=$m['NAMA_MAPEL'];
+                                                  $id_mapel=$m['KODE_MAPEL'];
+                                                  $nama_mapel=$m['NAMA_MAPEL'];
 
                                             ?>
-                                            <option value="<?php echo $KODE_MAPEL;?>"><?php echo $NAMA_MAPEL;?></option>
+                                            <option value="<?php echo $id_mapel;?>"><?php echo $nama_mapel;?></option>
                                             <?php } ?>
                                           </select>
                                         </div>
@@ -446,11 +442,11 @@
                                             <option value="">-Pilih-</option>
                                             <?php
                                                 foreach ($jabatan->result_array() as $j) {
-                                                  $KODE_JABATAN=$j['KODE_JABATAN'];
-                                                  $NAMA_JABATAN=$j['NAMA_JABATAN'];
+                                                  $id_jabatan=$j['KODE_JABATAN'];
+                                                  $nama_jabatan=$j['NAMA_JABATAN'];
 
                                             ?>
-                                            <option value="<?php echo $KODE_JABATAN;?>"><?php echo $NAMA_JABATAN;?></option>
+                                            <option value="<?php echo $id_jabatan;?>"><?php echo $nama_jabatan;?></option>
                                             <?php } ?>
                                           </select>
                                         </div>
@@ -463,11 +459,11 @@
                                             <option value="">-Pilih-</option>
                                             <?php
                                                 foreach ($piket->result_array() as $p) {
-                                                  $KODE_PIKET=$P['KODE_PIKET'];
-                                                  $HARI=$P['HARI'];
+                                                  $id_piket=$p['KODE_PIKET'];
+                                                  $nama_piket=$p['HARI'];
 
                                             ?>
-                                            <option value="<?php echo $KODE_PIKET;?>"><?php echo $HARI;?></option>
+                                            <option value="<?php echo $id_piket;?>"><?php echo $nama_piket;?></option>
                                             <?php } ?>
                                           </select>
                                         </div>
@@ -554,9 +550,7 @@
   <?php foreach ($data->result_array() as $i) :
               $kode=$i['guru_id'];
                        $mapel_id=$i['guru_mapel_id'];
-                       $mapel_nama=$i['NAMA_MAPEL'];
-                       $jabatan_id=$i['guru_jabatan_id'];
-                       $jabatan_nama=$i['NAMA_JABATAN'];
+                   
                        $piket_id=$i['guru_piket_id'];
                        $piket_nama=$i['HARI'];
                        $nip=$i['guru_nip'];
@@ -577,7 +571,7 @@
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button>
                         <h4 class="modal-title" id="myModalLabel">Edit Guru</h4>
                     </div>
-                    <form class="form-horizontal" action="<?php echo base_url().'admin/guru/update_guru'?>" method="post" enctype="multipart/form-data">
+                    <form class="form-horizontal" action="<?php echo base_url().'admin_si_guru/update_guru'?>" method="post" enctype="multipart/form-data">
                     <div class="modal-body">
                                 <input type="hidden" name="kode" value="<?php echo $kode;?>"/>
                                 <input type="hidden" value="<?php echo $photo;?>" name="gambar">
@@ -594,6 +588,87 @@
                                             <input type="text" name="xnama" value="<?php echo $nama;?>" class="form-control" id="inputUserName" placeholder="Nama" required>
                                         </div>
                                     </div>
+
+                                    <div class="form-group">
+                                        <label for="inputUserName" class="col-sm-4 control-label">Jabatan</label>
+                                        <div class="col-sm-7">
+                                          <select name="xjabatan" class="form-control" required>
+                                            <option value="">-Pilih-</option>
+                                            <?php
+                                                foreach ($jabatan->result_array() as $j) {
+                                                  $id_jabatan=$j['KODE_JABATAN'];
+                                                  $nama_jabatan=$j['NAMA_JABATAN'];
+
+                                            ?>
+                                            <?php if($id_jabatan==$KODE_JABATAN):?>
+                                              <option value="<?php echo $id_jabatan;?>" selected><?php echo $nama_jabatan;?></option>
+                                            <?php else:?>
+                                              <option value="<?php echo $id_jabatan;?>"><?php echo $nama_jabatan;?></option>
+                                            <?php endif;?>
+                                            <?php } ?>
+                                          </select>
+                                        </div>
+                                    </div>
+
+                                     <div class="form-group">
+                                        <label for="inputUserName" class="col-sm-4 control-label">Mata Pelajaran</label>
+                                        <div class="col-sm-7">
+                                          <select name="xmapel" class="form-control" required>
+                                            <option value="">-Pilih-</option>
+                                            <?php
+                                                foreach ($mapel->result_array() as $m) {
+                                                  $id_mapel=$m['KODE_MAPEL'];
+                                                  $nama_mapel=$m['NAMA_MAPEL'];
+
+                                            ?>
+                                            <?php if($id_mapel==$KODE_MAPEL):?>
+                                              <option value="<?php echo $id_mapel;?>" selected><?php echo $nama_mapel;?></option>
+                                            <?php else:?>
+                                              <option value="<?php echo $id_mapel;?>"><?php echo $nama_mapel;?></option>
+                                            <?php endif;?>
+                                            <?php } ?>
+                                          </select>
+                                        </div>
+                                    </div>
+
+                                     <div class="form-group">
+                                        <label for="inputUserName" class="col-sm-4 control-label">Jadwal Piket</label>
+                                        <div class="col-sm-7">
+                                          <select name="xpiket" class="form-control" required>
+                                            <option value="">-Pilih-</option>
+                                            <?php
+                                                foreach ($piket->result_array() as $p) {
+                                                  $id_piket=$p['KODE_PIKET'];
+                                                  $nama_piket=$p['HARI'];
+
+                                            ?>
+                                            <?php if($id_piket==$KODE_PIKET):?>
+                                              <option value="<?php echo $id_piket;?>" selected><?php echo $nama_piket;?></option>
+                                            <?php else:?>
+                                              <option value="<?php echo $id_piket;?>"><?php echo $nama_piket;?></option>
+                                            <?php endif;?>
+                                            <?php } ?>
+                                          </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="inputUserName" class="col-sm-4 control-label">Alamat</label>
+                                        <div class="col-sm-7">
+                                            <input type="text" name="xalamat" value="<?php echo $alamat;?>" class="form-control" id="inputUserName" placeholder="alamat" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="inputUserName" class="col-sm-4 control-label">Jumlah Jam</label>
+                                        <div class="col-sm-7">
+                                            <input type="text" name="xjam" value="<?php echo $jam;?>" class="form-control" id="inputUserName" placeholder="Jumlah Jam" required>
+                                        </div>
+                                    </div>
+
+
+
+
 
                                     <div class="form-group">
                                         <label for="inputUserName" class="col-sm-4 control-label">Jenis Kelamin</label>
@@ -634,13 +709,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">Mata Pelajaran</label>
-                                        <div class="col-sm-7">
-                                            <input type="text" name="xmapel" value="<?php echo $mapel;?>" class="form-control" id="inputUserName" placeholder="Contoh: PPKN, Matematika" required>
-                                        </div>
-                                    </div>
-
+                                   
                                     <div class="form-group">
                                         <label for="inputUserName" class="col-sm-4 control-label">Photo</label>
                                         <div class="col-sm-7">
@@ -661,26 +730,32 @@
 	<!--Modal Edit Album-->
 
 	<?php foreach ($data->result_array() as $i) :
-              $id=$i['guru_id'];
-              $nip=$i['guru_nip'];
-              $nama=$i['guru_nama'];
-              $jenkel=$i['guru_jenkel'];
-              $tmp_lahir=$i['guru_tmp_lahir'];
-              $tgl_lahir=$i['guru_tgl_lahir'];
-              $mapel=$i['guru_mapel'];
-              $photo=$i['guru_photo'];
+             $kode=$i['guru_id'];
+                       $mapel_id=$i['guru_mapel_id'];
+                   
+                       $piket_id=$i['guru_piket_id'];
+                       $piket_nama=$i['HARI'];
+                       $nip=$i['guru_nip'];
+                       $nama=$i['guru_nama'];
+                       $alamat=$i['guru_alamat'];
+                       $jam=$i['guru_jumlah_jam'];
+                       $jenkel=$i['guru_jenkel'];
+                       $tmp_lahir=$i['guru_tmp_lahir'];
+                       $tgl_lahir=$i['guru_tgl_lahir'];
+                       
+                       $photo=$i['guru_photo'];
             ?>
 	<!--Modal Hapus Pengguna-->
-        <div class="modal fade" id="ModalHapus<?php echo $id;?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal fade" id="ModalHapus<?php echo $kode;?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button>
                         <h4 class="modal-title" id="myModalLabel">Hapus Guru</h4>
                     </div>
-                    <form class="form-horizontal" action="<?php echo base_url().'admin/guru/hapus_guru'?>" method="post" enctype="multipart/form-data">
+                    <form class="form-horizontal" action="<?php echo base_url().'admin_si_guru/hapus_guru'?>" method="post" enctype="multipart/form-data">
                     <div class="modal-body">
-							       <input type="hidden" name="kode" value="<?php echo $id;?>"/>
+							       <input type="hidden" name="kode" value="<?php echo $kode;?>"/>
                      <input type="hidden" value="<?php echo $photo;?>" name="gambar">
                             <p>Apakah Anda yakin mau menghapus guru <b><?php echo $nama;?></b> ?</p>
 

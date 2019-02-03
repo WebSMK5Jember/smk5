@@ -62,8 +62,8 @@
           </li>
 
           <?php
-              $id_admin=$this->session->userdata('idadmin');
-              $q=$this->db->query("SELECT * FROM tbl_pengguna WHERE pengguna_id='$id_admin'");
+              $id_admin=$this->session->userdata('id_session');
+              $q=$this->db->query("SELECT * FROM tbl_pengguna WHERE pengguna_id='id_session'");
               $c=$q->row_array();
           ?>
           <li class="dropdown user user-menu">
