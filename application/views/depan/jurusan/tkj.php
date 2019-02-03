@@ -117,18 +117,10 @@
     <div class="container">
         <div class="row">
             <div class="col-md-7">
-                <h2>SMKN 5 Jember</h2>
-                <p>SMK Negeri 5 Jember merupakan salah satu Sekolah Menengah Kejuruan Negeri yang beralamat di Jl. Brawijawa No.55 Jubung, Kecamatan Sukorambi, Kabupaten Jember. Sekolah ini awalnya bernama SMKN 1 Sukorambi, hingga pada tahun 2013 berganti nama menjadi SMK Negeri 5 Jember. </p>
-
-               <p>Visi  </p>
-                        <p>Menciptakan tenaga kerja professional tingkat menengah yang memiliki daya saing pada tingkat regional, nasional dan internasional</p>
-                         <p>Misi</p>
-                         <p>1. Menyiapkan tamatan yang bertaqwa dan berbudi luhur, memiliki etos kerja dan berjiwa wirausaha</p>
-                         <p>2. Menjadi Sekolah Menengah Kejuruan Unggulan</p>
-                         <p>3. Meningkatkan daya serap tamatan di dunia kerja dan dapat melanjutkan pendidikan kejenjang yang lebih tinggi</p>
-                         <p>4. Meningkatkan peran SMK sebagai pusat pengembangan agribisnis di tingkat regional</p>
-                         <p>5. Meningkatkan peran SMK sebagai pengembang teknologi informasi bagi sekolah, industri dan masyarakat</p>
-                </div>
+                <h2>Teknik Komputer dan Jaringan </h2>
+                <p> Pada program keahlian Teknik Komputer dan Jaringan (TKJ), siswa akan dilatih untuk dapat memiliki mengetahui bidang infrastuktur jaringan, racang bangun jaringan, adminstrator sistem jaringan, trouble shooting kompter, trouble shooting LCD, serta trouble shooting printer. Dengan keahliah dan pengetahuan yang dimiliki, siswa diharapkan dapat langsung terjun ke dunia kerja ataupun melanjutkan ke jenjang pendidikan yang lebih tiggi </p>
+              
+             </div>
                 <div class="col-md-5">
                     <img src="<?php echo base_url().'theme/images/welcome-img.jpg'?>" class="img-fluid" alt="#">
                 </div>
