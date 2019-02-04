@@ -7,7 +7,10 @@ class M_guru extends CI_Model{
 		$hsl=$this->db->query("SELECT tbl_guru.*,HARI FROM tbl_guru JOIN tabel_piket ON guru_piket_id=KODE_PIKET");
 		return $hsl;
 	}
-
+function get_all_guru(){
+		$hsl=$this->db->query("SELECT * from tbl_guru");
+		return $hsl;
+	}
 	function simpan_guru($kode,$mapel,$jabatan,$piket,$nip,$nama,$alamat,$jam,$jenkel,$tmp_lahir,$tgl_lahir,$photo){
 		$hsl=$this->db->query("INSERT INTO tbl_guru (guru_id,guru_mapel_id,guru_jabatan_id,guru_piket_id,guru_nip,guru_nama,guru_alamat,guru_jumlah_jam,guru_jenkel,guru_tmp_lahir,guru_tgl_lahir,guru_photo) VALUES ('$kode','$mapel','$jabatan','$piket','$nip','$nama','$alamat','$jam','$jenkel','$tmp_lahir','$tgl_lahir','$photo')");
 		return $hsl;

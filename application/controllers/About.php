@@ -7,7 +7,7 @@ class About extends CI_Controller{
 		$this->m_pengunjung->count_visitor();
 	}
 	function index(){
-		
+		$x['populer']=$this->db->query("SELECT * FROM tbl_tulisan ORDER BY tulisan_views DESC LIMIT 5");
 		$x['tot_guru']=$this->db->get('tbl_guru')->num_rows();
 		$x['tot_siswa']=$this->db->get('tbl_siswa')->num_rows();
 		$x['tot_files']=$this->db->get('tbl_files')->num_rows();

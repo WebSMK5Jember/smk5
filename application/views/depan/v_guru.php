@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Data Guru</title>
+    <title>SMKN 5 Jember - Data Guru</title>
     <link rel="shorcut icon" href="<?php echo base_url().'theme/images/icon.png'?>">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="<?php echo base_url().'theme/css/bootstrap.min.css'?>">
@@ -73,7 +73,7 @@
                                     <a class="nav-link" href="<?php echo site_url('jurusan');?>">Jurusan</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo site_url('guru');?>">Guru</a>
+                                    <a class="nav-link" href="<?php echo site_url('blog');?>">Berita</a>
                                 </li>
                                
                                 <li class="nav-item">
@@ -168,7 +168,7 @@
                       <h3>Akademik</h3>
                       <ul>
                           <li><a href="<?php echo site_url('guru');?>">Data Guru</a></li>
-                          <li><a href="<?php echo site_url('siswa');?>">Data Siswa </a></li>
+                          <li><a href="<?php echo site_url('login_si');?>">Sistem Informasi </a></li>
                           <li><a href="<?php echo site_url('pengumuman');?>">Pengumuman</a></li>
                           <li><a href="<?php echo site_url('agenda');?>">Agenda</a></li>
                           <li><a href="<?php echo site_url('download');?>">Download</a></li>

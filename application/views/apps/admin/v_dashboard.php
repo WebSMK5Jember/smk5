@@ -43,7 +43,7 @@
 
   <!--Header-->
   <?php
-    $this->load->view('admin/v_header');
+    $this->load->view('apps/admin/v_header');
   ?>
 
   <!-- Left side column. contains the logo and sidebar -->
@@ -77,6 +77,32 @@
 		<li>
           <a href="<?php echo base_url().'admin_si_siswa'?>">
             <i class="fa fa-graduation-cap"></i> <span>Data Siswa</span>
+            <span class="pull-right-container">
+              <small class="label pull-right"></small>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="<?php echo base_url().'admin_si_jurusan'?>">
+            <i class="fa fa-graduation-cap"></i> <span>Data Jurusan</span>
+            <span class="pull-right-container">
+              <small class="label pull-right"></small>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="<?php echo base_url().'admin_si_kelas'?>">
+            <i class="fa fa-graduation-cap"></i> <span>Data Kelas</span>
+            <span class="pull-right-container">
+              <small class="label pull-right"></small>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="<?php echo base_url().'admin_si_jadwal'?>">
+            <i class="fa fa-graduation-cap"></i> <span>Data Jadwal</span>
             <span class="pull-right-container">
               <small class="label pull-right"></small>
             </span>

@@ -129,7 +129,7 @@ class Tulisan extends CI_Controller{
 
 	                }else{
 	                    echo $this->session->set_flashdata('msg','warning');
-	                    redirect('admin/pengguna');
+	                    redirect('admin/tulisan');
 	                }
 
 	            }else{

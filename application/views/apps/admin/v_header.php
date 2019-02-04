@@ -62,7 +62,7 @@
           </li>
 
           <?php
-              $id_admin=$this->session->userdata('id_session');
+              $user=$this->session->userdata('id_session');
               $q=$this->db->query("SELECT * FROM tbl_pengguna WHERE pengguna_id='id_session'");
               $c=$q->row_array();
           ?>
@@ -77,11 +77,15 @@
                 <img src="<?php echo base_url().'assets/images/'.$c['pengguna_photo'];?>" class="img-circle" alt="">
 
                 <p>
-                  <?php echo $c['pengguna_nama'];?>
+                   <?php echo $c['pengguna_nama'];?>
                   <?php if($c['pengguna_level']=='1'):?>
                     <small>Administrator</small>
-                  <?php else:?>
-                    <small>Author</small>
+                  <?php elseif($c['pengguna_level']=='2'):?>
+                    <small>Kepala Sekolah</small>
+          <?php elseif($c['pengguna_level']=='3'):?>
+                    <small>Guru</small>
+          <?php elseif($c['pengguna_level']=='4'):?>
+                    <small>Siswa</small>
                   <?php endif;?>
                 </p>
               </li>

@@ -95,22 +95,20 @@ class ModelLogin extends CI_Model{
 
 	public function get_name_siswa($user){
 	
-	$this->db->select('tbl_pengguna.*,tbl_siswa.*'); 
+	$this->db->select('*'); 
     $this->db->from('tbl_pengguna'); 
-    $this->db->join('tbl_siswa', 'tbl_siswa.siswa_nis = tbl_pengguna.pengguna_siswa');
-	$this->db->where('pengguna_siswa',$user);
+	$this->db->where('pengguna_username',$user);
     return $data = $this->db->get();
+	
 	}
 
 	public function get_name_guru($user){
-	
-	$this->db->select('tbl_pengguna.*,tbl_guru.*'); 
+	$this->db->select('*'); 
     $this->db->from('tbl_pengguna'); 
-    $this->db->join('tbl_guru', 'tbl_guru.guru_id = tbl_pengguna.pengguna_guru');
-	$this->db->where('pengguna_guru',$user);
+	$this->db->where('pengguna_username',$user);
     return $data = $this->db->get();
 	}
-	
+    
 	public function get_name_admin($user){
 	
 	$this->db->select('*'); 

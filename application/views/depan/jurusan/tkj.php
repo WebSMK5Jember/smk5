@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Profil Sekolah</title>
+    <title>SMKN 5 Jember | Profil Jurusan</title>
     <link rel="shorcut icon" href="<?php echo base_url().'theme/images/icon.png'?>">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="<?php echo base_url().'theme/css/bootstrap.min.css'?>">
@@ -76,8 +76,8 @@
                                     <a class="nav-link" href="<?php echo site_url('guru');?>">Guru</a>
                                 </li>
                                
-                                <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo site_url('blog');?>">Artikel</a>
+                               <li class="nav-item">
+                                    <a class="nav-link" href="<?php echo site_url('blog');?>">Berita</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="<?php echo site_url('pengumuman');?>">Pengumuman</a>
@@ -121,7 +121,7 @@
                 <p> Pada program keahlian Teknik Komputer dan Jaringan (TKJ), siswa akan dilatih untuk dapat memiliki mengetahui bidang infrastuktur jaringan, racang bangun jaringan, adminstrator sistem jaringan, trouble shooting kompter, trouble shooting LCD, serta trouble shooting printer. Dengan keahliah dan pengetahuan yang dimiliki, siswa diharapkan dapat langsung terjun ke dunia kerja ataupun melanjutkan ke jenjang pendidikan yang lebih tiggi </p>
               
              </div>
-                <div class="col-md-5">
+                <div class="col-md-5"><br>
                     <img src="<?php echo base_url().'theme/images/welcome-img.jpg'?>" class="img-fluid" alt="#">
                 </div>
             </div>
@@ -163,7 +163,7 @@
                       <h3>Akademik</h3>
                       <ul>
                           <li><a href="<?php echo site_url('guru');?>">Data Guru</a></li>
-                          <li><a href="<?php echo site_url('siswa');?>">Data Siswa </a></li>
+                          <li><a href="<?php echo site_url('login_si');?>">Sistem Informasi </a></li>
                           <li><a href="<?php echo site_url('pengumuman');?>">Pengumuman</a></li>
                           <li><a href="<?php echo site_url('agenda');?>">Agenda</a></li>
                           <li><a href="<?php echo site_url('download');?>">Download</a></li>

@@ -72,6 +72,32 @@
           </a>
         </li>
 
+        <li>
+          <a href="<?php echo base_url().'admin_si_jurusan'?>">
+            <i class="fa fa-graduation-cap"></i> <span>Data Jurusan</span>
+            <span class="pull-right-container">
+              <small class="label pull-right"></small>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="<?php echo base_url().'admin_si_kelas'?>">
+            <i class="fa fa-graduation-cap"></i> <span>Data Kelas</span>
+            <span class="pull-right-container">
+              <small class="label pull-right"></small>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="<?php echo base_url().'admin_si_jadwal'?>">
+            <i class="fa fa-graduation-cap"></i> <span>Data Jadwal</span>
+            <span class="pull-right-container">
+              <small class="label pull-right"></small>
+            </span>
+          </a>
+        </li>
+
        
 
          <li>
@@ -154,6 +180,8 @@
                        $photo=$i['guru_photo'];
 
                     ?>
+
+
                 <tr>
                   <?php if(empty($photo)):?>
                   <td><img width="40" height="40" class="img-circle" src="<?php echo base_url().'assets/images/user_blank.png';?>"></td>
@@ -183,6 +211,8 @@
                   </td>
                 </tr>
 				<?php endforeach;?>
+
+        
                 </tbody>
               </table>
             </div>

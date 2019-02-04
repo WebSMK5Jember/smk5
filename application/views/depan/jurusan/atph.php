@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Profil Sekolah</title>
+    <title>SMKN 5 Jember | Profil Jurusan</title>
     <link rel="shorcut icon" href="<?php echo base_url().'theme/images/icon.png'?>">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="<?php echo base_url().'theme/css/bootstrap.min.css'?>">
@@ -77,7 +77,7 @@
                                 </li>
                                
                                 <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo site_url('blog');?>">Artikel</a>
+                                    <a class="nav-link" href="<?php echo site_url('blog');?>">Berita</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="<?php echo site_url('pengumuman');?>">Pengumuman</a>
@@ -121,7 +121,7 @@
                 <p> Pada program keahlian Agribisnis Tanaman Pangan dan Holtikultura (ATPH), siswa akan dilatih untuk dapat memiliki keterampilan dibidang perencanaan serta pengolahan pada agribisnis tanaman pangan, agribisnis tanaman sayuran, agribisnis tanaman buah serta agribisnis tanaman hias. Produk yang dihasilkan nantinya akan dipasarkan oleh siswa guna melatih kemampuan dalam berwirausaha. </p>>
               
              </div>
-                <div class="col-md-5">
+                <div class="col-md-5"><br>
                     <img src="<?php echo base_url().'theme/images/welcome-img.jpg'?>" class="img-fluid" alt="#">
                 </div>
             </div>
@@ -163,7 +163,7 @@
                       <h3>Akademik</h3>
                       <ul>
                           <li><a href="<?php echo site_url('guru');?>">Data Guru</a></li>
-                          <li><a href="<?php echo site_url('siswa');?>">Data Siswa </a></li>
+                          <li><a href="<?php echo site_url('login_si');?>">Sistem Informasi </a></li>
                           <li><a href="<?php echo site_url('pengumuman');?>">Pengumuman</a></li>
                           <li><a href="<?php echo site_url('agenda');?>">Agenda</a></li>
                           <li><a href="<?php echo site_url('download');?>">Download</a></li>

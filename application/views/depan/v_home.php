@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>SMKN 5 Jember - Selamat Datang di M School</title>
+    <title>SMKN 5 Jember - Selamat Datang</title>
     <link rel="shorcut icon" href="<?php echo base_url().'theme/images/icon.png'?>">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="<?php echo base_url().'theme/css/bootstrap.min.css'?>">
@@ -82,8 +82,8 @@
                                     <a class="nav-link" href="<?php echo site_url('guru');?>">Guru</a>
                                 </li>
                                
-                                <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo site_url('blog');?>">Artikel</a>
+                               <li class="nav-item">
+                                    <a class="nav-link" href="<?php echo site_url('blog');?>">Berita</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="<?php echo site_url('pengumuman');?>">Pengumuman</a>
@@ -177,11 +177,13 @@
         <div class="row">
             <div class="col-md-8">
                <h2>Selamat Datang</h2>
-               <p>Kami Menyambut baik terbitnya Website SMKN 5 Jember yang baru , dengan harapan dipublikasinya website ini sekolah berharap : Peningkatan layanan pendidikan kepada siswa, orangtua, dan masyarakat pada umumnya semakin meningkat. </p>
+               <p>Kami Menyambut baik terbitnya Website SMKN 5 Jember yang baru , dengan harapan dipublikasinya website ini sekolah berharap : Peningkatan layanan pendidikan kepada siswa, orangtua, dan masyarakat pada umumnya semakin meningkat. SMKN 5 Jember juga dapat menyebarkan informasi kepada siswa, guru maupun masyarakat luar secara mudah dan cepat. </p>
 
             </div>
             <div class="col-md-4">
                 <img src="<?php echo base_url().'theme/images/welcome.png'?>" class="img-fluid about-img" alt="#">
+                <h4 style="text-align: center;"><br>Kepala Sekolah</h4>
+                <p style="text-align: center;font-weight: bold;font-size: 12px;">Kumudawati</p>
             </div>
         </div>
     </div>
@@ -192,7 +194,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h2>Artikel Terbaru</h2>
+                <h2>Berita Terbaru</h2>
             </div>
         </div>
         <div class="row">
@@ -333,7 +335,7 @@
                       <h3>Akademik</h3>
                       <ul>
                           <li><a href="<?php echo site_url('guru');?>">Data Guru</a></li>
-                          <li><a href="<?php echo site_url('siswa');?>">Data Siswa </a></li>
+                          <li><a href="<?php echo site_url('login_si');?>">Sistem Informasi </a></li>
                           <li><a href="<?php echo site_url('pengumuman');?>">Pengumuman</a></li>
                           <li><a href="<?php echo site_url('agenda');?>">Agenda</a></li>
                           <li><a href="<?php echo site_url('download');?>">Download</a></li>
