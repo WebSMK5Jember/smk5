@@ -1,13 +1,13 @@
 <?php
-class admin_si_jurusan extends CI_Controller{
+class admin_si_mapel extends CI_Controller{
 	function __construct(){
 		parent::__construct();
 		if($this->session->userdata('logon') !=TRUE){
             $url=base_url('login_si');
             redirect($url);
         };
-		$this->load->model('m_jurusan');
-$this->load->model('m_kelas');
+		$this->load->model('M_mapel');
+
 		$this->load->model('m_pengguna');
 		$this->load->library('upload');
 	}
@@ -15,46 +15,46 @@ $this->load->model('m_kelas');
 
 	function index(){
 
-		$x['data']=$this->m_jurusan->get_all_jurusan();
-		$this->load->view('apps/admin/v_jurusan',$x);
+		$x['data']=$this->M_mapel->get_all_mapel();
+		$this->load->view('apps/admin/v_mapel',$x);
 	}
 	
-	function simpan_jurusan(){
+	function simpan_mapel(){
 	
 	                        $kode=strip_tags($this->input->post('kode'));
 	                        $nama=strip_tags($this->input->post('xnama'));
 	                       
 						
 
-							$this->m_jurusan->simpan_jurusan($kode,$nama);
+							$this->M_mapel->simpan_mapel($kode,$nama);
 							echo $this->session->set_flashdata('msg','success');
-							redirect('admin_si_jurusan');
+							redirect('admin_si_mapel');
 					
 	}
 	
-	function update_jurusan(){
+	function update_mapel(){
 				
 	           
 	                         $kode=strip_tags($this->input->post('kode'));
 	                        $nama=strip_tags($this->input->post('xnama'));
 
-							$this->m_jurusan->update_jurusan($kode,$nama);
+							$this->m_mapel->update_mapel($kode,$nama);
 							echo $this->session->set_flashdata('msg','info');
-							redirect('admin_si_jurusan');
+							redirect('admin_si_mapel');
 	                    
 	                }
 	           
 
 	
 
-	function hapus_jurusan(){
+	function hapus_mapel(){
 		$kode=$this->input->post('kode');
 		
-		$this->m_jurusan->hapus_jurusan($kode);
-		$this->m_jurusan->hapus_jurusan_kelas($kode);
+		$this->M_mapel->hapus_mapel($kode);
+		
 		
 		echo $this->session->set_flashdata('msg','success-hapus');
-		redirect('admin_si_jurusan');
+		redirect('admin_si_mapel');
 	}
 
 }
