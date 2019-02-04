@@ -453,7 +453,7 @@
                                             <?php
                                                 foreach ($kelas->result_array() as $m) {
                                                   $KODE_KELAS=$m['KODE_KELAS'];
-                                                  $nama_kelas=$m['NAMA_KELAS'];
+                                                  $nama_kelas=$m['kelas_nama'];
 
                                             ?>
 
