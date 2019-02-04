@@ -11,7 +11,7 @@ class M_kelas extends CI_Model{
 
 
 	function simpan_kelas($kode,$kode_jurusan,$nama){
-		$hsl=$this->db->query("INSERT INTO tbl_kelas (kelas_id, kelas_jurusan_id, kelas_nama) VALUES ('$kode',$kode_jurusan,'$nama')");
+		$hsl=$this->db->query("INSERT INTO tbl_kelas (kelas_id, kelas_jurusan_id, kelas_nama) VALUES ('$kode','$kode_jurusan','$nama')");
 		return $hsl;
 	}
 

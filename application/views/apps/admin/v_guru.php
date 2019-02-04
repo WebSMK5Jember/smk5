@@ -154,9 +154,12 @@
           					<th>Photo</th>
                     <th>Kode Guru</th>
                   
-                    <th>Piket</th>
+                    
           					<th>NIP</th>
+
           					<th>Nama</th>
+                        <th>Jabatan</th>
+                    <th>Mata Pelajaran</th>
                     <th>Alamat</th>
                     <th>Jumlah Jam</th>
                     <th>Jenis Kelamin</th>
@@ -173,7 +176,10 @@
           					foreach ($data->result_array() as $i) :
           					   $no++;
           					   $kode=$i['guru_id'];
-                    
+                    $mapel_id=$i['guru_mapel_id'];
+                    $mapel_nama=$i['NAMA_MAPEL'];
+                     $jabatan_id=$i['guru_jabatan_id'];
+                    $jabatan_nama=$i['NAMA_JABATAN'];
                        $piket_id=$i['guru_piket_id'];
                        $piket_nama=$i['HARI'];
           					   $nip=$i['guru_nip'];
@@ -198,9 +204,12 @@
                   <td><?php echo $kode;?></td>
                   
                   
-                  <td><?php echo $piket_nama;?></td>
+                  
                   <td><?php echo $nip;?></td>
+
         				  <td><?php echo $nama;?></td>
+                  <td><?php echo $jabatan_nama;?></td>
+                  <td><?php echo $mapel_nama;?></td>
                   <td><?php echo $alamat;?></td>
                   <td><?php echo $jam;?></td>
                   <?php if($jenkel=='L'):?>
@@ -637,7 +646,7 @@
                                                   $nama_jabatan=$j['NAMA_JABATAN'];
 
                                             ?>
-                                            <?php if($id_jabatan==$KODE_JABATAN):?>
+                                            <?php if($id_jabatan==$jabatan_id):?>
                                               <option value="<?php echo $id_jabatan;?>" selected><?php echo $nama_jabatan;?></option>
                                             <?php else:?>
                                               <option value="<?php echo $id_jabatan;?>"><?php echo $nama_jabatan;?></option>
@@ -658,7 +667,7 @@
                                                   $nama_mapel=$m['NAMA_MAPEL'];
 
                                             ?>
-                                            <?php if($id_mapel==$KODE_MAPEL):?>
+                                            <?php if($id_mapel==$mapel_id):?>
                                               <option value="<?php echo $id_mapel;?>" selected><?php echo $nama_mapel;?></option>
                                             <?php else:?>
                                               <option value="<?php echo $id_mapel;?>"><?php echo $nama_mapel;?></option>
@@ -679,7 +688,7 @@
                                                   $nama_piket=$p['HARI'];
 
                                             ?>
-                                            <?php if($id_piket==$KODE_PIKET):?>
+                                            <?php if($id_piket==$piket_id):?>
                                               <option value="<?php echo $id_piket;?>" selected><?php echo $nama_piket;?></option>
                                             <?php else:?>
                                               <option value="<?php echo $id_piket;?>"><?php echo $nama_piket;?></option>

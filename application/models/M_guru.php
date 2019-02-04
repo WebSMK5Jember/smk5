@@ -4,7 +4,7 @@ class M_guru extends CI_Model{
 	
 	
 	function get_all_guru_piket(){
-		$hsl=$this->db->query("SELECT tbl_guru.*,HARI FROM tbl_guru JOIN tabel_piket ON guru_piket_id=KODE_PIKET");
+		$hsl=$this->db->query("SELECT tbl_guru.*,tabel_piket.*,tabel_mapel.*,tabel_jabatan.* FROM tbl_guru JOIN tabel_piket ON guru_piket_id=KODE_PIKET JOIN tabel_mapel ON guru_mapel_id=KODE_MAPEL JOIN tabel_jabatan ON guru_jabatan_id=KODE_JABATAN" );
 		return $hsl;
 	}
 function get_all_guru(){

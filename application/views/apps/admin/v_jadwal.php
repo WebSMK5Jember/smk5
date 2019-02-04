@@ -136,7 +136,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Data Mata Pelajaran
+        Data Jadwal Pelajaran
         <small></small>
       </h1>
       <ol class="breadcrumb">
@@ -448,10 +448,10 @@
                              <div class="form-group">
                                         <label for="inputUserName" class="col-sm-4 control-label">KELAS</label>
                                         <div class="col-sm-7">
-                                          <select name="xmapel" class="form-control" required>
+                                          <select name="kodekelas" class="form-control" required>
                                             <option value="">-Pilih-</option>
                                             <?php
-                                                foreach ($KELAS->result_array() as $m) {
+                                                foreach ($kelas->result_array() as $m) {
                                                   $KODE_KELAS=$m['KODE_KELAS'];
                                                   $nama_kelas=$m['NAMA_KELAS'];
 
@@ -466,7 +466,7 @@
                                     <div class="form-group">
                                         <label for="inputUserName" class="col-sm-4 control-label">Mapel</label>
                                         <div class="col-sm-7">
-                                          <select name="xmapel" class="form-control" required>
+                                          <select name="kodemapel" class="form-control" required>
                                             <option value="">-Pilih-</option>
                                             <?php
                                                 foreach ($mapel->result_array() as $m) {
@@ -484,10 +484,10 @@
                                     <div class="form-group">
                                         <label for="inputUserName" class="col-sm-4 control-label">Guru</label>
                                         <div class="col-sm-7">
-                                          <select name="xmapel" class="form-control" required>
+                                          <select name="kodeguru" class="form-control" required>
                                             <option value="">-Pilih-</option>
                                             <?php
-                                                foreach ($mapel->result_array() as $m) {
+                                                foreach ($guru->result_array() as $m) {
                                                   $id_guru=$m['guru_id'];
                                                   $nama_guru=$m['guru_nama'];
 
@@ -513,13 +513,13 @@
                                     <div class="form-group">
                                         <label for="inputUserName" class="col-sm-4 control-label">Ruangan</label>
                                         <div class="col-sm-7">
-                                            <input type="time" name="xnama" class="form-control" id="inputUserName" placeholder="ruang" required>
+                                            <input type="text" name="xnama" class="form-control" id="inputUserName" placeholder="ruang" required>
                                         </div>
                                     </div>
                               <div class="form-group">
                                         <label for="inputUserName" class="col-sm-4 control-label">Hari</label>
                                         <div class="col-sm-7">
-                                            <input type="time" name="xnama" class="form-control" id="inputUserName" placeholder="Hari" required>
+                                            <input type="text" name="xnama" class="form-control" id="inputUserName" placeholder="Hari" required>
                                         </div>
                                     </div>
 

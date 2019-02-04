@@ -2,7 +2,7 @@
 class M_jadwal extends CI_Model{
 
 	function get_all_jadwal(){
-		$hsl=$this->db->query("SELECT tabel_jadwal.*,KODE_KELAS, KODE_MAPEL, KODE_GURU, JAM , RUANG, HARI FROM tabel_jadwal JOIN tbl_kelas ON 'tabel_jadwal.KODE_KELAS'='tbl_kelas.kelas_id' JOIN tabel_mapel ON  
+		$hsl=$this->db->query("SELECT tabel_jadwal.*,tbl_kelas.*, tabel_mapel.* FROM tabel_jadwal JOIN tbl_kelas ON 'tabel_jadwal.KODE_KELAS'='tbl_kelas.kelas_id' JOIN tabel_mapel ON  
 			'tabel_jadwal.KODE_MAPEL_JADWAL'='tabel_mapel.KODE_MAPEL' JOIN tbl_guru ON 'tabel_jadwal.KODE_GURU'='tbl_guru.guru_id'");
 		return $hsl;
 	}
