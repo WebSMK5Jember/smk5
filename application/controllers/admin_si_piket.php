@@ -6,7 +6,7 @@ class admin_si_piket extends CI_Controller{
             $url=base_url('login_si');
             redirect($url);
         };
-		$this->load->model('M_mapel');
+		$this->load->model('M_piket');
 
 		$this->load->model('m_pengguna');
 		$this->load->library('upload');
@@ -15,32 +15,32 @@ class admin_si_piket extends CI_Controller{
 
 	function index(){
 
-		$x['data']=$this->M_mapel->get_all_mapel();
+		$x['data']=$this->M_piket->get_all_piket();
 		$this->load->view('apps/admin/v_piket',$x);
 	}
 	
 	function simpan_piket(){
 	
-	                        $kode=strip_tags($this->input->post('kode'));
-	                        $nama=strip_tags($this->input->post('xnama'));
+	                        $kode=strip_tags($this->input->post('kodepiket'));
+	                        $nama=strip_tags($this->input->post('hari'));
 	                       
 						
 
-							$this->M_mapel->simpan_mapel($kode,$nama);
+							$this->M_piket->simpan_piket($kode,$nama);
 							echo $this->session->set_flashdata('msg','success');
-							redirect('admin_si_mapel');
+							redirect('admin_si_piket');
 					
 	}
 	
 	function update_piket(){
 				
 	           
-	                         $kode=strip_tags($this->input->post('kode'));
-	                        $nama=strip_tags($this->input->post('xnama'));
+	                         $kode=strip_tags($this->input->post('kodepiket'));
+	                        $nama=strip_tags($this->input->post('hari'));
 
-							$this->m_mapel->update_mapel($kode,$nama);
+							$this->M_piket->update_piket($kode,$nama);
 							echo $this->session->set_flashdata('msg','info');
-							redirect('admin_si_mapel');
+							redirect('admin_si_piket');
 	                    
 	                }
 	           
@@ -48,9 +48,9 @@ class admin_si_piket extends CI_Controller{
 	
 
 	function hapus_piket(){
-		$kode=$this->input->post('kode');
+		$kode=$this->input->post('kodepiket');
 		
-		$this->M_mapel->hapus_mapel($kode);
+		$this->M_piket->hapus_piket($kode);
 		
 		
 		echo $this->session->set_flashdata('msg','success-hapus');

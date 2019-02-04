@@ -118,6 +118,15 @@
           </a>
         </li>
 
+<li>
+          <a href="<?php echo base_url().'admin_si_piket'?>">
+            <i class="fa fa-graduation-cap"></i> <span>Data Master Piket Guru</span>
+            <span class="pull-right-container">
+              <small class="label pull-right"></small>
+            </span>
+          </a>
+        </li>
+
 
          <li>
           <a href="<?php echo base_url().'login_si/logout'?>">
