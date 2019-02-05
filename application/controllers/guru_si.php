@@ -38,6 +38,18 @@ Class guru_si extends CI_Controller{
         
     }
 
+    public function jadwal_guru(){
+        $id = $this->session->userdata('id_session');
+        $list = $this->ModelGuru->get_jadwal($id)->result();
+        $data = array(
+            "menu"      => "MenuGuru",
+            "panelbody" => "apps/guru/jadwal_guru",
+            "list"      => $list
+        );
+        $this->load->view('panelbody', $data);
+        
+    }
+
    
     
 }

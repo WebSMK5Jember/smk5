@@ -183,7 +183,7 @@
           					foreach ($data->result_array() as $i) :
           					   $no++;
 
-                       $kode=$i['KODE_JADWAL'];
+                      
           					  
           					   $KODE_KELAS=$i['KODE_KELAS'];
                        
@@ -456,7 +456,7 @@
                                             <option value="">-Pilih-</option>
                                             <?php
                                                 foreach ($kelas->result_array() as $m) {
-                                                  $KODE_KELAS=$m['KODE_KELAS'];
+                                                  $KODE_KELAS=$m['kelas_id'];
                                                   $nama_kelas=$m['kelas_nama'];
 
                                             ?>
@@ -474,7 +474,7 @@
                                             <option value="">-Pilih-</option>
                                             <?php
                                                 foreach ($mapel->result_array() as $m) {
-                                                  $id_mapel=$m['KODE_MAPEL_JADWAL'];
+                                                  $id_mapel=$m['KODE_MAPEL'];
                                                   $nama_mapel=$m['NAMA_MAPEL'];
 
                                             ?>
@@ -576,8 +576,8 @@
                                             <option value="">-Pilih-</option>
                                             <?php
                                                 foreach ($KELAS->result_array() as $m) {
-                                                  $KODE_KELAS=$m['KODE_KELAS'];
-                                                  $nama_kelas=$m['NAMA_KELAS'];
+                                                  $KODE_KELAS=$m['kelas_id'];
+                                                  $nama_kelas=$m['kelas_nama'];
 
                                             ?>
 
@@ -594,7 +594,7 @@
                                             <option value="">-Pilih-</option>
                                             <?php
                                                 foreach ($mapel->result_array() as $m) {
-                                                  $id_mapel=$m['KODE_MAPEL_JADWAL'];
+                                                  $id_mapel=$m['KODE_MAPEL'];
                                                   $nama_mapel=$m['NAMA_MAPEL'];
 
                                             ?>
@@ -752,7 +752,7 @@
         <script type="text/javascript">
                 $.toast({
                     heading: 'Success',
-                    text: "Jurusan Berhasil disimpan ke database.",
+                    text: "Jadwal Berhasil disimpan ke database.",
                     showHideTransition: 'slide',
                     icon: 'success',
                     hideAfter: false,
@@ -764,7 +764,7 @@
         <script type="text/javascript">
                 $.toast({
                     heading: 'Info',
-                    text: "Mata Pelajaran berhasil di update",
+                    text: "Jadwal Pelajaran berhasil di update",
                     showHideTransition: 'slide',
                     icon: 'info',
                     hideAfter: false,
@@ -776,7 +776,7 @@
         <script type="text/javascript">
                 $.toast({
                     heading: 'Success',
-                    text: "Mata Pelajaran Berhasil dihapus.",
+                    text: "Jadwal Pelajaran Berhasil dihapus.",
                     showHideTransition: 'slide',
                     icon: 'success',
                     hideAfter: false,
