@@ -13,7 +13,7 @@ class siswa_khusus_dashboard extends CI_Controller{
 	function index(){
      $x['siswa']=$this->m_siswa->get_siswa();
  if($this->session->userdata('akses')=='4'){
-     $this->load->view('khusus/saran',$x);
+     $this->load->view('khusus/siswa/saran',$x);
     }else{
       redirect('administrator');
     }
