@@ -42,7 +42,14 @@ class Agenda extends CI_Controller{
             $this->pagination->initialize($config);
             $x['page'] =$this->pagination->create_links();
 		$x['data']=$this->m_agenda->agenda_perpage($offset,$limit);
+		$this->load->view('beranda/header',$x);
+	
+
 		$this->load->view('depan/v_agenda',$x);
+		
+	
+	$this->load->view('beranda/footer',$x);
+
 		
 	}
 

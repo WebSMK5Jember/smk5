@@ -40,6 +40,7 @@ class admin_si_jadwal extends CI_Controller{
 	}
 	
 	function update_jadwal(){
+				$kode=strip_tags($this->input->post('kode'));
 						$KODE_KELAS=strip_tags($this->input->post('kodekelas'));
 							$KODE_MAPEL=strip_tags($this->input->post('kodemapel'));
 							$KODE_GURU=strip_tags($this->input->post('kodeguru'));

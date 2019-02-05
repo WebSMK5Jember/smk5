@@ -9,7 +9,7 @@ class admin_si_kelas extends CI_Controller{
 		
 		$this->load->model('m_kelas');
 		$this->load->model('m_pengguna');
-		$this->load->model('m_jurusan');
+	
 		$this->load->library('upload');
 	}
 
@@ -17,7 +17,7 @@ class admin_si_kelas extends CI_Controller{
 	function index(){
 		
 		
-		$x['jurusan']=$this->m_jurusan->get_all_jurusan();
+		$x['jurusan']=$this->m_kelas->get_all_jurusan();
 		$x['data']=$this->m_kelas->get_all_kelas();
 		
 		$this->load->view('apps/admin/v_kelas',$x);

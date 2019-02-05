@@ -42,7 +42,9 @@ class Guru extends CI_Controller{
             $this->pagination->initialize($config);
             $x['page'] =$this->pagination->create_links();
 						$x['data']=$this->m_guru->guru_perpage($offset,$limit);
+						$this->load->view('beranda/header',$x);
 						$this->load->view('depan/v_guru',$x);
+						$this->load->view('beranda/footer',$x);
 	}
 
 }

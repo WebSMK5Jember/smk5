@@ -43,9 +43,9 @@
 
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
-      <ul class="sidebar-menu">
+<ul class="sidebar-menu">
         <li class="header">Menu Utama</li>
-        <li>
+        <li class="active">
           <a href="<?php echo base_url().'admin_si_dashboard'?>">
             <i class="fa fa-home"></i> <span>Dashboard</span>
             <span class="pull-right-container">
@@ -53,9 +53,9 @@
             </span>
           </a>
         </li>
+       
         
-
-    <li>
+        <li>
           <a href="<?php echo base_url().'admin_si_guru'?>">
             <i class="fa fa-graduation-cap"></i> <span>Data Guru</span>
             <span class="pull-right-container">
@@ -63,7 +63,8 @@
             </span>
           </a>
         </li>
-       <li>
+    
+    <li>
           <a href="<?php echo base_url().'admin_si_siswa'?>">
             <i class="fa fa-graduation-cap"></i> <span>Data Siswa</span>
             <span class="pull-right-container">
@@ -98,7 +99,7 @@
           </a>
         </li>
 
-       <li>
+ <li>
           <a href="<?php echo base_url().'admin_si_mapel'?>">
             <i class="fa fa-graduation-cap"></i> <span>Data Mata Pelajaran</span>
             <span class="pull-right-container">
@@ -106,6 +107,16 @@
             </span>
           </a>
         </li>
+
+<li>
+          <a href="<?php echo base_url().'admin_si_piket'?>">
+            <i class="fa fa-graduation-cap"></i> <span>Data Master Piket Guru</span>
+            <span class="pull-right-container">
+              <small class="label pull-right"></small>
+            </span>
+          </a>
+        </li>
+
 
          <li>
           <a href="<?php echo base_url().'login_si/logout'?>">

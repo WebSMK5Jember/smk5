@@ -40,7 +40,7 @@
         <div class="col-xs-8">
           <div class="checkbox icheck">
             <label>
-              <p>Silahkan Masuk Terlebih Dahulu
+              <p>Khusus Siswa/Guru/Admin
             </label>
           </div>
         </div>

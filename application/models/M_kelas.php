@@ -8,6 +8,11 @@ class M_kelas extends CI_Model{
 
 	
 
+	function get_all_jurusan(){
+		$hsl=$this->db->query("SELECT * FROM tabel_jurusan");
+		return $hsl;
+	}
+
 
 
 	function simpan_kelas($kode,$kode_jurusan,$nama){

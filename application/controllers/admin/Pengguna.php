@@ -121,14 +121,14 @@ class Pengguna extends CI_Controller{
                     		$nohp=$this->input->post('xkontak');
 							$level=$this->input->post('xlevel');
                             if (empty($password) && empty($konfirm_password)) {
-                            	$this->m_pengguna->update_pengguna_tanpa_pass($kode,$nama,$jenkel,$username,$password,$email,$nohp,$level,$gambar);
+                            	$this->m_pengguna->update_pengguna_tanpa_pass($kode,$nama,$jenkel,$username,$password,$email,$level,$gambar);
 	                    		echo $this->session->set_flashdata('msg','info');
 	               				redirect('admin/pengguna');
      						}elseif ($password <> $konfirm_password) {
      							echo $this->session->set_flashdata('msg','error');
 	               				redirect('admin/pengguna');
      						}else{
-	               				$this->m_pengguna->update_pengguna($kode,$nama,$jenkel,$username,$password,$email,$nohp,$level,$gambar);
+	               				$this->m_pengguna->update_pengguna($kode,$nama,$jenkel,$username,$password,$email,$level,$gambar);
 	                    		echo $this->session->set_flashdata('msg','info');
 	               				redirect('admin/pengguna');
 	               			}
@@ -149,14 +149,14 @@ class Pengguna extends CI_Controller{
                     $nohp=$this->input->post('xkontak');
 					$level=$this->input->post('xlevel');
 	            	if (empty($password) && empty($konfirm_password)) {
-                       	$this->m_pengguna->update_pengguna_tanpa_pass_dan_gambar($kode,$nama,$jenkel,$username,$password,$email,$nohp,$level);
+                       	$this->m_pengguna->update_pengguna_tanpa_pass_dan_gambar($kode,$nama,$jenkel,$username,$password,$email,$level);
 	                    echo $this->session->set_flashdata('msg','info');
 	               		redirect('admin/pengguna');
      				}elseif ($password <> $konfirm_password) {
      					echo $this->session->set_flashdata('msg','error');
 	               		redirect('admin/pengguna');
      				}else{
-	               		$this->m_pengguna->update_pengguna_tanpa_gambar($kode,$nama,$jenkel,$username,$password,$email,$nohp,$level);
+	               		$this->m_pengguna->update_pengguna_tanpa_gambar($kode,$nama,$jenkel,$username,$password,$email,$level);
 	                    echo $this->session->set_flashdata('msg','warning');
 	               		redirect('admin/pengguna');
 	               	}

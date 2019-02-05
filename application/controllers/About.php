@@ -12,6 +12,9 @@ class About extends CI_Controller{
 		$x['tot_siswa']=$this->db->get('tbl_siswa')->num_rows();
 		$x['tot_files']=$this->db->get('tbl_files')->num_rows();
 		$x['tot_agenda']=$this->db->get('tbl_agenda')->num_rows();
+		$this->load->view('beranda/header',$x);
 	$this->load->view('depan/v_about',$x);
+	
+	$this->load->view('beranda/footer',$x);
 	}
 }

@@ -7,13 +7,13 @@ class M_jadwal extends CI_Model{
 		return $hsl;
 	}
 
-	function simpan_jadwal($kodekelas,$kodemapel,$kodeguru, $jam,$ruang,$hari){
-		$hsl=$this->db->query("INSERT INTO tabel_jadwal (KODE_KELAS, KODE_MAPEL_JADWAL, KODE_GURU, JAM , RUANG, HARI) VALUES ('$kodekelas','$kodemapel','$kodeguru','$jam','$ruang','$hari')");
+	function simpan_jadwal($KODE_KELAS,$KODE_MAPEL,$KODE_GURU, $JAM,$RUANG,$HARI){
+		$hsl=$this->db->query("INSERT INTO tabel_jadwal (KODE_KELAS, KODE_MAPEL_JADWAL, KODE_GURU, JAM , RUANG, HARI) VALUES ('$KODE_KELAS','$KODE_MAPEL','$KODE_GURU','$JAM','$RUANG','$HARI')");
 		return $hsl;
 	}
 
-function update_jadwal($kode,$kodekelas,$kodemapel,$kodeguru, $jam,$ruang,$hari){
-		$hsl=$this->db->query("UPDATE tabel_jadwal SET KODE_KELAS='$kodekelas', KODE_MAPEL_JADWAL='$kodemapel',KODE_GURU='$kodeguru',JAM='$jam', RUANG='$ruang', HARI='$hari' WHERE KODE_JADWAL='$kode'");
+function update_jadwal($kode,$KODE_KELAS,$KODE_MAPEL,$KODE_GURU, $JAM,$RUANG,$HARI){
+		$hsl=$this->db->query("UPDATE tabel_jadwal SET KODE_KELAS='$KODE_KELAS', KODE_MAPEL_JADWAL='$KODE_MAPEL',KODE_GURU='$KODE_GURU',JAM='$JAM', RUANG='$RUANG', HARI='$HARI' WHERE KODE_JADWAL='$kode'");
 		return $hsl;
 	}
 

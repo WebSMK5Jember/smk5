@@ -60,6 +60,7 @@ class admin_si_guru extends CI_Controller{
 							$tgl_lahir=strip_tags($this->input->post('xtgl_lahir'));
 							
 							$dataUser = array(
+								'pengguna_username' => $this ->input ->post('kode'),  
 			'pengguna_nama' => $this ->input ->post('xnama'),
     		'pengguna_guru' => $this ->input ->post('kode'),
     		'pengguna_password' => md5($this ->input ->post('kode')),
@@ -90,6 +91,7 @@ class admin_si_guru extends CI_Controller{
 							$tgl_lahir=strip_tags($this->input->post('xtgl_lahir'));
 							
 							$dataUser = array(
+								'pengguna_username' => $this ->input ->post('kode'),  
 			'pengguna_nama' => $this ->input ->post('xnama'),
     		'pengguna_guru' => $this ->input ->post('kode'),
     		'pengguna_password' => md5($this ->input ->post('kode')),

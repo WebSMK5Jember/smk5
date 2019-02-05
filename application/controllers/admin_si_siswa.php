@@ -58,6 +58,7 @@ class admin_si_siswa extends CI_Controller{
                                $ijasah=strip_tags($this->input->post('xijasah'));
                             
                              $dataUser = array(
+               'pengguna_username' => $this ->input ->post('xnis'),              	
             'pengguna_nama' => $this ->input ->post('xnama'),
     		'pengguna_siswa' => $this ->input ->post('xnis'),
     		'pengguna_password' => md5($this ->input ->post('xnis')),
@@ -92,6 +93,7 @@ class admin_si_siswa extends CI_Controller{
 
 
                              $dataUser = array(
+                             	 'pengguna_username' => $this ->input ->post('xnis'),  
              'pengguna_nama' => $this ->input ->post('xnama'),
     		'pengguna_siswa' => $this ->input ->post('xnis'),
     		'pengguna_password' => md5($this ->input ->post('xnis')),

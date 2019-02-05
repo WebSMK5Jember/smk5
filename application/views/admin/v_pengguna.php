@@ -501,7 +501,7 @@
                                         <div class="col-sm-7">
                                             <select class="form-control" name="xlevel" required>
                                                 <option value="1">Administrator</option>
-                                                <option value="2">Author</option>
+                                                
                                             </select>
                                         </div>
                                     </div>
@@ -608,10 +608,16 @@
                                             <select class="form-control" name="xlevel" required>
 											<?php if($pengguna_level=='1'):?>
                                                 <option value="1" selected>Administrator</option>
-                                                <option value="2">Author</option>
+                                                <option value="2">Kepala Sekolah</option>
+                                                <option value="3" selected>Guru</option>
+                                                <option value="4" selected>Siswa</option>
 											<?php else:?>
 												<option value="1">Administrator</option>
-                                                <option value="2" selected>Author</option>
+
+                                                <option value="2" selected>Kepala Sekolah</option>
+
+                                                <option value="3" selected>Guru</option>
+                                                <option value="4" selected>Siswa</option>
 											<?php endif;?>
                                             </select>
                                         </div>

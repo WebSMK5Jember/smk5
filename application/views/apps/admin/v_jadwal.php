@@ -43,9 +43,9 @@
 
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
-      <ul class="sidebar-menu">
+  <ul class="sidebar-menu">
         <li class="header">Menu Utama</li>
-        <li>
+        <li class="active">
           <a href="<?php echo base_url().'admin_si_dashboard'?>">
             <i class="fa fa-home"></i> <span>Dashboard</span>
             <span class="pull-right-container">
@@ -53,9 +53,9 @@
             </span>
           </a>
         </li>
+       
         
-
-    <li>
+        <li>
           <a href="<?php echo base_url().'admin_si_guru'?>">
             <i class="fa fa-graduation-cap"></i> <span>Data Guru</span>
             <span class="pull-right-container">
@@ -63,7 +63,8 @@
             </span>
           </a>
         </li>
-       <li>
+    
+    <li>
           <a href="<?php echo base_url().'admin_si_siswa'?>">
             <i class="fa fa-graduation-cap"></i> <span>Data Siswa</span>
             <span class="pull-right-container">
@@ -98,7 +99,7 @@
           </a>
         </li>
 
-       <li>
+ <li>
           <a href="<?php echo base_url().'admin_si_mapel'?>">
             <i class="fa fa-graduation-cap"></i> <span>Data Mata Pelajaran</span>
             <span class="pull-right-container">
@@ -107,14 +108,15 @@
           </a>
         </li>
 
-          <li>
-          <a href="<?php echo base_url().'admin_si_jadwal'?>">
-            <i class="fa fa-graduation-cap"></i> <span>Data Jadwal Pelajaran</span>
+<li>
+          <a href="<?php echo base_url().'admin_si_piket'?>">
+            <i class="fa fa-graduation-cap"></i> <span>Data Master Piket Guru</span>
             <span class="pull-right-container">
               <small class="label pull-right"></small>
             </span>
           </a>
         </li>
+
 
          <li>
           <a href="<?php echo base_url().'login_si/logout'?>">
@@ -180,12 +182,14 @@
           					$no=0;
           					foreach ($data->result_array() as $i) :
           					   $no++;
+
+                       $kode=$i['KODE_JADWAL'];
           					  
           					   $KODE_KELAS=$i['KODE_KELAS'];
                        
                        $KODE_MAPEL=$i['KODE_MAPEL_JADWAL'];
 
-                       $KODE_GURU=$i['guru_id'];
+                       $KODE_GURU=$i['KODE_GURU'];
 
                        $jam=$i['JAM'];
 
@@ -446,7 +450,7 @@
                     <div class="modal-body">
 
                              <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">KELAS</label>
+                                        <label for="inputUserName" class="col-sm-4 control-label">Kelas</label>
                                         <div class="col-sm-7">
                                           <select name="kodekelas" class="form-control" required>
                                             <option value="">-Pilih-</option>
@@ -505,7 +509,7 @@
                                     <div class="form-group">
                                         <label for="inputUserName" class="col-sm-4 control-label">JAM</label>
                                         <div class="col-sm-7">
-                                            <input type="time" name="xnama" class="form-control" id="inputUserName" placeholder="Jam" required>
+                                            <input type="time" name="jam" class="form-control" id="inputUserName" placeholder="Jam" required>
                                         </div>
                                     </div>
 
@@ -513,13 +517,13 @@
                                     <div class="form-group">
                                         <label for="inputUserName" class="col-sm-4 control-label">Ruangan</label>
                                         <div class="col-sm-7">
-                                            <input type="text" name="xnama" class="form-control" id="inputUserName" placeholder="ruang" required>
+                                            <input type="text" name="ruang" class="form-control" id="inputUserName" placeholder="ruang" required>
                                         </div>
                                     </div>
                               <div class="form-group">
                                         <label for="inputUserName" class="col-sm-4 control-label">Hari</label>
                                         <div class="col-sm-7">
-                                            <input type="text" name="xnama" class="form-control" id="inputUserName" placeholder="Hari" required>
+                                            <input type="text" name="Hari" class="form-control" id="inputUserName" placeholder="Hari" required>
                                         </div>
                                     </div>
 
@@ -539,11 +543,12 @@
 
   <!--Modal Edit Album-->
   <?php foreach ($data->result_array() as $i) :
+    $kode=$i['KODE_JADWAL'];
              $KODE_KELAS=$i['KODE_KELAS'];
                        
                        $KODE_MAPEL=$i['KODE_MAPEL_JADWAL'];
 
-                       $KODE_GURU=$i['guru_id'];
+                       $KODE_GURU=$i['KODE_GURU'];
 
                        $jam=$i['JAM'];
 
@@ -567,7 +572,7 @@
                                    <div class="form-group">
                                         <label for="inputUserName" class="col-sm-4 control-label">KELAS</label>
                                         <div class="col-sm-7">
-                                          <select name="xmapel" class="form-control" required>
+                                          <select name="kodekelas" class="form-control" required>
                                             <option value="">-Pilih-</option>
                                             <?php
                                                 foreach ($KELAS->result_array() as $m) {
@@ -585,7 +590,7 @@
  <div class="form-group">
                                         <label for="inputUserName" class="col-sm-4 control-label">Mapel</label>
                                         <div class="col-sm-7">
-                                          <select name="xmapel" class="form-control" required>
+                                          <select name="kodemapel" class="form-control" required>
                                             <option value="">-Pilih-</option>
                                             <?php
                                                 foreach ($mapel->result_array() as $m) {
@@ -604,7 +609,7 @@
                                      <div class="form-group">
                                         <label for="inputUserName" class="col-sm-4 control-label">Guru</label>
                                         <div class="col-sm-7">
-                                          <select name="xmapel" class="form-control" required>
+                                          <select name="kodeguru" class="form-control" required>
                                             <option value="">-Pilih-</option>
                                             <?php
                                                 foreach ($mapel->result_array() as $m) {
@@ -623,7 +628,7 @@
                                       <div class="form-group">
                                         <label for="inputUserName" class="col-sm-4 control-label">JAM</label>
                                         <div class="col-sm-7">
-                                            <input type="time" name="xnama" class="form-control" id="inputUserName" placeholder="Jam" required>
+                                            <input type="time" name="jam" class="form-control" id="inputUserName" placeholder="Jam" required>
                                         </div>
                                     </div>
 
@@ -631,13 +636,13 @@
                                     <div class="form-group">
                                         <label for="inputUserName" class="col-sm-4 control-label">Ruangan</label>
                                         <div class="col-sm-7">
-                                            <input type="time" name="xnama" class="form-control" id="inputUserName" placeholder="ruang" required>
+                                            <input type="time" name="ruang" class="form-control" id="inputUserName" placeholder="ruang" required>
                                         </div>
                                     </div>
                               <div class="form-group">
                                         <label for="inputUserName" class="col-sm-4 control-label">Hari</label>
                                         <div class="col-sm-7">
-                                            <input type="time" name="xnama" class="form-control" id="inputUserName" placeholder="Hari" required>
+                                            <input type="time" name="Hari" class="form-control" id="inputUserName" placeholder="Hari" required>
                                         </div>
                                     </div>
 
@@ -656,11 +661,12 @@
 	<!--Modal Edit Album-->
 
 	 <?php foreach ($data->result_array() as $i) :
+    $kode=$i['KODE_JADWAL'];
               $KODE_KELAS=$i['KODE_KELAS'];
                        
                        $KODE_MAPEL=$i['KODE_MAPEL_JADWAL'];
 
-                       $KODE_GURU=$i['guru_id'];
+                       $KODE_GURU=$i['KODE_GURU'];
 
                        $jam=$i['JAM'];
 
