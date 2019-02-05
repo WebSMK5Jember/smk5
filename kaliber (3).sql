@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 04, 2019 at 04:15 AM
+-- Generation Time: Feb 05, 2019 at 12:10 PM
 -- Server version: 10.1.22-MariaDB
 -- PHP Version: 7.1.4
 
@@ -89,13 +89,23 @@ INSERT INTO `tabel_jabatan` (`KODE_JABATAN`, `NAMA_JABATAN`) VALUES
 --
 
 CREATE TABLE `tabel_jadwal` (
+  `KODE_JADWAL` int(5) NOT NULL,
   `KODE_KELAS` varchar(5) DEFAULT NULL,
-  `KODE_MAPEL` varchar(5) DEFAULT NULL,
+  `KODE_MAPEL_JADWAL` varchar(5) DEFAULT NULL,
   `KODE_GURU` varchar(5) DEFAULT NULL,
   `JAM` time DEFAULT NULL,
   `RUANG` varchar(10) DEFAULT NULL,
-  `HARI` date DEFAULT NULL
+  `HARI` varchar(5) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tabel_jadwal`
+--
+
+INSERT INTO `tabel_jadwal` (`KODE_JADWAL`, `KODE_KELAS`, `KODE_MAPEL_JADWAL`, `KODE_GURU`, `JAM`, `RUANG`, `HARI`) VALUES
+(1, 'a01', 'BDJW', 'a0001', '01:00:00', '5', '0000-'),
+(2, 'a01', 'AGAMA', '7', '01:00:00', '5', 'senin'),
+(3, 'a01', 'AGAMA', '1111', '02:00:00', '5', '5');
 
 -- --------------------------------------------------------
 
@@ -113,8 +123,7 @@ CREATE TABLE `tabel_jurusan` (
 --
 
 INSERT INTO `tabel_jurusan` (`KODE_JURUSAN`, `NAMA_JURUSAN`) VALUES
-('ank', 'analisis kimia'),
-('tkj', 'teknik komputer jaringan dan apa');
+('tkj', 'teknik komputer dan jaringan');
 
 -- --------------------------------------------------------
 
@@ -158,6 +167,7 @@ CREATE TABLE `tabel_mapel` (
 --
 
 INSERT INTO `tabel_mapel` (`KODE_MAPEL`, `NAMA_MAPEL`) VALUES
+('AGAMA', 'PENDIDIKAN AGAMA DAN BUDI PEKE'),
 ('BDJW', 'BAHASA DAERAH JAWA'),
 ('BING', 'BAHASA INGGRIS'),
 ('DDBT', 'DASAR-DASAR BUDIDAYA TANAMAN');
@@ -230,12 +240,19 @@ CREATE TABLE `tabel_prakerin` (
 --
 
 CREATE TABLE `tabel_saran` (
-  `KODE_SARAN` varchar(5) NOT NULL,
-  `KODE_ADMIN` varchar(5) DEFAULT NULL,
-  `DESCRIPSI_SARAN` varchar(200) DEFAULT NULL,
-  `DESCRIPSI_KRITIK` varchar(200) DEFAULT NULL,
-  `TANGGAL_KRITIKSARAN` date DEFAULT NULL
+  `KODE_SARAN` int(5) NOT NULL,
+  `NAMA_SISWA` varchar(50) DEFAULT NULL,
+  `DESCRIPSI_SARAN` varchar(500) DEFAULT NULL,
+  `TANGGAL_KRITIKSARAN` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `STATUS_SARAN` int(11) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tabel_saran`
+--
+
+INSERT INTO `tabel_saran` (`KODE_SARAN`, `NAMA_SISWA`, `DESCRIPSI_SARAN`, `TANGGAL_KRITIKSARAN`, `STATUS_SARAN`) VALUES
+(1, 'halo', '&lt;p&gt;sx&lt;/p&gt;\r\n', '2019-02-05 10:49:30', 1);
 
 -- --------------------------------------------------------
 
@@ -425,7 +442,10 @@ INSERT INTO `tbl_guru` (`guru_id`, `guru_mapel_id`, `guru_jabatan_id`, `guru_pik
 ('7', '0', '', '', '927482658274998', 'Irma Cantika', '', 0, 'P', 'Padang', '25 September 1993', '4200d2514abf45755943526b74474c16.jpg', '2017-01-26 13:45:11'),
 ('8', '0', '', '', '-', 'Ririn Febriesta', '', 0, 'P', 'Padang', '27 September 1994', NULL, '2017-01-27 04:28:23'),
 ('a', '0', '1', '', 'a', 'akua', 'sa', 3, 'L', 'as', '2019-02-21', NULL, '2019-02-04 00:51:44'),
-('a0001', '0', '2', '1', '1', 'saiful', 'jember', 24, 'L', 'jember', '2019-02-12', NULL, '2019-02-03 14:05:13');
+('a0001', '0', '2', '1', '1', 'saiful', 'jember', 24, 'L', 'jember', '2019-02-12', NULL, '2019-02-03 14:05:13'),
+('a2244', 'AGAMA', '', '1', 'a333', '333', 'eee3', 4, 'L', 'eee', '2019-02-09', NULL, '2019-02-04 06:56:01'),
+('e3116', 'BING', '2', '1', 'aaa', 'sasasas', 'jejejejeje', 3, 'L', 'jember', '2019-02-16', NULL, '2019-02-05 06:38:27'),
+('e322', 'BING', '2', '1', '2222', 'sasasasasas', 'sas', 4, 'L', 'sas', '2019-02-20', NULL, '2019-02-05 06:41:20');
 
 -- --------------------------------------------------------
 
@@ -494,7 +514,7 @@ CREATE TABLE `tbl_kelas` (
 --
 
 INSERT INTO `tbl_kelas` (`kelas_id`, `kelas_jurusan_id`, `kelas_nama`) VALUES
-('a01', 'ank', 'aku');
+('a01', 'tkj', 'x tkj 1');
 
 -- --------------------------------------------------------
 
@@ -566,17 +586,19 @@ CREATE TABLE `tbl_pengguna` (
 --
 
 INSERT INTO `tbl_pengguna` (`pengguna_id`, `pengguna_nama`, `pengguna_moto`, `pengguna_jenkel`, `pengguna_username`, `pengguna_siswa`, `pengguna_guru`, `pengguna_password`, `pengguna_email`, `pengguna_level`, `pengguna_register`, `pengguna_photo`) VALUES
-(1, 'M Fikri Setiadi', 'Just do it', 'L', 'admin', NULL, NULL, 'e10adc3949ba59abbe56e057f20f883e', 'fikrifiver97@gmail.com', '1', '2016-09-03 06:07:55', 'db5dec647062751f2fb236b9bc3f1c54.png'),
-(2, 'saiful', NULL, 'L', 'admin2', NULL, NULL, '202cb962ac59075b964b07152d234b70', 'saiful@gmail.com', '1', '2019-02-02 03:48:59', '1ebdfd8afc16f156a88d95723db64cd5.png'),
 (3, NULL, NULL, NULL, NULL, 'aku', NULL, '89ccfac87d8d06db06bf3211cb2d69ed', NULL, '4', '2019-02-02 04:58:17', NULL),
-(7, NULL, NULL, NULL, NULL, NULL, '12345', 'f1887d3f9e6ee7a32fe5e76f4ab80d63', NULL, '3', '2019-02-02 07:38:14', NULL),
 (8, NULL, NULL, NULL, NULL, NULL, '12345', '827ccb0eea8a706c4c34a16891f84e7b', NULL, '3', '2019-02-02 07:41:43', NULL),
 (9, NULL, NULL, NULL, NULL, NULL, '12345', 'e10adc3949ba59abbe56e057f20f883e', NULL, '3', '2019-02-02 07:41:58', NULL),
 (10, NULL, NULL, NULL, NULL, NULL, '12222', 'bae175604f2b1309ea6a36453190b70e', NULL, '3', '2019-02-02 07:42:21', NULL),
 (11, NULL, NULL, NULL, NULL, '111', NULL, '698d51a19d8a121ce581499d7b701668', NULL, '4', '2019-02-02 08:14:54', NULL),
 (12, 'saiful', NULL, NULL, NULL, NULL, 'a0001', 'cea2b707931a57f569fd6d961637d002', NULL, '3', '2019-02-03 14:05:13', NULL),
 (13, 'akua', NULL, NULL, NULL, NULL, 'a', '0cc175b9c0f1b6a831c399e269772661', NULL, '3', '2019-02-04 00:51:44', NULL),
-(14, 'aaa', NULL, NULL, NULL, NULL, '1111', 'b59c67bf196a4758191e42f76670ceba', NULL, '3', '2019-02-04 03:08:05', NULL);
+(14, 'aaa', NULL, NULL, NULL, NULL, '1111', 'b59c67bf196a4758191e42f76670ceba', NULL, '3', '2019-02-04 03:08:05', NULL),
+(15, '333', NULL, NULL, NULL, NULL, 'a2244', 'ccfd3f7012cdadb009bd7e76819809a3', NULL, '3', '2019-02-04 06:56:01', NULL),
+(16, 'sasasas', NULL, NULL, NULL, NULL, 'e3116', '5625f092441f044c0fe26237d59f7e14', NULL, '3', '2019-02-05 06:38:27', NULL),
+(17, 'sasasasasas', NULL, NULL, 'e322', NULL, 'e322', '2c00bf6ab3e5efc51becca108bbc7572', NULL, '3', '2019-02-05 06:41:20', NULL),
+(18, 'saifull', NULL, 'L', 'admin', NULL, NULL, '21232f297a57a5a743894a0e4a801fc3', 'saiful@gmail.com', '1', '2019-02-05 07:24:56', '9aafeef3c7604d1e652ea903c324c215.jpg'),
+(19, 'saiful', NULL, NULL, 'a1111', 'a1111', NULL, 'e0754b3d0bd14501c88a993b2235c331', NULL, '4', '2019-02-05 10:05:21', NULL);
 
 -- --------------------------------------------------------
 
@@ -624,7 +646,8 @@ INSERT INTO `tbl_pengunjung` (`pengunjung_id`, `pengunjung_tanggal`, `pengunjung
 (931, '2019-02-01 00:19:37', '::1', 'Chrome'),
 (932, '2019-02-01 23:01:01', '::1', 'Chrome'),
 (933, '2019-02-03 14:47:04', '::1', 'Chrome'),
-(934, '2019-02-04 01:22:57', '::1', 'Chrome');
+(934, '2019-02-04 01:22:57', '::1', 'Chrome'),
+(935, '2019-02-05 02:45:08', '::1', 'Chrome');
 
 -- --------------------------------------------------------
 
@@ -653,6 +676,7 @@ CREATE TABLE `tbl_siswa` (
 INSERT INTO `tbl_siswa` (`siswa_nis`, `siswa_nama`, `siswa_jenkel`, `siswa_kelas_id`, `siswa_tempat_lahir`, `siswa_tgl_lahir`, `siswa_alamat`, `siswa_ortu`, `siswa_asal_sekolah`, `no_ijasah`, `siswa_photo`) VALUES
 ('111', 'saiful', 'L', '11', 'jember', '2019-02-22', 'jj', 'jhj', 'jj', '9', NULL),
 ('a', 'a', 'L', '1', 'a', '2019-02-01', 'aa', 'aa', 'q', '1', NULL),
+('a1111', 'saiful', 'L', 'a01', 'jember', '2019-02-06', 'jember', 'jshd', 'sk', '2', NULL),
 ('er', 's', 'L', '10', 'a', '2019-02-15', 'aa', 'aa', 'aaa', '0', NULL),
 ('q', 'az', 'L', '10', 's', '2019-02-08', 's', 's', 'sd', '1', NULL);
 
@@ -685,7 +709,7 @@ INSERT INTO `tbl_tulisan` (`tulisan_id`, `tulisan_judul`, `tulisan_isi`, `tulisa
 (25, 'SMKN 5 Bangun Puluhan Screen House', '<p><strong>RADAR JEMBER.ID&nbsp;</strong>&ndash; Program revitalisasi SMK yang dilaksanakan di SMKN 5 Jember atas kerja sama Kementerian Pendidikan dengan Belanda menunjukkan progres yang luar biasa. Kualitas guru dan siswa SMKN 5 Jember terdongkrak. Selain memperbaiki kurikulum pembelajaran, ada juga penguatan kelembagaan.</p>\r\n\r\n<p>Termasuk inovasi Pembelajaran melalui<strong>&nbsp;p</strong>engembangan&nbsp;<em>teaching factory</em>&nbsp;sebagai pusat kreativitas dan inovasi. Berbagai bentuk inovasi pembelajaran telah dilakukan dengan membentuk kelompok-kelompok siswa. Untuk mengelola sebuah pekerjaan, contohnya dengan&nbsp;<em>proyek individu&nbsp;</em>yang dikelola oleh&nbsp;<em>small group</em>&nbsp;(3-4 siswa).</p>\r\n\r\n<p>Kelompok ini merencanakan, melaksanakan, dan mengevaluasi hasil kerja yang dibiayai oleh kelompoknya dengan melakukan kontrak produksi benih dengan PT Benih Citra Asia, dengan luas minimal 1.000 m2. &ldquo;Sebagai tempat pelatihannya di sekolah, difasilitasi 22 bangunan&nbsp;<em>screen house</em>&nbsp;untuk pembelajaran, sekaligus sebagai aplikasi dari model pembelajaran&nbsp;<em>teaching factory,&rdquo;&nbsp;</em>kata &nbsp;Kepala SMKN 5 Jember Sofyan Hadi Purwanto SE MT.</p>\r\n\r\n<p>Sofyan Hadi mengatakan, proyek percontohan revitalisasi SMK Pertanian di SMK Negeri 5 Jember merupakan kerja sama dengan Belanda. &ldquo;Pada tahun pertama telah dihasilkan beberapa kemajuan, di antaranya penguatan kelembagaan (pemutakhiran program kerja sama industri dan lokal SC), pengembangan kurikulum dan inovasi pembelajaran,&rdquo; ujarnya.</p>\r\n\r\n<p>PT Benih Citra Asia Jember salah satu mitra dari dunia kerja untuk sinkronisasi kurikulum antara sekolah dan kebutuhan dunia kerja/industri. Untuk meningkatkan keterampilan tamatan, pelaksanaan praktik kerja industri, dan rekrutmen tamatan telah dilakukan dan disepakati.</p>\r\n\r\n<p>Presiden Jokowi menginstruksikan dalam Inpres Nomor 9 Tahun 2016 tentang Revitalisasi SMK untuk dilakukan reorientasi&nbsp;pendidikan. Selanjutnya, pelatihan vokasi ke arah&nbsp;<em>demand driven.&nbsp;</em>Sehingga kurikulum, materi pembelajaran, praktik kerja, pengujian, serta sertifikasi sesuai dengan permintaan dunia usaha dan industri.</p>\r\n\r\n<p>Reorientasi pendidikan vokasi ini sangat penting dalam beberapa aspek, dengan tujuan agar sekolah menengah kejuruan dapat menyediakan tenaga kerja terampil yang siap kerja. Di berbagai sektor ekonomi seperti pertanian, industri, pariwisata, bahkan ekonomi kreatif. &ldquo;Selain itu, agar dapat mengurangi permasalahan pengangguran usia muda,&rdquo; ujarnya.</p>\r\n\r\n<p>Revitalisasi SMK diharapkan mampu memberikan dampak positif terhadap peningkatan mutu SMK dengan dua orientasi baru. Pertama, mengantisipasi datangnya gelombang Revolusi Industri 4.0 dengan segala teknologi desruptif yang menyertainya. Kedua, orientasi pengembangan keunggulan potensi wilayah sebagai keunggulan nasional untuk menciptakan daya saing bangsa. &ldquo;Pilar pertama memperkokoh jalinan SMK dengan dunia usaha dan industri abad XXI, pilar kedua mendongkrak keunggulan lokal menjadi keunggulan global,&rdquo; terangnya.&nbsp;<strong>(*)</strong></p>\r\n', '2018-08-08 13:26:08', 6, 'Prestasi', 6, 'fd4e3bcf7e92897514fe358c71fa0a2f.jpg', 1, 'M Fikri Setiadi', 0, 'smkn-5-bangun-puluhan-screen-house'),
 (26, 'SMKN 5 Jember DapatSertifikasi Jaminan Standar Siswa', '<p><strong>Jember Hari Ini &ndash;&nbsp;</strong>SMK Negeri 5 Jember mendapatkan lisensi sertifikasi profesi, sebagai jaminan standar kelayakan siswa, agar bisa diterima bekerja di dalam negeri dan luar negeri.</p>\r\n\r\n<p>Menurut Kepala SMKN 5 Jember, Rinoto, lisensi sertifikasi profesi yang diberikan Badan Nasional Sertifikasi Profesi, menjadi tantangan bagi sekolah untuk meningkatkan kemampuan siswa. Untuk mendapatkan lisensi sertifikasi profesi, siswa harus melakukan uji kompetensi sehingga siswa dinilai layak mendapatkan lisensi.</p>\r\n\r\n<p>Tahun ini, SMK Negeri 5 Jember menjadi tempat uji kompetensi untuk mendapatkan lisensi sertifikasi profesi untuk seluruh SMK negeri di Jember. Saat ini SMK Negeri 5 Jember berkoordinasi dengan kepala SMK negeri melalui Musyawarah Kerja Kepala Sekolah (MKKS) SMK negeri di Kabupaten Jember.</p>\r\n\r\n<p>Rinoto menambahkan, nantinya seluruh SMK negeri di Jember akan mendapatkan lisensi sertifikasi profesi, sehingga mampu bersaing menghadapi tantangan pasar bebas Masyarakat Ekonomi ASEAN (MEA).&nbsp;</p>\r\n', '2019-02-04 01:26:30', 6, 'Prestasi', 0, 'fde5e4dee768ba59e25e168c6203b35c.jpg', 2, 'saiful', 0, 'smkn-5-jember-dapatsertifikasi-jaminan-standar-siswa'),
 (27, 'Jokowi Singgung Antek Asing, Habiburokhman: Jangan Baper Deh', '<p><strong>Jakarta</strong>&nbsp;- Capres petahana Joko Widodo atau&nbsp;<a href=\"https://www.detik.com/pemilu/\">Jokowi&nbsp;</a>menyindir elite yang kerap menyebut dirinya antek asing namun justru penyindir itulah yang disebutnya antek asing. Juru bicara Direktorat Advokasi Badan Pemenangan Nasional (BPN) Prabowo Subianto-Sandiaga Uno,&nbsp;<a href=\"https://www.detik.com/pemilu/\">Habiburokhman</a>, meminta Jokowi tidak terlalu terbawa perasaan soal antek asing.<br />\r\n<br />\r\n&quot;Pak Prabowo tidak pernah tendensius ke individu tertentu dalam menyampaikan kritikan. Soal antek asing itu mengacu pada sistem yang dianggap lebih menguntungkan asing daripada kepentingan nasional, dan kita harus perbaiki sistem tersebut,&quot; kata Habiburokhman kepada wartawan, Senin (4/2/2019).&nbsp;<br />\r\n<br />\r\n&quot;Jadi jangan ada yang baper deh,&quot; imbuh dia.<br />\r\n&nbsp;</p>\r\n\r\n<table>\r\n	<tbody>\r\n		<tr>\r\n			<td>\r\n			<p><strong>Baca juga:&nbsp;</strong><a href=\"https://news.detik.com/read/2019/02/04/072952/4412953/10/jokowi-singgung-konsultan-asing-tkn-itu-warning\">Jokowi Singgung Konsultan Asing, TKN: Itu Warning</a></p>\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n\r\n<p><br />\r\nHabiburokhman meminta semua pihak berbicara tentang sistem, bukan individu. Kalau soal individu, Habiburokhman yakin&nbsp;<a href=\"https://www.detik.com/pemilu/\">Prabowo Subianto</a>&nbsp;jauh dari sosok antek asing.<br />\r\n<br />\r\n&quot;Kita harus lebih sering bicara sistem daripada personal. Kalau personal, sosok Pak Prabowo kurang apa? Beliau cucu dan anak pejuang, beliau sendiri puluhan tahun berjuang untuk NKRI, nggak ceritanya dituduh antek asing,&quot; tegas politikus Partai Gerindra itu.<br />\r\n&nbsp;</p>\r\n\r\n<table>\r\n	<tbody>\r\n		<tr>\r\n			<td>\r\n			<p><strong>Baca juga:&nbsp;</strong><a href=\"https://news.detik.com/read/2019/02/04/063737/4412917/10/sederet-sindiran-jokowi-habis-propaganda-rusia-terbit-konsultan-asing\">Sederet Sindiran Jokowi: Habis &#39;Propaganda Rusia&#39; Terbit &#39;Konsultan Asing&#39;</a></p>\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n\r\n<p><br />\r\nSoal antek asing,&nbsp;<a href=\"https://www.detik.com/pemilu/\">Jokowi&nbsp;</a>awalnya menuding elite yang menggunakan propaganda Rusia memakai jasa konsultan asing. Namun Jokowi tidak menyebut siapa elite tersebut.<br />\r\n<br />\r\n&quot;Yang dipakai konsultan asing. Nggak mikir ini memecah belah rakyat atau tidak, nggak mikir mengganggu ketenangan rakyat atau tidak, ini membuat rakyat khawatir atau tidak, membuat rakyat takut, nggak peduli. Konsultannya konsultan asing. Terus yang antek asing siapa?&quot; kata Jokowi di De Tjolomadoe, Kabupaten Karanganyar, Jawa Tengah, Minggu (3/2).<br />\r\n<br />\r\n&quot;Kanan sampai kita disuguhi kebohongan yang terus-menerus. Rakyat kita sudah pintar, baik yang di kota atau di desa,&quot; imbuh Jokowi.<br />\r\n&nbsp;</p>\r\n\r\n<table>\r\n	<tbody>\r\n		<tr>\r\n			<td>\r\n			<p><strong>Baca juga:&nbsp;</strong><a href=\"https://news.detik.com/read/2019/02/03/143520/4412428/10/jokowi-jangan-tunjuk-tunjuk-antek-asing-padahal-dia-sendiri-antek-asing\">Jokowi: Jangan Tunjuk-tunjuk Antek Asing Padahal Dia Sendiri Antek Asing</a></p>\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n\r\n<p><br />\r\nJokowi menambahkan, dia kerap dituding sebagai antek asing. Jokowi menepisnya dengan kebijakan pemerintah mengambil alih Blok Rokan, Blok Mahakam, dan kepemilikan saham 51 persen di PT Freeport.&nbsp;<br />\r\n<br />\r\n&quot;Yang antek asing siapa? Jangan begitu dong. Maksudnya, jangan nunjuk-nunjuk dia antek asing, padahal dirinya sendiri antek asing. Nggak mempan antek asing, ganti lagi,&quot; ujar Jokowi.&nbsp;</p>\r\n', '2019-02-04 02:32:17', 2, 'Politik', 0, '95bec55c1290fd6aedac99e19a6b1f67.jpeg', 2, 'saiful', 0, 'jokowi-singgung-antek-asing,-habiburokhman:-jangan-baper-deh'),
-(28, '7 Fakta dan Statistik Kemenangan MU atas ', '<p>&nbsp;</p>\r\n\r\n<p><strong>Jakarta</strong>&nbsp;-&nbsp;<a href=\"https://www.detik.com/tag/manchester-united/\">Manchester United</a>&nbsp;kembali ke jalur kemenangan setelah mengalahkan Leicester City 1-0. Beberapa torehan dibuat The Red Devils dari laga tersebut.<br />\r\n&nbsp;</p>\r\n\r\n<p><ins><img alt=\"\" src=\"https://wtf2.forkcdn.com/www/delivery/lg.php?bannerid=0&amp;campaignid=0&amp;zoneid=4563&amp;loc=https%3A%2F%2Fsport.detik.com%2Fsepakbola%2Fliga-inggris%2Fd-4413026%2F7-fakta-dan-statistik-kemenangan-mu-atas-leicester&amp;referer=https%3A%2F%2Fsport.detik.com%2F&amp;cb=9397d770d1\" style=\"height:0px; width:0px\" /></ins></p>\r\n\r\n<p>Berikut data dan fakta kemenangan Manchester United atas&nbsp;<a href=\"https://www.detik.com/tag/leicester-city/\">Leicester City</a>, seperti dihimpun oleh Opta:<br />\r\n<br />\r\n- Manchester United meraih kemenangan kelimanya secara beruntun untuk laga away di semua kompetisi. Ini adalah untuk kali pertama terjadi setelah Oktober 2012 bersama Sir Alex Ferguson.<br />\r\n<br />\r\n- Di Premier League, Leicester City paling sering kalah dari Manchester United dibanding klub lain. The Foxes tumbang 17 kali di tangan Setan Merah.<br />\r\n<br />\r\n- Leicester City sedang dalam tren buruk, mereka menelan empat kekalahan dan sekali imbang di lima laga terakhir.&nbsp;<br />\r\n&nbsp;</p>\r\n\r\n<table>\r\n	<tbody>\r\n		<tr>\r\n			<td>\r\n			<p><strong>Baca juga:&nbsp;</strong><a href=\"https://sport.detik.com/sepakbola/read/2019/02/04/004232/4412842/72/pujian-rashford-untuk-pogba\">Pujian Rashford untuk Pogba</a></p>\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n\r\n<p><br />\r\n<br />\r\n- Sejak&nbsp;<a href=\"https://www.detik.com/tag/ole-gunnar-solskjaer/\">Solskjaer</a>&nbsp;menjadi manajer interim MU, Paul Pogba merupakan pemain dengan keterlibatan menciptakan gol paling banyak di Premier League. Dia terlibat dalam terciptanya 11 gol (6 gol dan 11 assist).<br />\r\n<br />\r\n- Sejak melakoni debut di Manchester United,&nbsp;<a href=\"https://www.detik.com/tag/marcus-rashford/\">Marcus Rasford</a>&nbsp;sudah membuat 42 gol di semua kompetisi. Dalam kurun yang sama tak ada pemain MU lain yang lebih tajam darinya.<br />\r\n<br />\r\n- MU meraih poin paling banyak sejak Ole Gunnar Solskjaer datang dibanding klub lain pada periode yang sama. MU mengoleksi 22 poin hasil dari tujuh kemenangan, sekali imbang, dan belum pernah kalah.<br />\r\n<br />\r\n- Di usianya yang baru 21 tahun dan 95 hari, Marcus Rashford sudah mencatatkan 100 penampilan di Premier League. Rekor itu hanya kalah dari Ryan Giggs yang membuat 100 penampilan bersama MU di usia 21 tahun dan 74 hari.<br />\r\n&nbsp;</p>\r\n\r\n<table>\r\n	<tbody>\r\n		<tr>\r\n			<td>\r\n			<p><strong>Baca juga:&nbsp;</strong><a href=\"https://sport.detik.com/sepakbola/read/2019/02/04/063644/4412916/72/andai-solskjaer-datang-ke-mu-di-awal-musim\">Andai Solskjaer Datang ke MU di Awal Musim...</a></p>\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n', '2019-02-04 02:34:48', 13, 'Olah Raga', 2, '70a67bf0a3871b91e63059aa10b6ec27.jpeg', 2, 'saiful', 0, '7-fakta-dan-statistik-kemenangan-mu-atas');
+(28, '7 Fakta dan Statistik Kemenangan MU atas ', '<p>&nbsp;</p>\r\n\r\n<p><strong>Jakarta</strong>&nbsp;-&nbsp;<a href=\"https://www.detik.com/tag/manchester-united/\">Manchester United</a>&nbsp;kembali ke jalur kemenangan setelah mengalahkan Leicester City 1-0. Beberapa torehan dibuat The Red Devils dari laga tersebut.<br />\r\n&nbsp;</p>\r\n\r\n<p><ins><img alt=\"\" src=\"https://wtf2.forkcdn.com/www/delivery/lg.php?bannerid=0&amp;campaignid=0&amp;zoneid=4563&amp;loc=https%3A%2F%2Fsport.detik.com%2Fsepakbola%2Fliga-inggris%2Fd-4413026%2F7-fakta-dan-statistik-kemenangan-mu-atas-leicester&amp;referer=https%3A%2F%2Fsport.detik.com%2F&amp;cb=9397d770d1\" style=\"height:0px; width:0px\" /></ins></p>\r\n\r\n<p>Berikut data dan fakta kemenangan Manchester United atas&nbsp;<a href=\"https://www.detik.com/tag/leicester-city/\">Leicester City</a>, seperti dihimpun oleh Opta:<br />\r\n<br />\r\n- Manchester United meraih kemenangan kelimanya secara beruntun untuk laga away di semua kompetisi. Ini adalah untuk kali pertama terjadi setelah Oktober 2012 bersama Sir Alex Ferguson.<br />\r\n<br />\r\n- Di Premier League, Leicester City paling sering kalah dari Manchester United dibanding klub lain. The Foxes tumbang 17 kali di tangan Setan Merah.<br />\r\n<br />\r\n- Leicester City sedang dalam tren buruk, mereka menelan empat kekalahan dan sekali imbang di lima laga terakhir.&nbsp;<br />\r\n&nbsp;</p>\r\n\r\n<table>\r\n	<tbody>\r\n		<tr>\r\n			<td>\r\n			<p><strong>Baca juga:&nbsp;</strong><a href=\"https://sport.detik.com/sepakbola/read/2019/02/04/004232/4412842/72/pujian-rashford-untuk-pogba\">Pujian Rashford untuk Pogba</a></p>\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n\r\n<p><br />\r\n<br />\r\n- Sejak&nbsp;<a href=\"https://www.detik.com/tag/ole-gunnar-solskjaer/\">Solskjaer</a>&nbsp;menjadi manajer interim MU, Paul Pogba merupakan pemain dengan keterlibatan menciptakan gol paling banyak di Premier League. Dia terlibat dalam terciptanya 11 gol (6 gol dan 11 assist).<br />\r\n<br />\r\n- Sejak melakoni debut di Manchester United,&nbsp;<a href=\"https://www.detik.com/tag/marcus-rashford/\">Marcus Rasford</a>&nbsp;sudah membuat 42 gol di semua kompetisi. Dalam kurun yang sama tak ada pemain MU lain yang lebih tajam darinya.<br />\r\n<br />\r\n- MU meraih poin paling banyak sejak Ole Gunnar Solskjaer datang dibanding klub lain pada periode yang sama. MU mengoleksi 22 poin hasil dari tujuh kemenangan, sekali imbang, dan belum pernah kalah.<br />\r\n<br />\r\n- Di usianya yang baru 21 tahun dan 95 hari, Marcus Rashford sudah mencatatkan 100 penampilan di Premier League. Rekor itu hanya kalah dari Ryan Giggs yang membuat 100 penampilan bersama MU di usia 21 tahun dan 74 hari.<br />\r\n&nbsp;</p>\r\n\r\n<table>\r\n	<tbody>\r\n		<tr>\r\n			<td>\r\n			<p><strong>Baca juga:&nbsp;</strong><a href=\"https://sport.detik.com/sepakbola/read/2019/02/04/063644/4412916/72/andai-solskjaer-datang-ke-mu-di-awal-musim\">Andai Solskjaer Datang ke MU di Awal Musim...</a></p>\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n', '2019-02-04 02:34:48', 13, 'Olah Raga', 3, '70a67bf0a3871b91e63059aa10b6ec27.jpeg', 2, 'saiful', 0, '7-fakta-dan-statistik-kemenangan-mu-atas');
 
 --
 -- Indexes for dumped tables
@@ -721,9 +745,10 @@ ALTER TABLE `tabel_jabatan`
 -- Indexes for table `tabel_jadwal`
 --
 ALTER TABLE `tabel_jadwal`
+  ADD PRIMARY KEY (`KODE_JADWAL`),
   ADD KEY `FK_REFERENCE_2` (`KODE_KELAS`),
   ADD KEY `FK_REFERENCE_3` (`KODE_GURU`),
-  ADD KEY `FK_REFERENCE_5` (`KODE_MAPEL`);
+  ADD KEY `FK_REFERENCE_5` (`KODE_MAPEL_JADWAL`);
 
 --
 -- Indexes for table `tabel_jurusan`
@@ -779,8 +804,7 @@ ALTER TABLE `tabel_prakerin`
 -- Indexes for table `tabel_saran`
 --
 ALTER TABLE `tabel_saran`
-  ADD PRIMARY KEY (`KODE_SARAN`),
-  ADD KEY `FK_REFERENCE_19` (`KODE_ADMIN`);
+  ADD PRIMARY KEY (`KODE_SARAN`);
 
 --
 -- Indexes for table `tabel_tempat_prakerin`
@@ -897,6 +921,11 @@ ALTER TABLE `tbl_tulisan`
 --
 
 --
+-- AUTO_INCREMENT for table `tabel_jadwal`
+--
+ALTER TABLE `tabel_jadwal`
+  MODIFY `KODE_JADWAL` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
 -- AUTO_INCREMENT for table `tabel_laporguru`
 --
 ALTER TABLE `tabel_laporguru`
@@ -906,6 +935,11 @@ ALTER TABLE `tabel_laporguru`
 --
 ALTER TABLE `tabel_laporsarana`
   MODIFY `KODE_LAPORSRANA` int(5) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `tabel_saran`
+--
+ALTER TABLE `tabel_saran`
+  MODIFY `KODE_SARAN` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `tbl_agenda`
 --
@@ -950,7 +984,7 @@ ALTER TABLE `tbl_log_aktivitas`
 -- AUTO_INCREMENT for table `tbl_pengguna`
 --
 ALTER TABLE `tbl_pengguna`
-  MODIFY `pengguna_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `pengguna_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 --
 -- AUTO_INCREMENT for table `tbl_pengumuman`
 --
@@ -960,7 +994,7 @@ ALTER TABLE `tbl_pengumuman`
 -- AUTO_INCREMENT for table `tbl_pengunjung`
 --
 ALTER TABLE `tbl_pengunjung`
-  MODIFY `pengunjung_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=935;
+  MODIFY `pengunjung_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=936;
 --
 -- AUTO_INCREMENT for table `tbl_tulisan`
 --
