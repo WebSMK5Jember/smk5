@@ -10,7 +10,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>SMKN 5 Jember | Masukkan Saran</title>
+  <title>SMKN 5 Jember | Lapor Sarana</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <link rel="shorcut icon" type="text/css" href="<?php echo base_url().'assets/images/favicon.png'?>">
@@ -55,8 +55,17 @@
       <ul class="sidebar-menu">
         <li class="header">Menu Utama</li>
         <li>
-          <a href="<?php echo base_url().'siswa_khusus_dashboard'?>">
-            <i class="fa fa-home"></i> <span>Pengisian Saran Siswa</span>
+          <a href="<?php echo base_url().'guru_khusus_dashboard'?>">
+            <i class="fa fa-home"></i> <span>Laporkan Sarana</span>
+            <span class="pull-right-container">
+              <small class="label pull-right"></small>
+            </span>
+          </a>
+        </li>
+		
+		<li>
+          <a href="<?php echo base_url().'guru_khusus_laporguru'?>">
+            <i class="fa fa-home"></i> <span>Laporkan Guru</span>
             <span class="pull-right-container">
               <small class="label pull-right"></small>
             </span>
@@ -84,13 +93,13 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Saran
+        Lapor Guru
         <small></small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Saran</a></li>
-        <li class="active">Masukkan Saran</li>
+        <li><a href="#">Lapor Guru</a></li>
+        <li class="active">Masukkan Laporan Guru</li>
       </ol>
     </section>
 
@@ -100,16 +109,16 @@
       <!-- SELECT2 EXAMPLE -->
       <div class="box box-default">
         <div class="box-header with-border">
-          <h3 class="box-title">Masukkan Saran</h3>
+          <h3 class="box-title">Masukkan Laporan Guru</h3>
         </div>
 
-		<form action="<?php echo base_url().'siswa_khusus_dashboard/kirim_saran'?>" method="post" enctype="multipart/form-data">
+		<form action="<?php echo base_url().'guru_khusus_laporguru/kirim_lapor_guru'?>" method="post" enctype="multipart/form-data">
 
         <!-- /.box-header -->
         <div class="box-body">
           <div class="row">
             <div class="col-md-10">
-              <input type="text" name="xnama" class="form-control" placeholder="Masukkan Nama yang Valid" required/>
+              <input type="text" name="xnama" class="form-control" placeholder="Masukkan Nama Guru yang akan Di laporkan" required/>
             </div>
             <!-- /.col -->
             <div class="col-md-2">
@@ -132,12 +141,12 @@
 
           <div class="box box-danger">
             <div class="box-header">
-              <h3 class="box-title">Saran Siswa</h3>
+              <h3 class="box-title">Keterangan Laporan</h3>
             </div>
            
 
 			<div class="form-group">
-                                        <textarea placeholder="Masukkan Saran Anda" class="form-control" name="xdes" required rows="10"></textarea>
+                                        <textarea placeholder="Masukkan Keterangan dari Laporan Anda" class="form-control" name="xlaporguru" required rows="10"></textarea>
                                     </div>
 
             </div>

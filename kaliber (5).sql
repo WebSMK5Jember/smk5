@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 05, 2019 at 12:10 PM
+-- Generation Time: Feb 05, 2019 at 04:07 PM
 -- Server version: 10.1.22-MariaDB
 -- PHP Version: 7.1.4
 
@@ -133,10 +133,18 @@ INSERT INTO `tabel_jurusan` (`KODE_JURUSAN`, `NAMA_JURUSAN`) VALUES
 
 CREATE TABLE `tabel_laporguru` (
   `KODE_LAPORGURU` int(5) NOT NULL,
-  `KODE_GURU` varchar(5) DEFAULT NULL,
+  `NAMA_GURU_LAPOR` varchar(50) DEFAULT NULL,
   `ISI_LAPORGURU` varchar(300) DEFAULT NULL,
-  `TANGGAL_LAPORGURU` date DEFAULT NULL
+  `TANGGAL_LAPORGURU` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `STATUS_LAPOR_GURU` int(11) DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tabel_laporguru`
+--
+
+INSERT INTO `tabel_laporguru` (`KODE_LAPORGURU`, `NAMA_GURU_LAPOR`, `ISI_LAPORGURU`, `TANGGAL_LAPORGURU`, `STATUS_LAPOR_GURU`) VALUES
+(1, 'saiful', '', '2019-02-05 14:41:25', 1);
 
 -- --------------------------------------------------------
 
@@ -146,10 +154,18 @@ CREATE TABLE `tabel_laporguru` (
 
 CREATE TABLE `tabel_laporsarana` (
   `KODE_LAPORSRANA` int(5) NOT NULL,
-  `NIS` varchar(10) DEFAULT NULL,
+  `NAMA_SARANA` varchar(50) DEFAULT NULL,
   `ISI_LAPORAN` varchar(300) DEFAULT NULL,
-  `TANGGAL_LAPORANSARANA` date DEFAULT NULL
+  `TANGGAL_LAPORANSARANA` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `STATUS_LAPOR_SARANA` int(11) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tabel_laporsarana`
+--
+
+INSERT INTO `tabel_laporsarana` (`KODE_LAPORSRANA`, `NAMA_SARANA`, `ISI_LAPORAN`, `TANGGAL_LAPORANSARANA`, `STATUS_LAPOR_SARANA`) VALUES
+(1, 'meja', '', '2019-02-05 14:42:07', 1);
 
 -- --------------------------------------------------------
 
@@ -252,7 +268,8 @@ CREATE TABLE `tabel_saran` (
 --
 
 INSERT INTO `tabel_saran` (`KODE_SARAN`, `NAMA_SISWA`, `DESCRIPSI_SARAN`, `TANGGAL_KRITIKSARAN`, `STATUS_SARAN`) VALUES
-(1, 'halo', '&lt;p&gt;sx&lt;/p&gt;\r\n', '2019-02-05 10:49:30', 1);
+(1, 'halo', '&lt;p&gt;sx&lt;/p&gt;\r\n', '2019-02-05 10:49:30', 1),
+(2, 'halo', 'jdbj', '2019-02-05 11:34:35', 1);
 
 -- --------------------------------------------------------
 
@@ -707,8 +724,8 @@ CREATE TABLE `tbl_tulisan` (
 
 INSERT INTO `tbl_tulisan` (`tulisan_id`, `tulisan_judul`, `tulisan_isi`, `tulisan_tanggal`, `tulisan_kategori_id`, `tulisan_kategori_nama`, `tulisan_views`, `tulisan_gambar`, `tulisan_pengguna_id`, `tulisan_author`, `tulisan_img_slider`, `tulisan_slug`) VALUES
 (25, 'SMKN 5 Bangun Puluhan Screen House', '<p><strong>RADAR JEMBER.ID&nbsp;</strong>&ndash; Program revitalisasi SMK yang dilaksanakan di SMKN 5 Jember atas kerja sama Kementerian Pendidikan dengan Belanda menunjukkan progres yang luar biasa. Kualitas guru dan siswa SMKN 5 Jember terdongkrak. Selain memperbaiki kurikulum pembelajaran, ada juga penguatan kelembagaan.</p>\r\n\r\n<p>Termasuk inovasi Pembelajaran melalui<strong>&nbsp;p</strong>engembangan&nbsp;<em>teaching factory</em>&nbsp;sebagai pusat kreativitas dan inovasi. Berbagai bentuk inovasi pembelajaran telah dilakukan dengan membentuk kelompok-kelompok siswa. Untuk mengelola sebuah pekerjaan, contohnya dengan&nbsp;<em>proyek individu&nbsp;</em>yang dikelola oleh&nbsp;<em>small group</em>&nbsp;(3-4 siswa).</p>\r\n\r\n<p>Kelompok ini merencanakan, melaksanakan, dan mengevaluasi hasil kerja yang dibiayai oleh kelompoknya dengan melakukan kontrak produksi benih dengan PT Benih Citra Asia, dengan luas minimal 1.000 m2. &ldquo;Sebagai tempat pelatihannya di sekolah, difasilitasi 22 bangunan&nbsp;<em>screen house</em>&nbsp;untuk pembelajaran, sekaligus sebagai aplikasi dari model pembelajaran&nbsp;<em>teaching factory,&rdquo;&nbsp;</em>kata &nbsp;Kepala SMKN 5 Jember Sofyan Hadi Purwanto SE MT.</p>\r\n\r\n<p>Sofyan Hadi mengatakan, proyek percontohan revitalisasi SMK Pertanian di SMK Negeri 5 Jember merupakan kerja sama dengan Belanda. &ldquo;Pada tahun pertama telah dihasilkan beberapa kemajuan, di antaranya penguatan kelembagaan (pemutakhiran program kerja sama industri dan lokal SC), pengembangan kurikulum dan inovasi pembelajaran,&rdquo; ujarnya.</p>\r\n\r\n<p>PT Benih Citra Asia Jember salah satu mitra dari dunia kerja untuk sinkronisasi kurikulum antara sekolah dan kebutuhan dunia kerja/industri. Untuk meningkatkan keterampilan tamatan, pelaksanaan praktik kerja industri, dan rekrutmen tamatan telah dilakukan dan disepakati.</p>\r\n\r\n<p>Presiden Jokowi menginstruksikan dalam Inpres Nomor 9 Tahun 2016 tentang Revitalisasi SMK untuk dilakukan reorientasi&nbsp;pendidikan. Selanjutnya, pelatihan vokasi ke arah&nbsp;<em>demand driven.&nbsp;</em>Sehingga kurikulum, materi pembelajaran, praktik kerja, pengujian, serta sertifikasi sesuai dengan permintaan dunia usaha dan industri.</p>\r\n\r\n<p>Reorientasi pendidikan vokasi ini sangat penting dalam beberapa aspek, dengan tujuan agar sekolah menengah kejuruan dapat menyediakan tenaga kerja terampil yang siap kerja. Di berbagai sektor ekonomi seperti pertanian, industri, pariwisata, bahkan ekonomi kreatif. &ldquo;Selain itu, agar dapat mengurangi permasalahan pengangguran usia muda,&rdquo; ujarnya.</p>\r\n\r\n<p>Revitalisasi SMK diharapkan mampu memberikan dampak positif terhadap peningkatan mutu SMK dengan dua orientasi baru. Pertama, mengantisipasi datangnya gelombang Revolusi Industri 4.0 dengan segala teknologi desruptif yang menyertainya. Kedua, orientasi pengembangan keunggulan potensi wilayah sebagai keunggulan nasional untuk menciptakan daya saing bangsa. &ldquo;Pilar pertama memperkokoh jalinan SMK dengan dunia usaha dan industri abad XXI, pilar kedua mendongkrak keunggulan lokal menjadi keunggulan global,&rdquo; terangnya.&nbsp;<strong>(*)</strong></p>\r\n', '2018-08-08 13:26:08', 6, 'Prestasi', 6, 'fd4e3bcf7e92897514fe358c71fa0a2f.jpg', 1, 'M Fikri Setiadi', 0, 'smkn-5-bangun-puluhan-screen-house'),
-(26, 'SMKN 5 Jember DapatSertifikasi Jaminan Standar Siswa', '<p><strong>Jember Hari Ini &ndash;&nbsp;</strong>SMK Negeri 5 Jember mendapatkan lisensi sertifikasi profesi, sebagai jaminan standar kelayakan siswa, agar bisa diterima bekerja di dalam negeri dan luar negeri.</p>\r\n\r\n<p>Menurut Kepala SMKN 5 Jember, Rinoto, lisensi sertifikasi profesi yang diberikan Badan Nasional Sertifikasi Profesi, menjadi tantangan bagi sekolah untuk meningkatkan kemampuan siswa. Untuk mendapatkan lisensi sertifikasi profesi, siswa harus melakukan uji kompetensi sehingga siswa dinilai layak mendapatkan lisensi.</p>\r\n\r\n<p>Tahun ini, SMK Negeri 5 Jember menjadi tempat uji kompetensi untuk mendapatkan lisensi sertifikasi profesi untuk seluruh SMK negeri di Jember. Saat ini SMK Negeri 5 Jember berkoordinasi dengan kepala SMK negeri melalui Musyawarah Kerja Kepala Sekolah (MKKS) SMK negeri di Kabupaten Jember.</p>\r\n\r\n<p>Rinoto menambahkan, nantinya seluruh SMK negeri di Jember akan mendapatkan lisensi sertifikasi profesi, sehingga mampu bersaing menghadapi tantangan pasar bebas Masyarakat Ekonomi ASEAN (MEA).&nbsp;</p>\r\n', '2019-02-04 01:26:30', 6, 'Prestasi', 0, 'fde5e4dee768ba59e25e168c6203b35c.jpg', 2, 'saiful', 0, 'smkn-5-jember-dapatsertifikasi-jaminan-standar-siswa'),
-(27, 'Jokowi Singgung Antek Asing, Habiburokhman: Jangan Baper Deh', '<p><strong>Jakarta</strong>&nbsp;- Capres petahana Joko Widodo atau&nbsp;<a href=\"https://www.detik.com/pemilu/\">Jokowi&nbsp;</a>menyindir elite yang kerap menyebut dirinya antek asing namun justru penyindir itulah yang disebutnya antek asing. Juru bicara Direktorat Advokasi Badan Pemenangan Nasional (BPN) Prabowo Subianto-Sandiaga Uno,&nbsp;<a href=\"https://www.detik.com/pemilu/\">Habiburokhman</a>, meminta Jokowi tidak terlalu terbawa perasaan soal antek asing.<br />\r\n<br />\r\n&quot;Pak Prabowo tidak pernah tendensius ke individu tertentu dalam menyampaikan kritikan. Soal antek asing itu mengacu pada sistem yang dianggap lebih menguntungkan asing daripada kepentingan nasional, dan kita harus perbaiki sistem tersebut,&quot; kata Habiburokhman kepada wartawan, Senin (4/2/2019).&nbsp;<br />\r\n<br />\r\n&quot;Jadi jangan ada yang baper deh,&quot; imbuh dia.<br />\r\n&nbsp;</p>\r\n\r\n<table>\r\n	<tbody>\r\n		<tr>\r\n			<td>\r\n			<p><strong>Baca juga:&nbsp;</strong><a href=\"https://news.detik.com/read/2019/02/04/072952/4412953/10/jokowi-singgung-konsultan-asing-tkn-itu-warning\">Jokowi Singgung Konsultan Asing, TKN: Itu Warning</a></p>\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n\r\n<p><br />\r\nHabiburokhman meminta semua pihak berbicara tentang sistem, bukan individu. Kalau soal individu, Habiburokhman yakin&nbsp;<a href=\"https://www.detik.com/pemilu/\">Prabowo Subianto</a>&nbsp;jauh dari sosok antek asing.<br />\r\n<br />\r\n&quot;Kita harus lebih sering bicara sistem daripada personal. Kalau personal, sosok Pak Prabowo kurang apa? Beliau cucu dan anak pejuang, beliau sendiri puluhan tahun berjuang untuk NKRI, nggak ceritanya dituduh antek asing,&quot; tegas politikus Partai Gerindra itu.<br />\r\n&nbsp;</p>\r\n\r\n<table>\r\n	<tbody>\r\n		<tr>\r\n			<td>\r\n			<p><strong>Baca juga:&nbsp;</strong><a href=\"https://news.detik.com/read/2019/02/04/063737/4412917/10/sederet-sindiran-jokowi-habis-propaganda-rusia-terbit-konsultan-asing\">Sederet Sindiran Jokowi: Habis &#39;Propaganda Rusia&#39; Terbit &#39;Konsultan Asing&#39;</a></p>\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n\r\n<p><br />\r\nSoal antek asing,&nbsp;<a href=\"https://www.detik.com/pemilu/\">Jokowi&nbsp;</a>awalnya menuding elite yang menggunakan propaganda Rusia memakai jasa konsultan asing. Namun Jokowi tidak menyebut siapa elite tersebut.<br />\r\n<br />\r\n&quot;Yang dipakai konsultan asing. Nggak mikir ini memecah belah rakyat atau tidak, nggak mikir mengganggu ketenangan rakyat atau tidak, ini membuat rakyat khawatir atau tidak, membuat rakyat takut, nggak peduli. Konsultannya konsultan asing. Terus yang antek asing siapa?&quot; kata Jokowi di De Tjolomadoe, Kabupaten Karanganyar, Jawa Tengah, Minggu (3/2).<br />\r\n<br />\r\n&quot;Kanan sampai kita disuguhi kebohongan yang terus-menerus. Rakyat kita sudah pintar, baik yang di kota atau di desa,&quot; imbuh Jokowi.<br />\r\n&nbsp;</p>\r\n\r\n<table>\r\n	<tbody>\r\n		<tr>\r\n			<td>\r\n			<p><strong>Baca juga:&nbsp;</strong><a href=\"https://news.detik.com/read/2019/02/03/143520/4412428/10/jokowi-jangan-tunjuk-tunjuk-antek-asing-padahal-dia-sendiri-antek-asing\">Jokowi: Jangan Tunjuk-tunjuk Antek Asing Padahal Dia Sendiri Antek Asing</a></p>\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n\r\n<p><br />\r\nJokowi menambahkan, dia kerap dituding sebagai antek asing. Jokowi menepisnya dengan kebijakan pemerintah mengambil alih Blok Rokan, Blok Mahakam, dan kepemilikan saham 51 persen di PT Freeport.&nbsp;<br />\r\n<br />\r\n&quot;Yang antek asing siapa? Jangan begitu dong. Maksudnya, jangan nunjuk-nunjuk dia antek asing, padahal dirinya sendiri antek asing. Nggak mempan antek asing, ganti lagi,&quot; ujar Jokowi.&nbsp;</p>\r\n', '2019-02-04 02:32:17', 2, 'Politik', 0, '95bec55c1290fd6aedac99e19a6b1f67.jpeg', 2, 'saiful', 0, 'jokowi-singgung-antek-asing,-habiburokhman:-jangan-baper-deh'),
+(26, 'SMKN 5 Jember Dapat Sertifikasi Jaminan Standar Siswa', '<p><strong>Jember Hari Ini &ndash;&nbsp;</strong>SMK Negeri 5 Jember mendapatkan lisensi sertifikasi profesi, sebagai jaminan standar kelayakan siswa, agar bisa diterima bekerja di dalam negeri dan luar negeri.</p>\r\n\r\n<p>Menurut Kepala SMKN 5 Jember, Rinoto, lisensi sertifikasi profesi yang diberikan Badan Nasional Sertifikasi Profesi, menjadi tantangan bagi sekolah untuk meningkatkan kemampuan siswa. Untuk mendapatkan lisensi sertifikasi profesi, siswa harus melakukan uji kompetensi sehingga siswa dinilai layak mendapatkan lisensi.</p>\r\n\r\n<p>Tahun ini, SMK Negeri 5 Jember menjadi tempat uji kompetensi untuk mendapatkan lisensi sertifikasi profesi untuk seluruh SMK negeri di Jember. Saat ini SMK Negeri 5 Jember berkoordinasi dengan kepala SMK negeri melalui Musyawarah Kerja Kepala Sekolah (MKKS) SMK negeri di Kabupaten Jember.</p>\r\n\r\n<p>Rinoto menambahkan, nantinya seluruh SMK negeri di Jember akan mendapatkan lisensi sertifikasi profesi, sehingga mampu bersaing menghadapi tantangan pasar bebas Masyarakat Ekonomi ASEAN (MEA).&nbsp;</p>\r\n', '2019-02-04 01:26:30', 6, 'Prestasi', 0, 'fde5e4dee768ba59e25e168c6203b35c.jpg', 18, 'saifull', 0, 'smkn-5-jember-dapat-sertifikasi-jaminan-standar-siswa'),
+(27, 'Jokowi Singgung Antek Asing, Habiburokhman : Jangan Baper Deh', '<p><strong>Jakarta</strong>&nbsp;- Capres petahana Joko Widodo atau&nbsp;<a href=\"https://www.detik.com/pemilu/\">Jokowi&nbsp;</a>menyindir elite yang kerap menyebut dirinya antek asing namun justru penyindir itulah yang disebutnya antek asing. Juru bicara Direktorat Advokasi Badan Pemenangan Nasional (BPN) Prabowo Subianto-Sandiaga Uno,&nbsp;<a href=\"https://www.detik.com/pemilu/\">Habiburokhman</a>, meminta Jokowi tidak terlalu terbawa perasaan soal antek asing.<br />\r\n<br />\r\n&quot;Pak Prabowo tidak pernah tendensius ke individu tertentu dalam menyampaikan kritikan. Soal antek asing itu mengacu pada sistem yang dianggap lebih menguntungkan asing daripada kepentingan nasional, dan kita harus perbaiki sistem tersebut,&quot; kata Habiburokhman kepada wartawan, Senin (4/2/2019).&nbsp;<br />\r\n<br />\r\n&quot;Jadi jangan ada yang baper deh,&quot; imbuh dia.<br />\r\n&nbsp;</p>\r\n\r\n<table>\r\n	<tbody>\r\n		<tr>\r\n			<td>\r\n			<p><strong>Baca juga:&nbsp;</strong><a href=\"https://news.detik.com/read/2019/02/04/072952/4412953/10/jokowi-singgung-konsultan-asing-tkn-itu-warning\">Jokowi Singgung Konsultan Asing, TKN: Itu Warning</a></p>\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n\r\n<p><br />\r\nHabiburokhman meminta semua pihak berbicara tentang sistem, bukan individu. Kalau soal individu, Habiburokhman yakin&nbsp;<a href=\"https://www.detik.com/pemilu/\">Prabowo Subianto</a>&nbsp;jauh dari sosok antek asing.<br />\r\n<br />\r\n&quot;Kita harus lebih sering bicara sistem daripada personal. Kalau personal, sosok Pak Prabowo kurang apa? Beliau cucu dan anak pejuang, beliau sendiri puluhan tahun berjuang untuk NKRI, nggak ceritanya dituduh antek asing,&quot; tegas politikus Partai Gerindra itu.<br />\r\n&nbsp;</p>\r\n\r\n<table>\r\n	<tbody>\r\n		<tr>\r\n			<td>\r\n			<p><strong>Baca juga:&nbsp;</strong><a href=\"https://news.detik.com/read/2019/02/04/063737/4412917/10/sederet-sindiran-jokowi-habis-propaganda-rusia-terbit-konsultan-asing\">Sederet Sindiran Jokowi: Habis &#39;Propaganda Rusia&#39; Terbit &#39;Konsultan Asing&#39;</a></p>\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n\r\n<p><br />\r\nSoal antek asing,&nbsp;<a href=\"https://www.detik.com/pemilu/\">Jokowi&nbsp;</a>awalnya menuding elite yang menggunakan propaganda Rusia memakai jasa konsultan asing. Namun Jokowi tidak menyebut siapa elite tersebut.<br />\r\n<br />\r\n&quot;Yang dipakai konsultan asing. Nggak mikir ini memecah belah rakyat atau tidak, nggak mikir mengganggu ketenangan rakyat atau tidak, ini membuat rakyat khawatir atau tidak, membuat rakyat takut, nggak peduli. Konsultannya konsultan asing. Terus yang antek asing siapa?&quot; kata Jokowi di De Tjolomadoe, Kabupaten Karanganyar, Jawa Tengah, Minggu (3/2).<br />\r\n<br />\r\n&quot;Kanan sampai kita disuguhi kebohongan yang terus-menerus. Rakyat kita sudah pintar, baik yang di kota atau di desa,&quot; imbuh Jokowi.<br />\r\n&nbsp;</p>\r\n\r\n<table>\r\n	<tbody>\r\n		<tr>\r\n			<td>\r\n			<p><strong>Baca juga:&nbsp;</strong><a href=\"https://news.detik.com/read/2019/02/03/143520/4412428/10/jokowi-jangan-tunjuk-tunjuk-antek-asing-padahal-dia-sendiri-antek-asing\">Jokowi: Jangan Tunjuk-tunjuk Antek Asing Padahal Dia Sendiri Antek Asing</a></p>\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n\r\n<p><br />\r\nJokowi menambahkan, dia kerap dituding sebagai antek asing. Jokowi menepisnya dengan kebijakan pemerintah mengambil alih Blok Rokan, Blok Mahakam, dan kepemilikan saham 51 persen di PT Freeport.&nbsp;<br />\r\n<br />\r\n&quot;Yang antek asing siapa? Jangan begitu dong. Maksudnya, jangan nunjuk-nunjuk dia antek asing, padahal dirinya sendiri antek asing. Nggak mempan antek asing, ganti lagi,&quot; ujar Jokowi.&nbsp;</p>\r\n', '2019-02-04 02:32:17', 2, 'Politik', 0, '95bec55c1290fd6aedac99e19a6b1f67.jpeg', 18, 'saifull', 0, 'jokowi-singgung-antek-asing,-habiburokhman-:-jangan-baper-deh'),
 (28, '7 Fakta dan Statistik Kemenangan MU atas ', '<p>&nbsp;</p>\r\n\r\n<p><strong>Jakarta</strong>&nbsp;-&nbsp;<a href=\"https://www.detik.com/tag/manchester-united/\">Manchester United</a>&nbsp;kembali ke jalur kemenangan setelah mengalahkan Leicester City 1-0. Beberapa torehan dibuat The Red Devils dari laga tersebut.<br />\r\n&nbsp;</p>\r\n\r\n<p><ins><img alt=\"\" src=\"https://wtf2.forkcdn.com/www/delivery/lg.php?bannerid=0&amp;campaignid=0&amp;zoneid=4563&amp;loc=https%3A%2F%2Fsport.detik.com%2Fsepakbola%2Fliga-inggris%2Fd-4413026%2F7-fakta-dan-statistik-kemenangan-mu-atas-leicester&amp;referer=https%3A%2F%2Fsport.detik.com%2F&amp;cb=9397d770d1\" style=\"height:0px; width:0px\" /></ins></p>\r\n\r\n<p>Berikut data dan fakta kemenangan Manchester United atas&nbsp;<a href=\"https://www.detik.com/tag/leicester-city/\">Leicester City</a>, seperti dihimpun oleh Opta:<br />\r\n<br />\r\n- Manchester United meraih kemenangan kelimanya secara beruntun untuk laga away di semua kompetisi. Ini adalah untuk kali pertama terjadi setelah Oktober 2012 bersama Sir Alex Ferguson.<br />\r\n<br />\r\n- Di Premier League, Leicester City paling sering kalah dari Manchester United dibanding klub lain. The Foxes tumbang 17 kali di tangan Setan Merah.<br />\r\n<br />\r\n- Leicester City sedang dalam tren buruk, mereka menelan empat kekalahan dan sekali imbang di lima laga terakhir.&nbsp;<br />\r\n&nbsp;</p>\r\n\r\n<table>\r\n	<tbody>\r\n		<tr>\r\n			<td>\r\n			<p><strong>Baca juga:&nbsp;</strong><a href=\"https://sport.detik.com/sepakbola/read/2019/02/04/004232/4412842/72/pujian-rashford-untuk-pogba\">Pujian Rashford untuk Pogba</a></p>\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n\r\n<p><br />\r\n<br />\r\n- Sejak&nbsp;<a href=\"https://www.detik.com/tag/ole-gunnar-solskjaer/\">Solskjaer</a>&nbsp;menjadi manajer interim MU, Paul Pogba merupakan pemain dengan keterlibatan menciptakan gol paling banyak di Premier League. Dia terlibat dalam terciptanya 11 gol (6 gol dan 11 assist).<br />\r\n<br />\r\n- Sejak melakoni debut di Manchester United,&nbsp;<a href=\"https://www.detik.com/tag/marcus-rashford/\">Marcus Rasford</a>&nbsp;sudah membuat 42 gol di semua kompetisi. Dalam kurun yang sama tak ada pemain MU lain yang lebih tajam darinya.<br />\r\n<br />\r\n- MU meraih poin paling banyak sejak Ole Gunnar Solskjaer datang dibanding klub lain pada periode yang sama. MU mengoleksi 22 poin hasil dari tujuh kemenangan, sekali imbang, dan belum pernah kalah.<br />\r\n<br />\r\n- Di usianya yang baru 21 tahun dan 95 hari, Marcus Rashford sudah mencatatkan 100 penampilan di Premier League. Rekor itu hanya kalah dari Ryan Giggs yang membuat 100 penampilan bersama MU di usia 21 tahun dan 74 hari.<br />\r\n&nbsp;</p>\r\n\r\n<table>\r\n	<tbody>\r\n		<tr>\r\n			<td>\r\n			<p><strong>Baca juga:&nbsp;</strong><a href=\"https://sport.detik.com/sepakbola/read/2019/02/04/063644/4412916/72/andai-solskjaer-datang-ke-mu-di-awal-musim\">Andai Solskjaer Datang ke MU di Awal Musim...</a></p>\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n', '2019-02-04 02:34:48', 13, 'Olah Raga', 3, '70a67bf0a3871b91e63059aa10b6ec27.jpeg', 2, 'saiful', 0, '7-fakta-dan-statistik-kemenangan-mu-atas');
 
 --
@@ -760,15 +777,13 @@ ALTER TABLE `tabel_jurusan`
 -- Indexes for table `tabel_laporguru`
 --
 ALTER TABLE `tabel_laporguru`
-  ADD PRIMARY KEY (`KODE_LAPORGURU`),
-  ADD KEY `FK_REFERENCE_20` (`KODE_GURU`);
+  ADD PRIMARY KEY (`KODE_LAPORGURU`);
 
 --
 -- Indexes for table `tabel_laporsarana`
 --
 ALTER TABLE `tabel_laporsarana`
-  ADD PRIMARY KEY (`KODE_LAPORSRANA`),
-  ADD KEY `FK_REFERENCE_21` (`NIS`);
+  ADD PRIMARY KEY (`KODE_LAPORSRANA`);
 
 --
 -- Indexes for table `tabel_mapel`
@@ -929,17 +944,17 @@ ALTER TABLE `tabel_jadwal`
 -- AUTO_INCREMENT for table `tabel_laporguru`
 --
 ALTER TABLE `tabel_laporguru`
-  MODIFY `KODE_LAPORGURU` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `KODE_LAPORGURU` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `tabel_laporsarana`
 --
 ALTER TABLE `tabel_laporsarana`
-  MODIFY `KODE_LAPORSRANA` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `KODE_LAPORSRANA` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `tabel_saran`
 --
 ALTER TABLE `tabel_saran`
-  MODIFY `KODE_SARAN` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `KODE_SARAN` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `tbl_agenda`
 --

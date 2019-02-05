@@ -64,4 +64,14 @@ function get_all_guru(){
 		return $hsl;
 	}
 
+	function kirim_sarana($nama,$laporan){
+		$hsl=$this->db->query("INSERT INTO tabel_laporsarana(NAMA_SARANA,ISI_LAPORAN) VALUES ('$nama','$laporan')");
+		return $hsl;
+	}
+
+	function kirim_laporanguru($nama,$laporanguru){
+		$hsl=$this->db->query("INSERT INTO tabel_laporguru(NAMA_GURU_LAPOR,ISI_LAPORGURU) VALUES ('$nama','$laporanguru')");
+		return $hsl;
+	}
+
 }
