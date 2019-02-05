@@ -14,7 +14,7 @@ class admin_si_jadwal extends CI_Controller{
 
 
 	function index(){
-		
+
 		$x['data']=$this->M_jadwal->get_all_jadwal();
 		$x['guru']=$this->M_jadwal->get_all_guru();
 		$x['kelas']=$this->M_jadwal->get_all_kelas();

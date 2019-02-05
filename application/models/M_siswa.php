@@ -41,4 +41,14 @@ class M_siswa extends CI_Model{
 		return $hsl;
 	}
 
+	function kirim_saran($nama,$deskripsi){
+		$hsl=$this->db->query("INSERT INTO tabel_saran(NAMA_SISWA,DESCRIPSI_SARAN) VALUES ('$nama','$deskripsi')");
+		return $hsl;
+	}
+
+	function get_siswa(){
+		$hsl=$this->db->query("SELECT * from tbl_siswa");
+		return $hsl;
+	}
+
 }

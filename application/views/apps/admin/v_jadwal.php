@@ -183,7 +183,7 @@
           					foreach ($data->result_array() as $i) :
           					   $no++;
 
-                      
+                      $kode=$i['KODE_JADWAL'];
           					  
           					   $KODE_KELAS=$i['KODE_KELAS'];
                        
@@ -455,9 +455,9 @@
                                           <select name="kodekelas" class="form-control" required>
                                             <option value="">-Pilih-</option>
                                             <?php
-                                                foreach ($kelas->result_array() as $m) {
-                                                  $KODE_KELAS=$m['kelas_id'];
-                                                  $nama_kelas=$m['kelas_nama'];
+                                                foreach ($kelas->result_array() as $k) {
+                                                  $KODE_KELAS=$k['kelas_id'];
+                                                  $nama_kelas=$k['kelas_nama'];
 
                                             ?>
 
@@ -491,9 +491,9 @@
                                           <select name="kodeguru" class="form-control" required>
                                             <option value="">-Pilih-</option>
                                             <?php
-                                                foreach ($guru->result_array() as $m) {
-                                                  $id_guru=$m['guru_id'];
-                                                  $nama_guru=$m['guru_nama'];
+                                                foreach ($guru->result_array() as $g) {
+                                                  $id_guru=$g['guru_id'];
+                                                  $nama_guru=$g['guru_nama'];
 
                                             ?>
 
@@ -575,9 +575,9 @@
                                           <select name="kodekelas" class="form-control" required>
                                             <option value="">-Pilih-</option>
                                             <?php
-                                                foreach ($KELAS->result_array() as $m) {
-                                                  $KODE_KELAS=$m['kelas_id'];
-                                                  $nama_kelas=$m['kelas_nama'];
+                                                foreach ($kelas->result_array() as $k) {
+                                                  $KODE_KELAS=$k['kelas_id'];
+                                                  $nama_kelas=$k['kelas_nama'];
 
                                             ?>
 
@@ -612,9 +612,9 @@
                                           <select name="kodeguru" class="form-control" required>
                                             <option value="">-Pilih-</option>
                                             <?php
-                                                foreach ($mapel->result_array() as $m) {
-                                                  $id_guru=$m['guru_id'];
-                                                  $nama_guru=$m['guru_nama'];
+                                                foreach ($guru->result_array() as $g) {
+                                                  $id_guru=$g['guru_id'];
+                                                  $nama_guru=$g['guru_nama'];
 
                                             ?>
 
@@ -685,7 +685,7 @@
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button>
                         <h4 class="modal-title" id="myModalLabel">Hapus Mata Pelajaran</h4>
                     </div>
-                    <form class="form-horizontal" action="<?php echo base_url().'admin_si_mapel/hapus_jadwal'?>" method="post" enctype="multipart/form-data">
+                    <form class="form-horizontal" action="<?php echo base_url().'admin_si_jadwal/hapus_jadwal'?>" method="post" enctype="multipart/form-data">
                     <div class="modal-body">
 							       <input type="hidden" name="kode" value="<?php echo $kode;?>"/>
                     
