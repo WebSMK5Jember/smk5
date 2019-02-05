@@ -137,7 +137,7 @@
            
 
 			<div class="form-group">
-                                        <textarea placeholder="Masukkan Saran Anda" class="form-control" name="xdes" required rows="5"></textarea>
+                                        <textarea placeholder="Masukkan Saran Anda" class="form-control" name="xdes" required rows="10"></textarea>
                                     </div>
 
             </div>
