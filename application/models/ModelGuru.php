@@ -77,6 +77,24 @@ class ModelGuru extends CI_Model{
 
 	}
 	
+	public function get_absensi_input($id){
+		$this ->db ->select('*');
+		$this ->db ->from('tabel_absensi');
+		$this->db->join('tbl_siswa', 'tbl_siswa.siswa_nis = tabel_absensi.NIS', 'left');
+		$this->db->join('tabel_mapel', 'tabel_mapel.KODE_MAPEL = tabel_absensi.KODE_MAPEL', 'left');
+		$this->db->join('tbl_guru', 'tbl_guru.guru_id = tabel_absensi.KODE_GURU', 'left');
+		
+		$data = array(
+				'tabel_absensi.KODE_GURU'=>$id
+				);
+			$this ->db ->where($data,$id);
+
+			$query = $this ->db ->get();
+
+			return $query;		
+
+	}
+	
 
 
 }

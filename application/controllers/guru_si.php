@@ -50,6 +50,18 @@ Class guru_si extends CI_Controller{
         
     }
 
+    public function absensi_siswa_input(){
+        $id = $this->session->userdata('id_session');
+        $list = $this->ModelGuru->get_absensi_input($id)->result();
+        $data = array(
+            "menu"      => "MenuGuru",
+            "panelbody" => "apps/guru/input_absensi",
+            "list"      => $list
+        );
+        $this->load->view('panelbody', $data);
+        
+    }
+
 
     public function jadwal_guru(){
         $id = $this->session->userdata('id_session');
