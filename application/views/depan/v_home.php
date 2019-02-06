@@ -40,7 +40,7 @@
         <div class="row">
             <div class="col-md-8">
                <h2>Sambutan Kepala Sekolah</h2>
-               <p>Kami Menyambut baik terbitnya Website SMKN 5 Jember yang baru , dengan harapan dipublikasinya website ini sekolah berharap : Peningkatan layanan pendidikan kepada siswa, orangtua, dan masyarakat pada umumnya semakin meningkat. SMKN 5 Jember juga dapat menyebarkan informasi kepada siswa, guru maupun masyarakat luar secara mudah dan cepat. </p>
+               <p>Kami Menyambut baik terbitnya Website SMKN 5 Jember yang baru , dengan harapan terbitnya website ini sekolah berharap : Peningkatan layanan pendidikan kepada siswa, orangtua, dan masyarakat pada umumnya semakin meningkat. SMKN 5 Jember juga dapat menyebarkan informasi kepada siswa, guru maupun masyarakat luar secara mudah dan cepat. </p>
 
             </div>
             <div class="col-md-4">
