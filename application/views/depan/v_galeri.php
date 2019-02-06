@@ -66,7 +66,7 @@
                     <a href="<?php echo site_url();?>">
                         <img src="<?php echo base_url().'theme/images/logo-white.png'?>" width="150px" class="img-fluid" alt="footer_logo">
                     </a>
-                    <p><?php echo date('Y');?> © <a href="http://mfikri.com" target="_blank">SMKN 5 Jember</a>. <br>All rights reserved.</p>
+                    <p><?php echo date('Y');?> © <a href="<?php echo base_url().''?>" target="_blank">SMKN 5 Jember</a>. <br>All rights reserved.</p>
                     </div>
                 </div>
                 <div class="col-md-3">

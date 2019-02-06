@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>SMKN 5 Jember - Agenda Kegiatan</title>
+    <title>SMKN 5 Jember - Data Guru</title>
     <link rel="shorcut icon" href="<?php echo base_url().'theme/images/icon.png'?>">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="<?php echo base_url().'theme/css/bootstrap.min.css'?>">
@@ -15,41 +15,39 @@
     <link rel="stylesheet" href="<?php echo base_url().'theme/css/font-awesome.min.css'?>">
     <!-- Simple Line Font -->
     <link rel="stylesheet" href="<?php echo base_url().'theme/css/simple-line-icons.css'?>">
-    <!-- Calendar Css -->
-    <link rel="stylesheet" href="<?php echo base_url().'theme/css/fullcalendar.min.css'?>" />
     <!-- Owl Carousel -->
+    <link rel="stylesheet" href="<?php echo base_url().'theme/css/slick.css'?>">
+    <link rel="stylesheet" href="<?php echo base_url().'theme/css/slick-theme.css'?>">
     <link rel="stylesheet" href="<?php echo base_url().'theme/css/owl.carousel.min.css'?>">
     <!-- Main CSS -->
     <link href="<?php echo base_url().'theme/css/style.css'?>" rel="stylesheet">
 </head>
 
-<body>
-     <!--============================= HEADER =============================-->
-   
- 
-<!--============================= EVENTS =============================-->
-<section class="events">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <h2 class="event-title">Agenda</h2>
-            </div>
-            <div class="col-md-8">
+
+<!--//END HEADER -->
+
+    <section class="our-teachers">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="mb-5">Jadwal Agenda Kegiatan</h2>
+                </div>
+				<div class="col-md-8">
                 <!-- Nav tabs -->
                 <ul class="nav nav-tabs" role="tablist">
                     <li class="nav-item nav-tab1">
-                        <a class="nav-link tab-list active" data-toggle="tab" href="#upcoming-events" role="tab">Agenda Terbaru </a>
+                        <form action="<?php echo site_url('agenda/search_agenda');?>" method="get">
+                    <input type="text" name="keyword" placeholder="Search" class="blog-search" required>
+                    <button type="submit" class="btn btn-warning btn-blogsearch">SEARCH</button>
+                </form>
                     </li>
 
                 </ul>
             </div>
-        </div>
-        <br>
-        <div class="row">
-            <!-- Tab panes -->
-            <div class="tab-content">
-                <div class="tab-pane active" id="upcoming-events" role="tabpanel">
-                  <?php foreach($data->result() as $row):?>
+            </div>
+            <div class="row">
+			
+                 <?php foreach($data->result() as $row):?>
                     <div class="col-md-12">
                         <div class="row">
                             <div class="col-md-2">
@@ -70,15 +68,12 @@
                 <?php endforeach;?>
 
       <div class="col-md-12 text-center">
-        <?php echo $page;?>
+        <?php error_reporting(0); echo $page;?>
     </div>
 </div>
 
-</div>
-</div>
-</div>
-</section>
-<!--//END EVENTS -->
-<!--============================= FOOTER =============================-->
+    </section>
+	
 
-
+    <!--//End Style 2 -->
+    <!--============================= FOOTER =============================-->

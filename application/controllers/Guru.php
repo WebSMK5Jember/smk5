@@ -46,5 +46,22 @@ class Guru extends CI_Controller{
 						$this->load->view('depan/v_guru',$x);
 						$this->load->view('beranda/footer',$x);
 	}
+	
+	
+	function search_guru(){
+        $keyword=str_replace("'", "", htmlspecialchars($this->input->get('keyword',TRUE),ENT_QUOTES));
+        $query=$this->m_guru->cari_guru($keyword);
+				if($query->num_rows() > 0){
+					$x['data']=$query;
+					
+  				
+  		$this->load->view('beranda/header',$x);
+          $this->load->view('depan/v_guru',$x);
+          $this->load->view('beranda/footer',$x);
+	 		 }else{
+				 echo $this->session->set_flashdata('msg','<div class="alert alert-danger">Tidak dapat menemukan guru dengan kata kunci <b>'.$keyword.'</b></div>');
+				 redirect('guru');
+			 }
+    }
 
 }

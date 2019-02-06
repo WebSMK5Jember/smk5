@@ -19,7 +19,7 @@ class Administrator extends CI_Controller{
 
         if($cadmin->num_rows > 0 ){
          $this->session->set_userdata('masuk',true);
-         $this->session->set_userdata('user',$u,$ug,$us);
+         $this->session->set_userdata('user',$u);
          $xcadmin=$cadmin->row_array();
      
          if($xcadmin['pengguna_level']=='1')

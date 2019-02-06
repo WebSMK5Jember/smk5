@@ -103,8 +103,7 @@
         <div class="box-body">
           <div class="row">
             <div class="col-md-10">
-              <input type="text" name="xnama" class="form-control" placeholder="Masukkan Nama yang Valid" required/>
-            </div>
+          
             <!-- /.col -->
             <div class="col-md-2">
               <div class="form-group">

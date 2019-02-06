@@ -32,8 +32,21 @@
                 <div class="col-md-12">
                     <h2 class="mb-5">Guru Kami</h2>
                 </div>
+				<div class="col-md-8">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item nav-tab1">
+                        <form action="<?php echo site_url('guru/search_guru');?>" method="get">
+                    <input type="text" name="keyword" placeholder="Search" class="blog-search" required>
+                    <button type="submit" class="btn btn-warning btn-blogsearch">SEARCH</button>
+                </form>
+                    </li>
+
+                </ul>
+            </div>
             </div>
             <div class="row">
+			
                 <?php foreach ($data->result() as $row) : ?>
                     <div class="col-xs-12 col-sm-6 col-md-3">
                         <div class="admission_insruction">
@@ -50,7 +63,7 @@
                 <?php endforeach;?>
               </div>
             <!-- End row -->
-            <nav><?php echo $page;?></nav>
+            <?php error_reporting(0); echo $page;?>
         </div>
     </section>
 

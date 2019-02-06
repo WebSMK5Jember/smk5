@@ -73,5 +73,9 @@ function get_all_guru(){
 		$hsl=$this->db->query("INSERT INTO tabel_laporguru(NAMA_GURU_LAPOR,ISI_LAPORGURU) VALUES ('$nama','$laporanguru')");
 		return $hsl;
 	}
+	function cari_guru($keyword){
+		$hsl=$this->db->query("SELECT tbl_guru.*,DATE_FORMAT(guru_tgl_lahir,'%d/%m/%Y') AS tanggal FROM tbl_guru WHERE guru_nama LIKE '%$keyword%' LIMIT 5");
+		return $hsl;
+	}
 
 }

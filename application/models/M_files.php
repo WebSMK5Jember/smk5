@@ -32,5 +32,9 @@ class M_files extends CI_Model{
 		$hsl=$this->db->query("SELECT file_id,file_judul,file_deskripsi,DATE_FORMAT(file_tanggal,'%d/%m/%Y') AS tanggal,file_oleh,file_download,file_data FROM tbl_files ORDER BY file_id DESC limit 7");
 		return $hsl;
 	}
+	function cari_download($keyword){
+		$hsl=$this->db->query("SELECT tbl_files.*,DATE_FORMAT(file_tanggal,'%d/%m/%Y') AS tanggal FROM tbl_files WHERE file_judul LIKE '%$keyword%' LIMIT 5");
+		return $hsl;
+	}
 	
 }

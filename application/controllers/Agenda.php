@@ -2,12 +2,13 @@
 class Agenda extends CI_Controller{
 	function __construct(){
 		parent::__construct();
+		$this->load->model('m_tulisan');
 		$this->load->model('m_agenda');
 		$this->load->model('m_pengunjung');
 		$this->m_pengunjung->count_visitor();
 	}
 	function index(){
-	
+	$x['berita']=$this->m_tulisan->get_berita_home();
 		$jum=$this->m_agenda->agenda();
         $page=$this->uri->segment(3);
         if(!$page):
@@ -52,5 +53,21 @@ class Agenda extends CI_Controller{
 
 		
 	}
+	
+	function search_agenda(){
+        $keyword=str_replace("'", "", htmlspecialchars($this->input->get('keyword',TRUE),ENT_QUOTES));
+        $query=$this->m_agenda->cari_agenda($keyword);
+				if($query->num_rows() > 0){
+					$x['data']=$query;
+					
+  				
+  		$this->load->view('beranda/header',$x);
+          $this->load->view('depan/v_agenda',$x);
+          $this->load->view('beranda/footer',$x);
+	 		 }else{
+				 echo $this->session->set_flashdata('msg','<div class="alert alert-danger">Tidak dapat menemukan kegiatan dengan kata kunci <b>'.$keyword.'</b></div>');
+				 redirect('agenda');
+			 }
+    }
 
 }

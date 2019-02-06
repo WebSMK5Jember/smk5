@@ -26,5 +26,21 @@ class Download extends CI_Controller{
 		$name = $file;
 		force_download($name, $data);
 	}
+	
+	function search_download(){
+        $keyword=str_replace("'", "", htmlspecialchars($this->input->get('keyword',TRUE),ENT_QUOTES));
+        $query=$this->m_files->cari_download($keyword);
+				if($query->num_rows() > 0){
+					$x['data']=$query;
+					
+  				
+  		$this->load->view('beranda/header',$x);
+          $this->load->view('depan/v_download',$x);
+          $this->load->view('beranda/footer',$x);
+	 		 }else{
+				 echo $this->session->set_flashdata('msg','<div class="alert alert-danger">Tidak dapat menemukan file dengan kata kunci <b>'.$keyword.'</b></div>');
+				 redirect('agenda');
+			 }
+    }
 
 }

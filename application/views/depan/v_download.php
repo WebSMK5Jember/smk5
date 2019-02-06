@@ -32,6 +32,18 @@
                 <div class="contact-title">
                     <h2>Download</h2>
                 </div>
+				<div class="col-md-8">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item nav-tab1">
+                        <form action="<?php echo site_url('download/search_download');?>" method="get">
+                    <input type="text" name="keyword" placeholder="Search" class="blog-search" required>
+                    <button type="submit" class="btn btn-warning btn-blogsearch">SEARCH</button>
+                </form><br>
+                    </li>
+
+                </ul>
+            </div>
             </div>
         </div>
         <div class="row">
