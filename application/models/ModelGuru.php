@@ -57,6 +57,25 @@ class ModelGuru extends CI_Model{
 			return $query;		
 
 	}
+
+	public function get_pilih_input_nilai ($id){
+		$this ->db ->select('*');
+		$this ->db ->from('tabel_nilai');
+		$this->db->join('tbl_siswa', 'tbl_siswa.siswa_nis = tabel_nilai.NIS', 'left');
+		$this->db->join('tabel_mapel', 'tabel_mapel.KODE_MAPEL = tabel_nilai.KODE_MAPEL', 'left');
+		$this->db->join('tbl_kelas', 'tbl_kelas.kelas_id= tabel_nilai.KODE_KELAS', 'left');
+		$this->db->join('tbl_guru', 'tbl_guru.guru_id = tabel_nilai.KODE_GURU', 'left');
+	
+		$data = array(
+				'tabel_nilai.KODE_GURU'=>$id
+				);
+			$this ->db ->where($data,$id);
+
+			$query = $this ->db ->get();
+
+			return $query;		
+
+	}
 	
 	public function get_nilai_input($id){
 		$this ->db ->select('*');

@@ -38,6 +38,18 @@ Class guru_si extends CI_Controller{
         
     }
 
+     public function pilih_input_nilai(){
+        $id = $this->session->userdata('id_session');
+        $list = $this->ModelGuru->get_pilih_input_nilai($id)->result();
+        $data = array(
+            "menu"      => "MenuGuru",
+            "panelbody" => "apps/guru/pilihan_input",
+            "list"      => $list
+        );
+        $this->load->view('panelbody', $data);
+        
+    }
+
     public function nilai_siswa_input(){
         $id = $this->session->userdata('id_session');
         $list = $this->ModelGuru->get_nilai_input($id)->result();
