@@ -36,7 +36,7 @@
                     <div class="carousel-caption d-md-block">
                         <div class="slider_title">
                             <h1>Proses Belajar Interatif</h1>
-                            <h4>Kami membuat proses belajar mengajar menjadi lebih interatif.<br> dengan demikian siswa lebih menyukai <br>proses belajar.</h4>
+                            <h4>Kami membuat proses belajar mengajar menjadi lebih interaktif.<br> dengan demikian siswa lebih menyukai <br>proses belajar.</h4>
                             <div class="slider-btn">
                                 <a href="<?php echo site_url('galeri');?>" class="btn btn-default">Learn more</a>
                             </div>

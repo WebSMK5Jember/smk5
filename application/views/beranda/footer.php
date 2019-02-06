@@ -40,11 +40,7 @@
                         <p><span>Alamat: </span> Sukorambi, Jember, Jawa Timur, INA. 68151</p>
                         <p>Email : smkn5jember@yahoo.com
                             <br> Phone : 0331/487535</p>
-                            <ul class="footer-social-icons">
-                                <li><a href="#"><i class="fa fa-facebook fa-fb" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin fa-in" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter fa-tw" aria-hidden="true"></i></a></li>
-                            </ul>
+                           
                         </div>
                     </div>
                 </div>

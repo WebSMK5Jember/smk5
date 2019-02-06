@@ -46,6 +46,10 @@
                             
                              <a href="<?php echo site_url('administrator');?>">Akses Khusus</a>
                         </div>
+                         <div class="header-top_list">
+                            
+                             <a href="<?php echo site_url('login_si');?>">Sistem Informasi</a>
+                        </div>
                     </div>
                     <div class="header-top_login2">
                         <a href="<?php echo site_url('contact');?>">Hubungi Kami</a>
@@ -88,7 +92,7 @@ function googleTranslateElementInit() {new google.translate.TranslateElement({pa
                         <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo site_url('');?>">Home</a>
+                                    <a class="nav-link" href="<?php echo site_url('');?>">Main Menu</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="<?php echo site_url('about');?>">Profil</a>
@@ -116,9 +120,7 @@ function googleTranslateElementInit() {new google.translate.TranslateElement({pa
                                 <li class="nav-item">
                                     <a class="nav-link" href="<?php echo site_url('download');?>">Download</a>
                                 </li>
-                                 <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo site_url('login_si');?>">SI Akademik</a>
-                                </li>
+                                
 
                           </ul>
                     </div>

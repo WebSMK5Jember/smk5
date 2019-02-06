@@ -38,7 +38,7 @@
                          <p>Misi<br>
                          1. Menyiapkan tamatan yang bertaqwa dan berbudi luhur, memiliki etos kerja dan berjiwa wirausaha<br>
                          2. Menjadi Sekolah Menengah Kejuruan Unggulan<br>
-                         3. Meningkatkan daya serap tamatan di dunia kerja dan dapat melanjutkan pendidikan kejenjang yang lebih tinggi<br>
+                         3. Meningkatkan daya serap tamatan di dunia kerja dan dapat melanjutkan pendidikan ke jenjang yang lebih tinggi<br>
                          4. Meningkatkan peran SMK sebagai pusat pengembangan agribisnis di tingkat regional<br>
                          5. Meningkatkan peran SMK sebagai pengembang teknologi informasi bagi sekolah, industri dan masyarakat</p>
                 </div>

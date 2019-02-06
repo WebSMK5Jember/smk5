@@ -44,7 +44,7 @@
 
             </div>
             <div class="col-md-4">
-                <img src="<?php echo base_url().'theme/images/welcome.png'?>" class="img-fluid about-img" alt="#"> <p style="text-align: center;font-weight: bold;font-size: 12px;">Kumudawati</p>
+                <img src="<?php echo base_url().'theme/images/welcome.png'?>" class="img-fluid about-img" alt="#"> 
                
                
             </div>
