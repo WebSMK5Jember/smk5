@@ -28,7 +28,7 @@ class ModelSiswa extends CI_Model{
 		$this->db->select('*'); 
 		$this->db->from('tabel_jadwal');
 		$this->db->join('tbl_kelas', 'tbl_kelas.kelas_id = tabel_jadwal.KODE_KELAS', 'left');
-		$this->db->join('tabel_mapel', 'tabel_mapel.KODE_MAPEL = tabel_jadwal.KODE_MAPEL', 'left');
+		$this->db->join('tabel_mapel', 'tabel_mapel.KODE_MAPEL = tabel_jadwal.KODE_MAPEL_JADWAL', 'left');
 		$this->db->join('tbl_guru', 'tbl_guru.guru_id = tabel_jadwal.KODE_GURU', 'left');
 		$this->db->join('tbl_siswa', 'tbl_siswa.siswa_kelas_id = tbl_kelas.kelas_id', 'left');
 		$data = array(
@@ -45,7 +45,7 @@ class ModelSiswa extends CI_Model{
 		$this->db->select('*'); 
 		$this->db->from('tabel_nilai');
 		$this->db->join('tbl_kelas', 'tbl_kelas.kelas_id = tabel_nilai.KODE_KELAS', 'left');
-		$this->db->join('tabel_mapel', 'tabel_mapel.KODE_MAPEL = tabel_nilai.KODE_MAPEL', 'left');
+		$this->db->join('tabel_mapel', 'tabel_mapel.KODE_MAPEL = tabel_nilai.KODE_MAPEL_NILAI', 'left');
 		$this->db->join('tbl_guru', 'tbl_guru.guru_id = tabel_nilai.KODE_GURU', 'left');
 		$this->db->join('tbl_siswa', 'tbl_siswa.siswa_nis = tabel_nilai.NIS', 'left');
 		$data = array(

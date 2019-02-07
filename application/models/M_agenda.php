@@ -34,7 +34,7 @@ class M_agenda extends CI_Model{
 		return $hsl;
 	}
 	function cari_agenda($keyword){
-		$hsl=$this->db->query("SELECT tbl_agenda.*,DATE_FORMAT(agenda_tanggal,'%d/%m/%Y') AS tanggal FROM tbl_agenda WHERE agenda_nama LIKE '%$keyword%' LIMIT 5");
+		$hsl=$this->db->query("SELECT tbl_agenda.*,DATE_FORMAT(agenda_tanggal,'%d/%m/%Y') AS tanggal FROM tbl_agenda WHERE agenda_nama && agenda_tanggal LIKE '%$keyword%' LIMIT 5");
 		return $hsl;
 	}
 

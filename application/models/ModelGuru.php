@@ -65,7 +65,7 @@ class ModelGuru extends CI_Model{
 		$this ->db ->select('*');
 		$this ->db ->from('tabel_nilai');
 		$this->db->join('tbl_siswa', 'tbl_siswa.siswa_nis = tabel_nilai.NIS', 'left');
-		$this->db->join('tabel_mapel', 'tabel_mapel.KODE_MAPEL = tabel_nilai.KODE_MAPEL', 'left');
+		$this->db->join('tabel_mapel', 'tabel_mapel.KODE_MAPEL = tabel_nilai.KODE_MAPEL_NILAI', 'left');
 		$this->db->join('tbl_kelas', 'tbl_kelas.kelas_id= tabel_nilai.KODE_KELAS', 'left');
 		$this->db->join('tbl_guru', 'tbl_guru.guru_id = tabel_nilai.KODE_GURU', 'left');
 	
@@ -84,7 +84,7 @@ class ModelGuru extends CI_Model{
 		$this ->db ->select('*');
 		$this ->db ->from('tabel_nilai');
 		$this->db->join('tbl_siswa', 'tbl_siswa.siswa_nis = tabel_nilai.NIS', 'left');
-		$this->db->join('tabel_mapel', 'tabel_mapel.KODE_MAPEL = tabel_nilai.KODE_MAPEL', 'left');
+		$this->db->join('tabel_mapel', 'tabel_mapel.KODE_MAPEL = tabel_nilai.KODE_MAPEL_NILAI', 'left');
 		$this->db->join('tbl_kelas', 'tbl_kelas.kelas_id= tabel_nilai.KODE_KELAS', 'left');
 		$this->db->join('tbl_guru', 'tbl_guru.guru_id = tabel_nilai.KODE_GURU', 'left');
 	
@@ -129,7 +129,7 @@ class ModelGuru extends CI_Model{
         $data = array(
             'ID_NILAI'        => $ID_NILAI,
 			 'NIS'        => $NIS,
-			  'KODE_MAPEL'        => $KODE_MAPEL,
+			  'KODE_MAPEL_NILAI'        => $KODE_MAPEL,
 			   'KODE_GURU'        => $KODE_GURU,
 			    'SEMESTER'        => $SEMESTER,
 				 'TUGAS1'        => $TUGAS1,
@@ -154,7 +154,7 @@ class ModelGuru extends CI_Model{
       $this ->db ->select('*');
 		$this ->db ->from('tabel_nilai');
 		$this->db->join('tbl_siswa', 'tbl_siswa.siswa_nis = tabel_nilai.NIS', 'left');
-		$this->db->join('tabel_mapel', 'tabel_mapel.KODE_MAPEL = tabel_nilai.KODE_MAPEL', 'left');
+		$this->db->join('tabel_mapel', 'tabel_mapel.KODE_MAPEL = tabel_nilai.KODE_MAPEL_NILAI', 'left');
 		$this->db->join('tbl_kelas', 'tbl_kelas.kelas_id= tabel_nilai.KODE_KELAS', 'left');
 		$this->db->join('tbl_guru', 'tbl_guru.guru_id = tabel_nilai.KODE_GURU', 'left');
 	
