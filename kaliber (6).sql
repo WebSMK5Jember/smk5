@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 05, 2019 at 04:07 PM
+-- Generation Time: Feb 07, 2019 at 06:01 AM
 -- Server version: 10.1.22-MariaDB
 -- PHP Version: 7.1.4
 
@@ -44,11 +44,12 @@ CREATE TABLE `nilai_sikap` (
 --
 
 CREATE TABLE `tabel_absensi` (
-  `KODE_ABSENSI` varchar(5) NOT NULL,
+  `KODE_ABSENSI` int(5) NOT NULL,
   `KETERANGAN` varchar(30) NOT NULL,
   `JUMLAH_HADIR` int(2) NOT NULL,
   `KODE_MAPEL` varchar(5) NOT NULL,
-  `NIS` varchar(10) NOT NULL
+  `NIS` varchar(10) NOT NULL,
+  `KODE_GURU` varchar(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -195,6 +196,7 @@ INSERT INTO `tabel_mapel` (`KODE_MAPEL`, `NAMA_MAPEL`) VALUES
 --
 
 CREATE TABLE `tabel_nilai` (
+  `ID_NILAI` int(11) NOT NULL,
   `NIS` varchar(10) DEFAULT NULL,
   `KODE_MAPEL` varchar(5) DEFAULT NULL,
   `KODE_KELAS` varchar(5) DEFAULT NULL,
@@ -460,9 +462,8 @@ INSERT INTO `tbl_guru` (`guru_id`, `guru_mapel_id`, `guru_jabatan_id`, `guru_pik
 ('8', '0', '', '', '-', 'Ririn Febriesta', '', 0, 'P', 'Padang', '27 September 1994', NULL, '2017-01-27 04:28:23'),
 ('a', '0', '1', '', 'a', 'akua', 'sa', 3, 'L', 'as', '2019-02-21', NULL, '2019-02-04 00:51:44'),
 ('a0001', '0', '2', '1', '1', 'saiful', 'jember', 24, 'L', 'jember', '2019-02-12', NULL, '2019-02-03 14:05:13'),
-('a2244', 'AGAMA', '', '1', 'a333', '333', 'eee3', 4, 'L', 'eee', '2019-02-09', NULL, '2019-02-04 06:56:01'),
-('e3116', 'BING', '2', '1', 'aaa', 'sasasas', 'jejejejeje', 3, 'L', 'jember', '2019-02-16', NULL, '2019-02-05 06:38:27'),
-('e322', 'BING', '2', '1', '2222', 'sasasasasas', 'sas', 4, 'L', 'sas', '2019-02-20', NULL, '2019-02-05 06:41:20');
+('A01', 'AGAMA', '1', '1', '11212121', 'RERA', 'RAMBI', 24, 'P', 'jakarta', '2019-02-27', NULL, '2019-02-05 15:56:36'),
+('a2244', 'AGAMA', '', '1', 'a333', '333', 'eee3', 4, 'L', 'eee', '2019-02-09', NULL, '2019-02-04 06:56:01');
 
 -- --------------------------------------------------------
 
@@ -612,10 +613,9 @@ INSERT INTO `tbl_pengguna` (`pengguna_id`, `pengguna_nama`, `pengguna_moto`, `pe
 (13, 'akua', NULL, NULL, NULL, NULL, 'a', '0cc175b9c0f1b6a831c399e269772661', NULL, '3', '2019-02-04 00:51:44', NULL),
 (14, 'aaa', NULL, NULL, NULL, NULL, '1111', 'b59c67bf196a4758191e42f76670ceba', NULL, '3', '2019-02-04 03:08:05', NULL),
 (15, '333', NULL, NULL, NULL, NULL, 'a2244', 'ccfd3f7012cdadb009bd7e76819809a3', NULL, '3', '2019-02-04 06:56:01', NULL),
-(16, 'sasasas', NULL, NULL, NULL, NULL, 'e3116', '5625f092441f044c0fe26237d59f7e14', NULL, '3', '2019-02-05 06:38:27', NULL),
-(17, 'sasasasasas', NULL, NULL, 'e322', NULL, 'e322', '2c00bf6ab3e5efc51becca108bbc7572', NULL, '3', '2019-02-05 06:41:20', NULL),
 (18, 'saifull', NULL, 'L', 'admin', NULL, NULL, '21232f297a57a5a743894a0e4a801fc3', 'saiful@gmail.com', '1', '2019-02-05 07:24:56', '9aafeef3c7604d1e652ea903c324c215.jpg'),
-(19, 'saiful', NULL, NULL, 'a1111', 'a1111', NULL, 'e0754b3d0bd14501c88a993b2235c331', NULL, '4', '2019-02-05 10:05:21', NULL);
+(20, 'RERA', NULL, NULL, 'A01', NULL, 'A01', 'c79ec7047f39104c8372382cb20f84c0', NULL, '3', '2019-02-05 15:56:36', NULL),
+(21, 'ADYA ZALFA ZAHIRAH', NULL, NULL, '15109/0878', '15109/0878', NULL, 'ecf4bd3d635aea52739ace96b53394bb', NULL, '4', '2019-02-06 01:04:37', NULL);
 
 -- --------------------------------------------------------
 
@@ -664,7 +664,8 @@ INSERT INTO `tbl_pengunjung` (`pengunjung_id`, `pengunjung_tanggal`, `pengunjung
 (932, '2019-02-01 23:01:01', '::1', 'Chrome'),
 (933, '2019-02-03 14:47:04', '::1', 'Chrome'),
 (934, '2019-02-04 01:22:57', '::1', 'Chrome'),
-(935, '2019-02-05 02:45:08', '::1', 'Chrome');
+(935, '2019-02-05 02:45:08', '::1', 'Chrome'),
+(936, '2019-02-06 00:57:20', '::1', 'Chrome');
 
 -- --------------------------------------------------------
 
@@ -692,8 +693,8 @@ CREATE TABLE `tbl_siswa` (
 
 INSERT INTO `tbl_siswa` (`siswa_nis`, `siswa_nama`, `siswa_jenkel`, `siswa_kelas_id`, `siswa_tempat_lahir`, `siswa_tgl_lahir`, `siswa_alamat`, `siswa_ortu`, `siswa_asal_sekolah`, `no_ijasah`, `siswa_photo`) VALUES
 ('111', 'saiful', 'L', '11', 'jember', '2019-02-22', 'jj', 'jhj', 'jj', '9', NULL),
+('15109/0878', 'ADYA ZALFA ZAHIRAH', 'P', 'a01', 'JEMBER', '2001-04-08', 'JL gajah mada XIX/67 Link.condro Selatan', 'AKHMAD KUSYERI', 'SMP', 'DN-05 DI/06 0', 'd4138e4e2460936bd34c8cc79c777ce0.jpg'),
 ('a', 'a', 'L', '1', 'a', '2019-02-01', 'aa', 'aa', 'q', '1', NULL),
-('a1111', 'saiful', 'L', 'a01', 'jember', '2019-02-06', 'jember', 'jshd', 'sk', '2', NULL),
 ('er', 's', 'L', '10', 'a', '2019-02-15', 'aa', 'aa', 'aaa', '0', NULL),
 ('q', 'az', 'L', '10', 's', '2019-02-08', 's', 's', 'sd', '1', NULL);
 
@@ -744,7 +745,8 @@ ALTER TABLE `nilai_sikap`
 ALTER TABLE `tabel_absensi`
   ADD PRIMARY KEY (`KODE_ABSENSI`),
   ADD KEY `KODE_MAPEL` (`KODE_MAPEL`),
-  ADD KEY `NIS` (`NIS`);
+  ADD KEY `NIS` (`NIS`),
+  ADD KEY `KODE_GURU` (`KODE_GURU`);
 
 --
 -- Indexes for table `tabel_admin`
@@ -795,6 +797,7 @@ ALTER TABLE `tabel_mapel`
 -- Indexes for table `tabel_nilai`
 --
 ALTER TABLE `tabel_nilai`
+  ADD PRIMARY KEY (`ID_NILAI`),
   ADD KEY `FK_REFERENCE_6` (`NIS`),
   ADD KEY `FK_REFERENCE_7` (`KODE_MAPEL`),
   ADD KEY `FK_REFERENCE_8` (`KODE_KELAS`),
@@ -936,6 +939,11 @@ ALTER TABLE `tbl_tulisan`
 --
 
 --
+-- AUTO_INCREMENT for table `tabel_absensi`
+--
+ALTER TABLE `tabel_absensi`
+  MODIFY `KODE_ABSENSI` int(5) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `tabel_jadwal`
 --
 ALTER TABLE `tabel_jadwal`
@@ -950,6 +958,11 @@ ALTER TABLE `tabel_laporguru`
 --
 ALTER TABLE `tabel_laporsarana`
   MODIFY `KODE_LAPORSRANA` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `tabel_nilai`
+--
+ALTER TABLE `tabel_nilai`
+  MODIFY `ID_NILAI` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `tabel_saran`
 --
@@ -999,17 +1012,17 @@ ALTER TABLE `tbl_log_aktivitas`
 -- AUTO_INCREMENT for table `tbl_pengguna`
 --
 ALTER TABLE `tbl_pengguna`
-  MODIFY `pengguna_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `pengguna_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 --
 -- AUTO_INCREMENT for table `tbl_pengumuman`
 --
 ALTER TABLE `tbl_pengumuman`
-  MODIFY `pengumuman_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `pengumuman_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `tbl_pengunjung`
 --
 ALTER TABLE `tbl_pengunjung`
-  MODIFY `pengunjung_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=936;
+  MODIFY `pengunjung_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=937;
 --
 -- AUTO_INCREMENT for table `tbl_tulisan`
 --

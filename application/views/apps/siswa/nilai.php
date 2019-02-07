@@ -53,8 +53,8 @@
                         
                         <td><?php echo $data->NIS ?></td>
                         <td><?php echo $data->NAMA_MAPEL ?></td>
-                         <td><?php echo $data->NAMA_KELAS ?></td>
-                          <td><?php echo $data->NAMA_GURU ?></td>
+                         <td><?php echo $data->kelas_nama ?></td>
+                          <td><?php echo $data->guru_nama ?></td>
                         <td><?php echo $data->SEMESTER ?></td>
                          <td><?php echo $data->TUGAS1 ?></td>
                         <td><?php echo $data->TUGAS2 ?></td>
