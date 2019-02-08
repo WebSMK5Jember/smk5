@@ -7,7 +7,7 @@ class admin_si_guru extends CI_Controller{
             redirect($url);
         };
 		$this->load->model('m_guru');
-
+$this->load->library('form_validation');
 		$this->load->model('m_pengguna');
 		$this->load->library('upload');
 	}

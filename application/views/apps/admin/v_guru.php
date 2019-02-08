@@ -31,6 +31,7 @@
 
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
+
 <div class="wrapper">
 
    <?php
@@ -111,6 +112,25 @@
 <li>
           <a href="<?php echo base_url().'admin_si_piket'?>">
             <i class="fa fa-graduation-cap"></i> <span>Data Master Piket Guru</span>
+            <span class="pull-right-container">
+              <small class="label pull-right"></small>
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="<?php echo base_url().'admin_si_nilai'?>">
+            <i class="fa fa-graduation-cap"></i> <span>Data Master Nilai</span>
+            <span class="pull-right-container">
+              <small class="label pull-right"></small>
+            </span>
+          </a>
+        </li>
+
+
+        <li>
+          <a href="<?php echo base_url().'admin_si_tempat_prakerin'?>">
+            <i class="fa fa-graduation-cap"></i> <span>Data Master Tempat Prakerin</span>
             <span class="pull-right-container">
               <small class="label pull-right"></small>
             </span>
@@ -462,11 +482,15 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
+
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button>
                         <h4 class="modal-title" id="myModalLabel">Tambah Guru</h4>
                     </div>
                     <form class="form-horizontal" action="<?php echo base_url().'admin_si_guru/simpan_guru'?>" method="post" enctype="multipart/form-data">
+
+
                     <div class="modal-body">
+
 
                               <div class="form-group">
                                         <label for="inputUserName" class="col-sm-4 control-label">Kode Guru</label>
@@ -528,9 +552,10 @@
 
 
                                     <div class="form-group">
+
                                         <label for="inputUserName" class="col-sm-4 control-label">NIP</label>
                                         <div class="col-sm-7">
-                                            <input type="text" name="xnip" class="form-control" id="inputUserName" placeholder="NIP" required>
+                                            <input type="text" onkeypress="return hanyaAngka(event)" name="xnip" class="form-control" id="inputUserName" placeholder="NIP" required>
                                         </div>
                                     </div>
 
@@ -548,12 +573,25 @@
                                         </div>
                                     </div>
 
-                                    <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">Jumlah Jam Mengajar</label>
+                                  <div class="form-group">
+                                        <label for="inputUserName" class="col-sm-4 control-label">Jumlah Jam</label>
                                         <div class="col-sm-7">
-                                            <input type="text" name="xjam" class="form-control" id="inputUserName" placeholder="Jumlah Jam Mengajar" required>
-                                        </div>
-                                    </div>
+                                            <select class="form-control" name="xjam" required>
+                     
+                                                <option value="16" selected>16</option>
+                                                <option value="17" selected>17</option>
+                                                <option value="18" selected>18</option>
+                                                <option value="19" selected>19</option>
+                                                <option value="20" selected>20</option>
+                                                <option value="21" selected>21</option>
+                                                <option value="22" selected>22</option>
+                                                <option value="23" selected>23</option>
+                                                <option value="24" selected>24</option>
+
+                                              </select>
+                                            </div>
+                                          </div>
+
 
                                     <div class="form-group">
                                         <label for="inputUserName" class="col-sm-4 control-label">Jenis Kelamin</label>
@@ -716,12 +754,24 @@
                                         </div>
                                     </div>
 
-                                    <div class="form-group">
+                                      <div class="form-group">
                                         <label for="inputUserName" class="col-sm-4 control-label">Jumlah Jam</label>
                                         <div class="col-sm-7">
-                                            <input type="text" name="xjam" value="<?php echo $jam;?>" class="form-control" id="inputUserName" placeholder="Jumlah Jam" required>
-                                        </div>
-                                    </div>
+                                            <select class="form-control" name="xjam" required>
+                     
+                                                <option value="16" selected>16</option>
+                                                <option value="17" selected>17</option>
+                                                <option value="18" selected>18</option>
+                                                <option value="19" selected>19</option>
+                                                <option value="20" selected>20</option>
+                                                <option value="21" selected>21</option>
+                                                <option value="22" selected>22</option>
+                                                <option value="23" selected>23</option>
+                                                <option value="24" selected>24</option>
+
+                                              </select>
+                                            </div>
+                                          </div>
 
 
 
@@ -848,6 +898,15 @@
 <script type="text/javascript" src="<?php echo base_url().'assets/plugins/toast/jquery.toast.min.js'?>"></script>
 <!-- page script -->
 <script>
+    function hanyaAngka(evt) {
+      var charCode = (evt.which) ? evt.which : event.keyCode
+       if (charCode > 31 && (charCode < 48 || charCode > 57))
+ 
+        return false;
+      return true;
+    }
+  </script>
+<script>
   $(function () {
     $("#example1").DataTable();
     $('#example2').DataTable({
@@ -872,6 +931,7 @@
                     bgColor: '#FF4859'
                 });
         </script>
+
 
     <?php elseif($this->session->flashdata('msg')=='success'):?>
         <script type="text/javascript">

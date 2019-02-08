@@ -117,7 +117,7 @@
           </a>
         </li>
 
-<li>
+        <li>
           <a href="<?php echo base_url().'admin_si_nilai'?>">
             <i class="fa fa-graduation-cap"></i> <span>Data Master Nilai</span>
             <span class="pull-right-container">
@@ -125,6 +125,7 @@
             </span>
           </a>
         </li>
+
 
 <li>
           <a href="<?php echo base_url().'admin_si_tempat_prakerin'?>">
@@ -134,7 +135,8 @@
             </span>
           </a>
         </li>
-        
+
+
          <li>
           <a href="<?php echo base_url().'login_si/logout'?>">
             <i class="fa fa-sign-out"></i> <span>Sign Out</span>
@@ -155,12 +157,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Data Mata Pelajaran
+        Data Tempat Prakerin
         <small></small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Mata Pelajaran</li>
+        <li class="active">Data Tempat Prakerin</li>
       </ol>
     </section>
 
@@ -172,15 +174,17 @@
 
           <div class="box">
             <div class="box-header">
-              <a class="btn btn-success btn-flat" data-toggle="modal" data-target="#myModal"><span class="fa fa-plus"></span> Tambah Mata Pelajaran</a>
+              <a class="btn btn-success btn-flat" data-toggle="modal" data-target="#myModal"><span class="fa fa-plus"></span> Tambah Tempat Prakerin</a>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
               <table id="example1" class="table table-striped" style="font-size:13px;">
                 <thead>
                 <tr>
-          					<th>Kode Mata Pelajaran</th>
-                    <th>Nama Mata Pelajaran</th>
+          					<th>Kode Tempat</th>
+                    <th>Nama Tempat</th>
+                    <th>Alamat</th>
+
                   
                   
           					
@@ -194,9 +198,12 @@
           					foreach ($data->result_array() as $i) :
           					   $no++;
           					  
-          					   $kode=$i['KODE_MAPEL'];
+          					   $kode=$i['KODE_TEMPAT'];
                        
-                       $nama=$i['NAMA_MAPEL'];
+                       $nama=$i['NAMA_TEMPAT_PRAKERIN'];
+
+                       $lokasi=$i['LOKASI'];
+
 
                     ?>
                 <tr>
@@ -205,6 +212,8 @@
                   
                   
                   <td><?php echo $nama;?></td>
+
+                  <td><?php echo $lokasi;?></td>
                  
                   
                   
@@ -439,21 +448,28 @@
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button>
                         <h4 class="modal-title" id="myModalLabel">Tambah Mata Pelajaran</h4>
                     </div>
-                    <form class="form-horizontal" action="<?php echo base_url().'admin_si_mapel/simpan_mapel'?>" method="post" enctype="multipart/form-data">
+                    <form class="form-horizontal" action="<?php echo base_url().'admin_si_tempat_prakerin/simpan_tempat'?>" method="post" enctype="multipart/form-data">
                     <div class="modal-body">
 
                               <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">Kode Mata Pelajaran</label>
+                                        <label for="inputUserName" class="col-sm-4 control-label">Kode Tempat Prakerin </label>
                                         <div class="col-sm-7">
-                                            <input type="text" name="kode" class="form-control" id="inputUserName" placeholder="Kode Mapel" required>
+                                            <input type="text" name="kode" class="form-control" id="inputUserName" placeholder="kode" required>
                                         </div>
                                     </div>
 
                                      
                                     <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">Nama Mata Pelajaran</label>
+                                        <label for="inputUserName" class="col-sm-4 control-label">Nama Tempat Prakerin </label>
                                         <div class="col-sm-7">
-                                            <input type="text" name="xnama" class="form-control" id="inputUserName" placeholder="Nama Mapel" required>
+                                            <input type="text" name="xnama" class="form-control" id="inputUserName" placeholder="xnama" required>
+                                        </div>
+                                    </div>
+
+                                        <div class="form-group">
+                                        <label for="inputUserName" class="col-sm-4 control-label"> Alamat </label>
+                                        <div class="col-sm-7">
+                                            <input type="text" name="xalamat" class="form-control" id="inputUserName" placeholder="xalamat" required>
                                         </div>
                                     </div>
 
@@ -473,9 +489,12 @@
 
   <!--Modal Edit Album-->
   <?php foreach ($data->result_array() as $i) :
-              $kode=$i['KODE_MAPEL'];
-                       $nama=$i['NAMA_MAPEL'];
-                   
+             
+                       $kode=$i['KODE_TEMPAT'];
+                       
+                       $nama=$i['NAMA_TEMPAT_PRAKERIN'];
+
+                       $lokasi=$i['LOKASI'];
                       
             ?>
 
@@ -519,9 +538,12 @@
 	<!--Modal Edit Album-->
 
 	 <?php foreach ($data->result_array() as $i) :
-              $kode=$i['KODE_MAPEL'];
-                       $nama=$i['NAMA_MAPEL'];
-                   
+            
+                       $kode=$i['KODE_TEMPAT'];
+                       
+                       $nama=$i['NAMA_TEMPAT_PRAKERIN'];
+
+                       $lokasi=$i['LOKASI'];
                       
             ?>
 	<!--Modal Hapus Pengguna-->
@@ -536,7 +558,7 @@
                     <div class="modal-body">
 							       <input type="hidden" name="kode" value="<?php echo $kode;?>"/>
                     
-                            <p>Apakah Anda yakin mau menghapus mata pelajaran <b><?php echo $nama;?></b> ?</p>
+                            <p>Apakah Anda yakin mau menghapus tempat prakerin <b><?php echo $nama;?></b> ?</p>
 
                     </div>
                     <div class="modal-footer">

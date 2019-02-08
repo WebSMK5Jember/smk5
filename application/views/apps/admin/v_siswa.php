@@ -117,6 +117,24 @@
           </a>
         </li>
 
+        <li>
+          <a href="<?php echo base_url().'admin_si_nilai'?>">
+            <i class="fa fa-graduation-cap"></i> <span>Data Master Nilai</span>
+            <span class="pull-right-container">
+              <small class="label pull-right"></small>
+            </span>
+          </a>
+        </li>
+
+<li>
+          <a href="<?php echo base_url().'admin_si_tempat_prakerin'?>">
+            <i class="fa fa-graduation-cap"></i> <span>Data Master Tempat Prakerin</span>
+            <span class="pull-right-container">
+              <small class="label pull-right"></small>
+            </span>
+          </a>
+        </li>
+
 
          <li>
           <a href="<?php echo base_url().'login_si/logout'?>">
@@ -525,7 +543,13 @@
                                     <div class="form-group">
                                         <label for="inputUserName" class="col-sm-4 control-label">Asal Sekolah</label>
                                         <div class="col-sm-7">
-                                            <input type="text" name="xasal_sekolah" class="form-control" id="inputUserName" placeholder="Asal Sekolah" required>
+                                            <select class="form-control" name="xasal_sekolah" required>
+                     
+                                                <option value="SMP" selected>SMP</option>
+                                                <option value="MTS">MTS</option>
+                                  
+                     
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="form-group">

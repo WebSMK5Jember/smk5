@@ -127,6 +127,15 @@
         </li>
 
 
+<li>
+          <a href="<?php echo base_url().'admin_si_tempat_prakerin'?>">
+            <i class="fa fa-graduation-cap"></i> <span>Data Master Tempat Prakerin</span>
+            <span class="pull-right-container">
+              <small class="label pull-right"></small>
+            </span>
+          </a>
+        </li>
+
          <li>
           <a href="<?php echo base_url().'login_si/logout'?>">
             <i class="fa fa-sign-out"></i> <span>Sign Out</span>
