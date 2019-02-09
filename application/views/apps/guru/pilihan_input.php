@@ -6,18 +6,7 @@
                 <div class="col-md-12">
                     <div class="p-20">
 
-  <div class="form-group">
-                            <label class="col-md-2 control-label" for="exampleInputEmail1">KODE MATA  PELAJARAN<br> </label>
-                                <div class="col-md-10">
-                                    <select class="form-control" name="KODE_MAPEL">
-                                        <option disabled selected value>- Pilih -</option>
-                                        <?php foreach($mapel as $data){?>
-                                        <option value="<?php echo $data->KODE_MAPEL?>"><?php echo $data->NAMA_MAPEL?></option>
-                                        
-                                    <?php } ?>
-                                    </select>
-                                </div>
-                        </div>
+  
 <div class="form-group">
                             <label class="col-md-2 control-label" for="exampleInputEmail1">KODE KELAS </label>
                                 <div class="col-md-10">
@@ -31,19 +20,7 @@
                                 </div>
                         </div>
 
- <div class="form-group">
-                            <label class="col-md-2 control-label" for="exampleInputEmail1">KODE GURU </label>
-                                <div class="col-md-10">
-                                    <select class="form-control" name="KODE_GURU">
-                                        <option disabled selected value>- Pilih -</option>
-                                        <?php foreach($guru as $data){?>
-                                        <option value="<?php echo $data->guru_id?>"><?php echo $data->guru_nama?></option>
-                                        
-                                    <?php } ?>
-                                    </select>
-                                </div>
-                        </div>
-
+ 
                           
 
 

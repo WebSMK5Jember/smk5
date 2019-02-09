@@ -80,7 +80,7 @@ class ModelGuru extends CI_Model{
 
 	}
 	
-	public function get_nilai_input($id){
+	public function get_nilai_input($id,$id_kelas){
 		$this ->db ->select('*');
 		$this ->db ->from('tabel_nilai');
 		$this->db->join('tbl_siswa', 'tbl_siswa.siswa_nis = tabel_nilai.NIS', 'left');
@@ -89,11 +89,12 @@ class ModelGuru extends CI_Model{
 		$this->db->join('tbl_guru', 'tbl_guru.guru_id = tabel_nilai.KODE_GURU', 'left');
 	
 		$data = array(
-				'tabel_nilai.KODE_GURU'=>$id
+				'tabel_nilai.KODE_GURU'=>$id,
+				'tabel_nilai.KODE_KELAS'=>$id_kelas
 				);
-			$this ->db ->where($data,$id);
+			$this ->db ->where($data,$id,$id_kelas);
 
-			$query = $this ->db ->get();
+			$query = $this ->db ->get('tabel_nilai');
 
 			return $query;		
 

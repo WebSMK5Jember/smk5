@@ -50,7 +50,7 @@ class admin_si_nilai extends CI_Controller{
 	                        
 						
 
-							$this->M_nilai->update_jadwal($id,$kode,$KODE_KELAS,$KODE_MAPEL,$KODE_GURU,$JAM,$Ruang,$Hari);
+							$this->M_nilai->update_nilai($id,$kode,$KODE_KELAS,$KODE_MAPEL,$KODE_GURU,$Semester);
 							echo $this->session->set_flashdata('msg','success');
 							redirect('admin_si_nilai');
 				

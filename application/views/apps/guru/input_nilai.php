@@ -1,5 +1,12 @@
 <?php echo form_open('guru_si/hapus_nilai_siswa','class="form-horizontal" role="form"');
- echo form_hidden('ID_NILAI', $this->uri->segment(3));?>
+ echo form_hidden('ID_NILAI', $this->uri->segment(3));<?php echo form_open('guru_si/nilai_siswa','class="form-horizontal" role="form"') ;?>
+
+
+
+
+
+
+
     
 <div class="row">
     <div class="col-sm-12">
