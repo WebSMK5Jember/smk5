@@ -15,24 +15,24 @@ class admin_si_jadwal extends CI_Controller{
 
 	function index(){
 
-		$x['data']=$this->M_jadwal->get_all_jadwal();
-		$x['guru']=$this->M_jadwal->get_all_guru();
-		$x['kelas']=$this->M_jadwal->get_all_kelas();
-		$x['mapel']=$this->M_jadwal->get_all_mapel();
-		$this->load->view('apps/admin/v_jadwal',$x);
+		$i['data']=$this->M_jadwal->get_all_jadwal();
+		$i['guru']=$this->M_jadwal->get_all_guru();
+		$i['kelas']=$this->M_jadwal->get_all_kelas();
+		$i['mapel']=$this->M_jadwal->get_all_mapel();
+		$this->load->view('apps/admin/v_jadwal',$i);
 	}
 	
 	function simpan_jadwal(){
-							$KODE_KELAS=strip_tags($this->input->post('kodekelas'));
-							$KODE_MAPEL=strip_tags($this->input->post('kodemapel'));
-							$KODE_GURU=strip_tags($this->input->post('kodeguru'));
-	                        $JAM=strip_tags($this->input->post('jam'));
-	                        $Ruang=strip_tags($this->input->post('ruang'));
-	                        $Hari=strip_tags($this->input->post('Hari'));
+							$kelas=strip_tags($this->input->post('kodekelas'));
+							$mapel=strip_tags($this->input->post('kodemapel'));
+							$guru=strip_tags($this->input->post('kodeguru'));
+	                        $jam=strip_tags($this->input->post('jam'));
+	                        $RUANG=strip_tags($this->input->post('ruang'));
+	                        $HARI=strip_tags($this->input->post('hari'));
 	                       
 						
 
-							$this->M_jadwal->simpan_jadwal($KODE_KELAS,$KODE_MAPEL,$KODE_GURU,$JAM,$Ruang,$Hari);
+							$this->M_jadwal->simpan_jadwal($kelas,$mapel,$guru,$jam,$RUANG,$HARI);
 							echo $this->session->set_flashdata('msg','success');
 							redirect('admin_si_jadwal');
 					
@@ -41,16 +41,15 @@ class admin_si_jadwal extends CI_Controller{
 	
 	function update_jadwal(){
 				$kode=strip_tags($this->input->post('kode'));
-						$KODE_KELAS=strip_tags($this->input->post('kodekelas'));
-							$KODE_MAPEL=strip_tags($this->input->post('kodemapel'));
-							$KODE_GURU=strip_tags($this->input->post('kodeguru'));
-	                        $JAM=strip_tags($this->input->post('jam'));
-	                        $Ruang=strip_tags($this->input->post('ruang'));
-	                        $Hari=strip_tags($this->input->post('Hari'));
+						$kelas=strip_tags($this->input->post('kodekelas'));
+							$mapel=strip_tags($this->input->post('kodemapel'));
+							$guru=strip_tags($this->input->post('kodeguru'));
+	                        $jam=strip_tags($this->input->post('jam'));
+	                        $RUANG=strip_tags($this->input->post('ruang'));
+	                        $HARI=strip_tags($this->input->post('hari'));
 	                       
-						
 
-							$this->M_jadwal->update_jadwal($KODE_KELAS,$KODE_MAPEL,$KODE_GURU,$JAM,$Ruang,$Hari);
+							$this->M_jadwal->update_jadwal($kelas,$mapel,$guru,$jam,$RUANG,$HARI);
 							echo $this->session->set_flashdata('msg','success');
 							redirect('admin_si_jadwal');
 				
@@ -58,7 +57,7 @@ class admin_si_jadwal extends CI_Controller{
 
 	}
 
-	function hapus_guru(){
+	function hapus_jadwal(){
 		$kode=$this->input->post('kode');
 		
 		$this->M_jadwal->hapus_jadwal($kode);

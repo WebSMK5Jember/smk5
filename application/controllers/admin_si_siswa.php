@@ -9,6 +9,7 @@ class admin_si_siswa extends CI_Controller{
 		
 		$this->load->model('m_siswa');
 		$this->load->model('m_pengguna');
+		$this->load->library('form_validation');
 		$this->load->model('m_kelas');
 		$this->load->library('upload');
 	}

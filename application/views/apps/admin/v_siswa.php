@@ -472,7 +472,8 @@
                                     <div class="form-group">
                                         <label for="inputUserName" class="col-sm-4 control-label">NIS</label>
                                         <div class="col-sm-7">
-                                            <input type="text" name="xnis" class="form-control" id="inputUserName" placeholder="NIS" required>
+                                            
+                                             <input type="text" onkeypress="return hanyaAngka(event)" name="xniS" class="form-control" id="inputUserName" placeholder="NIS" required>
                                         </div>
                                     </div>
 
@@ -781,6 +782,19 @@
 <script src="<?php echo base_url().'assets/dist/js/demo.js'?>"></script>
 <script type="text/javascript" src="<?php echo base_url().'assets/plugins/toast/jquery.toast.min.js'?>"></script>
 <!-- page script -->
+
+
+
+<script>
+    function hanyaAngka(evt) {
+      var charCode = (evt.which) ? evt.which : event.keyCode
+       if (charCode > 31 && (charCode < 48 || charCode > 57))
+ 
+        return false;
+      return true;
+    }
+  </script>
+  
 <script>
   $(function () {
     $("#example1").DataTable();

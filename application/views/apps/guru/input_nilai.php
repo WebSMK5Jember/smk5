@@ -1,5 +1,5 @@
 <?php echo form_open('guru_si/hapus_nilai_siswa','class="form-horizontal" role="form"');
- echo form_hidden('ID_NILAI', $this->uri->segment(3));<?php echo form_open('guru_si/nilai_siswa','class="form-horizontal" role="form"') ;?>
+ echo form_hidden('ID_NILAI', $this->uri->segment(3)); echo form_open('guru_si/nilai_siswa','class="form-horizontal" role="form"') ;?>
 
 
 
@@ -79,6 +79,8 @@
                         <td><?php echo $data->NRATARAPOT ?></td>
                     <td><?php 
                        
+
+                       echo form_open('guru_si/nilai_siswa'.$data->KODE_KELAS, 'class="form-horizontal" role="form"');
                         
                         echo anchor('guru_si/edit_nilai/'.$data->ID_NILAI,'Edit','id="btnTest" type="button" class="btn btn-warning btn-bordered waves-effect w-md waves-light" style="margin-bottom:5px;"');
                         echo anchor('guru_si/hapus_nilai_siswa/'.$data->ID_NILAI,'Hapus','id="btnTest" type="button" class="btn btn-danger btn-bordered waves-effect w-md waves-light"');

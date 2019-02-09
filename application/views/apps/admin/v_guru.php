@@ -499,22 +499,7 @@
                                         </div>
                                     </div>
 
-                                      <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">Mapel</label>
-                                        <div class="col-sm-7">
-                                          <select name="xmapel" class="form-control" required>
-                                            <option value="">-Pilih-</option>
-                                            <?php
-                                                foreach ($mapel->result_array() as $m) {
-                                                  $id_mapel=$m['KODE_MAPEL'];
-                                                  $nama_mapel=$m['NAMA_MAPEL'];
-
-                                            ?>
-                                            <option value="<?php echo $id_mapel;?>"><?php echo $nama_mapel;?></option>
-                                            <?php } ?>
-                                          </select>
-                                        </div>
-                                    </div>
+                                     
 
                                      <div class="form-group">
                                         <label for="inputUserName" class="col-sm-4 control-label">Jabatan</label>

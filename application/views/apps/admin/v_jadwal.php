@@ -215,6 +215,7 @@
 
                        $HARI=$i['HARI'];
 
+                      
                     ?>
                 <tr>
                  
@@ -230,6 +231,8 @@
                   <td><?php echo $RUANG?></td>
 
                   <td><?php echo $HARI;?></td>
+
+
                  
                   
                   
@@ -473,13 +476,13 @@
                                           <select name="kodekelas" class="form-control" required>
                                             <option value="">-Pilih-</option>
                                             <?php
-                                                foreach ($kelas->result_array() as $k) {
-                                                  $KODE_KELAS=$k['kelas_id'];
-                                                  $nama_kelas=$k['kelas_nama'];
+                                                foreach ($kelas->result_array() as $i) {
+                                                  $id_kelas=$i['kelas_id'];
+                                                  $nama_kelas=$i['kelas_nama'];
 
                                             ?>
 
-                                            <option value="<?php echo $KODE_KELAS;?>"><?php echo $nama_kelas;?></option>
+                                            <option value="<?php echo $id_kelas;?>"><?php echo $nama_kelas;?></option>
                                             <?php } ?>
                                           </select>
                                         </div>
@@ -491,9 +494,9 @@
                                           <select name="kodemapel" class="form-control" required>
                                             <option value="">-Pilih-</option>
                                             <?php
-                                                foreach ($mapel->result_array() as $m) {
-                                                  $id_mapel=$m['KODE_MAPEL'];
-                                                  $nama_mapel=$m['NAMA_MAPEL'];
+                                                foreach ($mapel->result_array() as $i) {
+                                                  $id_mapel=$i['KODE_MAPEL'];
+                                                  $nama_mapel=$i['NAMA_MAPEL'];
 
                                             ?>
 
@@ -527,7 +530,7 @@
                                     <div class="form-group">
                                         <label for="inputUserName" class="col-sm-4 control-label">JAM</label>
                                         <div class="col-sm-7">
-                                            <input type="time" name="jam" class="form-control" id="inputUserName" placeholder="Jam" required>
+                                            <input type="time" name="jam" class="form-control" id="inputUserName" placeholder="jam" required>
                                         </div>
                                     </div>
 
@@ -541,7 +544,7 @@
                               <div class="form-group">
                                         <label for="inputUserName" class="col-sm-4 control-label">Hari</label>
                                         <div class="col-sm-7">
-                                            <input type="text" name="Hari" class="form-control" id="inputUserName" placeholder="Hari" required>
+                                            <input type="text" name="hari" class="form-control" id="inputUserName" placeholder="hari" required>
                                         </div>
                                     </div>
 
@@ -707,7 +710,7 @@
                     <div class="modal-body">
 							       <input type="hidden" name="kode" value="<?php echo $kode;?>"/>
                     
-                            <p>Apakah Anda yakin mau menghapus mata pelajaran <b><?php echo $nama;?></b> ?</p>
+                            <p>Apakah Anda yakin mau menghapus jadwal pelajaran <b><?php echo $nama_mapel;?></b> ?</p>
 
                     </div>
                     <div class="modal-footer">

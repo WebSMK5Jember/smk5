@@ -180,8 +180,9 @@
               <table id="example1" class="table table-striped" style="font-size:13px;">
                 <thead>
                 <tr>
-                    <th>Kode Kelas</th>
+
                     <th>Nama Jurusan</th>
+                    <th>Kode Kelas</th>
                     <th>Nama Kelas</th>
                    <th style="text-align:right;">Aksi</th>
                 </tr>
@@ -191,17 +192,20 @@
                     $no=0;
                     foreach ($data->result_array() as $i) :
                        $no++;
-                      
+                        
+                        $kode_jurusan=$i['kelas_jurusan_id'];
+                        $nama_jurusan=$i['NAMA_JURUSAN'];
                        $kode=$i['kelas_id'];
-                       $kode_jurusan=$i['kelas_jurusan_id'];
-                       $nama_jurusan=$i['NAMA_JURUSAN'];
                        $nama=$i['kelas_nama'];
+                       
+                       
+                       
 
                     ?>
                 <tr>
                  
-                  <td><?php echo $kode;?></td>
                   <td><?php echo $nama_jurusan;?></td>
+                  <td><?php echo $kode;?></td>
                   <td><?php echo $nama;?></td>
                  
                   
@@ -440,10 +444,20 @@
                     <form class="form-horizontal" action="<?php echo base_url().'admin_si_kelas/simpan_kelas'?>" method="post" enctype="multipart/form-data">
                     <div class="modal-body">
 
-                              <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">Kode Kelas</label>
+                             <div class="form-group">
+                                        <label for="inputUserName" class="col-sm-4 control-label">Kode Jurusan</label>
                                         <div class="col-sm-7">
-                                            <input type="text" name="kode" class="form-control" id="inputUserName" placeholder="Kode Kelas" required>
+                                          <select name="xjurusan" class="form-control" required>
+                                            <option value="">-Pilih-</option>
+                                            <?php
+                                                foreach ($jurusan->result_array() as $j) {
+                                                  $id_jurusan=$j['KODE_JURUSAN'];
+                                                  $nama_jurusan=$j['NAMA_JURUSAN'];
+
+                                            ?>
+                                            <option value="<?php echo $id_jurusan;?>"><?php echo $nama_jurusan;?></option>
+                                            <?php } ?>
+                                          </select>
                                         </div>
                                     </div>
 
@@ -496,10 +510,20 @@
                     <div class="modal-body">
                                 <input type="hidden" name="kode" value="<?php echo $kode;?>"/>
                              
-                                    <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">Kode Kelas</label>
+                                   <div class="form-group">
+                                        <label for="inputUserName" class="col-sm-4 control-label">Kode Jurusan</label>
                                         <div class="col-sm-7">
-                                            <input type="text" name="kode" value="<?php echo $kode;?>" class="form-control" id="inputUserName" placeholder="Kode Kelas" required>
+                                          <select name="xjurusan" class="form-control" required>
+                                            <option value="">-Pilih-</option>
+                                            <?php
+                                                foreach ($jurusan->result_array() as $m) {
+                                                  $id_jurusan=$m['KODE_JURUSAN'];
+                                                  $nama_jurusan=$m['NAMA_JURUSAN'];
+
+                                            ?>
+                                            <option value="<?php echo $id_jurusan;?>"><?php echo $nama_jurusan;?></option>
+                                            <?php } ?>
+                                          </select>
                                         </div>
                                     </div>
 
@@ -533,7 +557,8 @@
   <!--Modal Edit Album-->
 
    <?php foreach ($data->result_array() as $i) :
-             $kode=$i['kelas_id'];
+                        
+                      $kode=$i['kelas_id'];
                        $kode_jurusan=$i['kelas_jurusan_id'];
                        $nama_jurusan=$i['NAMA_JURUSAN'];
                        

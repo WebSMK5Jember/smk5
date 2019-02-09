@@ -1,14 +1,18 @@
 <?php
 class M_jadwal extends CI_Model{
 
-	function get_all_jadwal(){
+	function get_all_jadwal_new(){
 		$hsl=$this->db->query("SELECT tabel_jadwal.*,tbl_kelas.*, tabel_mapel.* FROM tabel_jadwal JOIN tbl_kelas ON 'tabel_jadwal.KODE_KELAS'='tbl_kelas.kelas_id' JOIN tabel_mapel ON  
 			'tabel_jadwal.KODE_MAPEL_JADWAL'='tabel_mapel.KODE_MAPEL' JOIN tbl_guru ON 'tabel_jadwal.KODE_GURU'='tbl_guru.guru_id'");
 		return $hsl;
 	}
+	function get_all_jadwal(){
+		$hsl=$this->db->query("SELECT * from tabel_jadwal");
+		return $hsl;
+	}
 
-	function simpan_jadwal($KODE_KELAS,$KODE_MAPEL,$KODE_GURU, $JAM,$RUANG,$HARI){
-		$hsl=$this->db->query("INSERT INTO tabel_jadwal (KODE_KELAS, KODE_MAPEL_JADWAL, KODE_GURU, JAM , RUANG, HARI) VALUES ('$KODE_KELAS','$KODE_MAPEL','$KODE_GURU','$JAM','$RUANG','$HARI')");
+	function simpan_jadwal($kelas,$mapel,$guru, $JAM,$RUANG,$HARI){
+		$hsl=$this->db->query("INSERT INTO tabel_jadwal (KODE_KELAS, KODE_MAPEL_JADWAL, KODE_GURU, JAM , RUANG, HARI) VALUES ('$kelas','$mapel','$guru','$JAM','$RUANG','$HARI')");
 		return $hsl;
 	}
 

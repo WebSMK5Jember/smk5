@@ -24,9 +24,9 @@ class admin_si_kelas extends CI_Controller{
 	}
 	
 	function simpan_kelas(){
-	
+							  $jurusan=strip_tags($this->input->post('xjurusan'));
 	                        $kode=strip_tags($this->input->post('kode'));
-	                        $kode_jurusan=strip_tags($this->input->post('xjurusan'));
+	                      
 	                        $nama=strip_tags($this->input->post('xnama'));
 	                       
 						
@@ -39,9 +39,9 @@ class admin_si_kelas extends CI_Controller{
 	
 	function update_kelas(){
 				
-	           
+	           				 $jurusan=strip_tags($this->input->post('xjurusan'));
 	                         $kode=strip_tags($this->input->post('kode'));
-	                         $kode_jurusan=strip_tags($this->input->post('xjurusan'));
+	                        
 	                         $nama=strip_tags($this->input->post('xnama'));
 
 							$this->m_kelas->update_kelas($kode,$kode_jurusan,$nama);
