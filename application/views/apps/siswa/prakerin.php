@@ -1,4 +1,4 @@
-<?php echo form_open('siswa/save_input_prakerin','class="form-horizontal" role="form"');?>
+<?php echo form_open('siswa_si/input_prakerin','class="form-horizontal" role="form"');?>
 <div class="row">
     <div class="col-sm-12">
         <div class="card-box">
@@ -7,12 +7,7 @@
                 <div class="col-md-12">
                     <div class="p-20">
                         
-                         <div class="form-group">
-                            <label class="col-md-2 control-label" for="exampleInputEmail1">KODE PRAKERIN </label>
-                            <div class="col-md-10">
-                                <input type="text" name="KODE_PRAKERIN" class="form-control" id="exampleInputEmail1">
-                            </div>
-                         </div>
+                         
                         <div class="form-group">
                             <label class="col-md-2 control-label" for="exampleInputEmail1">NIS </label>
                             <div class="col-md-10">
@@ -26,10 +21,10 @@
                         <div class="form-group">
                             <label class="col-md-2 control-label" for="exampleInputEmail1"> GURU PEMBIMBING</label>
                                 <div class="col-md-10">
-                                    <select class="form-control" name="KODE_GURU">
+                                    <select class="form-control" name="guru_id">
                                         <option disabled selected value>- Pilih -</option>
                                         <?php foreach($guru as $data){?>
-                                        <option value="<?php echo $data->KODE_GURU?>"><?php echo $data->NAMA_GURU?></option>
+                                        <option value="<?php echo $data->guru_id?>"><?php echo $data->guru_nama?></option>
                                     <?php } ?>
                                     </select>
                                 </div>
@@ -49,19 +44,22 @@
                         </div>
 
                          <div class="form-group">
-                            <label class="col-md-2 control-label" for="exampleInputEmail1">TANGGAL MULAI </label>
+                            <label class="col-md-2 control-label" for="exampleInputEmail1">MINAT/BAKAT </label>
                             <div class="col-md-10">
-                                <input type="date" name="TANGGAL_DFTAR" class="form-control" id="exampleInputEmail1">
+                                <input type="text" name="MINAT" class="form-control" id="exampleInputEmail1">
                             </div>
                          </div>
-                         <div class="form-group">
-                            <label class="col-md-2 control-label" for="exampleInputEmail1">TANGGAL SELESAI </label>
-                            <div class="col-md-10">
-                                <input type="date" name="TANGGAL_KELUAR" class="form-control" id="exampleInputEmail1">
-                            </div>
-                         </div>
-                         
 
+                         <div class="form-group">
+                                        <label class="col-md-2 control-label" for="exampleInputEmail1">Upload Surat Persetujuan Orang Tua</label>
+                                        <div class="col-md-10-7">
+                                            <input type="file" name="filesurat" class="form-control" id="exampleInputEmail1">
+                                        </div>
+                                    </div>
+
+
+
+                     
                        
                             <button style="margin-top: 20px;" type="submit" name="btn-update" class="btn btn-custom waves-light waves-effect w-md">Submit</button>
                             <button style="margin-top: 20px;" type="submit" onclick="history-1" class="btn btn-warning waves-effect waves-light">Back</button>

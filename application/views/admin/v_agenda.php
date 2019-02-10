@@ -442,7 +442,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button>
-                        <h4 class="modal-title" id="myModalLabel">Add Agenda</h4>
+                        <h4 class="modal-title" id="myModalLabel">Tambah Agenda</h4>
                     </div>
                     <form class="form-horizontal" action="<?php echo base_url().'admin/agenda/simpan_agenda'?>" method="post" enctype="multipart/form-data">
                     <div class="modal-body">
@@ -497,7 +497,7 @@
                             <div class="form-group">
                                 <label for="inputUserName" class="col-sm-4 control-label">Waktu</label>
                                 <div class="col-sm-7">
-                                    <input type="text" name="xwaktu" class="form-control" id="inputUserName" placeholder="Contoh: 10.30-11.00 WIB" required>
+                                    <input type="time" name="xwaktu" class="form-control" id="inputUserName" placeholder="Contoh: 10.30" required>
                                 </div>
                             </div>
 
@@ -593,7 +593,7 @@
                             <div class="form-group">
                                 <label for="inputUserName" class="col-sm-4 control-label">Waktu</label>
                                 <div class="col-sm-7">
-                                    <input type="text" name="xwaktu" class="form-control" value="<?php echo $agenda_waktu;?>" id="inputUserName" placeholder="Contoh: 10.30-11.00 WIB" required>
+                                    <input type="time" name="xwaktu" class="form-control" value="<?php echo $agenda_waktu;?>" id="inputUserName" placeholder="Contoh: 10.30" required>
                                 </div>
                             </div>
 
@@ -638,7 +638,7 @@
                     <form class="form-horizontal" action="<?php echo base_url().'admin/agenda/hapus_agenda'?>" method="post" enctype="multipart/form-data">
                     <div class="modal-body">
 							<input type="hidden" name="kode" value="<?php echo $agenda_id;?>"/>
-                            <p>Apakah Anda yakin mau menghapus Pengguna <b><?php echo $agenda_nama;?></b> ?</p>
+                            <p>Apakah Anda yakin mau menghapus angenda <b><?php echo $agenda_nama;?></b> ?</p>
 
                     </div>
                     <div class="modal-footer">

@@ -87,6 +87,36 @@ public function get_tempat(){
 	public function get_mapel(){
 		return $this ->db ->get("tabel_mapel");
 	}
+
+function get_prakerin($id){
+	$this->db->select('*'); 
+    $this->db->from('tabel_prakerin'); 
+	$this->db->join('tbl_guru', 'tbl_guru.guru_id = tabel_prakerin.KODE_GURU', 'left');
+	$this->db->join('tbl_siswa', 'tbl_siswa.siswa_nis = tabel_prakerin.NIS', 'left');
+	$this->db->join('tabel_tempat_prakerin', 'tabel_tempat_prakerin.KODE_TEMPAT = tabel_prakerin.KODE_TEMPAT_P', 'left');
+    $data = array(
+				'tabel_prakerin.KODE_PRAKERIN'=>$id
+				);
+			$this ->db ->where($data,$id);
+
+			$query = $this ->db ->get();
+
+			return $query;
+	}
+
+
+	function simpan_prakerin($id,$nis,$guru,$tempat,$minat,$surat){
+		$hsl=$this->db->query("INSERT INTO tabel_prakerin  (NIS,KODE_GURU, KODE_TEMPAT_P, MINAT, PERSETUJUAN_ORGTUA) VALUES ('$nis','$guru','$tempat','$minat','$surat')");
+$data = array(
+				'tabel_prakerin.KODE_PRAKERIN'=>$id
+				);
+			$this ->db ->where($data,$id);
+
+			$query = $this ->db ->get();
+
+
+		return $hsl;
+	}
 }
 
 ?>
