@@ -10,7 +10,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>SI Sekolah | Data Jurusan</title>
+  <title>SI Sekolah | Verifkasi Prakerin</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <link rel="shorcut icon" type="text/css" href="<?php echo base_url().'assets/images/favicon.png'?>">
@@ -43,7 +43,7 @@
 
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
-<ul class="sidebar-menu">
+  <ul class="sidebar-menu">
         <li class="header">Menu Utama</li>
         <li class="active">
           <a href="<?php echo base_url().'admin_si_dashboard'?>">
@@ -116,7 +116,8 @@
             </span>
           </a>
         </li>
-<li>
+
+        <li>
           <a href="<?php echo base_url().'admin_si_nilai'?>">
             <i class="fa fa-graduation-cap"></i> <span>Data Master Nilai</span>
             <span class="pull-right-container">
@@ -134,8 +135,7 @@
           </a>
         </li>
 
-
-          <li>
+        <li>
           <a href="<?php echo base_url().'admin_si_verif_prakerin'?>">
             <i class="fa fa-graduation-cap"></i> <span>Verifikasi Prakerin</span>
             <span class="pull-right-container">
@@ -143,6 +143,7 @@
             </span>
           </a>
         </li>
+
 
 
          <li>
@@ -165,12 +166,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Data Jurusan
+        Verifikasi Prakerin
         <small></small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Jurusan</li>
+        <li class="active">Verifikasi Prakerin</li>
       </ol>
     </section>
 
@@ -180,17 +181,16 @@
         <div class="col-xs-12">
           <div class="box">
 
-          <div class="box">
-            <div class="box-header">
-              <a class="btn btn-success btn-flat" data-toggle="modal" data-target="#myModal"><span class="fa fa-plus"></span> Tambah Jurusan</a>
-            </div>
             <!-- /.box-header -->
             <div class="box-body">
               <table id="example1" class="table table-striped" style="font-size:13px;">
                 <thead>
                 <tr>
-          					<th>Kode Jurusan</th>
-                    <th>Nama Jurusan</th>
+          					<th>NOMOR INDUK SISWA (NIS)</th>
+                    <th>KODE GURU</th>
+                    <th>KODE TEMPAT PRAKERIN</th>
+                    <th>MINAT</th>
+                   
                   
                   
           					
@@ -203,24 +203,45 @@
           					$no=0;
           					foreach ($data->result_array() as $i) :
           					   $no++;
-          					  
-          					   $kode=$i['KODE_JURUSAN'];
-                       
-                       $nama=$i['NAMA_JURUSAN'];
 
+                      $kode=$i['KODE_PRAKERIN'];
+          					  
+          					   $NIS=$i['NIS'];
+
+                       $KODE_GURU=$i['KODE_GURU'];
+                       
+                       $KODE_TEMPAT_P=$i['KODE_TEMPAT_P'];
+
+                       
+
+                       $MINAT=$i['MINAT'];
+
+                       
+
+                       
+
+                      
                     ?>
                 <tr>
                  
-                  <td><?php echo $kode;?></td>
-                  
-                  
-                  <td><?php echo $nama;?></td>
+                  <td><?php echo $NIS;?></td>
+                
+
+                  <td><?php echo $KODE_GURU;?></td>
+
+                  <td><?php echo $KODE_TEMPAT_P;?></td>
+
+                  <td><?php echo $MINAT;?></td>
+
+              
+
+
                  
                   
                   
                   <td style="text-align:right;">
                         <a class="btn" data-toggle="modal" data-target="#ModalEdit<?php echo $kode;?>"><span class="fa fa-pencil"></span></a>
-                        <a class="btn" data-toggle="modal" data-target="#ModalHapus<?php echo $kode;?>"><span class="fa fa-trash"></span></a>
+                        
                   </td>
                 </tr>
 				<?php endforeach;?>
@@ -441,82 +462,72 @@
 </div>
 <!-- ./wrapper -->
 
-    <!--Modal Add Pengguna-->
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button>
-                        <h4 class="modal-title" id="myModalLabel">Tambah Jurusan</h4>
-                    </div>
-                    <form class="form-horizontal" action="<?php echo base_url().'admin_si_jurusan/simpan_jurusan'?>" method="post" enctype="multipart/form-data">
-                    <div class="modal-body">
-
-                              <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">Kode Jurusan</label>
-                                        <div class="col-sm-7">
-                                            <input type="text" name="kode" class="form-control" id="inputUserName" placeholder="Kode Jurusan" required>
-                                        </div>
-                                    </div>
-
-                                     
-                                    <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">Nama Jurusan</label>
-                                        <div class="col-sm-7">
-                                            <input type="text" name="xnama" class="form-control" id="inputUserName" placeholder="Nama Jurusan" required>
-                                        </div>
-                                    </div>
-
-                              
-
-
-
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default btn-flat" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary btn-flat" id="simpan">Simpan</button>
-                    </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-
+    
   <!--Modal Edit Album-->
   <?php foreach ($data->result_array() as $i) :
-              $kode=$i['KODE_JURUSAN'];
-                       $nama=$i['NAMA_JURUSAN'];
-                   
+     $kode=$i['KODE_PRAKERIN'];
                       
-            ?>
+                       $NIS=$i['NIS'];
 
+                       $KODE_GURU=$i['KODE_GURU'];
+                       
+                       $KODE_TEMPAT_P=$i['KODE_TEMPAT_P'];
+
+                       $MINAT=$i['MINAT'];
+;
+
+                    ?>
+             
         <div class="modal fade" id="ModalEdit<?php echo $kode;?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button>
-                        <h4 class="modal-title" id="myModalLabel">Edit Jurusan</h4>
+                        <h4 class="modal-title" id="myModalLabel">VERIFIKASI PENDAFTARAN PRAKERIN</h4>
                     </div>
-                    <form class="form-horizontal" action="<?php echo base_url().'admin_si_jurusan/update_jurusan'?>" method="post" enctype="multipart/form-data">
+                    <form class="form-horizontal" action="<?php echo base_url().'admin_si_verif_prakerin/update_vef_prakerin'?>" method="post" enctype="multipart/form-data">
                     <div class="modal-body">
                                 <input type="hidden" name="kode" value="<?php echo $kode;?>"/>
                              
-                                    <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">Kode Jurusan</label>
+                                  
+                                     <div class="form-group">
+                                        <label for="inputUserName" class="col-sm-4 control-label">Guru</label>
                                         <div class="col-sm-7">
-                                            <input type="text" name="kode" value="<?php echo $kode;?>" class="form-control" id="inputUserName" placeholder="Kode Jurusan" required>
+                                          <select name="kodeguru" class="form-control" required>
+                                            <option value="">-Pilih-</option>
+                                            <?php
+                                                foreach ($guru->result_array() as $g) {
+                                                  $id_guru=$g['guru_id'];
+                                                  $nama_guru=$g['guru_nama'];
+
+                                            ?>
+
+                                            <option value="<?php echo $id_guru;?>"><?php echo $nama_guru;?></option>
+                                            <?php } ?>
+                                          </select>
+                                        </div>
+                                    </div>
+    <div class="form-group">
+                                        <label for="inputUserName" class="col-sm-4 control-label">TEMPAT PRAKERIN</label>
+                                        <div class="col-sm-7">
+                                          <select name="KODE_TEMPAT_P" class="form-control" required>
+                                            <option value="">-Pilih-</option>
+                                            <?php
+                                                foreach ($tempat->result_array() as $t) {
+                                                  $id_tempat=$t['KODE_TEMPAT'];
+                                                  $nama_tempat=$t['NAMA_TEMPAT_PRAKERIN'];
+
+                                            ?>
+
+                                            <option value="<?php echo $id_tempat;?>"><?php echo $nama_tempat;?></option>
+                                            <?php } ?>
+                                          </select>
                                         </div>
                                     </div>
 
-                                    <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">Nama Jurusan</label>
-                                        <div class="col-sm-7">
-                                            <input type="text" name="xnama" value="<?php echo $nama;?>" class="form-control" id="inputUserName" placeholder="Nama Jurusan" required>
-                                        </div>
-                                    </div>
 
-                                   
+                                     
 
-                    </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default btn-flat" data-dismiss="modal">Close</button>
                         <button type="submit" class="btn btn-primary btn-flat" id="simpan">Simpan</button>
@@ -528,36 +539,7 @@
   <?php endforeach;?>
 	<!--Modal Edit Album-->
 
-	 <?php foreach ($data->result_array() as $i) :
-              $kode=$i['KODE_JURUSAN'];
-                       $nama=$i['NAMA_JURUSAN'];
-                   
-                      
-            ?>
-	<!--Modal Hapus Pengguna-->
-        <div class="modal fade" id="ModalHapus<?php echo $kode;?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button>
-                        <h4 class="modal-title" id="myModalLabel">Hapus Jurusan</h4>
-                    </div>
-                    <form class="form-horizontal" action="<?php echo base_url().'admin_si_jurusan/hapus_jurusan'?>" method="post" enctype="multipart/form-data">
-                    <div class="modal-body">
-							       <input type="hidden" name="kode" value="<?php echo $kode;?>"/>
-                    
-                            <p>Apakah Anda yakin mau menghapus jurusan <b><?php echo $nama;?></b> ?</p>
-
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default btn-flat" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary btn-flat" id="simpan">Hapus</button>
-                    </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-	<?php endforeach;?>
+	
 
 
 
@@ -609,7 +591,7 @@
         <script type="text/javascript">
                 $.toast({
                     heading: 'Success',
-                    text: "Jurusan Berhasil disimpan ke database.",
+                    text: "Jadwal Berhasil disimpan ke database.",
                     showHideTransition: 'slide',
                     icon: 'success',
                     hideAfter: false,
@@ -621,7 +603,7 @@
         <script type="text/javascript">
                 $.toast({
                     heading: 'Info',
-                    text: "Jurusan berhasil di update",
+                    text: "Jadwal Pelajaran berhasil di update",
                     showHideTransition: 'slide',
                     icon: 'info',
                     hideAfter: false,
@@ -633,7 +615,7 @@
         <script type="text/javascript">
                 $.toast({
                     heading: 'Success',
-                    text: "Jurusan Berhasil dihapus.",
+                    text: "Jadwal Pelajaran Berhasil dihapus.",
                     showHideTransition: 'slide',
                     icon: 'success',
                     hideAfter: false,

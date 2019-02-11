@@ -96,16 +96,16 @@ class ModelLogin extends CI_Model{
 	public function get_name_siswa($user){
 	
 	$this->db->select('*'); 
-    $this->db->from('tbl_pengguna'); 
-	$this->db->where('pengguna_username',$user);
+    $this->db->from('tbl_siswa'); 
+	$this->db->where('siswa_nis',$user);
     return $data = $this->db->get();
 	
 	}
 
 	public function get_name_guru($user){
 	$this->db->select('*'); 
-    $this->db->from('tbl_pengguna'); 
-	$this->db->where('pengguna_username',$user);
+    $this->db->from('tbl_guru'); 
+	$this->db->where('pguru_id',$user);
     return $data = $this->db->get();
 	}
     
