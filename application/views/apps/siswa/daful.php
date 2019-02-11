@@ -1,4 +1,4 @@
-<?php echo form_open('siswa/save_input_daful','class="form-horizontal" role="form"');?>
+<?php echo form_open('siswa_si/save_input_daful','class="form-horizontal" role="form"');?>
 <div class="row">
     <div class="col-sm-12">
         <div class="card-box">
@@ -29,13 +29,14 @@
                             </div>
                          </div>
 
-                         <div class="form-group">
-                            <label class="col-md-2 control-label" for="exampleInputEmail1">Status </label>
-                            <div class="col-md-10">
-                                <input type="radio-button" name="STATUS" class="form-control" id="exampleInputEmail1">
-                            </div>
-                         </div>
-                        
+                          <div class="form-group">
+                                        <label class="col-md-2 control-label" for="exampleInputEmail1">BUKTI PEMBAYARAN SPP TERAKHIR</label>
+                                        <div class="col-md-10-7">
+                                            <input type="file" name="filespp" class="form-control" id="exampleInputEmail1">
+                                        </div>
+                                    </div>
+
+
                         
                         
                        

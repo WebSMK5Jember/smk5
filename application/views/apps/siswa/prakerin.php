@@ -1,4 +1,4 @@
-<?php echo form_open('siswa_si/input_prakerin','class="form-horizontal" role="form"');?>
+<?php echo form_open('siswa_si/save_input_prakerin','class="form-horizontal" role="form"');?>
 <div class="row">
     <div class="col-sm-12">
         <div class="card-box">
@@ -21,7 +21,7 @@
                         <div class="form-group">
                             <label class="col-md-2 control-label" for="exampleInputEmail1"> GURU PEMBIMBING</label>
                                 <div class="col-md-10">
-                                    <select class="form-control" name="guru_id">
+                                    <select class="form-control" name="KODE_GURU">
                                         <option disabled selected value>- Pilih -</option>
                                         <?php foreach($guru as $data){?>
                                         <option value="<?php echo $data->guru_id?>"><?php echo $data->guru_nama?></option>
@@ -33,7 +33,7 @@
                          <div class="form-group">
                             <label class="col-md-2 control-label" for="exampleInputEmail1">TEMPAT PRAKERIN</label>
                                 <div class="col-md-10">
-                                    <select class="form-control" name="KODE_TEMPAT">
+                                    <select class="form-control" name="KODE_TEMPAT_P">
                                         <option disabled selected value>- Pilih -</option>
                                         <?php foreach($tempat as $data){?>
                                         <option value="<?php echo $data->KODE_TEMPAT?>"><?php echo $data->NAMA_TEMPAT_PRAKERIN?></option>
@@ -53,7 +53,7 @@
                          <div class="form-group">
                                         <label class="col-md-2 control-label" for="exampleInputEmail1">Upload Surat Persetujuan Orang Tua</label>
                                         <div class="col-md-10-7">
-                                            <input type="file" name="filesurat" class="form-control" id="exampleInputEmail1">
+                                            <input type="file" name="PERSETUJUAN_ORGTUA" class="form-control" id="exampleInputEmail1">
                                         </div>
                                     </div>
 

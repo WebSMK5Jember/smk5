@@ -61,8 +61,7 @@ public function jadwalpelajaran(){
 
 public function input_prakerin(){
 
-        $id = $this->session->userdata('id_session');
-         $prakerin = $this ->ModelSiswa->get_prakerin($id)->result();
+      
         $guru = $this ->ModelSiswa->get_guru()->result();
         $tempat = $this ->ModelSiswa->get_tempat()->result();
 
@@ -72,46 +71,15 @@ public function input_prakerin(){
             "panelbody" => "apps/siswa/prakerin",
 
             "guru" => $guru,
-            "tempat" => $tempat,
-            "prakerin" => $prakerin
+            "tempat" => $tempat
            
         );
         $this->load->view('panelbody', $data);
 }
 public function save_input_prakerin(){
 
-    $cek = $this->db->query("SELECT * FROM tabel_prakerin where KODE_PRAKERIN='".$this->input->post('KODE_PRAKERIN')."'")->num_rows();
-    if ($cek<=0){
-         $config['upload_path'] = './assets/images/'; //path folder
-                $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
-                $config['encrypt_name'] = TRUE; //nama yang terupload nantinya
-
-     $this->upload->initialize($config);
-                if(!empty($_FILES['filesurat']['name']))
-                {
-                    if ($this->upload->do_upload('filesurat'))
-                    {
-                            $gbr = $this->upload->data();
-                            //Compress Image
-                            $config['image_library']='gd2';
-                            $config['source_image']='./assets/images/'.$gbr['file_name'];
-                            $config['create_thumb']= FALSE;
-                            $config['maintain_ratio']= FALSE;
-                            $config['quality']= '60%';
-                            $config['width']= 300;
-                            $config['height']= 300;
-                            $config['new_image']= './assets/images/'.$gbr['file_name'];
-                            $this->load->library('image_lib', $config);
-                            $this->image_lib->resize();
-
-
-                             $photo=$gbr['file_name'];
-                            $nis=strip_tags($this->input->post('NIS'));
-                             $guru=strip_tags($this->input->post('guru_id'));
-                             $tempat=strip_tags($this->input->post('KODE_TEMPAT'));
-                              $minat=strip_tags($this->input->post('MINAT'));
-                               $surat=strip_tags($this->input->post('filesurat'));
-
+   
+        
 
         $data = array(
 
@@ -125,16 +93,11 @@ public function save_input_prakerin(){
     );
         
         $this->db->insert('tabel_prakerin',$data);
-        $this->db->ModelSiswa->simpan_prakerin()->result();
+        
         redirect('siswa_si');
 
 
     }
-}
-
-}
-
-}
 
 public function input_daful(){
 
@@ -155,7 +118,7 @@ public function save_input_daful(){
             'NIS' => $this->input->post('NIS'),
             'SEMESTER' => $this->input->post('SEMESTER'),
             'TANGGAL_DAFUL' => $this->input->post('TANGGAL_DAFUL'),
-            'STATUS' => $this->input->post('STATUS')
+            'filespp' => $this->input->post('filespp')
           
             
     );
@@ -168,3 +131,7 @@ public function save_input_daful(){
 
 
 }
+
+
+
+
