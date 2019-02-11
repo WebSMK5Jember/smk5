@@ -20,6 +20,6 @@ class Galeri extends CI_Controller{
 		$x['data']=$this->m_galeri->get_galeri_by_album_id($idalbum);
 		$this->load->view('beranda/header',$x);
 		$this->load->view('depan/v_galeri_per_album',$x);
-		$this->load->view('beranda/footer',$x);
+		
 	}
 }

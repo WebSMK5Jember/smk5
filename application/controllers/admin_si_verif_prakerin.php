@@ -26,22 +26,19 @@ class admin_si_verif_prakerin extends CI_Controller{
 	
 	function update_vef_prakerin(){
 
-		$this->M_V_PRAKERIN->update_prakerin($KODE_GURU,$KODE_TEMPAT_Pss,$data);
-		echo $this->session->set_flashdata('msg','success');
-		redirect('admin_si_verif_prakerin');
-				
+							$kode=strip_tags($this->input->post('kode'));
 						
 							$KODE_GURU=strip_tags($this->input->post('kodeguru'));
 	                        $KODE_TEMPAT_P=strip_tags($this->input->post('kodetempat'));
 	               
 
-	                       $data = array(
-	                       	'KODE_GURU' =>  $this ->input ->post('kodeguru'), 
-	                       	'KODE_TEMPAT_P' =>  $this ->input ->post('kodetempat'),
-	                       	'status' =>  '1');
+	                    
 
 							
-							
+							$this->M_V_PRAKERIN->update_prakerin($kode,$KODE_GURU,$KODE_TEMPAT_P);
+		echo $this->session->set_flashdata('msg','success');
+		redirect('admin_si_verif_prakerin');
+				
 	           
 
 	}

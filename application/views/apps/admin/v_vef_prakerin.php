@@ -203,19 +203,17 @@
           					$no=0;
           					foreach ($data->result_array() as $i) :
           					   $no++;
+ $kode=$i['KODE_PRAKERIN'];
+                      
+                       $NIS=$i['NIS'];
 
-                      $kode=$i['KODE_PRAKERIN'];
-          					  
-          					   $NIS=$i['NIS'];
-
-                       $KODE_GURU=$i['KODE_GURU'];
+                       $KODE_GURU=$i['KODE_GURU_P'];
+                       $nama_guru=$i['guru_nama'];
                        
                        $KODE_TEMPAT_P=$i['KODE_TEMPAT_P'];
-
-                       
+                       $nama_tempat=$i['NAMA_TEMPAT_PRAKERIN'];
 
                        $MINAT=$i['MINAT'];
-
                        
 
                        
@@ -465,13 +463,15 @@
     
   <!--Modal Edit Album-->
   <?php foreach ($data->result_array() as $i) :
-     $kode=$i['KODE_PRAKERIN'];
+                      $kode=$i['KODE_PRAKERIN'];
                       
                        $NIS=$i['NIS'];
 
-                       $KODE_GURU=$i['KODE_GURU'];
+                       $KODE_GURU=$i['KODE_GURU_P'];
+                       $nama_guru=$i['guru_nama'];
                        
                        $KODE_TEMPAT_P=$i['KODE_TEMPAT_P'];
+                       $nama_tempat=$i['NAMA_TEMPAT_PRAKERIN'];
 
                        $MINAT=$i['MINAT'];
 ;
@@ -501,8 +501,11 @@
                                                   $nama_guru=$g['guru_nama'];
 
                                             ?>
-
-                                            <option value="<?php echo $id_guru;?>"><?php echo $nama_guru;?></option>
+                                              <?php if($id_guru==$guru_id):?>
+                                              <option value="<?php echo $id_guru;?>" selected><?php echo $nama_guru;?></option>
+                                            <?php else:?>
+                                              <option value="<?php echo $id_guru;?>"><?php echo $nama_guru;?></option>
+                                            <?php endif;?>
                                             <?php } ?>
                                           </select>
                                         </div>
@@ -510,7 +513,7 @@
     <div class="form-group">
                                         <label for="inputUserName" class="col-sm-4 control-label">TEMPAT PRAKERIN</label>
                                         <div class="col-sm-7">
-                                          <select name="KODE_TEMPAT_P" class="form-control" required>
+                                          <select name="kodetempat" class="form-control" required>
                                             <option value="">-Pilih-</option>
                                             <?php
                                                 foreach ($tempat->result_array() as $t) {
@@ -519,7 +522,11 @@
 
                                             ?>
 
-                                            <option value="<?php echo $id_tempat;?>"><?php echo $nama_tempat;?></option>
+                                            <?php if($id_tempat==$KODE_TEMPAT):?>
+                                              <option value="<?php echo $id_tempat;?>" selected><?php echo $nama_tempat;?></option>
+                                            <?php else:?>
+                                              <option value="<?php echo $id_tempat;?>"><?php echo $nama_tempat;?></option>
+                                            <?php endif;?>
                                             <?php } ?>
                                           </select>
                                         </div>

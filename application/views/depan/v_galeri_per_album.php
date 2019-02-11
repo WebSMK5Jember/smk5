@@ -31,48 +31,36 @@
   <!--============================= Gallery =============================-->
   <div class="gallery-wrap">
     <div class="container">
-
 <!-- Style 2 -->
 <div class="row">
   <div class="col-md-12">
     
-
-     <div class="blog-category_block">
-             <ul>
-    
-                  <?php 
-                                      foreach ($alb->result_array() as $i) {
-                                        $alb_id=$i['album_id'];
-                                        $alb_nama=$i['album_nama'];
-                                      
-                                    ?>
-                                    <li><a href="<?php echo base_url().'galeri/album/'.$alb_id;?>"><?php echo $alb_nama;?></a></li>
-                                    <?php } ?>
-                                  </ul>
-</div>
+    <h3 class="gallery-style">Galeri Foto</h3>
   </div>
- <div class="col-md-12">
-     <h3 class="gallery-style">Semua Foto</h3>
 
+    
+ 
+    
       <div id="gallery-content">
         <div id="gallery-content-center">
-          <?php foreach ($all_galeri->result() as $row) : ?>
-            <a href="<?php echo base_url().'assets/images/'.$row->galeri_gambar;?>" class="image-link2">
-             <img src="<?php echo base_url().'assets/images/'.$row->galeri_gambar;?>" class="all img-fluid" alt="#" />
-            </a>
-          <?php endforeach;?>
-       </div>
+                            	<ul>
+                                  <?php
+                                    foreach ($data->result_array() as $a) {
+                                      $id=$a['galeri_id'];
+                                      $judul=$a['galeri_judul'];
+                                      $gambar=$a['galeri_gambar'];
+                                      
+                                  ?>
+                                	  <li><a href="<?php echo base_url().'assets/images/'.$gambar?>" rel="galleryimg" class="galleryimg" title="<?php echo $judul;?>" ><img src="<?php echo base_url().'assets/images/'.$gambar?>"  alt="" /></a></li>
+                                  <?php } ?>
+                              </ul>
+               </div>
      </div>
    </div>
  </div>
 </div>
-<!--//End Style 2 -->
 
-</div>
-</div>
-<!--//End Gallery -->
-<!--============================= FOOTER =============================-->
-<!--============================= FOOTER =============================-->
+
 <footer>
     <div class="container">
         <div class="row">
@@ -146,3 +134,4 @@
   </body>
 
   </html>
+  
