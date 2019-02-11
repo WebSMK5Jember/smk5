@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 11 Feb 2019 pada 15.36
--- Versi Server: 10.1.22-MariaDB
+-- Generation Time: Feb 11, 2019 at 11:32 PM
+-- Server version: 10.1.22-MariaDB
 -- PHP Version: 7.1.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `nilai_sikap`
+-- Table structure for table `nilai_sikap`
 --
 
 CREATE TABLE `nilai_sikap` (
@@ -40,7 +40,7 @@ CREATE TABLE `nilai_sikap` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tabel_absensi`
+-- Table structure for table `tabel_absensi`
 --
 
 CREATE TABLE `tabel_absensi` (
@@ -55,7 +55,7 @@ CREATE TABLE `tabel_absensi` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tabel_admin`
+-- Table structure for table `tabel_admin`
 --
 
 CREATE TABLE `tabel_admin` (
@@ -67,7 +67,7 @@ CREATE TABLE `tabel_admin` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tabel_jabatan`
+-- Table structure for table `tabel_jabatan`
 --
 
 CREATE TABLE `tabel_jabatan` (
@@ -76,7 +76,7 @@ CREATE TABLE `tabel_jabatan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tabel_jabatan`
+-- Dumping data for table `tabel_jabatan`
 --
 
 INSERT INTO `tabel_jabatan` (`KODE_JABATAN`, `NAMA_JABATAN`) VALUES
@@ -86,7 +86,7 @@ INSERT INTO `tabel_jabatan` (`KODE_JABATAN`, `NAMA_JABATAN`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tabel_jadwal`
+-- Table structure for table `tabel_jadwal`
 --
 
 CREATE TABLE `tabel_jadwal` (
@@ -100,7 +100,7 @@ CREATE TABLE `tabel_jadwal` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tabel_jadwal`
+-- Dumping data for table `tabel_jadwal`
 --
 
 INSERT INTO `tabel_jadwal` (`KODE_JADWAL`, `KODE_KELAS`, `KODE_MAPEL_JADWAL`, `KODE_GURU`, `JAM`, `RUANG`, `HARI`) VALUES
@@ -120,7 +120,7 @@ INSERT INTO `tabel_jadwal` (`KODE_JADWAL`, `KODE_KELAS`, `KODE_MAPEL_JADWAL`, `K
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tabel_jurusan`
+-- Table structure for table `tabel_jurusan`
 --
 
 CREATE TABLE `tabel_jurusan` (
@@ -129,7 +129,7 @@ CREATE TABLE `tabel_jurusan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tabel_jurusan`
+-- Dumping data for table `tabel_jurusan`
 --
 
 INSERT INTO `tabel_jurusan` (`KODE_JURUSAN`, `NAMA_JURUSAN`) VALUES
@@ -139,7 +139,7 @@ INSERT INTO `tabel_jurusan` (`KODE_JURUSAN`, `NAMA_JURUSAN`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tabel_laporguru`
+-- Table structure for table `tabel_laporguru`
 --
 
 CREATE TABLE `tabel_laporguru` (
@@ -151,7 +151,7 @@ CREATE TABLE `tabel_laporguru` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tabel_laporguru`
+-- Dumping data for table `tabel_laporguru`
 --
 
 INSERT INTO `tabel_laporguru` (`KODE_LAPORGURU`, `NAMA_GURU_LAPOR`, `ISI_LAPORGURU`, `TANGGAL_LAPORGURU`, `STATUS_LAPOR_GURU`) VALUES
@@ -160,7 +160,7 @@ INSERT INTO `tabel_laporguru` (`KODE_LAPORGURU`, `NAMA_GURU_LAPOR`, `ISI_LAPORGU
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tabel_laporsarana`
+-- Table structure for table `tabel_laporsarana`
 --
 
 CREATE TABLE `tabel_laporsarana` (
@@ -172,7 +172,7 @@ CREATE TABLE `tabel_laporsarana` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tabel_laporsarana`
+-- Dumping data for table `tabel_laporsarana`
 --
 
 INSERT INTO `tabel_laporsarana` (`KODE_LAPORSRANA`, `NAMA_SARANA`, `ISI_LAPORAN`, `TANGGAL_LAPORANSARANA`, `STATUS_LAPOR_SARANA`) VALUES
@@ -181,7 +181,7 @@ INSERT INTO `tabel_laporsarana` (`KODE_LAPORSRANA`, `NAMA_SARANA`, `ISI_LAPORAN`
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tabel_mapel`
+-- Table structure for table `tabel_mapel`
 --
 
 CREATE TABLE `tabel_mapel` (
@@ -190,7 +190,7 @@ CREATE TABLE `tabel_mapel` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tabel_mapel`
+-- Dumping data for table `tabel_mapel`
 --
 
 INSERT INTO `tabel_mapel` (`KODE_MAPEL`, `NAMA_MAPEL`) VALUES
@@ -202,7 +202,7 @@ INSERT INTO `tabel_mapel` (`KODE_MAPEL`, `NAMA_MAPEL`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tabel_nilai`
+-- Table structure for table `tabel_nilai`
 --
 
 CREATE TABLE `tabel_nilai` (
@@ -227,7 +227,7 @@ CREATE TABLE `tabel_nilai` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tabel_nilai`
+-- Dumping data for table `tabel_nilai`
 --
 
 INSERT INTO `tabel_nilai` (`ID_NILAI`, `NIS`, `KODE_MAPEL_NILAI`, `KODE_KELAS`, `KODE_GURU`, `SEMESTER`, `TUGAS1`, `TUGAS2`, `TUGAS3`, `TUGAS4`, `TUGAS5`, `UH1`, `UH2`, `UH3`, `UH4`, `UTS`, `UAS`, `NRATARAPOT`) VALUES
@@ -239,7 +239,7 @@ INSERT INTO `tabel_nilai` (`ID_NILAI`, `NIS`, `KODE_MAPEL_NILAI`, `KODE_KELAS`, 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tabel_piket`
+-- Table structure for table `tabel_piket`
 --
 
 CREATE TABLE `tabel_piket` (
@@ -248,7 +248,7 @@ CREATE TABLE `tabel_piket` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tabel_piket`
+-- Dumping data for table `tabel_piket`
 --
 
 INSERT INTO `tabel_piket` (`KODE_PIKET`, `HARI`) VALUES
@@ -257,13 +257,13 @@ INSERT INTO `tabel_piket` (`KODE_PIKET`, `HARI`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tabel_prakerin`
+-- Table structure for table `tabel_prakerin`
 --
 
 CREATE TABLE `tabel_prakerin` (
   `KODE_PRAKERIN` int(5) NOT NULL,
   `NIS` varchar(10) DEFAULT NULL,
-  `KODE_GURU` varchar(5) DEFAULT NULL,
+  `KODE_GURU_P` varchar(5) DEFAULT NULL,
   `KODE_TEMPAT_P` varchar(5) DEFAULT NULL,
   `MINAT` varchar(50) DEFAULT NULL,
   `PERSETUJUAN_ORGTUA` varchar(40) NOT NULL,
@@ -271,16 +271,16 @@ CREATE TABLE `tabel_prakerin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tabel_prakerin`
+-- Dumping data for table `tabel_prakerin`
 --
 
-INSERT INTO `tabel_prakerin` (`KODE_PRAKERIN`, `NIS`, `KODE_GURU`, `KODE_TEMPAT_P`, `MINAT`, `PERSETUJUAN_ORGTUA`, `status`) VALUES
-(5, '15045/0481', 'a0001', '112', 'trouble shooting computer', 'vb.png', 0);
+INSERT INTO `tabel_prakerin` (`KODE_PRAKERIN`, `NIS`, `KODE_GURU_P`, `KODE_TEMPAT_P`, `MINAT`, `PERSETUJUAN_ORGTUA`, `status`) VALUES
+(5, '15045/0481', '2', '112', 'trouble shooting computer', 'vb.png', 1);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tabel_saran`
+-- Table structure for table `tabel_saran`
 --
 
 CREATE TABLE `tabel_saran` (
@@ -292,7 +292,7 @@ CREATE TABLE `tabel_saran` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tabel_saran`
+-- Dumping data for table `tabel_saran`
 --
 
 INSERT INTO `tabel_saran` (`KODE_SARAN`, `NAMA_SISWA`, `DESCRIPSI_SARAN`, `TANGGAL_KRITIKSARAN`, `STATUS_SARAN`) VALUES
@@ -303,7 +303,7 @@ INSERT INTO `tabel_saran` (`KODE_SARAN`, `NAMA_SISWA`, `DESCRIPSI_SARAN`, `TANGG
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tabel_tempat_prakerin`
+-- Table structure for table `tabel_tempat_prakerin`
 --
 
 CREATE TABLE `tabel_tempat_prakerin` (
@@ -313,7 +313,7 @@ CREATE TABLE `tabel_tempat_prakerin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tabel_tempat_prakerin`
+-- Dumping data for table `tabel_tempat_prakerin`
 --
 
 INSERT INTO `tabel_tempat_prakerin` (`KODE_TEMPAT`, `NAMA_TEMPAT_PRAKERIN`, `LOKASI`) VALUES
@@ -322,7 +322,7 @@ INSERT INTO `tabel_tempat_prakerin` (`KODE_TEMPAT`, `NAMA_TEMPAT_PRAKERIN`, `LOK
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `table_daful`
+-- Table structure for table `table_daful`
 --
 
 CREATE TABLE `table_daful` (
@@ -334,7 +334,7 @@ CREATE TABLE `table_daful` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `table_daful`
+-- Dumping data for table `table_daful`
 --
 
 INSERT INTO `table_daful` (`KODE_DAFUL`, `NIS`, `SEMESTER`, `TANGGAL_DAFUL`, `filespp`) VALUES
@@ -345,7 +345,7 @@ INSERT INTO `table_daful` (`KODE_DAFUL`, `NIS`, `SEMESTER`, `TANGGAL_DAFUL`, `fi
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_agenda`
+-- Table structure for table `tbl_agenda`
 --
 
 CREATE TABLE `tbl_agenda` (
@@ -362,7 +362,7 @@ CREATE TABLE `tbl_agenda` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_agenda`
+-- Dumping data for table `tbl_agenda`
 --
 
 INSERT INTO `tbl_agenda` (`agenda_id`, `agenda_nama`, `agenda_tanggal`, `agenda_deskripsi`, `agenda_mulai`, `agenda_selesai`, `agenda_tempat`, `agenda_waktu`, `agenda_keterangan`, `agenda_author`) VALUES
@@ -375,7 +375,7 @@ INSERT INTO `tbl_agenda` (`agenda_id`, `agenda_nama`, `agenda_tanggal`, `agenda_
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_album`
+-- Table structure for table `tbl_album`
 --
 
 CREATE TABLE `tbl_album` (
@@ -389,7 +389,7 @@ CREATE TABLE `tbl_album` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_album`
+-- Dumping data for table `tbl_album`
 --
 
 INSERT INTO `tbl_album` (`album_id`, `album_nama`, `album_tanggal`, `album_pengguna_id`, `album_author`, `album_count`, `album_cover`) VALUES
@@ -400,7 +400,7 @@ INSERT INTO `tbl_album` (`album_id`, `album_nama`, `album_tanggal`, `album_pengg
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_files`
+-- Table structure for table `tbl_files`
 --
 
 CREATE TABLE `tbl_files` (
@@ -414,7 +414,7 @@ CREATE TABLE `tbl_files` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_files`
+-- Dumping data for table `tbl_files`
 --
 
 INSERT INTO `tbl_files` (`file_id`, `file_judul`, `file_deskripsi`, `file_tanggal`, `file_oleh`, `file_download`, `file_data`) VALUES
@@ -433,7 +433,7 @@ INSERT INTO `tbl_files` (`file_id`, `file_judul`, `file_deskripsi`, `file_tangga
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_galeri`
+-- Table structure for table `tbl_galeri`
 --
 
 CREATE TABLE `tbl_galeri` (
@@ -447,7 +447,7 @@ CREATE TABLE `tbl_galeri` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_galeri`
+-- Dumping data for table `tbl_galeri`
 --
 
 INSERT INTO `tbl_galeri` (`galeri_id`, `galeri_judul`, `galeri_tanggal`, `galeri_gambar`, `galeri_album_id`, `galeri_pengguna_id`, `galeri_author`) VALUES
@@ -470,7 +470,7 @@ INSERT INTO `tbl_galeri` (`galeri_id`, `galeri_judul`, `galeri_tanggal`, `galeri
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_guru`
+-- Table structure for table `tbl_guru`
 --
 
 CREATE TABLE `tbl_guru` (
@@ -490,7 +490,7 @@ CREATE TABLE `tbl_guru` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_guru`
+-- Dumping data for table `tbl_guru`
 --
 
 INSERT INTO `tbl_guru` (`guru_id`, `guru_mapel_id`, `guru_jabatan_id`, `guru_piket_id`, `guru_nip`, `guru_nama`, `guru_alamat`, `guru_jumlah_jam`, `guru_jenkel`, `guru_tmp_lahir`, `guru_tgl_lahir`, `guru_photo`, `guru_tgl_input`) VALUES
@@ -515,7 +515,7 @@ INSERT INTO `tbl_guru` (`guru_id`, `guru_mapel_id`, `guru_jabatan_id`, `guru_pik
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_inbox`
+-- Table structure for table `tbl_inbox`
 --
 
 CREATE TABLE `tbl_inbox` (
@@ -529,7 +529,7 @@ CREATE TABLE `tbl_inbox` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_inbox`
+-- Dumping data for table `tbl_inbox`
 --
 
 INSERT INTO `tbl_inbox` (`inbox_id`, `inbox_nama`, `inbox_email`, `inbox_kontak`, `inbox_pesan`, `inbox_tanggal`, `inbox_status`) VALUES
@@ -542,7 +542,7 @@ INSERT INTO `tbl_inbox` (`inbox_id`, `inbox_nama`, `inbox_email`, `inbox_kontak`
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_kategori`
+-- Table structure for table `tbl_kategori`
 --
 
 CREATE TABLE `tbl_kategori` (
@@ -552,7 +552,7 @@ CREATE TABLE `tbl_kategori` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_kategori`
+-- Dumping data for table `tbl_kategori`
 --
 
 INSERT INTO `tbl_kategori` (`kategori_id`, `kategori_nama`, `kategori_tanggal`) VALUES
@@ -565,7 +565,7 @@ INSERT INTO `tbl_kategori` (`kategori_id`, `kategori_nama`, `kategori_tanggal`) 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_kelas`
+-- Table structure for table `tbl_kelas`
 --
 
 CREATE TABLE `tbl_kelas` (
@@ -575,7 +575,7 @@ CREATE TABLE `tbl_kelas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_kelas`
+-- Dumping data for table `tbl_kelas`
 --
 
 INSERT INTO `tbl_kelas` (`kelas_id`, `kelas_jurusan_id`, `kelas_nama`) VALUES
@@ -585,7 +585,7 @@ INSERT INTO `tbl_kelas` (`kelas_id`, `kelas_jurusan_id`, `kelas_nama`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_komentar`
+-- Table structure for table `tbl_komentar`
 --
 
 CREATE TABLE `tbl_komentar` (
@@ -600,7 +600,7 @@ CREATE TABLE `tbl_komentar` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_komentar`
+-- Dumping data for table `tbl_komentar`
 --
 
 INSERT INTO `tbl_komentar` (`komentar_id`, `komentar_nama`, `komentar_email`, `komentar_isi`, `komentar_tanggal`, `komentar_status`, `komentar_tulisan_id`, `komentar_parent`) VALUES
@@ -613,7 +613,7 @@ INSERT INTO `tbl_komentar` (`komentar_id`, `komentar_nama`, `komentar_email`, `k
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_log_aktivitas`
+-- Table structure for table `tbl_log_aktivitas`
 --
 
 CREATE TABLE `tbl_log_aktivitas` (
@@ -629,7 +629,7 @@ CREATE TABLE `tbl_log_aktivitas` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_pengguna`
+-- Table structure for table `tbl_pengguna`
 --
 
 CREATE TABLE `tbl_pengguna` (
@@ -648,7 +648,7 @@ CREATE TABLE `tbl_pengguna` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_pengguna`
+-- Dumping data for table `tbl_pengguna`
 --
 
 INSERT INTO `tbl_pengguna` (`pengguna_id`, `pengguna_nama`, `pengguna_moto`, `pengguna_jenkel`, `pengguna_username`, `pengguna_siswa`, `pengguna_guru`, `pengguna_password`, `pengguna_email`, `pengguna_level`, `pengguna_register`, `pengguna_photo`) VALUES
@@ -673,7 +673,7 @@ INSERT INTO `tbl_pengguna` (`pengguna_id`, `pengguna_nama`, `pengguna_moto`, `pe
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_pengumuman`
+-- Table structure for table `tbl_pengumuman`
 --
 
 CREATE TABLE `tbl_pengumuman` (
@@ -685,7 +685,7 @@ CREATE TABLE `tbl_pengumuman` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_pengumuman`
+-- Dumping data for table `tbl_pengumuman`
 --
 
 INSERT INTO `tbl_pengumuman` (`pengumuman_id`, `pengumuman_judul`, `pengumuman_deskripsi`, `pengumuman_tanggal`, `pengumuman_author`) VALUES
@@ -700,7 +700,7 @@ INSERT INTO `tbl_pengumuman` (`pengumuman_id`, `pengumuman_judul`, `pengumuman_d
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_pengunjung`
+-- Table structure for table `tbl_pengunjung`
 --
 
 CREATE TABLE `tbl_pengunjung` (
@@ -711,7 +711,7 @@ CREATE TABLE `tbl_pengunjung` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_pengunjung`
+-- Dumping data for table `tbl_pengunjung`
 --
 
 INSERT INTO `tbl_pengunjung` (`pengunjung_id`, `pengunjung_tanggal`, `pengunjung_ip`, `pengunjung_perangkat`) VALUES
@@ -726,12 +726,13 @@ INSERT INTO `tbl_pengunjung` (`pengunjung_id`, `pengunjung_tanggal`, `pengunjung
 (938, '2019-02-08 05:50:36', '::1', 'Chrome'),
 (939, '2019-02-09 11:46:59', '::1', 'Chrome'),
 (940, '2019-02-10 06:46:02', '::1', 'Chrome'),
-(941, '2019-02-11 02:09:35', '::1', 'Chrome');
+(941, '2019-02-11 02:09:35', '::1', 'Chrome'),
+(942, '2019-02-11 22:31:53', '::1', 'Chrome');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_siswa`
+-- Table structure for table `tbl_siswa`
 --
 
 CREATE TABLE `tbl_siswa` (
@@ -749,7 +750,7 @@ CREATE TABLE `tbl_siswa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_siswa`
+-- Dumping data for table `tbl_siswa`
 --
 
 INSERT INTO `tbl_siswa` (`siswa_nis`, `siswa_nama`, `siswa_jenkel`, `siswa_kelas_id`, `siswa_tempat_lahir`, `siswa_tgl_lahir`, `siswa_alamat`, `siswa_ortu`, `siswa_asal_sekolah`, `no_ijasah`, `siswa_photo`) VALUES
@@ -764,7 +765,7 @@ INSERT INTO `tbl_siswa` (`siswa_nis`, `siswa_nama`, `siswa_jenkel`, `siswa_kelas
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_tulisan`
+-- Table structure for table `tbl_tulisan`
 --
 
 CREATE TABLE `tbl_tulisan` (
@@ -783,7 +784,7 @@ CREATE TABLE `tbl_tulisan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tbl_tulisan`
+-- Dumping data for table `tbl_tulisan`
 --
 
 INSERT INTO `tbl_tulisan` (`tulisan_id`, `tulisan_judul`, `tulisan_isi`, `tulisan_tanggal`, `tulisan_kategori_id`, `tulisan_kategori_nama`, `tulisan_views`, `tulisan_gambar`, `tulisan_pengguna_id`, `tulisan_author`, `tulisan_img_slider`, `tulisan_slug`) VALUES
@@ -877,7 +878,7 @@ ALTER TABLE `tabel_piket`
 --
 ALTER TABLE `tabel_prakerin`
   ADD PRIMARY KEY (`KODE_PRAKERIN`),
-  ADD KEY `FK_REFERENCE_14` (`KODE_GURU`),
+  ADD KEY `FK_REFERENCE_14` (`KODE_GURU_P`),
   ADD KEY `FK_REFERENCE_15` (`NIS`),
   ADD KEY `FK_REFERENCE_22` (`KODE_TEMPAT_P`);
 
@@ -1095,7 +1096,7 @@ ALTER TABLE `tbl_pengumuman`
 -- AUTO_INCREMENT for table `tbl_pengunjung`
 --
 ALTER TABLE `tbl_pengunjung`
-  MODIFY `pengunjung_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=942;
+  MODIFY `pengunjung_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=943;
 --
 -- AUTO_INCREMENT for table `tbl_tulisan`
 --
