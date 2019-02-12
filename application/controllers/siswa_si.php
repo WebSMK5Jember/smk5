@@ -85,7 +85,7 @@ public function save_input_prakerin(){
 
             'KODE_PRAKERIN' => $this->input->post('KODE_PRAKERIN'),
             'NIS' => $this->input->post('NIS'),
-            'KODE_GURU' => $this->input->post('KODE_GURU'),
+            'KODE_GURU_P' => $this->input->post('KODE_GURU_P'),
             'KODE_TEMPAT_P' => $this->input->post('KODE_TEMPAT_P'),
             'MINAT' => $this->input->post('MINAT'),
             'PERSETUJUAN_ORGTUA' => $this->input->post('PERSETUJUAN_ORGTUA')
@@ -98,6 +98,31 @@ public function save_input_prakerin(){
 
 
     }
+
+
+
+
+     public function prakerin_fix(){
+        $id = $this->session->userdata('id_session');
+        $list = $this->ModelSiswa->get_prakerin($id)->result();
+        $data = array(
+            "menu"      => "MenuSiswa",
+            "panelbody" => "apps/siswa/prakerin_fix",
+            "list"      => $list
+        );
+        $this->load->view('panelbody', $data);
+        
+    }
+
+function cetak_prakerin($kode) {
+        $this->cek();
+        $data = array(
+            'title' => 'BUKTI DAFTAR PRAKERIN',
+            'table' => $this->ModelSiswa->get_cetak_prakerin($kode)->result(),
+            );
+        $this->load->view('apps/siswa/cetak_laporan_prakerin', $data);
+    }
+
 
 public function input_daful(){
 
@@ -128,6 +153,9 @@ public function save_input_daful(){
 
 
     }
+
+
+   
 
 
 }

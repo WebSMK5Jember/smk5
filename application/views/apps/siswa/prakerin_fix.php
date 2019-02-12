@@ -11,7 +11,7 @@
                         <div class="form-group">
                             <label class="col-md-2 control-label" for="exampleInputEmail1">NIS </label>
                             <div class="col-md-10">
-                                <input type="text" name="NIS" class="form-control" id="exampleInputEmail1">
+                                <input type="text" name="NIS" class="form-control" id="exampleInputEmail1" readonly="disabled">
                             </div>
                          </div>
                         
@@ -21,7 +21,7 @@
                         <div class="form-group">
                             <label class="col-md-2 control-label" for="exampleInputEmail1"> GURU PEMBIMBING</label>
                                 <div class="col-md-10">
-                                    <select class="form-control" name="KODE_GURU">
+                                    <select class="form-control" name="KODE_GURU" readonly="disabled">
                                         <option disabled selected value>- Pilih -</option>
                                         <?php foreach($guru as $data){?>
                                         <option value="<?php echo $data->guru_id?>"><?php echo $data->guru_nama?></option>
@@ -33,8 +33,8 @@
                          <div class="form-group">
                             <label class="col-md-2 control-label" for="exampleInputEmail1">TEMPAT PRAKERIN</label>
                                 <div class="col-md-10">
-                                    <select class="form-control" name="KODE_TEMPAT_P">
-                                        <option disabled selected value>- Pilih -</option>
+                                    <select class="form-control" name="KODE_TEMPAT_P" readonly="disabled">
+                                        <option disabled selected value>- Pilih -</optreadonly="disabled"ion>
                                         <?php foreach($tempat as $data){?>
                                         <option value="<?php echo $data->KODE_TEMPAT?>"><?php echo $data->NAMA_TEMPAT_PRAKERIN?></option>
                                         
@@ -46,14 +46,14 @@
                          <div class="form-group">
                             <label class="col-md-2 control-label" for="exampleInputEmail1">MINAT/BAKAT </label>
                             <div class="col-md-10">
-                                <input type="text" name="MINAT" class="form-control"  id="exampleInputEmail1">
+                                <input type="text" name="MINAT" readonly="disabled" class="form-control"  id="exampleInputEmail1">
                             </div>
                          </div>
 
                          <div class="form-group">
                                         <label class="col-md-2 control-label" for="exampleInputEmail1">Upload Surat Persetujuan Orang Tua</label>
                                         <div class="col-md-10-7">
-                                            <input type="file" name="PERSETUJUAN_ORGTUA" class="form-control" id="exampleInputEmail1">
+                                            <input type="file" name="PERSETUJUAN_ORGTUA" readonly="disabled" class="form-control" id="exampleInputEmail1">
                                         </div>
                                     </div>
 
@@ -61,8 +61,7 @@
 
                      
                        
-                            <button style="margin-top: 20px;" type="submit" name="btn-update" class="btn btn-custom waves-light waves-effect w-md"><?php echo anchor('siswa_si/prakerin_fix',
-            'Submit','id="btnTest" type="button" '); ?></button>
+                            <button style="margin-top: 20px;" type="submit" name="btn-update" class="btn btn-custom waves-light waves-effect w-md">Submit </button>
                             <button style="margin-top: 20px;" type="submit" onclick="history-1" class="btn btn-warning waves-effect waves-light">Back</button>
 
                                 </div>
