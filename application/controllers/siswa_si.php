@@ -94,7 +94,7 @@ public function save_input_prakerin(){
         
         $this->db->insert('tabel_prakerin',$data);
         
-        redirect('siswa_si');
+        redirect('siswa_si/prakerin_fix');
 
 
     }
@@ -103,24 +103,32 @@ public function save_input_prakerin(){
 
 
      public function prakerin_fix(){
+
+        $guru = $this ->ModelSiswa->get_guru()->result();
+        $tempat = $this ->ModelSiswa->get_tempat()->result();
         $id = $this->session->userdata('id_session');
         $list = $this->ModelSiswa->get_prakerin($id)->result();
         $data = array(
             "menu"      => "MenuSiswa",
             "panelbody" => "apps/siswa/prakerin_fix",
-            "list"      => $list
+            "list"      => $list,
+
+            "guru" => $guru,
+            "tempat" => $tempat
         );
         $this->load->view('panelbody', $data);
         
     }
 
-function cetak_prakerin($kode) {
-        $this->cek();
+public function cetak_prakerin($id) {
+          $id = $this->session->userdata('KODE_PRAKERIN');
         $data = array(
-            'title' => 'BUKTI DAFTAR PRAKERIN',
-            'table' => $this->ModelSiswa->get_cetak_prakerin($kode)->result(),
+            "title" => "BUKTI DAFTAR PRAKERIN",
+            "table" => $this->ModelSiswa->get_cetak_prakerin($id)->result(),
+            "panelbody" => "apps/siswa/cetak_prakerin"
+            
             );
-        $this->load->view('apps/siswa/cetak_laporan_prakerin', $data);
+        $this->load->view('panelbody', $data);
     }
 
 

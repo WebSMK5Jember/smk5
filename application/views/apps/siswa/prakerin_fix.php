@@ -61,7 +61,8 @@
 
                      
                        
-                            <button style="margin-top: 20px;" type="submit" name="btn-update" class="btn btn-custom waves-light waves-effect w-md">Submit </button>
+                            <button style="margin-top: 20px;" type="submit" name="btn-update" class="btn btn-custom waves-light waves-effect w-md"><?php echo anchor('siswa_si/cetak_prakerin/',
+            'Cetak','id="btnTest" type="button" '); ?></button>
                             <button style="margin-top: 20px;" type="submit" onclick="history-1" class="btn btn-warning waves-effect waves-light">Back</button>
 
                                 </div>

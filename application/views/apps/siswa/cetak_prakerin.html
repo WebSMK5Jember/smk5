@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><?= $title ?></title>
+	<!-- Bootstrap 3.3.6 -->
+	<link rel="stylesheet" href="<?php echo base_url('theme/css/bootstrap.min.css') ?>">
+	<style type="text/css">
+		@media print {
+			body { visibility: visible; }
+			@page{
+				margin: 2cm 2cm 2cm 2cm; 
+			}
+		}
+	</style>
+</head>
+<body>
+	<h3 class="text-center"><strong><?= $title ?></strong></h3>
+	<?php 
+	$this->table->set_heading(array('KODE PRAKERIN','NIS','GURU PEMBIMBING','TEMPAT PRAKERIN', 'MINAT'));
+	foreach($table as $row){
+	    $this->table->add_row(
+	        array('data' => $row->KODE_PRAKERIN, 'width' => '25'),
+	        array('data' => $row->NIS),
+	        array('data' => $row->KODE_GURU_P),
+	        array('data' => $row->KODE_TEMPAT_P),
+	        array('data' => $row->MINAT)
+	      
+	    ;
+	}                                   
+	
+	
+	?>
+
+	<!-- Bootstrap 3.3.6 -->
+	<script src="<?php echo base_url('theme/js/bootstrap.min.js') ?>"></script>
+	<script type="text/javascript">
+		window.print();
+		window.close();
+	</script>
+</body>
+</html>
