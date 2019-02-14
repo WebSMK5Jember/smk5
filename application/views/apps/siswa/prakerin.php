@@ -64,9 +64,18 @@
 
                      
                        
+<<<<<<< HEAD
                            
                             <button style="margin-top: 20px;" type="submit" name="btn-update" class="btn btn-custom waves-light waves-effect w-md">Submit</button>
                             <button style="margin-top: 20px;" type="submit" onclick="history-1" class="btn btn-warning waves-effect waves-light">Back</button>
+=======
+                             <button style="margin-top: 20px;" type="submit" name="btn-update" class="btn btn-custom waves-light waves-effect w-md" ">Submit <?php echo anchor('siswa_si/prakerin_fix'); ?></button>
+
+                            <button style="margin-top: 20px;" type="submit" onclick="history-1" class="btn btn-warning waves-effect waves-light">Back</button>
+
+
+
+>>>>>>> 9cea15eb63619a2b1ed07f7abe4b5ed3d67ed9b3
                                 </div>
                         </div>
 

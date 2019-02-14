@@ -155,7 +155,11 @@ function get_prakerin($id){
 	$this->db->join('tbl_siswa', 'tbl_siswa.siswa_nis = tabel_prakerin.NIS', 'left');
 	$this->db->join('tabel_tempat_prakerin', 'tabel_tempat_prakerin.KODE_TEMPAT = tabel_prakerin.KODE_TEMPAT_P', 'left');
     $data = array(
+<<<<<<< HEAD
 				'tabel_prakerin.status'=>$id
+=======
+				'tabel_prakerin.KODE_PRAKERIN'=>$id,
+>>>>>>> 9cea15eb63619a2b1ed07f7abe4b5ed3d67ed9b3
 				);
 			$this ->db ->where($data,'1');
 
@@ -211,6 +215,11 @@ $data = array(
 
 		return $hsl;
 	}
+ function get_cetak_prakerin($id){
+
+ 	return $this->db->query ("select * from tabel_prakerin WHERE status='1' and KODE_PRAKERIN='$id'");
+ }
+
 }
 
 ?>
