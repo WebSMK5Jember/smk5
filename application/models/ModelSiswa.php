@@ -24,6 +24,22 @@ class ModelSiswa extends CI_Model{
 			return $query;
 	}
 
+
+
+
+	function get_data_diri_akun($id){
+	$this->db->select('*'); 
+    $this->db->from('tbl_pengguna'); 
+
+    $data = array(
+				'pengguna_siswa'=>$id
+				);
+			$this ->db ->where($data,$id);
+
+			$query = $this ->db ->get();
+
+			return $query;
+	}
 	function get_jadwal_pelajaran($id){
 		$this->db->select('*'); 
 		$this->db->from('tabel_jadwal');
@@ -74,6 +90,50 @@ class ModelSiswa extends CI_Model{
 
 }
 
+
+ public function get_jadwal_awal(){
+        $this ->db ->select('tgl_awal');
+		$this ->db ->from('tbl_tanggal');
+		
+
+		$query = $this ->db ->get()->row_array();
+
+		return $query;
+    }
+
+    public function get_jadwal_akhir(){
+        $this ->db ->select('tgl_akhir');
+		$this ->db ->from('tbl_tanggal');
+		
+
+		$query = $this ->db ->get()->row_array();
+
+		return $query;
+    }
+
+public function get_jadwal_awa_review(){
+        $this ->db ->select('tgl_awal');
+		$this ->db ->from('tbl_tanggal_review');
+		
+
+		$query = $this ->db ->get()->row_array();
+
+		return $query;
+    }
+
+    public function get_jadwal_akhir_review(){
+        $this ->db ->select('tgl_akhir');
+		$this ->db ->from('tbl_tanggal_review');
+		
+
+		$query = $this ->db ->get()->row_array();
+
+		return $query;
+    }
+
+
+
+
 public function get_guru(){
 		return $this ->db ->get("tbl_guru");
 	}
@@ -95,14 +155,48 @@ function get_prakerin($id){
 	$this->db->join('tbl_siswa', 'tbl_siswa.siswa_nis = tabel_prakerin.NIS', 'left');
 	$this->db->join('tabel_tempat_prakerin', 'tabel_tempat_prakerin.KODE_TEMPAT = tabel_prakerin.KODE_TEMPAT_P', 'left');
     $data = array(
-				'tabel_prakerin.KODE_PRAKERIN'=>$id
+				'tabel_prakerin.status'=>$id
+				);
+			$this ->db ->where($data,'1');
+
+			$query = $this ->db ->get();
+
+			return $query;
+	}
+
+
+
+	function update_password($kode,$password){
+		$hsl=$this->db->query("UPDATE tbl_pengguna set pengguna_password='$password' where pengguna_id='$kode'");
+		return $hsl;
+	}
+
+	  function edit_password($kode)
+    {
+        $q="SELECT * FROM  tbl_pengguna WHERE pengguna_id='$kode'";
+        $query=$this->db->query($q);
+        return $query->row();
+    }
+
+
+    function get_review_prakerin($id){
+		$this->db->select('*'); 
+		$this->db->from('tabel_prakerin');
+		$this->db->join('tbl_siswa', 'tbl_siswa.siswa_nis = tabel_prakerin.NIS', 'left');
+		$this->db->join('tabel_tempat_prakerin', 'tabel_tempat_prakerin.KODE_TEMPAT = tabel_prakerin.KODE_TEMPAT_P', 'left');
+		$this->db->join('tbl_guru', 'tbl_guru.guru_id = tabel_prakerin.KODE_GURU_P', 'left');
+	
+		$data = array(
+				'tbl_siswa.siswa_nis'=>$id
+				
 				);
 			$this ->db ->where($data,$id);
 
 			$query = $this ->db ->get();
 
 			return $query;
-	}
+
+}
 
 
 	function simpan_prakerin($id,$nis,$guru,$tempat,$minat,$surat){

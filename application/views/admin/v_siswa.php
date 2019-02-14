@@ -524,14 +524,14 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button>
-                        <h4 class="modal-title" id="myModalLabel">Edit Guru</h4>
+                        <h4 class="modal-title" id="myModalLabel">Edit Siswa</h4>
                     </div>
                     <form class="form-horizontal" action="<?php echo base_url().'admin/siswa/update_siswa'?>" method="post" enctype="multipart/form-data">
                     <div class="modal-body">
                                 <input type="hidden" name="kode" value="<?php echo $id;?>"/>
                                 <input type="hidden" value="<?php echo $photo;?>" name="gambar">
                                     <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">NIP</label>
+                                        <label for="inputUserName" class="col-sm-4 control-label">NIS</label>
                                         <div class="col-sm-7">
                                             <input type="text" name="xnis" value="<?php echo $nis;?>" class="form-control" id="inputUserName" placeholder="NIP" required>
                                         </div>

@@ -7,7 +7,7 @@
             <div id="datatable_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
             <div class="row">
    
-        <table  class="table table-striped table-bordered dataTable no-footer"  >
+      <table id="datatable" class="table table-striped table-bordered dataTable no-footer" role="grid" aria-describedby="datatable_info">
                 <thead>
                 <tr role="row">
                    
@@ -34,9 +34,9 @@
                         
                         foreach($list as $data){ ?>
                         
-                        <td><?php echo $data->NAMA_KELAS ?></td>
+                        <td><?php echo $data->kelas_nama ?></td>
                         <td><?php echo $data->NAMA_MAPEL ?></td>
-                         <td><?php echo $data->NAMA_GURU ?></td>
+                         <td><?php echo $data->guru_nama ?></td>
                           <td><?php echo $data->JAM ?></td>
                         <td><?php echo $data->RUANG ?></td>
                         <td><?php echo $data->HARI?></td>

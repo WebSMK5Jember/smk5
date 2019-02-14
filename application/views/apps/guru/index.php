@@ -26,11 +26,11 @@
                     </th>
                     <th  tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 30px;">JUMLAH JAM
                     </th>
-                    <th  tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 30px;">KODE MATAPELAJARAN
+                    <th  tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 30px;">MATAPELAJARAN
                     </th>
-                    <th  tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 30px;">KODE JABATAN
+                    <th  tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 30px;">JABATAN
                     </th>
-                    <th  tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 30px;">KODE PIKET
+                    <th  tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 30px;">JADWAL PIKET
                     </th>
 					
                 </tr>
@@ -49,9 +49,9 @@
                           <td><?php echo $data->guru_tmp_lahir ?></td>
                           <td> <?php echo $data->guru_tgl_lahir?></td>
                         <td><?php echo $data->guru_jumlah_jam ?></td>
-						   <td><?php echo $data->guru_mapel_id ?></td>
-                        <td><?php echo $data->guru_jabatan_id ?></td>
-                        <td><?php echo $data->guru_piket_id ?></td>
+						   <td><?php echo $data->NAMA_MAPEL ?></td>
+                        <td><?php echo $data->NAMA_JABATAN ?></td>
+                        <td><?php echo $data->HARI?></td>
 					
                     </tr>
                         <?php }?>

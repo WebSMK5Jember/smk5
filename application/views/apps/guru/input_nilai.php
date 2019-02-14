@@ -21,9 +21,12 @@
             <div id="datatable_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
                        
                        
-                       <table  class="table table-striped table-bordered dataTable no-footer"  >
+                     <table id="datatable" class="table table-striped table-bordered dataTable no-footer" role="grid" aria-describedby="datatable_info">
                 <thead>
                 <tr role="row">
+                      <th  tabindex="0" input-type="text" aria-controls="datatable" rowspan="1" colspan="1"  style="width: 50px;">KELAS
+                    </th>
+
                     <th  tabindex="0" input-type="text" aria-controls="datatable" rowspan="1" colspan="1"  style="width: 50px;">NIS
                     </th>
                     <th  tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 30px;">SEMESTER
@@ -62,7 +65,9 @@
                     <tr>
                         <?php 
                         
+
                         foreach($list as $data){ ?>
+                            <td><?php echo $data->kelas_nama?></td>
                         <td><?php echo $data->NIS ?></td>
                         <td><?php echo $data->SEMESTER ?></td>
                         <td><?php echo $data->TUGAS1 ?></td>
@@ -80,7 +85,7 @@
                     <td><?php 
                        
 
-                       echo form_open('guru_si/nilai_siswa'.$data->KODE_KELAS, 'class="form-horizontal" role="form"');
+                  
                         
                         echo anchor('guru_si/edit_nilai/'.$data->ID_NILAI,'Edit','id="btnTest" type="button" class="btn btn-warning btn-bordered waves-effect w-md waves-light" style="margin-bottom:5px;"');
                         echo anchor('guru_si/hapus_nilai_siswa/'.$data->ID_NILAI,'Hapus','id="btnTest" type="button" class="btn btn-danger btn-bordered waves-effect w-md waves-light"');

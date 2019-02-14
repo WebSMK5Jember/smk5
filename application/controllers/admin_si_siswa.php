@@ -46,7 +46,7 @@ class admin_si_siswa extends CI_Controller{
 	                        $this->image_lib->resize();
 
 	                        $photo=$gbr['file_name'];
-                            $nis=strip_tags($this->input->post('xnis'));
+                            $nis=strip_tags($this->input->post('nis'));
                             $nama=strip_tags($this->input->post('xnama'));
                              $jenkel=strip_tags($this->input->post('xjenkel'));
                              $kelas=strip_tags($this->input->post('xkelas'));
@@ -59,10 +59,10 @@ class admin_si_siswa extends CI_Controller{
                                $ijasah=strip_tags($this->input->post('xijasah'));
                             
                              $dataUser = array(
-               'pengguna_username' => $this ->input ->post('xnis'),              	
+               'pengguna_username' => $this ->input ->post('nis'),              	
             'pengguna_nama' => $this ->input ->post('xnama'),
-    		'pengguna_siswa' => $this ->input ->post('xnis'),
-    		'pengguna_password' => md5($this ->input ->post('xnis')),
+    		'pengguna_siswa' => $this ->input ->post('nis'),
+    		'pengguna_password' => md5($this ->input ->post('nis')),
     		'pengguna_level' => '4');
         
         
@@ -80,7 +80,7 @@ class admin_si_siswa extends CI_Controller{
 	                }
 	                 
 	            }else{
-	            	 $nis=strip_tags($this->input->post('xnis'));
+	            	 $nis=strip_tags($this->input->post('nis'));
                             $nama=strip_tags($this->input->post('xnama'));
                              $jenkel=strip_tags($this->input->post('xjenkel'));
                              $kelas=strip_tags($this->input->post('xkelas'));
@@ -94,10 +94,10 @@ class admin_si_siswa extends CI_Controller{
 
 
                              $dataUser = array(
-                             	 'pengguna_username' => $this ->input ->post('xnis'),  
+                             	 'pengguna_username' => $this ->input ->post('nis'),  
              'pengguna_nama' => $this ->input ->post('xnama'),
-    		'pengguna_siswa' => $this ->input ->post('xnis'),
-    		'pengguna_password' => md5($this ->input ->post('xnis')),
+    		'pengguna_siswa' => $this ->input ->post('nis'),
+    		'pengguna_password' => md5($this ->input ->post('nis')),
     		'pengguna_level' => '4');
         
         
@@ -110,7 +110,7 @@ class admin_si_siswa extends CI_Controller{
 				
 				 }else {  
         echo $this->session->set_flashdata('msg','Data sudah ada !!');
-
+	redirect('admin_si_siswa');
 				
 	}
 }
@@ -143,7 +143,7 @@ class admin_si_siswa extends CI_Controller{
 							unlink($path);
 
 	       $photo=$gbr['file_name'];
-                            $nis=strip_tags($this->input->post('xnis'));
+                            $nis=strip_tags($this->input->post('nis'));
                             $nama=strip_tags($this->input->post('xnama'));
                              $jenkel=strip_tags($this->input->post('xjenkel'));
                              $kelas=strip_tags($this->input->post('xkelas'));
@@ -166,7 +166,7 @@ class admin_si_siswa extends CI_Controller{
 	                }
 	                
 	            }else{
-							$nis=strip_tags($this->input->post('xnis'));
+							$nis=strip_tags($this->input->post('nis'));
                             $nama=strip_tags($this->input->post('xnama'));
                              $jenkel=strip_tags($this->input->post('xjenkel'));
                              $kelas=strip_tags($this->input->post('xkelas'));
@@ -186,7 +186,7 @@ class admin_si_siswa extends CI_Controller{
 	}
 
 	function delete_siswa(){
-		$nis=$this->input->post('xnis');
+		$nis=$this->input->post('nis');
 		$gambar=$this->input->post('gambar');
 		$path='./assets/images/'.$gambar;
 		unlink($path);

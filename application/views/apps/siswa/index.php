@@ -33,6 +33,8 @@
                     </th>
 					<th  tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 30px;">NOMOR IJAZAH
                     </th>
+
+                  
 					
                 </tr>
                 </thead>
@@ -45,13 +47,15 @@
                         <td><?php echo $data->siswa_nis ?></td>
                         <td><?php echo $data->siswa_nama ?></td>
 						 <td><?php echo $data->siswa_jenkel ?></td>
-						  <td><?php echo $data->siswa_kelas_id ?></td>
+						  <td><?php echo $data->kelas_nama ?></td>
                         <td><?php echo $data->siswa_tempat_lahir ?></td>
 						 <td><?php echo $data->siswa_tgl_lahir?></td>
 						  <td><?php echo $data->siswa_alamat ?></td>
 						   <td><?php echo $data->siswa_ortu ?></td>
 						    <td><?php echo $data->siswa_asal_sekolah ?></td>
 							 <td><?php echo $data->no_ijasah ?></td>
+
+                        
 							  
                     </tr>
                         <?php }?>

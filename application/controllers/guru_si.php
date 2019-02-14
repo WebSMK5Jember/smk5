@@ -26,17 +26,7 @@ Class guru_si extends CI_Controller{
         
     }
 
-    public function nilai_siswa(){
-        
-        $list = $this->ModelGuru->get_kelas();
-        $data = array(
-            "menu"      => "MenuGuru",
-            "panelbody" => "apps/guru/data_kelas",
-            "list"      => $list
-        );
-        $this->load->view('panelbody', $data);
-        
-    }
+   
 
     
     public function nilai_siswa_input(){

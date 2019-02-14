@@ -61,24 +61,47 @@ public function jadwalpelajaran(){
 
 public function input_prakerin(){
 
-      
+       $tgl_awal = $this ->ModelSiswa->get_jadwal_awal();
+        $tgl_akhir = $this ->ModelSiswa->get_jadwal_akhir();
         $guru = $this ->ModelSiswa->get_guru()->result();
         $tempat = $this ->ModelSiswa->get_tempat()->result();
+ date_default_timezone_set('Asia/Jakarta');
+            $y = date("Y");
+            $m=date("m");
+            $d=date("d");
+            $akhir = explode('-',$tgl_akhir['tgl_akhir']);
+            $awal = explode('-',$tgl_awal['tgl_awal']);
+            
+            // $val = $this->ModelMahasiswa->get_jadwal()->result();
 
+            // if($val!=0){
+                if(@($y-$awal[0]==0 && $m-$awal[1]==0 && $d-$awal[2]>=0)&&($y-$akhir[0]==0 && $m-$akhir[1]==0 && $d-$akhir[2]<=0)){
+                    $l=1;
+                }else{
+                    $l=0;
+                } 
+                // if($val<1){
+                //     $l=2;
+                // }
+            // }else{
+            //     $l=2;
+            // }
 
         $data = array(
             "menu"      => "MenuSiswa",
             "panelbody" => "apps/siswa/prakerin",
-
+             "tgl_awal" => $tgl_awal,
+               "tgl_akhir" => $tgl_akhir,
             "guru" => $guru,
-            "tempat" => $tempat
+            "tempat" => $tempat,
+                  "limit"=>$l
            
         );
         $this->load->view('panelbody', $data);
 }
 public function save_input_prakerin(){
 
-   
+
         
 
         $data = array(
@@ -100,28 +123,91 @@ public function save_input_prakerin(){
     }
 
 
-
-
-     public function prakerin_fix(){
+     public function akun(){
         $id = $this->session->userdata('id_session');
-        $list = $this->ModelSiswa->get_prakerin($id)->result();
+        $list = $this->ModelSiswa->get_data_diri_akun($id)->result();
         $data = array(
             "menu"      => "MenuSiswa",
-            "panelbody" => "apps/siswa/prakerin_fix",
+            "panelbody" => "apps/siswa/akun",
             "list"      => $list
         );
         $this->load->view('panelbody', $data);
         
     }
 
-function cetak_prakerin($kode) {
-        $this->cek();
+
+    function edit_akun($pengguna_siswa)
+    {
+        $pengguna_id = $this->uri->segment(3);
+
+        
         $data = array(
-            'title' => 'BUKTI DAFTAR PRAKERIN',
-            'table' => $this->ModelSiswa->get_cetak_prakerin($kode)->result(),
-            );
-        $this->load->view('apps/siswa/cetak_laporan_prakerin', $data);
+            'menu' => 'MenuSiswa',
+            'panelbody' => 'apps/siswa/edit_akun',
+            "form_edit_akun" => "apps/siswa/form_edit_akun"
+         
+            
+        );
+        $this ->load ->view('panelbody',$data);
+    
     }
+function simpan_edit_akun()
+    {
+            $pengguna_siswa = $this->input->post('pengguna_id');
+            $data = array(
+            'pengguna_password'=> md5($this->input->post('pengguna_password'))
+           
+                        
+            
+        );
+        $this->db->where('pengguna_id', $pengguna_siswa);
+        $this->db->update('tbl_pengguna', $data);
+        redirect('siswa_si/akun');
+    
+    }
+
+
+    public function Review_prakerin(){
+         $tgl_awal = $this ->ModelSiswa->get_jadwal_awal();
+        $tgl_akhir = $this ->ModelSiswa->get_jadwal_akhir();
+    $id = $this->session->userdata('id_session');
+        $list = $this->ModelSiswa->get_prakerin($id)->result();
+
+
+        date_default_timezone_set('Asia/Jakarta');
+            $y = date("Y");
+            $m=date("m");
+            $d=date("d");
+            $akhir = explode('-',$tgl_akhir['tgl_akhir']);
+            $awal = explode('-',$tgl_awal['tgl_awal']);
+            
+            // $val = $this->ModelMahasiswa->get_jadwal()->result();
+
+            // if($val!=0){
+                if(@($y-$awal[0]==0 && $m-$awal[1]==0 && $d-$awal[2]>=0)&&($y-$akhir[0]==0 && $m-$akhir[1]==0 && $d-$akhir[2]<=0)){
+                    $l=1;
+                }else{
+                    $l=0;
+                } 
+                // if($val<1){
+                //     $l=2;
+                // }
+            // }else{
+            //     $l=2;
+            // }
+        $data = array(
+            "menu"      => "MenuSiswa",
+            "panelbody" => "apps/siswa/review_prakerin",
+            "list"      => $list,
+              "tgl_awal" => $tgl_awal,
+               "tgl_akhir" => $tgl_akhir,
+    
+                  "limit"=>$l
+        );
+        $this->load->view('panelbody', $data);
+        
+    }
+
 
 
 public function input_daful(){

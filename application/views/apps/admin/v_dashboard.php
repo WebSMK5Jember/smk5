@@ -145,6 +145,36 @@
           </a>
         </li>
 
+         <li>
+          <a href="<?php echo base_url().'admin_si_tanggal_prakerin'?>">
+            <i class="fa fa-graduation-cap"></i> <span>Tanggal Pendaftaran Prakerin</span>
+            <span class="pull-right-container">
+              <small class="label pull-right"></small>
+            </span>
+          </a>
+        </li>
+         <li>
+
+           <li>
+          <a href="<?php echo base_url().'admin_si_tanggal_review'?>">
+            <i class="fa fa-graduation-cap"></i> <span>Tanggal Hasil Review Prakerin</span>
+            <span class="pull-right-container">
+              <small class="label pull-right"></small>
+            </span>
+          </a>
+        </li>
+         <li>
+
+        <li>
+          <a href="<?php echo base_url().'admin_si_verif_prakerin'?>">
+            <i class="fa fa-graduation-cap"></i> <span>Verifikasi Prakerin</span>
+            <span class="pull-right-container">
+              <small class="label pull-right"></small>
+            </span>
+          </a>
+        </li>
+         <li>
+
 
          <li>
           <a href="<?php echo base_url().'login_si/logout'?>">

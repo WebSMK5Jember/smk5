@@ -12,13 +12,23 @@
                                 <a href="<?php echo base_url(); ?>siswa_si/absensi"><i class="fa fa-list"></i><span> Absensi Siswa</span></a>
                             </li>
                             <li>
-                                <a href="<?php echo base_url(); ?>siswa_si/nilai"><i class="fa fa-list"></i><span> Nilai Siswa</span></a>
+                                <a href="<?php echo base_url(); ?>siswa_si/nilai_siswa_input"><i class="fa fa-list"></i><span> Nilai Siswa</span></a>
                             </li>
                             <li>
                                 <a href="<?php echo base_url(); ?>siswa_si/input_daful"><i class="fa fa-plus-circle"></i><span> Daftar Ulang</span></a>
                             </li>
                             <li>
                                 <a href="<?php echo base_url(); ?>siswa_si/input_prakerin"><i class="fa fa-plus-circle"></i><span> Daftar Prakerin</span></a>
+
+
+                            </li>
+                        <li>
+                                <a href="<?php echo base_url(); ?>siswa_si/akun"><i class="fa fa-plus-circle"></i><span> Pengaturan Akun</span></a>
+
+
+                            </li>
+                       <li>
+                                <a href="<?php echo base_url(); ?>siswa_si/review_prakerin"><i class="fa fa-list"></i><span>Hasil Review Prakerin</span></a>
 
 
                             </li>

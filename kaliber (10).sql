@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 11, 2019 at 11:32 PM
+-- Generation Time: Feb 14, 2019 at 04:51 AM
 -- Server version: 10.1.22-MariaDB
 -- PHP Version: 7.1.4
 
@@ -47,9 +47,9 @@ CREATE TABLE `tabel_absensi` (
   `KODE_ABSENSI` int(5) NOT NULL,
   `KETERANGAN` varchar(30) NOT NULL,
   `JUMLAH_HADIR` int(2) NOT NULL,
-  `KODE_MAPEL` varchar(5) NOT NULL,
-  `NIS` varchar(10) NOT NULL,
-  `KODE_GURU` varchar(5) NOT NULL
+  `KODE_MAPEL_ABSEN` varchar(5) NOT NULL,
+  `NIS_ABSEN` varchar(10) NOT NULL,
+  `KODE_GURU_ABSEN` varchar(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -115,7 +115,8 @@ INSERT INTO `tabel_jadwal` (`KODE_JADWAL`, `KODE_KELAS`, `KODE_MAPEL_JADWAL`, `K
 (11, '112', 'BDJW', '7', '19:06:00', 'ruang 1', 'jumat'),
 (12, '112', 'BING', '2', '09:00:00', 'anggrek', 'jumat'),
 (13, 'a01', 'DDBT', '12345', '06:00:00', '0', 'k'),
-(14, 'a01', 'BDJW', 'a', '09:00:00', 'n', 'j');
+(14, 'a01', 'BDJW', 'a', '09:00:00', 'n', 'j'),
+(15, 'a01', 'BING', 'A01', '01:00:00', 'ruang 1', 'jumat');
 
 -- --------------------------------------------------------
 
@@ -134,6 +135,7 @@ CREATE TABLE `tabel_jurusan` (
 
 INSERT INTO `tabel_jurusan` (`KODE_JURUSAN`, `NAMA_JURUSAN`) VALUES
 ('ank', 'kimia'),
+('php', 'hasil pertanian'),
 ('tkj', 'teknik komputer dan jaringan');
 
 -- --------------------------------------------------------
@@ -194,6 +196,7 @@ CREATE TABLE `tabel_mapel` (
 --
 
 INSERT INTO `tabel_mapel` (`KODE_MAPEL`, `NAMA_MAPEL`) VALUES
+('111', 'halo'),
 ('AGAMA', 'PENDIDIKAN AGAMA DAN BUDI PEKE'),
 ('BDJW', 'BAHASA DAERAH JAWA'),
 ('BING', 'BAHASA INGGRIS'),
@@ -267,7 +270,7 @@ CREATE TABLE `tabel_prakerin` (
   `KODE_TEMPAT_P` varchar(5) DEFAULT NULL,
   `MINAT` varchar(50) DEFAULT NULL,
   `PERSETUJUAN_ORGTUA` varchar(40) NOT NULL,
-  `status` int(1) NOT NULL DEFAULT '0'
+  `status` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -275,7 +278,8 @@ CREATE TABLE `tabel_prakerin` (
 --
 
 INSERT INTO `tabel_prakerin` (`KODE_PRAKERIN`, `NIS`, `KODE_GURU_P`, `KODE_TEMPAT_P`, `MINAT`, `PERSETUJUAN_ORGTUA`, `status`) VALUES
-(5, '15045/0481', '2', '112', 'trouble shooting computer', 'vb.png', 1);
+(5, '15045/0481', '2', '112', 'trouble shooting computer', 'vb.png', 0),
+(6, '01', 'A01', '112', 'hmm', 'SECOND TASK.docx', 1);
 
 -- --------------------------------------------------------
 
@@ -510,7 +514,10 @@ INSERT INTO `tbl_guru` (`guru_id`, `guru_mapel_id`, `guru_jabatan_id`, `guru_pik
 ('A01', 'AGAMA', '1', '1', '11212121', 'RERA', 'RAMBI', 24, 'P', 'jakarta', '2019-02-27', NULL, '2019-02-05 15:56:36'),
 ('a012', '', '1', '1', '33233223', 'rera', 'jember', 24, 'P', 'jember', '2019-02-16', '87c8b34fff6b53f4366ba93658fc9d68.jpg', '2019-02-09 12:28:28'),
 ('a018', '', '1', '1', '33233223', 'm saiful rizal', 'jember', 24, 'P', 'jember', '2019-02-15', NULL, '2019-02-09 12:29:10'),
-('a2244', 'AGAMA', '', '1', 'a333', '333', 'eee3', 4, 'L', 'eee', '2019-02-09', NULL, '2019-02-04 06:56:01');
+('a2244', 'AGAMA', '', '1', 'a333', '333', 'eee3', 4, 'L', 'eee', '2019-02-09', NULL, '2019-02-04 06:56:01'),
+('aaa01', '', '2', '1', '3323322390', 'aa', 'aaa', 24, 'L', 'jember', '2019-02-06', NULL, '2019-02-13 04:14:10'),
+('aaaaa', '', '2', '1', '111', 'm saiful rizal', 'jember', 24, 'L', 'tt', '2019-02-26', NULL, '2019-02-13 02:35:35'),
+('asasa', 'BING', '2', '1', '1212', 'kscn', 'kxcn', 24, 'L', 'kxck', '2019-02-07', NULL, '2019-02-13 04:19:59');
 
 -- --------------------------------------------------------
 
@@ -668,7 +675,13 @@ INSERT INTO `tbl_pengguna` (`pengguna_id`, `pengguna_nama`, `pengguna_moto`, `pe
 (28, 'farel rama', NULL, NULL, NULL, NULL, NULL, 'd41d8cd98f00b204e9800998ecf8427e', NULL, '4', '2019-02-09 12:16:48', NULL),
 (29, 'rera', NULL, NULL, 'a012', NULL, 'a012', '97150a281ed51b6929b33be2d1f4e7e4', NULL, '3', '2019-02-09 12:28:28', NULL),
 (30, 'm saiful rizal', NULL, NULL, 'a012', NULL, 'a012', '97150a281ed51b6929b33be2d1f4e7e4', NULL, '3', '2019-02-09 12:28:56', NULL),
-(31, 'm saiful rizal', NULL, NULL, 'a018', NULL, 'a018', '5e54de03dba9d18c4b83181de22e7b91', NULL, '3', '2019-02-09 12:29:10', NULL);
+(31, 'm saiful rizal', NULL, NULL, 'a018', NULL, 'a018', '5e54de03dba9d18c4b83181de22e7b91', NULL, '3', '2019-02-09 12:29:10', NULL),
+(32, 'm saiful rizal', NULL, NULL, 'aaaaa', NULL, 'aaaaa', '594f803b380a41396ed63dca39503542', NULL, '3', '2019-02-13 02:35:35', NULL),
+(33, 'dxs', NULL, NULL, NULL, NULL, NULL, 'd41d8cd98f00b204e9800998ecf8427e', NULL, '4', '2019-02-13 03:05:21', NULL),
+(34, 'm saiful rizal', NULL, NULL, NULL, NULL, NULL, 'd41d8cd98f00b204e9800998ecf8427e', NULL, '4', '2019-02-13 04:04:55', NULL),
+(35, 'aa', NULL, NULL, 'aaa01', NULL, 'aaa01', 'ed5d7db75f7c254edd84a93d46703fda', NULL, '3', '2019-02-13 04:14:10', NULL),
+(36, 'kscn', NULL, NULL, 'asasasasas', NULL, 'asasa', 'b6d78e18e10fc1aa0b2f3eb068b658da', NULL, '3', '2019-02-13 04:19:59', NULL),
+(37, 'saiful', NULL, NULL, NULL, NULL, NULL, 'd41d8cd98f00b204e9800998ecf8427e', NULL, '4', '2019-02-13 04:24:06', NULL);
 
 -- --------------------------------------------------------
 
@@ -727,7 +740,8 @@ INSERT INTO `tbl_pengunjung` (`pengunjung_id`, `pengunjung_tanggal`, `pengunjung
 (939, '2019-02-09 11:46:59', '::1', 'Chrome'),
 (940, '2019-02-10 06:46:02', '::1', 'Chrome'),
 (941, '2019-02-11 02:09:35', '::1', 'Chrome'),
-(942, '2019-02-11 22:31:53', '::1', 'Chrome');
+(942, '2019-02-11 22:31:53', '::1', 'Chrome'),
+(943, '2019-02-13 01:22:26', '::1', 'Chrome');
 
 -- --------------------------------------------------------
 
@@ -754,13 +768,50 @@ CREATE TABLE `tbl_siswa` (
 --
 
 INSERT INTO `tbl_siswa` (`siswa_nis`, `siswa_nama`, `siswa_jenkel`, `siswa_kelas_id`, `siswa_tempat_lahir`, `siswa_tgl_lahir`, `siswa_alamat`, `siswa_ortu`, `siswa_asal_sekolah`, `no_ijasah`, `siswa_photo`) VALUES
-('', 'farel rama', 'L', 'a01', 'j', '2019-02-08', 'jember', 'd', 'SMP', 'd', '1a7a20f3b42ae8fa3bd13400cd0f9d7b.jpg'),
-('01', 'm saiful rizal', 'L', '112', 'j', '2019-02-05', 'd', 'd', 'SMP', 'd', 'a3bb47136b2356aa5f9889207dd5abc9.jpg'),
+('01', 'a', 'L', '112', 'j', '2019-02-05', 'd', 'd', 'SMP', 'd', 'a3bb47136b2356aa5f9889207dd5abc9.jpg'),
 ('111', 'saiful', 'L', '11', 'jember', '2019-02-22', 'jj', 'jhj', 'jj', '9', NULL),
 ('15109/0878', 'ADYA ZALFA ZAHIRAH', 'P', 'a01', 'JEMBER', '2001-04-08', 'JL gajah mada XIX/67 Link.condro Selatan', 'AKHMAD KUSYERI', 'SMP', 'DN-05 DI/06 0', 'd4138e4e2460936bd34c8cc79c777ce0.jpg'),
 ('a', 'a', 'L', '1', 'a', '2019-02-01', 'aa', 'aa', 'q', '1', NULL),
 ('er', 's', 'L', '10', 'a', '2019-02-15', 'aa', 'aa', 'aaa', '0', NULL),
 ('q', 'az', 'L', '10', 's', '2019-02-08', 's', 's', 'sd', '1', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_tanggal`
+--
+
+CREATE TABLE `tbl_tanggal` (
+  `id` int(11) NOT NULL,
+  `tgl_awal` date DEFAULT NULL,
+  `tgl_akhir` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_tanggal`
+--
+
+INSERT INTO `tbl_tanggal` (`id`, `tgl_awal`, `tgl_akhir`) VALUES
+(11, '2019-02-13', '2019-02-16');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_tanggal_review`
+--
+
+CREATE TABLE `tbl_tanggal_review` (
+  `id` int(11) NOT NULL,
+  `tgl_awal` date NOT NULL,
+  `tgl_akhir` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_tanggal_review`
+--
+
+INSERT INTO `tbl_tanggal_review` (`id`, `tgl_awal`, `tgl_akhir`) VALUES
+(1, '2019-02-13', '2019-02-14');
 
 -- --------------------------------------------------------
 
@@ -808,9 +859,9 @@ ALTER TABLE `nilai_sikap`
 --
 ALTER TABLE `tabel_absensi`
   ADD PRIMARY KEY (`KODE_ABSENSI`),
-  ADD KEY `KODE_MAPEL` (`KODE_MAPEL`),
-  ADD KEY `NIS` (`NIS`),
-  ADD KEY `KODE_GURU` (`KODE_GURU`);
+  ADD KEY `KODE_MAPEL` (`KODE_MAPEL_ABSEN`),
+  ADD KEY `NIS` (`NIS_ABSEN`),
+  ADD KEY `KODE_GURU` (`KODE_GURU_ABSEN`);
 
 --
 -- Indexes for table `tabel_admin`
@@ -991,6 +1042,18 @@ ALTER TABLE `tbl_siswa`
   ADD PRIMARY KEY (`siswa_nis`);
 
 --
+-- Indexes for table `tbl_tanggal`
+--
+ALTER TABLE `tbl_tanggal`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tbl_tanggal_review`
+--
+ALTER TABLE `tbl_tanggal_review`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `tbl_tulisan`
 --
 ALTER TABLE `tbl_tulisan`
@@ -1011,7 +1074,7 @@ ALTER TABLE `tabel_absensi`
 -- AUTO_INCREMENT for table `tabel_jadwal`
 --
 ALTER TABLE `tabel_jadwal`
-  MODIFY `KODE_JADWAL` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `KODE_JADWAL` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT for table `tabel_laporguru`
 --
@@ -1031,7 +1094,7 @@ ALTER TABLE `tabel_nilai`
 -- AUTO_INCREMENT for table `tabel_prakerin`
 --
 ALTER TABLE `tabel_prakerin`
-  MODIFY `KODE_PRAKERIN` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `KODE_PRAKERIN` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `tabel_saran`
 --
@@ -1086,7 +1149,7 @@ ALTER TABLE `tbl_log_aktivitas`
 -- AUTO_INCREMENT for table `tbl_pengguna`
 --
 ALTER TABLE `tbl_pengguna`
-  MODIFY `pengguna_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `pengguna_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 --
 -- AUTO_INCREMENT for table `tbl_pengumuman`
 --
@@ -1096,7 +1159,17 @@ ALTER TABLE `tbl_pengumuman`
 -- AUTO_INCREMENT for table `tbl_pengunjung`
 --
 ALTER TABLE `tbl_pengunjung`
-  MODIFY `pengunjung_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=943;
+  MODIFY `pengunjung_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=944;
+--
+-- AUTO_INCREMENT for table `tbl_tanggal`
+--
+ALTER TABLE `tbl_tanggal`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+--
+-- AUTO_INCREMENT for table `tbl_tanggal_review`
+--
+ALTER TABLE `tbl_tanggal_review`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `tbl_tulisan`
 --

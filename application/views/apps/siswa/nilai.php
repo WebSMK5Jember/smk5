@@ -7,13 +7,12 @@
              <div id="datatable_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
 <div class="row">
     <div class="col-sm-12">
-        <table  class="table table-striped table-bordered dataTable no-footer" role="grid" aria-describedby="datatable_info">
+         <table id="datatable" class="table table-striped table-bordered dataTable no-footer" role="grid" aria-describedby="datatable_info">
                 <thead>
                 <tr role="row">
                    
                     </th>
-                    <th  tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 20px;">NIS
-                    </th>
+                 
                     <th  tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 0px;">MATA PELAJARAN
                     </th>
                     <th  tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 30px;">KELAS
@@ -51,7 +50,7 @@
                         
                         foreach($list as $data){ ?>
                         
-                        <td><?php echo $data->NIS ?></td>
+                 
                         <td><?php echo $data->NAMA_MAPEL ?></td>
                          <td><?php echo $data->kelas_nama ?></td>
                           <td><?php echo $data->guru_nama ?></td>

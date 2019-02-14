@@ -26,6 +26,42 @@ function update_prakerin($kode,$KODE_GURU,$KODE_TEMPAT_P){
 		return $hsl;
 	}
 
+	function get_all_tanggal(){
+		$hsl=$this->db->query("SELECT * from tbl_tanggal");
+		return $hsl;
+	}
+	function hapus_tanggal($kode){
+		$hsl=$this->db->query("DELETE FROM tbl_tanggal WHERE id='$kode'");
+		return $hsl;
+	}
+function update_tanggal($kode,$tgl_awal,$tgl_akhir){
+		$hsl=$this->db->query("UPDATE tbl_tanggal SET tgl_awal='$tgl_awal', tgl_akhir='$tgl_akhir' WHERE id='$kode'");
+		return $hsl;
+	}
+	function simpan_tanggal($tgl_awal,$tgl_akhir){
+		$hsl=$this->db->query("INSERT INTO tbl_tanggal  (tgl_awal,tgl_akhir) VALUES ('$tgl_awal','$tgl_akhir')");
+		return $hsl;
+	}
+
+
+function get_all_tanggal_review(){
+		$hsl=$this->db->query("SELECT * from tbl_tanggal_review");
+		return $hsl;
+	}
+	function hapus_tanggal_review($kode){
+		$hsl=$this->db->query("DELETE FROM tbl_tanggal_review WHERE id='$kode'");
+		return $hsl;
+	}
+function update_tanggal_review($kode,$tgl_awal,$tgl_akhir){
+		$hsl=$this->db->query("UPDATE tbl_tanggal_review SET tgl_awal='$tgl_awal', tgl_akhir='$tgl_akhir' WHERE id='$kode'");
+		return $hsl;
+	}
+	function simpan_tanggal_review($tgl_awal,$tgl_akhir){
+		$hsl=$this->db->query("INSERT INTO tbl_tanggal_review  (tgl_awal,tgl_akhir) VALUES ('$tgl_awal','$tgl_akhir')");
+		return $hsl;
+	}
+
+
 
 	
 }
