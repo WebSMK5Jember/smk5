@@ -10,7 +10,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>SI Sekolah | Data Master Nilai</title>
+  <title>SI Sekolah | Data Master Absen</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <link rel="shorcut icon" type="text/css" href="<?php echo base_url().'assets/images/favicon.png'?>">
@@ -185,7 +185,7 @@
           					<th>Kode Kelas</th>
                     <th>Kode Mata Pelajaran</th>
                     <th>Kode Guru</th>
-                    <th>Semester </th>
+                 
                     
                   
                   
@@ -203,16 +203,17 @@
           					   $no++;
 
 
-                       $id =$i['ID_NILAI'];
-                      $kode=$i['NIS'];
-          					  
-          					   $KODE_KELAS=$i['KODE_KELAS'];
+                             $id =$i['KODE_ABSENSI'];
+                      $kode=$i['NIS_ABSEN'];
+                      
+                       $KODE_KELAS=$i['KODE_KELAS_ABSEN'];
                        
-                       $KODE_MAPEL=$i['KODE_MAPEL_NILAI'];
+                       $KODE_MAPEL=$i['KODE_MAPEL_ABSEN'];
 
-                       $KODE_GURU=$i['KODE_GURU'];
+                       $KODE_GURU=$i['KODE_GURU_ABSEN'];
 
-                       $Semester=$i['SEMESTER'];
+                     
+                     
 
                        
                     ?>
@@ -227,7 +228,7 @@
 
                   <td><?php echo $KODE_GURU;?></td>
 
-                  <td><?php echo $Semester;?></td>
+              
 
                  
                  
@@ -456,127 +457,21 @@
 </div>
 <!-- ./wrapper -->
 
-    <!--Modal Add Pengguna-->
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button>
-                        <h4 class="modal-title" id="myModalLabel">Tambah</h4>
-                    </div>
-                    <form class="form-horizontal" action="<?php echo base_url().'admin_si_nilai/simpan_nilai'?>" method="post" enctype="multipart/form-data">
-                    <div class="modal-body">
-
-
-
-                  <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">NIS</label>
-                                        <div class="col-sm-7">
-                                          <select name="nis" class="form-control" required>
-                                            <option value="">-Pilih-</option>
-                                            <?php
-                                                foreach ($siswa->result_array() as $a) {
-                                                  $kode=$a['siswa_nis'];
-                                                  $nama_siswa=$a['siswa_nama'];
-
-                                            ?>
-
-                                            <option value="<?php echo $kode;?>"><?php echo $nama_siswa;?></option>
-                                            <?php } ?>
-                                          </select>
-                                        </div>
-                                    </div>
-
-                             <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">Kelas</label>
-                                        <div class="col-sm-7">
-                                          <select name="kodekelas" class="form-control" required>
-                                            <option value="">-Pilih-</option>
-                                            <?php
-                                                foreach ($kelas->result_array() as $k) {
-                                                  $KODE_KELAS=$k['kelas_id'];
-                                                  $nama_kelas=$k['kelas_nama'];
-
-                                            ?>
-
-                                            <option value="<?php echo $KODE_KELAS;?>"><?php echo $nama_kelas;?></option>
-                                            <?php } ?>
-                                          </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">Mapel</label>
-                                        <div class="col-sm-7">
-                                          <select name="kodemapel" class="form-control" required>
-                                            <option value="">-Pilih-</option>
-                                            <?php
-                                                foreach ($mapel->result_array() as $m) {
-                                                  $id_mapel=$m['KODE_MAPEL'];
-                                                  $nama_mapel=$m['NAMA_MAPEL'];
-
-                                            ?>
-
-                                    <option value="<?php echo $id_mapel;?>"><?php echo $nama_mapel;?></option>
-                                            <?php } ?>
-                                          </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">Guru</label>
-                                        <div class="col-sm-7">
-                                          <select name="kodeguru" class="form-control" required>
-                                            <option value="">-Pilih-</option>
-                                            <?php
-                                                foreach ($guru->result_array() as $g) {
-                                                  $id_guru=$g['guru_id'];
-                                                  $nama_guru=$g['guru_nama'];
-
-                                            ?>
-
-                                              <option value="<?php echo $id_guru;?>"><?php echo $nama_guru;?></option>
-                                            <?php } ?>
-                                          </select>
-                                        </div>
-                                    </div>
-
-
-
-                                     
-                                    <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">Semester</label>
-                                        <div class="col-sm-7">
-                                            <input type="text" name="Semester" class="form-control" id="inputUserName" placeholder="Semeter" required>
-                                        </div>
-                                    </div>
-
-
-                                    
-
-
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default btn-flat" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary btn-flat" id="simpan">Simpan</button>
-                    </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+    
 
   <!--Modal Edit Album-->
   <?php foreach ($data->result_array() as $i) :
-    $id =$i['ID_NILAI'];
-    $kode=$i['NIS'];
-             $KODE_KELAS=$i['KODE_KELAS'];
+   
+                       $id =$i['KODE_ABSENSI'];
+                      $kode=$i['NIS_ABSEN'];
+                      
+                       $KODE_KELAS=$i['KODE_KELAS_ABSEN'];
                        
-                       $KODE_MAPEL=$i['KODE_MAPEL_NILAI'];
+                       $KODE_MAPEL=$i['KODE_MAPEL_ABSEN'];
 
-                       $KODE_GURU=$i['KODE_GURU'];
+                       $KODE_GURU=$i['KODE_GURU_ABSEN'];
 
-                       $Semester=$i['SEMESTER'];
-
+                     
                      
 
                     ?>
@@ -586,9 +481,9 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button>
-                        <h4 class="modal-title" id="myModalLabel">Edit Data MAster Nilai</h4>
+                        <h4 class="modal-title" id="myModalLabel">Edit Data MAster Absen</h4>
                     </div>
-                    <form class="form-horizontal" action="<?php echo base_url().'admin_si_nilai/update_nilai'?>" method="post" enctype="multipart/form-data">
+                    <form class="form-horizontal" action="<?php echo base_url().'admin_si_absen/update_absen'?>" method="post" enctype="multipart/form-data">
                     <div class="modal-body">
                                 <input type="hidden" name="id" value="<?php echo $id;?>"/>
 
@@ -618,7 +513,7 @@
                                    <div class="form-group">
                                         <label for="inputUserName" class="col-sm-4 control-label">KELAS</label>
                                         <div class="col-sm-7">
-                                          <select name="kodekelas" class="form-control" required>
+                                          <select name="kelas" class="form-control" required>
                                             <option value="">-Pilih-</option>
                                             <?php
                                                 foreach ($kelas->result_array() as $k) {
@@ -641,7 +536,7 @@
  <div class="form-group">
                                         <label for="inputUserName" class="col-sm-4 control-label">Mapel</label>
                                         <div class="col-sm-7">
-                                          <select name="kodemapel" class="form-control" required>
+                                          <select name="mapel" class="form-control" required>
                                             <option value="">-Pilih-</option>
                                             <?php
                                                 foreach ($mapel->result_array() as $m) {
@@ -664,7 +559,7 @@
                                      <div class="form-group">
                                         <label for="inputUserName" class="col-sm-4 control-label">Guru</label>
                                         <div class="col-sm-7">
-                                          <select name="kodeguru" class="form-control" required>
+                                          <select name="guru" class="form-control" required>
                                             <option value="">-Pilih-</option>
                                             <?php
                                                 foreach ($guru->result_array() as $g) {
@@ -685,13 +580,7 @@
                                     </div>
 
 
-                                      <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">Semester</label>
-                                        <div class="col-sm-7">
-                                            <input type="texte" name="Semester" class="form-control" id="inputUserName" placeholder="Semester" value="<?php echo $Semester;?>" required>
-                                        </div>
-                                    </div>
-
+                              
 
                                      
 
@@ -707,18 +596,17 @@
 	<!--Modal Edit Album-->
 
 	 <?php foreach ($data->result_array() as $i) :
-    $id =$i['ID_NILAI'];
-     $kode=$i['NIS'];
-             $KODE_KELAS=$i['KODE_KELAS'];
+          $id =$i['KODE_ABSENSI'];
+                      $kode=$i['NIS_ABSEN'];
+                      
+                       $KODE_KELAS=$i['KODE_KELAS_ABSEN'];
                        
-                       $KODE_MAPEL=$i['KODE_MAPEL_NILAI'];
+                       $KODE_MAPEL=$i['KODE_MAPEL_ABSEN'];
 
-                       $KODE_GURU=$i['KODE_GURU'];
+                       $KODE_GURU=$i['KODE_GURU_ABSEN'];
 
-                       $Semester=$i['SEMESTER'];
-
-
-                    ?>
+                     
+                     ?>
                 
             
 	<!--Modal Hapus Pengguna-->
@@ -727,13 +615,13 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button>
-                        <h4 class="modal-title" id="myModalLabel">Hapus Data Master Nilai</h4>
+                        <h4 class="modal-title" id="myModalLabel">Hapus Data Master Absen</h4>
                     </div>
-                    <form class="form-horizontal" action="<?php echo base_url().'admin_si_nilai/hapus_nilai'?>" method="post" enctype="multipart/form-data">
+                    <form class="form-horizontal" action="<?php echo base_url().'admin_si_absen/hapus_absen'?>" method="post" enctype="multipart/form-data">
                     <div class="modal-body">
 							       <input type="hidden" name="id" value="<?php echo $id;?>"/>
                     
-                            <p>Apakah Anda yakin mau menghapus master nilai? <b><?php echo $id;?></b> ?</p>
+                            <p>Apakah Anda yakin mau menghapus master absen? <b><?php echo $id;?></b> ?</p>
 
                     </div>
                     <div class="modal-footer">

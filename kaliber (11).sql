@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 14, 2019 at 04:51 AM
+-- Generation Time: Feb 15, 2019 at 06:25 AM
 -- Server version: 10.1.22-MariaDB
 -- PHP Version: 7.1.4
 
@@ -45,12 +45,26 @@ CREATE TABLE `nilai_sikap` (
 
 CREATE TABLE `tabel_absensi` (
   `KODE_ABSENSI` int(5) NOT NULL,
-  `KETERANGAN` varchar(30) NOT NULL,
-  `JUMLAH_HADIR` int(2) NOT NULL,
-  `KODE_MAPEL_ABSEN` varchar(5) NOT NULL,
-  `NIS_ABSEN` varchar(10) NOT NULL,
-  `KODE_GURU_ABSEN` varchar(5) NOT NULL
+  `JUMLAH_HADIR` int(2) DEFAULT NULL,
+  `KODE_MAPEL_ABSEN` varchar(5) DEFAULT NULL,
+  `NIS_ABSEN` varchar(10) DEFAULT NULL,
+  `KODE_GURU_ABSEN` varchar(5) DEFAULT NULL,
+  `KODE_KELAS_ABSEN` varchar(5) DEFAULT NULL,
+  `JUMLAH_IZIN` int(11) DEFAULT NULL,
+  `JUMLAH_SAKIT` int(11) DEFAULT NULL,
+  `JUMLAH_ALPA` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tabel_absensi`
+--
+
+INSERT INTO `tabel_absensi` (`KODE_ABSENSI`, `JUMLAH_HADIR`, `KODE_MAPEL_ABSEN`, `NIS_ABSEN`, `KODE_GURU_ABSEN`, `KODE_KELAS_ABSEN`, `JUMLAH_IZIN`, `JUMLAH_SAKIT`, `JUMLAH_ALPA`) VALUES
+(1, 4, 'BDJW', '15109/0878', 'A01', 'a01', 0, 0, 0),
+(2, 0, 'AGAMA', '15109/0878', '1111', '112', 0, 0, 0),
+(3, NULL, '111', '15109/0878', '1', 'a01', NULL, NULL, NULL),
+(4, 2, NULL, NULL, NULL, NULL, 0, 0, 0),
+(5, NULL, '111', '111', '1111', 'a01', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -234,10 +248,10 @@ CREATE TABLE `tabel_nilai` (
 --
 
 INSERT INTO `tabel_nilai` (`ID_NILAI`, `NIS`, `KODE_MAPEL_NILAI`, `KODE_KELAS`, `KODE_GURU`, `SEMESTER`, `TUGAS1`, `TUGAS2`, `TUGAS3`, `TUGAS4`, `TUGAS5`, `UH1`, `UH2`, `UH3`, `UH4`, `UTS`, `UAS`, `NRATARAPOT`) VALUES
-(1, '111', 'agama', 'a01', '1111', 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(2, '111', 'AGAMA', 'a01', '1111', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(3, '15109/0878', 'AGAMA', 'a01', 'A01', 22, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(4, '01', 'AGAMA', '112', 'A01', 4, 50, 60, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+(8, '01', 'BING', 'a01', 'A01', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(9, '111', '111', 'a01', '1111', 15, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(10, '15109/0878', 'BDJW', 'a01', '1111', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(11, '111', '111', '112', '1', 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -279,7 +293,8 @@ CREATE TABLE `tabel_prakerin` (
 
 INSERT INTO `tabel_prakerin` (`KODE_PRAKERIN`, `NIS`, `KODE_GURU_P`, `KODE_TEMPAT_P`, `MINAT`, `PERSETUJUAN_ORGTUA`, `status`) VALUES
 (5, '15045/0481', '2', '112', 'trouble shooting computer', 'vb.png', 0),
-(6, '01', 'A01', '112', 'hmm', 'SECOND TASK.docx', 1);
+(6, '01', 'A01', '112', 'hmm', 'SECOND TASK.docx', 1),
+(7, '01', '4', '112', 'kjsnc', '', 0);
 
 -- --------------------------------------------------------
 
@@ -360,7 +375,7 @@ CREATE TABLE `tbl_agenda` (
   `agenda_mulai` date DEFAULT NULL,
   `agenda_selesai` date DEFAULT NULL,
   `agenda_tempat` varchar(90) DEFAULT NULL,
-  `agenda_waktu` time(6) DEFAULT NULL,
+  `agenda_waktu` time DEFAULT NULL,
   `agenda_keterangan` varchar(200) DEFAULT NULL,
   `agenda_author` varchar(60) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -370,11 +385,10 @@ CREATE TABLE `tbl_agenda` (
 --
 
 INSERT INTO `tbl_agenda` (`agenda_id`, `agenda_nama`, `agenda_tanggal`, `agenda_deskripsi`, `agenda_mulai`, `agenda_selesai`, `agenda_tempat`, `agenda_waktu`, `agenda_keterangan`, `agenda_author`) VALUES
-(1, 'Penyembelihan Hewan Kurban Idul Adha 2017', '2017-01-22 06:18:01', 'Idul Adha yang biasa disebut lebaran haji atapun lebaran kurban sangat identik dengan penyembelihan hewan kurban. M-Sekolah tahun ini juga melakukan penyembelihan hewan kurban. Yang rencananya akan dihadiri oleh guru-guru, siswa dan pengurus OSIS.', '2017-01-22', '2017-01-22', 'M-Sekolah', '16:00:00.000000', 'Dihadiri oleh guru-guru, siswa dan pengurus OSIS', 'saifull'),
-(2, 'Peluncuran Website Resmi M-Sekolah', '2017-01-22 06:26:33', 'Peluncuran website resmi  M-Sekolah, sebagai media informasi dan akademik online untuk pelayanan pendidikan yang lebih baik kepada siswa, orangtua, dan masyarakat pada umumnya semakin meningkat.', '2017-01-04', '2017-01-04', 'M-Sekolah', '14:00:00.000000', '-', 'saifull'),
-(3, 'Penerimaan Raport Semester Ganjil Tahun Ajaran 2017-2018', '2017-01-22 06:29:49', 'Berakhirnya semester ganjil tahun pelajaran 2016-2017, ditandai dengan pembagian laporan hasil belajar.', '2017-02-17', '2017-02-17', 'M-Sekolah', '00:00:00.000000', 'Untuk kelas XI dan XII, pembagian raport dimulai pukul 07.30 WIB. Sedangkan untuk kelas X pada pukul 09.00 WIB. Raport diambil oleh orang tua/wali murid masing-masing.', 'saifull'),
-(4, 'rapat', '2019-02-11 02:21:18', 'rapat akhir semester', '2019-02-05', '2019-02-05', 'ruang guru', '10:00:00.000000', 'harus datang semua', 'saifull'),
-(5, 'rapat', '2019-02-11 02:21:18', 'rapat akhir semester', '2019-02-05', '2019-02-05', 'ruang guru', '10:00:00.000000', 'harus datang semua', 'saifull');
+(1, 'Penyembelihan Hewan Kurban Idul Adha 2017', '2017-01-22 06:18:01', 'Idul Adha yang biasa disebut lebaran haji atapun lebaran kurban sangat identik dengan penyembelihan hewan kurban. M-Sekolah tahun ini juga melakukan penyembelihan hewan kurban. Yang rencananya akan dihadiri oleh guru-guru, siswa dan pengurus OSIS.', '2017-01-22', '2017-01-22', 'M-Sekolah', '16:00:00', 'Dihadiri oleh guru-guru, siswa dan pengurus OSIS', 'saifull'),
+(2, 'Peluncuran Website Resmi M-Sekolah', '2017-01-22 06:26:33', 'Peluncuran website resmi  M-Sekolah, sebagai media informasi dan akademik online untuk pelayanan pendidikan yang lebih baik kepada siswa, orangtua, dan masyarakat pada umumnya semakin meningkat.', '2017-01-04', '2017-01-04', 'M-Sekolah', '14:00:00', '-', 'saifull'),
+(3, 'Penerimaan Raport Semester Ganjil Tahun Ajaran 2017-2018', '2017-01-22 06:29:49', 'Berakhirnya semester ganjil tahun pelajaran 2016-2017, ditandai dengan pembagian laporan hasil belajar.', '2017-02-17', '2017-02-17', 'M-Sekolah', '05:00:00', 'Untuk kelas XI dan XII, pembagian raport dimulai pukul 07.30 WIB. Sedangkan untuk kelas X pada pukul 09.00 WIB. Raport diambil oleh orang tua/wali murid masing-masing.', 'saifull'),
+(5, 'rapat', '2019-02-11 02:21:18', 'rapat akhir semester', '2019-02-05', '2019-02-05', 'ruang guru', '10:01:00', 'harus datang semua', 'saifull');
 
 -- --------------------------------------------------------
 
@@ -669,9 +683,9 @@ INSERT INTO `tbl_pengguna` (`pengguna_id`, `pengguna_nama`, `pengguna_moto`, `pe
 (14, 'aaa', NULL, NULL, NULL, NULL, '1111', 'b59c67bf196a4758191e42f76670ceba', NULL, '3', '2019-02-04 03:08:05', NULL),
 (15, '333', NULL, NULL, NULL, NULL, 'a2244', 'ccfd3f7012cdadb009bd7e76819809a3', NULL, '3', '2019-02-04 06:56:01', NULL),
 (18, 'saifull', NULL, 'L', 'admin', NULL, NULL, '21232f297a57a5a743894a0e4a801fc3', 'saiful@gmail.com', '1', '2019-02-05 07:24:56', '9aafeef3c7604d1e652ea903c324c215.jpg'),
-(20, 'RERA', NULL, NULL, 'A01', NULL, 'A01', 'c79ec7047f39104c8372382cb20f84c0', NULL, '3', '2019-02-05 15:56:36', NULL),
+(20, 'RERA', NULL, NULL, 'A01', NULL, 'A01', '202cb962ac59075b964b07152d234b70', NULL, '3', '2019-02-05 15:56:36', NULL),
 (21, 'ADYA ZALFA ZAHIRAH', NULL, NULL, '15109/0878', '15109/0878', NULL, 'ecf4bd3d635aea52739ace96b53394bb', NULL, '4', '2019-02-06 01:04:37', NULL),
-(27, 'm saiful rizal', NULL, NULL, '01', '01', NULL, '96a3be3cf272e017046d1b2674a52bd3', NULL, '4', '2019-02-09 06:46:44', NULL),
+(27, 'm saiful rizal', NULL, NULL, '01', '01', NULL, '202cb962ac59075b964b07152d234b70', NULL, '4', '2019-02-09 06:46:44', NULL),
 (28, 'farel rama', NULL, NULL, NULL, NULL, NULL, 'd41d8cd98f00b204e9800998ecf8427e', NULL, '4', '2019-02-09 12:16:48', NULL),
 (29, 'rera', NULL, NULL, 'a012', NULL, 'a012', '97150a281ed51b6929b33be2d1f4e7e4', NULL, '3', '2019-02-09 12:28:28', NULL),
 (30, 'm saiful rizal', NULL, NULL, 'a012', NULL, 'a012', '97150a281ed51b6929b33be2d1f4e7e4', NULL, '3', '2019-02-09 12:28:56', NULL),
@@ -741,7 +755,9 @@ INSERT INTO `tbl_pengunjung` (`pengunjung_id`, `pengunjung_tanggal`, `pengunjung
 (940, '2019-02-10 06:46:02', '::1', 'Chrome'),
 (941, '2019-02-11 02:09:35', '::1', 'Chrome'),
 (942, '2019-02-11 22:31:53', '::1', 'Chrome'),
-(943, '2019-02-13 01:22:26', '::1', 'Chrome');
+(943, '2019-02-13 01:22:26', '::1', 'Chrome'),
+(944, '2019-02-14 05:57:22', '::1', 'Chrome'),
+(945, '2019-02-14 23:28:22', '::1', 'Firefox');
 
 -- --------------------------------------------------------
 
@@ -1069,7 +1085,7 @@ ALTER TABLE `tbl_tulisan`
 -- AUTO_INCREMENT for table `tabel_absensi`
 --
 ALTER TABLE `tabel_absensi`
-  MODIFY `KODE_ABSENSI` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `KODE_ABSENSI` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `tabel_jadwal`
 --
@@ -1089,12 +1105,12 @@ ALTER TABLE `tabel_laporsarana`
 -- AUTO_INCREMENT for table `tabel_nilai`
 --
 ALTER TABLE `tabel_nilai`
-  MODIFY `ID_NILAI` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ID_NILAI` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `tabel_prakerin`
 --
 ALTER TABLE `tabel_prakerin`
-  MODIFY `KODE_PRAKERIN` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `KODE_PRAKERIN` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `tabel_saran`
 --
@@ -1159,7 +1175,7 @@ ALTER TABLE `tbl_pengumuman`
 -- AUTO_INCREMENT for table `tbl_pengunjung`
 --
 ALTER TABLE `tbl_pengunjung`
-  MODIFY `pengunjung_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=944;
+  MODIFY `pengunjung_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=946;
 --
 -- AUTO_INCREMENT for table `tbl_tanggal`
 --

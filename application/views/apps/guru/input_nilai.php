@@ -1,5 +1,5 @@
-<?php echo form_open('guru_si/hapus_nilai_siswa','class="form-horizontal" role="form"');
- echo form_hidden('ID_NILAI', $this->uri->segment(3)); echo form_open('guru_si/nilai_siswa','class="form-horizontal" role="form"') ;?>
+<?php 
+ echo form_hidden('ID_NILAI', $this->uri->segment(3)); ?>
 
 
 
@@ -27,8 +27,16 @@
                       <th  tabindex="0" input-type="text" aria-controls="datatable" rowspan="1" colspan="1"  style="width: 50px;">KELAS
                     </th>
 
+                    <th  tabindex="0" input-type="text" aria-controls="datatable" rowspan="1" colspan="1"  style="width: 50px;">MAPEL
+                    </th>
+
                     <th  tabindex="0" input-type="text" aria-controls="datatable" rowspan="1" colspan="1"  style="width: 50px;">NIS
                     </th>
+
+
+                    <th  tabindex="0" input-type="text" aria-controls="datatable" rowspan="1" colspan="1"  style="width: 50px;">NAMA
+                    </th>
+
                     <th  tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 30px;">SEMESTER
                     </th>
                     <th  tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 30px;">TUGAS 1
@@ -68,7 +76,9 @@
 
                         foreach($list as $data){ ?>
                             <td><?php echo $data->kelas_nama?></td>
+                                 <td><?php echo $data->NAMA_MAPEL?></td>
                         <td><?php echo $data->NIS ?></td>
+                             <td><?php echo $data->siswa_nama?></td>
                         <td><?php echo $data->SEMESTER ?></td>
                         <td><?php echo $data->TUGAS1 ?></td>
                         <td><?php echo $data->TUGAS2 ?></td>
@@ -88,8 +98,7 @@
                   
                         
                         echo anchor('guru_si/edit_nilai/'.$data->ID_NILAI,'Edit','id="btnTest" type="button" class="btn btn-warning btn-bordered waves-effect w-md waves-light" style="margin-bottom:5px;"');
-                        echo anchor('guru_si/hapus_nilai_siswa/'.$data->ID_NILAI,'Hapus','id="btnTest" type="button" class="btn btn-danger btn-bordered waves-effect w-md waves-light"');
-                        
+                   
                    
                         
                        

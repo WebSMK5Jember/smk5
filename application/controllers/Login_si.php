@@ -41,7 +41,7 @@ Class Login_si extends CI_Controller{
 	    			$this ->session ->set_userdata('pengguna_level', '2');
 	    			$this ->session ->set_userdata('id_session', $data['pengguna_guru']);
 	    			$this ->session ->set_userdata('name_session', $gur['guru_nama']);
-				redirect('kepsek_si');
+				redirect('guru_si');
 	    			
 					$this ->load ->view('apps/kepsek/index.php');
 	    		}else if($data['pengguna_level'] == 3){

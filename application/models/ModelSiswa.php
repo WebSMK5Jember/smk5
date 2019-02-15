@@ -77,8 +77,8 @@ class ModelSiswa extends CI_Model{
 	function get_absensi($id){
 		$this->db->select('*'); 
 		$this->db->from('tabel_absensi');
-		$this->db->join('tabel_mapel', 'tabel_mapel.KODE_MAPEL = tabel_absensi.KODE_MAPEL', 'left');
-		$this->db->join('tbl_siswa', 'tbl_siswa.siswa_nis = tabel_absensi.NIS', 'left');
+		$this->db->join('tabel_mapel', 'tabel_mapel.KODE_MAPEL = tabel_absensi.KODE_MAPEL_ABSEN', 'left');
+		$this->db->join('tbl_siswa', 'tbl_siswa.siswa_nis = tabel_absensi.NIS_ABSEN', 'left');
 		$data = array(
 				'tbl_siswa.siswa_nis'=>$id
 				);
@@ -155,11 +155,11 @@ function get_prakerin($id){
 	$this->db->join('tbl_siswa', 'tbl_siswa.siswa_nis = tabel_prakerin.NIS', 'left');
 	$this->db->join('tabel_tempat_prakerin', 'tabel_tempat_prakerin.KODE_TEMPAT = tabel_prakerin.KODE_TEMPAT_P', 'left');
     $data = array(
-<<<<<<< HEAD
+
 				'tabel_prakerin.status'=>$id
-=======
-				'tabel_prakerin.KODE_PRAKERIN'=>$id,
->>>>>>> 9cea15eb63619a2b1ed07f7abe4b5ed3d67ed9b3
+
+			
+
 				);
 			$this ->db ->where($data,'1');
 

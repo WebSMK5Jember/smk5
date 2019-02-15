@@ -26,6 +26,61 @@ Class guru_si extends CI_Controller{
         
     }
 
+
+    
+
+
+
+
+     public function akun(){
+         $id = $this->session->userdata('id_session');
+     
+        $list = $this->ModelGuru->get_data_diri_akun($id)->result();
+        $data = array(
+            "menu"      => "MenuGuru",
+          
+            "panelbody" => "apps/guru/akun",
+            "list"      => $list
+        );
+        $this->load->view('panelbody', $data);
+        
+    }
+
+
+
+
+      function edit_akun($pengguna_guru)
+    {
+        $pengguna_id = $this->uri->segment(3);
+
+        
+        $data = array(
+            'menu' => 'MenuGuru',
+            'panelbody' => 'apps/guru/edit_akun',
+            "form_edit_akun" => "apps/guru/form_edit_akun"
+         
+            
+        );
+        $this ->load ->view('panelbody',$data);
+    
+    }
+    
+function simpan_edit_akun()
+    {
+            $pengguna_guru = $this->input->post('pengguna_id');
+            $data = array(
+            'pengguna_password'=> md5($this->input->post('pengguna_password'))
+           
+                        
+            
+        );
+        $this->db->where('pengguna_id', $pengguna_guru);
+        $this->db->update('tbl_pengguna', $data);
+        redirect('guru_si/akun');
+    
+    }
+
+
    
 
     
@@ -41,17 +96,7 @@ Class guru_si extends CI_Controller{
         
     }
 
-    public function absensi_siswa_input(){
-        $id = $this->session->userdata('id_session');
-        $list = $this->ModelGuru->get_absensi_input($id)->result();
-        $data = array(
-            "menu"      => "MenuGuru",
-            "panelbody" => "apps/guru/input_absensi",
-            "list"      => $list
-        );
-        $this->load->view('panelbody', $data);
-        
-    }
+
 
 
     public function jadwal_guru(){
@@ -109,14 +154,58 @@ Class guru_si extends CI_Controller{
     
     }
 	
-	public function hapus_nilai_siswa(){
-        $ID_NILAI = $this ->uri ->segment(3);
-        $this ->db ->where('ID_NILAI',$ID_NILAI);
-        $this ->db ->delete('tabel_nilai');
+	
 
-        redirect('guru_si/nilai_siswa_input');
+
+        public function absensi_siswa_input(){
+        $id = $this->session->userdata('id_session');
+        $list = $this->ModelGuru->get_absensi_input($id)->result();
+        $data = array(
+            "menu"      => "MenuGuru",
+            "panelbody" => "apps/guru/input_absensi",
+            "list"      => $list
+        );
+        $this->load->view('panelbody', $data);
+        
     }
 
+
+    
+    
+    function edit_absensi($KODE_ABSENSI)
+    {
+        $KODE_ABSENSI = $this->uri->segment(3);
+        $list = $this ->ModelGuru ->absensi_edit($KODE_ABSENSI)->row_array();
+        
+        $data = array(
+            'menu' => 'MenuGuru',
+            'panelbody' => 'apps/guru/edit_absensi',
+            "form_edit_absensi" => "apps/guru/form_edit_absensi",
+            'list' => $list
+            
+        );
+        $this ->load ->view('panelbody',$data);
+    
+    }
+
+    function simpan_edit_absensi()
+    {
+            $KODE_ABSENSI = $this->input->post('KODE_ABSENSI');
+            $data = array(
+            'JUMLAH_ALPA'=> $this->input->post('JUMLAH_ALPA'),
+            'JUMLAH_IZIN'=> $this->input->post('JUMLAH_IZIN'),
+            'JUMLAH_SAKIT'=> $this->input->post('JUMLAH_SAKIT'),
+            'JUMLAH_HADIR'=> $this->input->post('JUMLAH_HADIR')
+            
+
+        );
+        $this->db->where('KODE_ABSENSI', $KODE_ABSENSI);
+        $this->db->update('tabel_absensi', $data);
+        redirect('guru_si/absensi_siswa_input');
+    
+    }
+    
+  
    
     
 }

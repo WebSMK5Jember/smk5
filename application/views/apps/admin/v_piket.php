@@ -436,7 +436,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button>
-                        <h4 class="modal-title" id="myModalLabel">Tambah Mata Pelajaran</h4>
+                        <h4 class="modal-title" id="myModalLabel">Tambah Piket</h4>
                     </div>
                     <form class="form-horizontal" action="<?php echo base_url().'admin_si_piket/simpan_piket'?>" method="post" enctype="multipart/form-data">
                     <div class="modal-body">
@@ -483,21 +483,21 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button>
-                        <h4 class="modal-title" id="myModalLabel">Edit Mata Pelajaran</h4>
+                        <h4 class="modal-title" id="myModalLabel">Edit Piket</h4>
                     </div>
                     <form class="form-horizontal" action="<?php echo base_url().'admin_si_piket/update_piket'?>" method="post" enctype="multipart/form-data">
                     <div class="modal-body">
                                 <input type="hidden" name="kode" value="<?php echo $kode;?>"/>
                              
                                     <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">Kode Mata Pelajaran</label>
+                                        <label for="inputUserName" class="col-sm-4 control-label">Kode Piket</label>
                                         <div class="col-sm-7">
                                             <input type="text" name="kode" value="<?php echo $kode;?>" class="form-control" id="inputUserName" placeholder="kodepiket" required>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">Nama Mata Pelajaran</label>
+                                        <label for="inputUserName" class="col-sm-4 control-label">Hari</label>
                                         <div class="col-sm-7">
                                             <input type="text" name="hari" value="<?php echo $nama;?>" class="form-control" id="inputUserName" placeholder="hari" required>
                                         </div>
@@ -529,13 +529,13 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button>
-                        <h4 class="modal-title" id="myModalLabel">Hapus Mata Pelajaran</h4>
+                        <h4 class="modal-title" id="myModalLabel">Hapus Data Piket</h4>
                     </div>
                     <form class="form-horizontal" action="<?php echo base_url().'admin_si_piket/hapus_piket'?>" method="post" enctype="multipart/form-data">
                     <div class="modal-body">
 							       <input type="hidden" name="kode" value="<?php echo $kode;?>"/>
                     
-                            <p>Apakah Anda yakin mau menghapus mata pelajaran <b><?php echo $nama;?></b> ?</p>
+                            <p>Apakah Anda yakin mau menghapus data <b><?php echo $nama;?></b> ?</p>
 
                     </div>
                     <div class="modal-footer">

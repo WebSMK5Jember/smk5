@@ -1,7 +1,16 @@
-<?php echo form_open('guru_si/absensi_siswa_input','class="form-horizontal" role="form"');?>
+<?php 
+ echo form_hidden('KODE_ABSENSI', $this->uri->segment(3)); ?>
+
+
+
+
+
+
+
+    
 <div class="row">
     <div class="col-sm-12">
-        <div class="card-box">
+        <div class="card-box table-responsive">
             <h4 class="m-t-0 header-title"><b>INPUT ABSENSI SISWA </b></h4>
             <div class="row">
                 <div class="col-md-12">
@@ -9,73 +18,79 @@
                         
                         
                         
+            <div id="datatable_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
                        
                        
-                       
-                        <div class="form-group">
-                            <label class="col-md-2 control-label" for="exampleInputEmail1"> NIS</label>
-                                <div class="col-md-10">
-                                    <select class="form-control" name="nis">
-                                        <option disabled selected value>- Pilih -</option>
-                                        <?php foreach($nis as $data){?>
-                                        <option value="<?php echo $data->siswa_nis?>"><?php echo $data->siswa_nama?></option>
-                                    <?php } ?>
-                                    </select>
-                                </div>
-                        </div>
+                     <table id="datatable" class="table table-striped table-bordered dataTable no-footer" role="grid" aria-describedby="datatable_info">
+                <thead>
+                <tr role="row">
+                      <th  tabindex="0" input-type="text" aria-controls="datatable" rowspan="1" colspan="1"  style="width: 50px;">KELAS
+                    </th>
 
-                         <div class="form-group">
-                            <label class="col-md-2 control-label" for="exampleInputEmail1">KODE MATA  PELAJARAN </label>
-                                <div class="col-md-10">
-                                    <select class="form-control" name="KODE_MAPEL">
-                                        <option disabled selected value>- Pilih -</option>
-                                        <?php foreach($mapel as $data){?>
-                                        <option value="<?php echo $data->KODE_MAPEL?>"><?php echo $data->NAMA_MAPEL?></option>
-                                        
-                                    <?php } ?>
-                                    </select>
-                                </div>
-                        </div>
+                    <th  tabindex="0" input-type="text" aria-controls="datatable" rowspan="1" colspan="1"  style="width: 50px;">MAPEL
+                    </th>
 
+                     <th  tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 30px;">NIS
+                    </th>
+                    <th  tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 30px;">NAMA SISWA
+                    </th>
+                    <th  tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 30px;">JUMLAH HADIR
+                    </th>
+                    <th  tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 30px;">JUMLAH IZIN
+                    </th>
+                    <th  tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 30px;">JUMLAH SAKIT
+                    </th>
+                    
+                    <th  tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 30px;">JUMLAH ALPA
+                    </th>
+                   
+                    <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width:15px;">Opsi
+                    </th>
+                    
+                </tr>
+                </thead>
+                 <tbody>
+                    <tr>
+                        <?php 
                         
 
-                         <div class="form-group">
-                            <label class="col-md-2 control-label" for="exampleInputEmail1">KODE GURU </label>
-                                <div class="col-md-10">
-                                    <select class="form-control" name="KODE_GURU">
-                                        <option disabled selected value>- Pilih -</option>
-                                        <?php foreach($guru as $data){?>
-                                        <option value="<?php echo $data->guru_id?>"><?php echo $data->guru_nama?></option>
-                                        
-                                    <?php } ?>
-                                    </select>
-                                </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="col-md-2 control-label" for="exampleInputEmail1"> KETERANGAN </label>
-                            <div class="col-md-10">
-                                <input type="text" name="SEMESTER" class="form-control" id="exampleInputEmail1">
-                            </div>
-                         </div>
-                         
-                         <div class="form-group">
-                            <label class="col-md-2 control-label" for="exampleInputEmail1">JUMLAH HADIR</label>
-                            <div class="col-md-10">
-                                <input type="text" name="TUGAS1" class="form-control" id="exampleInputEmail1">
-                            </div>
-                         </div>
-
+                        foreach($list as $data){ ?>
+                            <td><?php echo $data->kelas_nama?></td>
+                        <td><?php echo $data->NAMA_MAPEL ?></td>
+                        <td><?php echo $data->NIS_ABSEN ?></td>
+                        <td><?php echo $data->siswa_nama ?></td>
+                        <td><?php echo $data->JUMLAH_HADIR ?></td>
+                        <td><?php echo $data->JUMLAH_IZIN ?></td>
+                        <td><?php echo $data->JUMLAH_SAKIT ?></td>
+                          <td><?php echo $data->JUMLAH_ALPA ?></td>
+              
+                    <td><?php 
                        
 
-                            <button style="margin-top: 20px;" type="submit" name="btn-update" class="btn btn-custom waves-light waves-effect w-md">Submit</button>
-                            <button style="margin-top: 20px;" type="submit" onclick="history-1" class="btn btn-warning waves-effect waves-light">Back</button>
-                                </div>
+                  
+                        
+                        echo anchor('guru_si/edit_absensi/'.$data->KODE_ABSENSI,'Edit','id="btnTest" type="button" class="btn btn-warning btn-bordered waves-effect w-md waves-light" style="margin-bottom:5px;"');
+                   
+                   
+                        
+                       
+
+                         ?></td>
+                    </tr>
+                        <?php }?>
+            </tbody>
+             </table>
+
+
+
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- end row -->
+
+        </div>
 
         </div> <!-- end card-box -->
     </div><!-- end col -->

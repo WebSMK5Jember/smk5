@@ -458,7 +458,7 @@
                               <div class="form-group">
                                         <label for="inputUserName" class="col-sm-4 control-label">Tanggal Awal</label>
                                         <div class="col-sm-7">
-                                            <input type="date" name="awal" class="form-control" id="inputUserName" placeholder="Tanggal Pembukaan Daftar Prakerin" required>
+                                            <input type="date" name="awal" class="form-control" id="inputUserName" placeholder="Tanggal Pembukaan Pengumuman Prakerin" required>
                                         </div>
                                     </div>
 
@@ -466,7 +466,7 @@
                                     <div class="form-group">
                                         <label for="inputUserName" class="col-sm-4 control-label">Tanggal Akhir</label>
                                         <div class="col-sm-7">
-                                            <input type="date" name="akhir" class="form-control" id="inputUserName" placeholder="Tanggal Penutupan Daftar Prakerin" required>
+                                            <input type="date" name="akhir" class="form-control" id="inputUserName" placeholder="Tanggal Penutupan Pengumuman Prakerin" required>
                                         </div>
                                     </div>
 
@@ -510,14 +510,14 @@
                                     <div class="form-group">
                                         <label for="inputUserName" class="col-sm-4 control-label">Tangal Awal</label>
                                         <div class="col-sm-7">
-                                            <input type="date" name="awal" value="<?php echo $tgl_awal;?>" class="form-control" id="inputUserName" placeholder="Tanggal Pembukaan Daftar Prakerin" required>
+                                            <input type="date" name="awal" value="<?php echo $tgl_awal;?>" class="form-control" id="inputUserName" placeholder="Tanggal Pembukaan Pengumuman Prakerin" required>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="inputUserName" class="col-sm-4 control-label">Tanggal Akhir</label>
                                         <div class="col-sm-7">
-                                            <input type="date" name="akhir" value="<?php echo $tgl_akhir;?>" class="form-control" id="inputUserName" placeholder="Tangal Penutupan Daftar Prakerin" required>
+                                            <input type="date" name="akhir" value="<?php echo $tgl_akhir;?>" class="form-control" id="inputUserName" placeholder="Tangal Penutupan Pengumuman Prakerin" required>
                                         </div>
                                     </div>
 

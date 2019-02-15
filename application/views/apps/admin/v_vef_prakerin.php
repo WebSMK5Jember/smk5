@@ -187,8 +187,8 @@
                 <thead>
                 <tr>
           					<th>NOMOR INDUK SISWA (NIS)</th>
-                    <th>KODE GURU</th>
-                    <th>KODE TEMPAT PRAKERIN</th>
+                    <th>GURU</th>
+                    <th>TEMPAT PRAKERIN</th>
                     <th>MINAT</th>
                    
                   
@@ -225,9 +225,9 @@
                   <td><?php echo $NIS;?></td>
                 
 
-                  <td><?php echo $KODE_GURU;?></td>
+                  <td><?php echo $nama_guru;?></td>
 
-                  <td><?php echo $KODE_TEMPAT_P;?></td>
+                  <td><?php echo $nama_tempat;?></td>
 
                   <td><?php echo $MINAT;?></td>
 
@@ -497,14 +497,14 @@
                                             <option value="">-Pilih-</option>
                                             <?php
                                                 foreach ($guru->result_array() as $g) {
-                                                  $id_guru=$g['guru_id'];
+                                                  $KODE_GURU=$g['guru_id'];
                                                   $nama_guru=$g['guru_nama'];
 
                                             ?>
-                                              <?php if($id_guru==$guru_id):?>
-                                              <option value="<?php echo $id_guru;?>" selected><?php echo $nama_guru;?></option>
+                                              <?php if($KODE_GURU==$guru_id):?>
+                                              <option value="<?php echo $KODE_GURU;?>" selected><?php echo $nama_guru;?></option>
                                             <?php else:?>
-                                              <option value="<?php echo $id_guru;?>"><?php echo $nama_guru;?></option>
+                                              <option value="<?php echo $KODE_GURU;?>"><?php echo $nama_guru;?></option>
                                             <?php endif;?>
                                             <?php } ?>
                                           </select>
@@ -544,6 +544,9 @@
             </div>
         </div>
   <?php endforeach;?>
+
+
+
 	<!--Modal Edit Album-->
 
 	

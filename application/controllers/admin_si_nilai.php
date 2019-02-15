@@ -31,7 +31,15 @@ class admin_si_nilai extends CI_Controller{
 							$KODE_GURU=strip_tags($this->input->post('kodeguru'));
 	                        $Semester=strip_tags($this->input->post('Semester'));
 	                       
-						
+						 $dataUser = array(
+               'KODE_KELAS_ABSEN' => $this ->input ->post('kodekelas'),              	
+            'KODE_MAPEL_ABSEN' => $this ->input ->post('kodemapel'),
+    		'KODE_GURU_ABSEN' => $this ->input ->post('kodeguru'),
+    		'NIS_ABSEN' => $this ->input ->post('nis'));
+    	
+        
+        
+        $this ->db ->insert("tabel_absensi",$dataUser);
 
 							$this->M_nilai->simpan_nilai($kode,$KODE_KELAS,$KODE_MAPEL,$KODE_GURU,$Semester);
 							echo $this->session->set_flashdata('msg','success');
@@ -59,9 +67,9 @@ class admin_si_nilai extends CI_Controller{
 	}
 
 	function hapus_nilai(){
-		$kode=$this->input->post('kode');
+		$id=$this->input->post('id');
 		
-		$this->M_nilai->hapus_nilai($kode);
+		$this->M_nilai->hapus_nilai($id);
 		
 		
 		echo $this->session->set_flashdata('msg','success-hapus');

@@ -445,7 +445,7 @@
                     <div class="modal-body">
 
                              <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">Kode Jurusan</label>
+                                        <label for="inputUserName" class="col-sm-4 control-label">Jurusan</label>
                                         <div class="col-sm-7">
                                           <select name="xjurusan" class="form-control" required>
                                             <option value="">-Pilih-</option>
@@ -461,13 +461,7 @@
                                         </div>
                                     </div>
 
-                                   <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">Kode Jurusan</label>
-                                        <div class="col-sm-7">
-                                            <input type="text" name="xjurusan" class="form-control" id="inputUserName" placeholder="Kode Jurusan" required>
-                                        </div>
-                                    </div>
-                                     
+                                 
                                     <div class="form-group">
                                         <label for="inputUserName" class="col-sm-4 control-label">Nama Kelas</label>
                                         <div class="col-sm-7">
@@ -511,7 +505,7 @@
                                 <input type="hidden" name="kode" value="<?php echo $kode;?>"/>
                              
                                    <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">Kode Jurusan</label>
+                                        <label for="inputUserName" class="col-sm-4 control-label">Jurusan</label>
                                         <div class="col-sm-7">
                                           <select name="xjurusan" class="form-control" required>
                                             <option value="">-Pilih-</option>
@@ -521,18 +515,18 @@
                                                   $nama_jurusan=$m['NAMA_JURUSAN'];
 
                                             ?>
-                                            <option value="<?php echo $id_jurusan;?>"><?php echo $nama_jurusan;?></option>
+                                           
+                                            <?php if($id_jurusan==$KODE_JURUSAN):?>
+                                              <option value="<?php echo $id_jurusan;?>" selected><?php echo $nama_jurusan;?></option>
+                                            <?php else:?>
+                                             <option value="<?php echo $id_jurusan;?>" selected><?php echo $nama_jurusan;?></option>
+                                            <?php endif;?>
                                             <?php } ?>
                                           </select>
                                         </div>
                                     </div>
 
-                                     <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">Kode Jurusan</label>
-                                        <div class="col-sm-7">
-                                            <input type="text" name="xjurusan" value="<?php echo $kode_jurusan;?>" class="form-control" id="inputUserName" placeholder="Kode Jurusan" required>
-                                        </div>
-                                    </div>
+                           
 
                                      
                                     <div class="form-group">

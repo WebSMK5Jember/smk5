@@ -601,8 +601,11 @@
                                                   $nama_kelas=$k['kelas_nama'];
 
                                             ?>
-
-                                            <option value="<?php echo $KODE_KELAS;?>"><?php echo $nama_kelas;?></option>
+                                <?php if($KODE_KELAS==$kelas_id):?>
+                                              <option value="<?php echo $KODE_KELAS;?>" selected><?php echo $nama_kelas;?></option>
+                                            <?php else:?>
+                                             <option value="<?php echo $KODE_KELAS;?>" selected><?php echo $nama_kelas;?></option>
+                                            <?php endif;?>
                                             <?php } ?>
                                           </select>
                                         </div>
@@ -619,8 +622,11 @@
                                                   $nama_mapel=$m['NAMA_MAPEL'];
 
                                             ?>
-
-                                    <option value="<?php echo $id_mapel;?>"><?php echo $nama_mapel;?></option>
+ <?php if($id_mapel==$KODE_MAPEL):?>
+                                              <option value="<?php echo $id_mapel;?>" selected><?php echo $nama_mapel;?></option>
+                                            <?php else:?>
+                                             <option value="<?php echo $id_mapel;?>" selected><?php echo $nama_mapel;?></option>
+                                            <?php endif;?>
                                             <?php } ?>
                                           </select>
                                         </div>
@@ -639,7 +645,11 @@
 
                                             ?>
 
-                                            <option value="<?php echo $id_guru;?>"><?php echo $nama_guru;?></option>
+                                            <?php if($id_guru==$guru_id):?>
+                                              <option value="<?php echo $id_guru;?>" selected><?php echo $nama_guru;?></option>
+                                            <?php else:?>
+                                             <option value="<?php echo $id_guru;?>" selected><?php echo $nama_guru;?></option>
+                                            <?php endif;?>
                                             <?php } ?>
                                           </select>
                                         </div>

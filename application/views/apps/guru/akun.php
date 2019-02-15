@@ -40,7 +40,7 @@
                         <?php 
                         
                         foreach($list as $data){ ?>
-                        <td><?php echo $data->pengguna_siswa ?></td>
+                        <td><?php echo $data->pengguna_guru ?></td>
                         <td><?php echo $data->pengguna_password ?></td>
 
                     <td><?php 
@@ -48,7 +48,7 @@
 
           
                         
-                        echo anchor('siswa_si/edit_akun/'.$data->pengguna_id,'Edit','id="btnTest" type="button" class="btn btn-warning btn-bordered waves-effect w-md waves-light" style="margin-bottom:5px;"');
+                        echo anchor('guru_si/edit_akun/'.$data->pengguna_id,'Edit','id="btnTest" type="button" class="btn btn-warning btn-bordered waves-effect w-md waves-light" style="margin-bottom:5px;"');
           
                         
                    

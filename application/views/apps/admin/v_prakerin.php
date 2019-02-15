@@ -446,7 +446,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button>
-                        <h4 class="modal-title" id="myModalLabel">Tambah Mata Pelajaran</h4>
+                        <h4 class="modal-title" id="myModalLabel">Tambah Tempat Prakerin</h4>
                     </div>
                     <form class="form-horizontal" action="<?php echo base_url().'admin_si_tempat_prakerin/simpan_tempat'?>" method="post" enctype="multipart/form-data">
                     <div class="modal-body">
@@ -454,7 +454,7 @@
                               <div class="form-group">
                                         <label for="inputUserName" class="col-sm-4 control-label">Kode Tempat Prakerin </label>
                                         <div class="col-sm-7">
-                                            <input type="text" name="kode" class="form-control" id="inputUserName" placeholder="kode" required>
+                                            <input type="text" name="kode" class="form-control" id="inputUserName" placeholder="Kode" required>
                                         </div>
                                     </div>
 
@@ -462,14 +462,14 @@
                                     <div class="form-group">
                                         <label for="inputUserName" class="col-sm-4 control-label">Nama Tempat Prakerin </label>
                                         <div class="col-sm-7">
-                                            <input type="text" name="xnama" class="form-control" id="inputUserName" placeholder="xnama" required>
+                                            <input type="text" name="xnama" class="form-control" id="inputUserName" placeholder="Nama" required>
                                         </div>
                                     </div>
 
                                         <div class="form-group">
                                         <label for="inputUserName" class="col-sm-4 control-label"> Alamat </label>
                                         <div class="col-sm-7">
-                                            <input type="text" name="xalamat" class="form-control" id="inputUserName" placeholder="xalamat" required>
+                                            <input type="text" name="xalamat" class="form-control" id="inputUserName" placeholder="Alamat" required>
                                         </div>
                                     </div>
 
@@ -503,23 +503,29 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button>
-                        <h4 class="modal-title" id="myModalLabel">Edit Mata Pelajaran</h4>
+                        <h4 class="modal-title" id="myModalLabel">Edit Tempat Prakerin</h4>
                     </div>
                     <form class="form-horizontal" action="<?php echo base_url().'admin_si_mapel/update_mapel'?>" method="post" enctype="multipart/form-data">
                     <div class="modal-body">
                                 <input type="hidden" name="kode" value="<?php echo $kode;?>"/>
                              
                                     <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">Kode Mata Pelajaran</label>
+                                        <label for="inputUserName" class="col-sm-4 control-label">Kode Tampat Prakerin</label>
                                         <div class="col-sm-7">
-                                            <input type="text" name="kode" value="<?php echo $kode;?>" class="form-control" id="inputUserName" placeholder="Kode Mapel" required>
+                                            <input type="text" name="kode" value="<?php echo $kode;?>" class="form-control" id="inputUserName" placeholder="Kode" required>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">Nama Mata Pelajaran</label>
+                                        <label for="inputUserName" class="col-sm-4 control-label">Nama Tempat Prakerin</label>
                                         <div class="col-sm-7">
-                                            <input type="text" name="xnama" value="<?php echo $nama;?>" class="form-control" id="inputUserName" placeholder="Nama Mapel" required>
+                                            <input type="text" name="xnama" value="<?php echo $nama;?>" class="form-control" id="inputUserName" placeholder="Nama" required>
+                                        </div>
+                                    </div>
+                                     <div class="form-group">
+                                        <label for="inputUserName" class="col-sm-4 control-label">Alamat</label>
+                                        <div class="col-sm-7">
+                                            <input type="text" name="xalamat" value="<?php echo $nama;?>" class="form-control" id="inputUserName" placeholder="Alamat" required>
                                         </div>
                                     </div>
 

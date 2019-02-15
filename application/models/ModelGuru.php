@@ -61,24 +61,7 @@ class ModelGuru extends CI_Model{
 
 	}
 
-	public function get_pilih_input_nilai ($id){
-		$this ->db ->select('*');
-		$this ->db ->from('tabel_nilai');
-		$this->db->join('tbl_siswa', 'tbl_siswa.siswa_nis = tabel_nilai.NIS', 'left');
-		$this->db->join('tabel_mapel', 'tabel_mapel.KODE_MAPEL = tabel_nilai.KODE_MAPEL_NILAI', 'left');
-		$this->db->join('tbl_kelas', 'tbl_kelas.kelas_id= tabel_nilai.KODE_KELAS', 'left');
-		$this->db->join('tbl_guru', 'tbl_guru.guru_id = tabel_nilai.KODE_GURU', 'left');
 	
-		$data = array(
-				'tabel_nilai.KODE_GURU'=>$id
-				);
-			$this ->db ->where($data,$id);
-
-			$query = $this ->db ->get();
-
-			return $query;		
-
-	}
 	
 	public function get_nilai_input($id){
 		$this ->db ->select('*');
@@ -98,16 +81,33 @@ class ModelGuru extends CI_Model{
 			return $query;		
 
 	}
+
+
+
+	function get_data_diri_akun($id){
+	$this->db->select('*'); 
+    $this->db->from('tbl_pengguna'); 
+
+    $data = array(
+				'pengguna_guru'=>$id
+				);
+			$this ->db ->where($data,$id);
+
+			$query = $this ->db ->get();
+
+			return $query;
+	}
 	
 	public function get_absensi_input($id){
 		$this ->db ->select('*');
 		$this ->db ->from('tabel_absensi');
 		$this->db->join('tbl_siswa', 'tbl_siswa.siswa_nis = tabel_absensi.NIS_ABSEN', 'left');
 		$this->db->join('tabel_mapel', 'tabel_mapel.KODE_MAPEL = tabel_absensi.KODE_MAPEL_ABSEN', 'left');
+		$this->db->join('tbl_kelas', 'tbl_kelas.kelas_id= tabel_absensi.KODE_KELAS_ABSEN', 'left');
 		$this->db->join('tbl_guru', 'tbl_guru.guru_id = tabel_absensi.KODE_GURU_ABSEN', 'left');
 		
 		$data = array(
-				'tabel_absensi.KODE_GURU'=>$id
+				'tabel_absensi.KODE_GURU_ABSEN'=>$id
 				);
 			$this ->db ->where($data,$id);
 
@@ -164,9 +164,26 @@ class ModelGuru extends CI_Model{
 
 		return $query;
 	}
+
+
+
+	public function absensi_edit($KODE_ABSENSI){
+ $this ->db ->select('*');
+		$this ->db ->from('tabel_absensi');
+		$this->db->join('tbl_siswa', 'tbl_siswa.siswa_nis = tabel_absensi.NIS_ABSEN', 'left');
+		$this->db->join('tabel_mapel', 'tabel_mapel.KODE_MAPEL = tabel_absensi.KODE_MAPEL_ABSEN', 'left');
+		$this->db->join('tbl_guru', 'tbl_guru.guru_id = tabel_absensi.KODE_GURU_ABSEN', 'left');
+		$this->db->join('tbl_kelas', 'tbl_kelas.kelas_id = tabel_absensi.KODE_KELAS_ABSEN', 'left');
+	$this ->db ->where('KODE_ABSENSI',$KODE_ABSENSI);
+
+			$query = $this ->db ->get();
+
+			return $query;		
+
+	
 	
 
 
 }
 
-?>
+}
