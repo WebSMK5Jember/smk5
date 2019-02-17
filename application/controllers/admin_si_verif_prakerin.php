@@ -16,10 +16,10 @@ class admin_si_verif_prakerin extends CI_Controller{
 	function index(){
 
 		
-		$i['data']=$this->M_V_PRAKERIN->get_all_prakerin();
-		$i['guru']=$this->M_V_PRAKERIN->get_all_guru();
-		$i['tempat']=$this->M_V_PRAKERIN->get_all_tempat();
-		$this->load->view('apps/admin/v_vef_prakerin',$i);
+		$x['data']=$this->M_V_PRAKERIN->get_all_prakerin();
+		$x['guru']=$this->M_V_PRAKERIN->get_all_guru();
+		$x['tempat']=$this->M_V_PRAKERIN->get_all_tempat();
+		$this->load->view('apps/admin/v_vef_prakerin',$x);
 	}
 	
 	

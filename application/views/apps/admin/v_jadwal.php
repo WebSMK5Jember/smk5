@@ -42,8 +42,8 @@
     <section class="sidebar">
 
       <!-- /.search form -->
-      <!-- sidebar menu: : style can be found in sidebar.less -->
-  <ul class="sidebar-menu">
+    <!-- sidebar menu: : style can be found in sidebar.less -->
+      <ul class="sidebar-menu">
         <li class="header">Menu Utama</li>
         <li class="active">
           <a href="<?php echo base_url().'admin_si_dashboard'?>">
@@ -117,9 +117,20 @@
           </a>
         </li>
 
-        <li>
+<li>
           <a href="<?php echo base_url().'admin_si_nilai'?>">
             <i class="fa fa-graduation-cap"></i> <span>Data Master Nilai</span>
+            <span class="pull-right-container">
+              <small class="label pull-right"></small>
+            </span>
+          </a>
+        </li>
+
+<li>
+
+  <li>
+          <a href="<?php echo base_url().'admin_si_absen'?>">
+            <i class="fa fa-graduation-cap"></i> <span>Data Master Absen</span>
             <span class="pull-right-container">
               <small class="label pull-right"></small>
             </span>
@@ -135,6 +146,36 @@
           </a>
         </li>
 
+         <li>
+          <a href="<?php echo base_url().'admin_si_tanggal_prakerin'?>">
+            <i class="fa fa-graduation-cap"></i> <span>Tanggal Pendaftaran Prakerin</span>
+            <span class="pull-right-container">
+              <small class="label pull-right"></small>
+            </span>
+          </a>
+        </li>
+         <li>
+
+           <li>
+          <a href="<?php echo base_url().'admin_si_tanggal_review'?>">
+            <i class="fa fa-graduation-cap"></i> <span>Tanggal Hasil Review Prakerin</span>
+            <span class="pull-right-container">
+              <small class="label pull-right"></small>
+            </span>
+          </a>
+        </li>
+         <li>
+
+        <li>
+          <a href="<?php echo base_url().'admin_si_verif_prakerin'?>">
+            <i class="fa fa-graduation-cap"></i> <span>Verifikasi Prakerin</span>
+            <span class="pull-right-container">
+              <small class="label pull-right"></small>
+            </span>
+          </a>
+        </li>
+         <li>
+
 
          <li>
           <a href="<?php echo base_url().'login_si/logout'?>">
@@ -144,6 +185,7 @@
             </span>
           </a>
         </li>
+
 
 
       </ul>

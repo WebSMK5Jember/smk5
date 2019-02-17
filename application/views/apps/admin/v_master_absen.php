@@ -43,7 +43,8 @@
 
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
-  <ul class="sidebar-menu">
+    <!-- sidebar menu: : style can be found in sidebar.less -->
+      <ul class="sidebar-menu">
         <li class="header">Menu Utama</li>
         <li class="active">
           <a href="<?php echo base_url().'admin_si_dashboard'?>">
@@ -126,6 +127,16 @@
           </a>
         </li>
 
+<li>
+
+  <li>
+          <a href="<?php echo base_url().'admin_si_absen'?>">
+            <i class="fa fa-graduation-cap"></i> <span>Data Master Absen</span>
+            <span class="pull-right-container">
+              <small class="label pull-right"></small>
+            </span>
+          </a>
+        </li>
 
 <li>
           <a href="<?php echo base_url().'admin_si_tempat_prakerin'?>">
@@ -137,6 +148,37 @@
         </li>
 
          <li>
+          <a href="<?php echo base_url().'admin_si_tanggal_prakerin'?>">
+            <i class="fa fa-graduation-cap"></i> <span>Tanggal Pendaftaran Prakerin</span>
+            <span class="pull-right-container">
+              <small class="label pull-right"></small>
+            </span>
+          </a>
+        </li>
+         <li>
+
+           <li>
+          <a href="<?php echo base_url().'admin_si_tanggal_review'?>">
+            <i class="fa fa-graduation-cap"></i> <span>Tanggal Hasil Review Prakerin</span>
+            <span class="pull-right-container">
+              <small class="label pull-right"></small>
+            </span>
+          </a>
+        </li>
+         <li>
+
+        <li>
+          <a href="<?php echo base_url().'admin_si_verif_prakerin'?>">
+            <i class="fa fa-graduation-cap"></i> <span>Verifikasi Prakerin</span>
+            <span class="pull-right-container">
+              <small class="label pull-right"></small>
+            </span>
+          </a>
+        </li>
+         <li>
+
+
+         <li>
           <a href="<?php echo base_url().'login_si/logout'?>">
             <i class="fa fa-sign-out"></i> <span>Sign Out</span>
             <span class="pull-right-container">
@@ -144,6 +186,7 @@
             </span>
           </a>
         </li>
+
 
 
       </ul>
@@ -489,7 +532,7 @@
 
 
                                  <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">NIS</label>
+                                        <label for="inputUserName" class="col-sm-4 control-label">Nama Siswa</label>
                                         <div class="col-sm-7">
                                           <select name="nis" class="form-control" required>
                                             <option value="">-Pilih-</option>
@@ -582,7 +625,7 @@
 
                               
 
-                                     
+                                 </div>    
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default btn-flat" data-dismiss="modal">Close</button>
@@ -684,7 +727,7 @@
         <script type="text/javascript">
                 $.toast({
                     heading: 'Success',
-                    text: "Jadwal Berhasil disimpan ke database.",
+                    text: "Absen Berhasil disimpan ke database.",
                     showHideTransition: 'slide',
                     icon: 'success',
                     hideAfter: false,
@@ -696,7 +739,7 @@
         <script type="text/javascript">
                 $.toast({
                     heading: 'Info',
-                    text: "Jadwal Pelajaran berhasil di update",
+                    text: "Absen berhasil di update",
                     showHideTransition: 'slide',
                     icon: 'info',
                     hideAfter: false,
@@ -708,7 +751,7 @@
         <script type="text/javascript">
                 $.toast({
                     heading: 'Success',
-                    text: "Jadwal Pelajaran Berhasil dihapus.",
+                    text: "Absen Berhasil dihapus.",
                     showHideTransition: 'slide',
                     icon: 'success',
                     hideAfter: false,

@@ -47,7 +47,7 @@ class admin_si_absen extends CI_Controller{
 	function hapus_absen(){
 		$id=$this->input->post('id');
 		
-		$this->M_nilai->hapus_nilai($id);
+		$this->M_nilai->hapus_absen($id);
 		
 		
 		echo $this->session->set_flashdata('msg','success-hapus');

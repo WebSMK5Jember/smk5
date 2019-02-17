@@ -43,7 +43,8 @@
 
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
-  <ul class="sidebar-menu">
+    <!-- sidebar menu: : style can be found in sidebar.less -->
+      <ul class="sidebar-menu">
         <li class="header">Menu Utama</li>
         <li class="active">
           <a href="<?php echo base_url().'admin_si_dashboard'?>">
@@ -126,6 +127,16 @@
           </a>
         </li>
 
+<li>
+
+  <li>
+          <a href="<?php echo base_url().'admin_si_absen'?>">
+            <i class="fa fa-graduation-cap"></i> <span>Data Master Absen</span>
+            <span class="pull-right-container">
+              <small class="label pull-right"></small>
+            </span>
+          </a>
+        </li>
 
 <li>
           <a href="<?php echo base_url().'admin_si_tempat_prakerin'?>">
@@ -135,6 +146,37 @@
             </span>
           </a>
         </li>
+
+         <li>
+          <a href="<?php echo base_url().'admin_si_tanggal_prakerin'?>">
+            <i class="fa fa-graduation-cap"></i> <span>Tanggal Pendaftaran Prakerin</span>
+            <span class="pull-right-container">
+              <small class="label pull-right"></small>
+            </span>
+          </a>
+        </li>
+         <li>
+
+           <li>
+          <a href="<?php echo base_url().'admin_si_tanggal_review'?>">
+            <i class="fa fa-graduation-cap"></i> <span>Tanggal Hasil Review Prakerin</span>
+            <span class="pull-right-container">
+              <small class="label pull-right"></small>
+            </span>
+          </a>
+        </li>
+         <li>
+
+        <li>
+          <a href="<?php echo base_url().'admin_si_verif_prakerin'?>">
+            <i class="fa fa-graduation-cap"></i> <span>Verifikasi Prakerin</span>
+            <span class="pull-right-container">
+              <small class="label pull-right"></small>
+            </span>
+          </a>
+        </li>
+         <li>
+
 
          <li>
           <a href="<?php echo base_url().'login_si/logout'?>">
@@ -470,7 +512,7 @@
 
 
                   <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">NIS</label>
+                                        <label for="inputUserName" class="col-sm-4 control-label">nama Siswa</label>
                                         <div class="col-sm-7">
                                           <select name="nis" class="form-control" required>
                                             <option value="">-Pilih-</option>
@@ -594,7 +636,7 @@
 
 
                                  <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">NIS</label>
+                                        <label for="inputUserName" class="col-sm-4 control-label">Nama Siswa</label>
                                         <div class="col-sm-7">
                                           <select name="nis" class="form-control" required>
                                             <option value="">-Pilih-</option>
@@ -692,7 +734,7 @@
                                         </div>
                                     </div>
 
-
+</div>
                                      
 
                     <div class="modal-footer">
@@ -796,7 +838,7 @@
         <script type="text/javascript">
                 $.toast({
                     heading: 'Success',
-                    text: "Jadwal Berhasil disimpan ke database.",
+                    text: "Master Nilai Berhasil disimpan ke database.",
                     showHideTransition: 'slide',
                     icon: 'success',
                     hideAfter: false,
@@ -808,7 +850,7 @@
         <script type="text/javascript">
                 $.toast({
                     heading: 'Info',
-                    text: "Jadwal Pelajaran berhasil di update",
+                    text: "Master Nilai berhasil di update",
                     showHideTransition: 'slide',
                     icon: 'info',
                     hideAfter: false,
@@ -820,7 +862,7 @@
         <script type="text/javascript">
                 $.toast({
                     heading: 'Success',
-                    text: "Jadwal Pelajaran Berhasil dihapus.",
+                    text: "Master Nilai Berhasil dihapus.",
                     showHideTransition: 'slide',
                     icon: 'success',
                     hideAfter: false,

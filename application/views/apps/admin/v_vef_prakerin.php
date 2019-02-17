@@ -43,7 +43,8 @@
 
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
-  <ul class="sidebar-menu">
+   <!-- sidebar menu: : style can be found in sidebar.less -->
+      <ul class="sidebar-menu">
         <li class="header">Menu Utama</li>
         <li class="active">
           <a href="<?php echo base_url().'admin_si_dashboard'?>">
@@ -117,9 +118,20 @@
           </a>
         </li>
 
-        <li>
+<li>
           <a href="<?php echo base_url().'admin_si_nilai'?>">
             <i class="fa fa-graduation-cap"></i> <span>Data Master Nilai</span>
+            <span class="pull-right-container">
+              <small class="label pull-right"></small>
+            </span>
+          </a>
+        </li>
+
+<li>
+
+  <li>
+          <a href="<?php echo base_url().'admin_si_absen'?>">
+            <i class="fa fa-graduation-cap"></i> <span>Data Master Absen</span>
             <span class="pull-right-container">
               <small class="label pull-right"></small>
             </span>
@@ -135,6 +147,26 @@
           </a>
         </li>
 
+         <li>
+          <a href="<?php echo base_url().'admin_si_tanggal_prakerin'?>">
+            <i class="fa fa-graduation-cap"></i> <span>Tanggal Pendaftaran Prakerin</span>
+            <span class="pull-right-container">
+              <small class="label pull-right"></small>
+            </span>
+          </a>
+        </li>
+         <li>
+
+           <li>
+          <a href="<?php echo base_url().'admin_si_tanggal_review'?>">
+            <i class="fa fa-graduation-cap"></i> <span>Tanggal Hasil Review Prakerin</span>
+            <span class="pull-right-container">
+              <small class="label pull-right"></small>
+            </span>
+          </a>
+        </li>
+         <li>
+
         <li>
           <a href="<?php echo base_url().'admin_si_verif_prakerin'?>">
             <i class="fa fa-graduation-cap"></i> <span>Verifikasi Prakerin</span>
@@ -143,7 +175,7 @@
             </span>
           </a>
         </li>
-
+         <li>
 
 
          <li>
@@ -533,7 +565,7 @@
                                     </div>
 
 
-                                     
+                                </div>     
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default btn-flat" data-dismiss="modal">Close</button>
@@ -601,7 +633,7 @@
         <script type="text/javascript">
                 $.toast({
                     heading: 'Success',
-                    text: "Jadwal Berhasil disimpan ke database.",
+                    text: "Verif Prakerin Berhasil disimpan ke database.",
                     showHideTransition: 'slide',
                     icon: 'success',
                     hideAfter: false,
@@ -613,7 +645,7 @@
         <script type="text/javascript">
                 $.toast({
                     heading: 'Info',
-                    text: "Jadwal Pelajaran berhasil di update",
+                    text: "Verif Prakerin berhasil di update",
                     showHideTransition: 'slide',
                     icon: 'info',
                     hideAfter: false,
@@ -625,7 +657,7 @@
         <script type="text/javascript">
                 $.toast({
                     heading: 'Success',
-                    text: "Jadwal Pelajaran Berhasil dihapus.",
+                    text: "Verif Prakerin Berhasil dihapus.",
                     showHideTransition: 'slide',
                     icon: 'success',
                     hideAfter: false,
