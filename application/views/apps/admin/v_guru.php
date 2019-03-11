@@ -602,8 +602,8 @@
 
                                         <label for="inputUserName" class="col-sm-4 control-label">NIP</label>
                                         <div class="col-sm-7">
-                                            <input type="text" onkeypress="return hanyaAngka(event)" name="xnip" class="form-control" id="inputUserName" placeholder="NIP" required>
-                                        </div>
+                                            <input type="text" maxlength="16" onkeypress="return hanyaAngka(event)" name="xnip" class="form-control" id="inputUserName" placeholder="NIP" required>
+                                        </di16>
                                     </div>
 
                                     <div class="form-group">
@@ -676,7 +676,7 @@
                                             <input type="file" name="filefoto"/>
                                         </div>
                                     </div>
-
+                                      </div>
 
                     </div>
                     <div class="modal-footer">
@@ -720,7 +720,8 @@
                                     <div class="form-group">
                                         <label for="inputUserName" class="col-sm-4 control-label">NIP</label>
                                         <div class="col-sm-7">
-                                            <input type="text" name="xnip" value="<?php echo $nip;?>" class="form-control" id="inputUserName" placeholder="NIP" required>
+                                            <input type="text" maxlength="16" onkeypress="return hanyaAngka(event)" name="xnip" class="form-control" id="inputUserName" placeholder="NIP" required>
+                                            <input type="text"  name="xnip" value="<?php echo $nip;?>" class="form-control" id="inputUserName" placeholder="NIP" required>
                                         </div>
                                     </div>
 
