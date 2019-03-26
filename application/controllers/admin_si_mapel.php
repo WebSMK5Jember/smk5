@@ -38,7 +38,7 @@ class admin_si_mapel extends CI_Controller{
 	                         $kode=strip_tags($this->input->post('kode'));
 	                        $nama=strip_tags($this->input->post('xnama'));
 
-							$this->m_mapel->update_mapel($kode,$nama);
+							$this->M_mapel->update_mapel($kode,$nama);
 							echo $this->session->set_flashdata('msg','info');
 							redirect('admin_si_mapel');
 	                    

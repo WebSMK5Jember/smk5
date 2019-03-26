@@ -71,7 +71,12 @@
                                     <div class="col-12">
                                         <button name="btn-login" class="btn btn-block btn-custom waves-effect waves-light" type="submit">Masuk</button>
                                     </div>
+
+                                     
                                 </div>
+                                <div class="col-14">
+                                        <a href="<?php echo base_url().''?>" class="btn btn-block btn-custom waves-effect waves-light">Kembali Ke Halaman Web</a>
+                                    </div>
 
                             </form>
 
